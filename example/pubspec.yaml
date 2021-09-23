@@ -1,7 +1,7 @@
-name: flutter_simple_shopify_example
+name: shopify_plus_example
 description: A simple shopify example.
 
-publish_to: 'none'
+publish_to: "none"
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_simple_shopify:
+  shopify_plus:
     path: ../
 
 dev_dependencies:

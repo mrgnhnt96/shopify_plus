@@ -1,7 +1,7 @@
-import 'package:flutter_simple_shopify/models/src/product/metafield/metafield.dart';
-import 'package:flutter_simple_shopify/models/src/product/option/option.dart';
-import 'package:flutter_simple_shopify/models/src/product/product_variant/product_variant.dart';
-import 'package:flutter_simple_shopify/models/src/product/shopify_image/shopify_image.dart';
+import 'package:shopify_plus/models/src/product/metafield/metafield.dart';
+import 'package:shopify_plus/models/src/product/option/option.dart';
+import 'package:shopify_plus/models/src/product/product_variant/product_variant.dart';
+import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'associated_collections/associated_collections.dart';

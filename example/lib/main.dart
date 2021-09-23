@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_simple_shopify/flutter_simple_shopify.dart';
+import 'package:shopify_plus/shopify_plus.dart';
 
 import 'screens/collection_tab.dart';
 import 'screens/home_tab.dart';

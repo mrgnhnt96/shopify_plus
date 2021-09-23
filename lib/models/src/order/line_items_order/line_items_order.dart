@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/order/line_item_order/line_item_order.dart';
+import 'package:shopify_plus/models/src/order/line_item_order/line_item_order.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'line_items_order.freezed.dart';

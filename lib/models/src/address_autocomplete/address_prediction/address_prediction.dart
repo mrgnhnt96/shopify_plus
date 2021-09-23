@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/address_autocomplete/matched_substring/matched_substring.dart';
+import 'package:shopify_plus/models/src/address_autocomplete/matched_substring/matched_substring.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'address_prediction.freezed.dart';

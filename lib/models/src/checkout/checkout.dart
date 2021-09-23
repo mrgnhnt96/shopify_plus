@@ -1,5 +1,5 @@
-import 'package:flutter_simple_shopify/models/src/order/order.dart';
-import 'package:flutter_simple_shopify/models/src/product/price_v_2/price_v_2.dart';
+import 'package:shopify_plus/models/src/order/order.dart';
+import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../json_helper.dart';

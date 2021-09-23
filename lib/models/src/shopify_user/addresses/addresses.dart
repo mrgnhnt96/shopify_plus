@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/shopify_user/address/address.dart';
+import 'package:shopify_plus/models/src/shopify_user/address/address.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'addresses.freezed.dart';

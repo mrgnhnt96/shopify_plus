@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/mixins/src/shopfiy_error.dart';
+import 'package:shopify_plus/mixins/src/shopfiy_error.dart';
 import 'package:graphql/client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -22,7 +22,7 @@ class ShopifyAuth with ShopifyError {
   static Map<String?, ShopifyUser?> _shopifyUser = {};
 
   @deprecated
-  static const String _shopifyKey = 'FLUTTER_SIMPLE_SHOPIFY_ACCESS_TOKEN';
+  static const String _shopifyKey = 'shopify_plus_ACCESS_TOKEN';
 
   static Map<String?, String?> _currentCustomerAccessToken = {};
 

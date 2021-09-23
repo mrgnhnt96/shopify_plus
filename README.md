@@ -1,7 +1,7 @@
-# flutter_simple_shopify
+# shopify_plus
 
-[![pub package](https://img.shields.io/pub/v/flutter_simple_shopify.svg)](https://pub.dev/packages/flutter_simple_shopify)
-![Build](https://github.com/ThinkSimple/flutter_simple_shopify/workflows/Build/badge.svg)
+[![pub package](https://img.shields.io/pub/v/shopify_plus.svg)](https://pub.dev/packages/shopify_plus)
+![Build](https://github.com/ThinkSimple/shopify_plus/workflows/Build/badge.svg)
 
 
 A new Flutter package which provides help in creating a mobile app of a shopify store.

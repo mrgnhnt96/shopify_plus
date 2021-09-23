@@ -1,6 +1,6 @@
-import 'package:flutter_simple_shopify/models/src/checkout/product_variant_checkout/product_variant_checkout.dart';
-import 'package:flutter_simple_shopify/models/src/order/discount_allocations/discount_allocations.dart';
-import 'package:flutter_simple_shopify/models/src/product/price_v_2/price_v_2.dart';
+import 'package:shopify_plus/models/src/checkout/product_variant_checkout/product_variant_checkout.dart';
+import 'package:shopify_plus/models/src/order/discount_allocations/discount_allocations.dart';
+import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'line_item_order.freezed.dart';

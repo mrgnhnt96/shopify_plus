@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/article/articles/articles.dart';
+import 'package:shopify_plus/models/src/article/articles/articles.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'blog.freezed.dart';

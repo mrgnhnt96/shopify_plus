@@ -1,4 +1,4 @@
-library simple_shopify;
+library shopify_plus;
 
 export 'shopify/shopify.dart';
 export 'enums/enums.dart';

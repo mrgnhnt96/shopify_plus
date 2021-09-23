@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/checkout/shipping_rates/shipping_rates.dart';
+import 'package:shopify_plus/models/src/checkout/shipping_rates/shipping_rates.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'available_shipping_rates.freezed.dart';

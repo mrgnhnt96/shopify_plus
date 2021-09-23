@@ -1,13 +1,13 @@
-import 'package:flutter_simple_shopify/enums/enums.dart';
-import 'package:flutter_simple_shopify/enums/src/sort_key_article.dart';
-import 'package:flutter_simple_shopify/graphql_operations/queries/get_all_blogs.dart';
-import 'package:flutter_simple_shopify/graphql_operations/queries/get_blog_by_handle.dart';
-import 'package:flutter_simple_shopify/graphql_operations/queries/get_n_articles_sorted.dart';
-import 'package:flutter_simple_shopify/mixins/src/shopfiy_error.dart';
-import 'package:flutter_simple_shopify/models/src/article/article.dart';
-import 'package:flutter_simple_shopify/models/src/article/articles/articles.dart';
-import 'package:flutter_simple_shopify/models/src/blog/blog.dart';
-import 'package:flutter_simple_shopify/models/src/blog/blogs/blogs.dart';
+import 'package:shopify_plus/enums/enums.dart';
+import 'package:shopify_plus/enums/src/sort_key_article.dart';
+import 'package:shopify_plus/graphql_operations/queries/get_all_blogs.dart';
+import 'package:shopify_plus/graphql_operations/queries/get_blog_by_handle.dart';
+import 'package:shopify_plus/graphql_operations/queries/get_n_articles_sorted.dart';
+import 'package:shopify_plus/mixins/src/shopfiy_error.dart';
+import 'package:shopify_plus/models/src/article/article.dart';
+import 'package:shopify_plus/models/src/article/articles/articles.dart';
+import 'package:shopify_plus/models/src/blog/blog.dart';
+import 'package:shopify_plus/models/src/blog/blogs/blogs.dart';
 import 'package:graphql/client.dart';
 
 import '../../shopify_config.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter_simple_shopify/models/src/product/shopify_image/shopify_image.dart';
+import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'author_v_2/author_v_2.dart';
@@ -53,8 +53,8 @@ class Article with _$Article {
 
   static _getCommentList(Map<String, dynamic> json) {
     List<Comment> commentList = [];
-    json['edges']?.forEach(
-        (comment) => commentList.add(Comment.fromGraphJson(comment ?? const {})));
+    json['edges']?.forEach((comment) =>
+        commentList.add(Comment.fromGraphJson(comment ?? const {})));
     return commentList;
   }
 
