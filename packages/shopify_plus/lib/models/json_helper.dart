@@ -37,20 +37,20 @@ class JsonHelper {
     String currencyString;
     String formattedPrice = priceFormat.format(amountFromJson(amount));
     switch (currencyCode) {
-      case "INR":
+      case 'INR':
         {
           currencyString =
               '${_simpleCurrencySymbols[currencyCode]} $formattedPrice';
         }
         break;
 
-      case "EUR":
+      case 'EUR':
         {
           currencyString =
               '$formattedPrice ${_simpleCurrencySymbols[currencyCode]}';
         }
         break;
-      case "USD":
+      case 'USD':
         {
           currencyString =
               '${_simpleCurrencySymbols[currencyCode]} $formattedPrice';

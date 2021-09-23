@@ -6,7 +6,7 @@ class ShopifyConfig {
 
   /// Your store url.
   ///
-  /// eg: "shopname.myshopify.com"
+  /// eg: 'shopname.myshopify.com'
   static String? _storeUrl;
 
   static String? get storeUrl => _storeUrl;

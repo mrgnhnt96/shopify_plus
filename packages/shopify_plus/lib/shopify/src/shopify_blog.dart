@@ -38,7 +38,7 @@ class ShopifyBlog with ShopifyError {
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
-    return (Blogs.fromGraphJson((result.data ?? const {})["blogs"] ?? const {}))
+    return (Blogs.fromGraphJson((result.data ?? const {})['blogs'] ?? const {}))
         .blogList;
   }
 

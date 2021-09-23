@@ -35,6 +35,6 @@ class ShopifyException implements Exception {
 
   @override
   String toString() {
-    return "$errorKey during $key: $errors";
+    return '$errorKey during $key: $errors';
   }
 }

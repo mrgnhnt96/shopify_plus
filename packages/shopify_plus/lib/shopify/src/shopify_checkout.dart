@@ -184,23 +184,23 @@ class ShopifyCheckout with ShopifyError {
       document: gql(compCheckoutWithTokenizedPaymentV2),
       variables: {
         'checkoutId': checkoutId,
-        "payment": {
-          "paymentAmount": {
-            "amount": price.amount,
-            "currencyCode": price.currencyCode
+        'payment': {
+          'paymentAmount': {
+            'amount': price.amount,
+            'currencyCode': price.currencyCode
           },
-          "idempotencyKey": impotencyKey,
-          "billingAddress": {
-            "firstName": billingAddress.firstName,
-            "lastName": billingAddress.lastName,
-            "address1": billingAddress.address1,
-            "province": billingAddress.province,
-            "country": billingAddress.country,
-            "city": billingAddress.city,
-            "zip": billingAddress.zip
+          'idempotencyKey': impotencyKey,
+          'billingAddress': {
+            'firstName': billingAddress.firstName,
+            'lastName': billingAddress.lastName,
+            'address1': billingAddress.address1,
+            'province': billingAddress.province,
+            'country': billingAddress.country,
+            'city': billingAddress.city,
+            'zip': billingAddress.zip
           },
-          "paymentData": tokenizedPayment,
-          "type": type
+          'paymentData': tokenizedPayment,
+          'type': type
         }
       },
     );
@@ -221,15 +221,15 @@ class ShopifyCheckout with ShopifyError {
 
   /// Helper method for transforming a list of variant ids into a List Of Map<String, dynamic> which looks like this:
   ///
-  /// [{"quantity":AMOUNT,"variantId":"YOUR_VARIANT_ID"}]
+  /// [{'quantity':AMOUNT,'variantId':'YOUR_VARIANT_ID'}]
   List<Map<String, dynamic>> transformVariantIdListIntoListOfMaps(
       List<String> variantIdList) {
     List<Map<String, dynamic>> lineItemList = [];
     variantIdList.forEach((e) {
       if (lineItemList.indexWhere((test) => e == test['variantId']) == -1)
         lineItemList.add({
-          "quantity": variantIdList.where((id) => e == id).toList().length,
-          "variantId": e
+          'quantity': variantIdList.where((id) => e == id).toList().length,
+          'variantId': e
         });
     });
     return lineItemList;

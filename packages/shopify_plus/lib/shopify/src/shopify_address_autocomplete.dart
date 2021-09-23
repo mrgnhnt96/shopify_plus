@@ -1,5 +1,3 @@
-import 'package:shopify_plus/graphql_operations/queries/get_address_details.dart';
-import 'package:shopify_plus/graphql_operations/queries/get_address_predictions.dart';
 import 'package:shopify_plus/mixins/src/shopfiy_error.dart';
 import 'package:shopify_plus/models/src/address_autocomplete/address_details/address_details.dart';
 import 'package:shopify_plus/models/src/address_autocomplete/address_prediction/address_prediction.dart';
@@ -15,9 +13,9 @@ class ShopifyAddressAutocomplete with ShopifyError {
 
   final GraphQLClient _graphQLClient = GraphQLClient(
     link: HttpLink(
-      "https://autocomplete-service.shopifycloud.com/graphql",
+      'https://autocomplete-service.shopifycloud.com/graphql',
       defaultHeaders: {
-        "origin": "https://checkout.shopify.com",
+        'origin': 'https://checkout.shopify.com',
       },
     ),
     cache: GraphQLCache(

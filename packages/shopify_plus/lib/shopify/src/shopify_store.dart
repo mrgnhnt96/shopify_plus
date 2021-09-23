@@ -55,7 +55,7 @@ class ShopifyStore with ShopifyError {
       final QueryResult result = await _graphQLClient!.query(_options);
       checkForError(result);
       tempProduct =
-          (Products.fromGraphJson((result.data ?? const {})["products"] ?? {}));
+          (Products.fromGraphJson((result.data ?? const {})['products'] ?? {}));
 
       productList += tempProduct.productList;
       cursor = productList.isNotEmpty ? productList.last.cursor : '';
@@ -88,7 +88,7 @@ class ShopifyStore with ShopifyError {
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     tempProduct =
-        (Products.fromGraphJson((result.data ?? const {})["products"] ?? {}));
+        (Products.fromGraphJson((result.data ?? const {})['products'] ?? {}));
     productList += tempProduct.productList;
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -147,7 +147,7 @@ class ShopifyStore with ShopifyError {
     final QueryResult result = await _graphQLClient!.query(_options);
     checkForError(result);
     productList =
-        (Products.fromGraphJson((result.data ?? const {})["products"] ?? {}))
+        (Products.fromGraphJson((result.data ?? const {})['products'] ?? {}))
             .productList;
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -170,10 +170,10 @@ class ShopifyStore with ShopifyError {
       var newResponse = List.generate(
           result.data!['productRecommendations']?.length ?? 0,
           (index) => {
-                "node":
+                'node':
                     (result.data!['productRecommendations'] ?? const {})[index]
               });
-      var tempProducts = {"edges": newResponse};
+      var tempProducts = {'edges': newResponse};
       return Products.fromGraphJson(tempProducts).productList;
     } catch (e) {
       print(e);
@@ -194,8 +194,8 @@ class ShopifyStore with ShopifyError {
       }
 
       var newResponse = List.generate(result.data!['nodes']?.length ?? 0,
-          (index) => {"node": (result.data!['nodes'] ?? const {})[index]});
-      var tempCollection = {"edges": newResponse};
+          (index) => {'node': (result.data!['nodes'] ?? const {})[index]});
+      var tempCollection = {'edges': newResponse};
       return Collections.fromGraphJson(tempCollection).collectionList;
     } catch (e) {
       print(e);
