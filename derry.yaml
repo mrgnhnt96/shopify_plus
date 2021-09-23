@@ -1,0 +1,19 @@
+brun: pub run build_runner build --delete-conflicting-outputs
+
+wrun: pub run build_runner watch --delete-conflicting-outputs
+
+cbrun: pub run build_runner clean build
+
+cproj:
+  - dart pub upgrade
+
+cgit:
+  - "git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done"
+
+sort: dart pub global run import_sorter:main
+
+# requires `dart pub global activate pub_version_plus`
+vmajor: pubversion major
+vminor: pubversion minor
+vpatch: pubversion patch
+vbuild: pubversion build
