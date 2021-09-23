@@ -18,6 +18,6 @@ dev_dependencies:
   freezed: ^0.14.5
   injectable_generator: ^1.5.2
   pedantic: ^1.11.1
-  derry: 1.4.3
+  derry: ^1.4.3
 
-scripts: derry.yaml
+scripts: ../../derry.yaml
