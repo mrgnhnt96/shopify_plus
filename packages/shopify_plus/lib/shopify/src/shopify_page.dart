@@ -1,6 +1,4 @@
 import 'package:shopify_plus/enums/src/sort_key_page.dart';
-import 'package:shopify_plus/graphql_operations/queries/get_all_pages.dart';
-import 'package:shopify_plus/graphql_operations/queries/get_page_by_handle.dart';
 import 'package:shopify_plus/mixins/src/shopfiy_error.dart';
 import 'package:shopify_plus/models/src/page/page.dart';
 import 'package:shopify_plus/models/src/page/pages/pages.dart';

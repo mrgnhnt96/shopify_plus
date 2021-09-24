@@ -2,13 +2,6 @@ import 'package:shopify_plus/mixins/src/shopfiy_error.dart';
 import 'package:graphql/client.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../graphql_operations/mutations/access_token_delete.dart';
-import '../../graphql_operations/mutations/customer_access_token_create.dart';
-import '../../graphql_operations/mutations/customer_access_token_create_with_multipass.dart';
-import '../../graphql_operations/mutations/customer_access_token_renew.dart';
-import '../../graphql_operations/mutations/customer_create.dart';
-import '../../graphql_operations/mutations/customer_recover.dart';
-import '../../graphql_operations/queries/get_customer.dart';
 import '../../models/src/shopify_user/shopify_user.dart';
 import '../../shopify_config.dart';
 
@@ -45,8 +38,8 @@ class ShopifyAuth with ShopifyError {
     required String password,
     bool deleteThisPartOfCache = false,
   }) async {
-    final MutationOptions _options = MutationOptions(
-      document: gql(customerCreateMutation),
+    final _options = MutationOptions(
+      document: gql(customerCreate),
       variables: {
         'firstName': firstName,
         'lastName': lastName,
@@ -54,7 +47,7 @@ class ShopifyAuth with ShopifyError {
         'password': password,
       },
     );
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     print(result.exception.toString());
     checkForError(
       result,
@@ -63,7 +56,7 @@ class ShopifyAuth with ShopifyError {
     );
     final shopifyUser = ShopifyUser.fromGraphJson(
         (result.data!['customerCreate'] ?? const {})['customer']);
-    final String? customerAccessToken = await _createAccessToken(
+    final customerAccessToken = await _createAccessToken(
       email,
       password,
     );
@@ -82,9 +75,9 @@ class ShopifyAuth with ShopifyError {
   /// user of your app.
   Future<void> sendPasswordResetEmail(
       {required String email, bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
-        document: gql(customerRecoverMutation), variables: {'email': email});
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final _options = MutationOptions(
+        document: gql(customerRecover), variables: {'email': email});
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'customerRecover',
@@ -101,7 +94,7 @@ class ShopifyAuth with ShopifyError {
     required String password,
     bool deleteThisPartOfCache = false,
   }) async {
-    final String? customerAccessToken = await _createAccessToken(
+    final customerAccessToken = await _createAccessToken(
       email,
       password,
     );
