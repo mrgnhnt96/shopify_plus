@@ -1,4 +1,4 @@
-String createCheckout = r'''
+String checkoutCreate = r'''
 mutation checkoutCreate($input: CheckoutCreateInput!) {
   checkoutCreate(input: $input) {
     checkoutUserErrors {

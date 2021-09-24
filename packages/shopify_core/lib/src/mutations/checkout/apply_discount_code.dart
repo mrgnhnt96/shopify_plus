@@ -1,5 +1,5 @@
 const String checkoutWithDiscountCode = r'''
-mutation checkoutDiscountCodeApply($checkoutId : ID!, $discountCode : String!) {
+mutation checkoutDiscountCodeApplyV2($checkoutId : ID!, $discountCode : String!) {
   checkoutDiscountCodeApplyV2(checkoutId: $checkoutId, discountCode: $discountCode) {
     checkoutUserErrors {
       message
