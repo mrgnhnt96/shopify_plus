@@ -1,0 +1,19 @@
+name: shopify_storefront
+description: Storefront API gives you full creative control to add Shopify buying experiences anywhere your customers are, including websites, apps, and video games.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  json_serializable: ^5.0.2
+  freezed_annotation: ^0.14.3
+
+dev_dependencies:
+  test: ^1.17.12
+  build_runner: ^2.1.2
+  freezed: ^0.14.5
+  derry: ^1.4.3
+
+scripts: ../../derry.yaml
