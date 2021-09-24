@@ -1,8 +1,8 @@
-brun: pub run build_runner build --delete-conflicting-outputs
+brun: dart run build_runner build --delete-conflicting-outputs
 
-wrun: pub run build_runner watch --delete-conflicting-outputs
+wrun: dart run build_runner watch --delete-conflicting-outputs
 
-cbrun: pub run build_runner clean build
+cbrun: dart run build_runner clean build
 
 cproj:
   - flutter clean
