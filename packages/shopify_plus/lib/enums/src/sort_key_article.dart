@@ -10,6 +10,6 @@ enum SortKeyArticle {
 
 extension ParseToStringArticle on SortKeyArticle{
   String parseToString(){
-    return this.toString().split('.')[1];
+    return toString().split('.')[1];
   }
 }

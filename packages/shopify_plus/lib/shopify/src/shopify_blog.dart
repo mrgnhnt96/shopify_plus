@@ -24,13 +24,13 @@ class ShopifyBlog with ShopifyError {
       SortKeyBlog sortKeyBlog = SortKeyBlog.HANDLE,
       bool reverseBlogs = false,
       bool reverseArticles = false}) async {
-    final WatchQueryOptions _options =
+    final _options =
         WatchQueryOptions(document: gql(getAllBlogsQuery), variables: {
       'reverseBlogs': reverseBlogs,
       'reverseArticles': reverseArticles,
       'sortKey': sortKeyBlog.parseToString(),
     });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -53,10 +53,10 @@ class ShopifyBlog with ShopifyError {
       'sortKey': sortKeyArticle.parseToString(),
       'reverseArticles': reverse
     });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
-    var response = result.data!['blogByHandle'];
-    var newResponse = {'node': response};
+    final response = result.data!['blogByHandle'];
+    final newResponse = {'node': response};
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }
@@ -74,7 +74,7 @@ class ShopifyBlog with ShopifyError {
       'x': articleAmount,
       'sortKey': sortKeyArticle.parseToString(),
     });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});

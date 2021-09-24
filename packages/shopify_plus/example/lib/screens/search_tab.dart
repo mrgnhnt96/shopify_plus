@@ -80,10 +80,12 @@ class _SearchTabState extends State<SearchTab> {
   }
 
   List<Widget> _buildProductList() {
-    List<Widget> widgetList = [];
-    products.forEach((product) => widgetList.add(ListTile(
+    final widgetList = <Widget>[];
+    for (final product in products) {
+      widgetList.add(ListTile(
           title: Text(product.title),
-        )));
+        ));
+    }
     return widgetList;
   }
 }

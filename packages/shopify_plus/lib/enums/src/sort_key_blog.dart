@@ -7,6 +7,6 @@ enum SortKeyBlog {
 
 extension ParseToStringBlog on SortKeyBlog{
   String parseToString(){
-    return this.toString().split('.')[1];
+    return toString().split('.')[1];
   }
 }

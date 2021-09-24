@@ -19,7 +19,7 @@ class Orders with _$Orders {
   }
 
   static List<Order> _getOrderList(Map<String, dynamic> json) {
-    List<Order> orderList = [];
+    final orderList = <Order>[];
     json['edges']
         ?.forEach((e) => orderList.add(Order.fromGraphJson(e ?? const {})));
     return orderList;

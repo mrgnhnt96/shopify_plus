@@ -21,7 +21,7 @@ class Collections with _$Collections {
   }
 
   static List<Collection> _getCollectionList(Map<String, dynamic> json) {
-    List<Collection> collectionList = [];
+    final collectionList = <Collection>[];
     json['edges']?.forEach(
         (e) => collectionList.add(Collection.fromGraphJson(e ?? const {})));
     return collectionList;

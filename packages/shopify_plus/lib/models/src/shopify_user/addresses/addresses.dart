@@ -16,7 +16,7 @@ class Addresses with _$Addresses {
   }
 
   static _getAddressList(Map<String, dynamic> json) {
-    List<Address> addressList = [];
+    final addressList = <Address>[];
     json['edges']?.forEach((address) =>
         addressList.add(Address.fromGraphJson(address ?? const [])));
     return addressList;

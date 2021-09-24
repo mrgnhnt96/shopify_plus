@@ -22,7 +22,7 @@ class ShopifyPage with ShopifyError {
     bool reversePages = false,
     String? pagesQuery,
   }) async {
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final _options = WatchQueryOptions(
       document: gql(getAllPagesQuery),
       variables: {
         'reversePages': reversePages,
@@ -30,7 +30,7 @@ class ShopifyPage with ShopifyError {
         'pagesQuery': pagesQuery,
       },
     );
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -52,10 +52,10 @@ class ShopifyPage with ShopifyError {
         'handle': handle,
       },
     );
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
-    var response = result.data!['pageByHandle'];
-    var newResponse = {'node': response};
+    final response = result.data!['pageByHandle'];
+    final newResponse = {'node': response};
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
     }

@@ -15,7 +15,7 @@ class Blogs with _$Blogs {
   }
 
   static List<Blog> _getBlogList(Map<String, dynamic> json) {
-    List<Blog> blogList = [];
+    final blogList = <Blog>[];
     json['edges']
         ?.forEach((blog) => blogList.add(Blog.fromGraphJson(blog ?? const {})));
     return blogList;

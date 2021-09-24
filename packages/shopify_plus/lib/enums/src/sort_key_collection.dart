@@ -7,6 +7,6 @@ enum SortKeyCollection {
 
 extension ParseToStringCollection on SortKeyCollection{
   String parseToString(){
-    return this.toString().split('.')[1];
+    return toString().split('.')[1];
   }
 }

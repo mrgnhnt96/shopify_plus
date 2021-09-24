@@ -18,7 +18,7 @@ class LineItem with _$LineItem {
   }) = _LineItem;
 
   static LineItem fromGraphJson(Map<String, dynamic> json) {
-    Map<String, dynamic> nodeJson = json['node'] ?? {};
+    final Map<String, dynamic> nodeJson = json['node'] ?? {};
 
     return LineItem(
         id: nodeJson['id'],

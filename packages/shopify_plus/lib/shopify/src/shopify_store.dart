@@ -26,7 +26,7 @@ class ShopifyStore with ShopifyError {
   /// Simply returns all Products from your Store.
   Future<List<Product>> getAllProducts(
       {String? metafieldsNamespace, bool deleteThisPartOfCache = false}) async {
-    List<Product> productList = [];
+    var productList = <Product>[];
     Products tempProduct;
     String? cursor;
     WatchQueryOptions _options;
@@ -38,7 +38,7 @@ class ShopifyStore with ShopifyError {
           'metafieldsNamespace': metafieldsNamespace,
         },
       );
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       tempProduct =
           (Products.fromGraphJson((result.data ?? const {})['products'] ?? {}));
@@ -60,10 +60,10 @@ class ShopifyStore with ShopifyError {
       {bool deleteThisPartOfCache = false,
       bool reverse = false,
       SortKeyProduct sortKeyProduct = SortKeyProduct.TITLE}) async {
-    List<Product> productList = [];
+    var productList = <Product>[];
     Products tempProduct;
-    String cursor = startCursor;
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final cursor = startCursor;
+    final _options = WatchQueryOptions(
         document: gql(getXProductsAfterCursorQuery),
         variables: {
           'x': limit,
@@ -71,7 +71,7 @@ class ShopifyStore with ShopifyError {
           'reverse': reverse,
           'sortKey': sortKeyProduct.parseToString()
         });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     tempProduct =
         (Products.fromGraphJson((result.data ?? const {})['products'] ?? {}));
@@ -90,10 +90,10 @@ class ShopifyStore with ShopifyError {
     List<Product>? productList = [];
     final QueryOptions _options = WatchQueryOptions(
         document: gql(getProductsByIdsQuery), variables: {'ids': idList});
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
-    var response = result.data!;
-    var newResponse = {
+    final response = result.data!;
+    final newResponse = {
       'edges': List.generate(response['nodes'].length,
           (index) => {'node': response['nodes'][index]})
     };
@@ -124,13 +124,13 @@ class ShopifyStore with ShopifyError {
       bool? reverse,
       SortKeyProduct sortKey = SortKeyProduct.PRODUCT_TYPE}) async {
     List<Product>? productList = [];
-    final WatchQueryOptions _options =
+    final _options =
         WatchQueryOptions(document: gql(getNProductsQuery), variables: {
       'n': n,
       'sortKey': sortKey.parseToString(),
       'reverse': reverse,
     });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     productList =
         (Products.fromGraphJson((result.data ?? const {})['products'] ?? {}))
@@ -145,21 +145,21 @@ class ShopifyStore with ShopifyError {
   Future<List<Product>?> getProductRecommendations(String productId,
       {bool deleteThisPartOfCache = false}) async {
     try {
-      final WatchQueryOptions _options = WatchQueryOptions(
+      final _options = WatchQueryOptions(
           document: gql(getProductRecommendationsQuery),
           variables: {'id': productId});
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       if (deleteThisPartOfCache) {
         _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
       }
-      var newResponse = List.generate(
+      final newResponse = List.generate(
           result.data!['productRecommendations']?.length ?? 0,
           (index) => {
                 'node':
                     (result.data!['productRecommendations'] ?? const {})[index]
               });
-      var tempProducts = {'edges': newResponse};
+      final tempProducts = {'edges': newResponse};
       return Products.fromGraphJson(tempProducts).productList;
     } catch (e) {
       print(e);
@@ -171,17 +171,17 @@ class ShopifyStore with ShopifyError {
   Future<List<Collection>?> getCollectionsByIds(List<String> idList,
       {bool deleteThisPartOfCache = false}) async {
     try {
-      final WatchQueryOptions _options = WatchQueryOptions(
+      final _options = WatchQueryOptions(
           document: gql(getCollectionsByIdsQuery), variables: {'ids': idList});
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       if (deleteThisPartOfCache) {
         _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
       }
 
-      var newResponse = List.generate(result.data!['nodes']?.length ?? 0,
+      final newResponse = List.generate(result.data!['nodes']?.length ?? 0,
           (index) => {'node': (result.data!['nodes'] ?? const {})[index]});
-      var tempCollection = {'edges': newResponse};
+      final tempCollection = {'edges': newResponse};
       return Collections.fromGraphJson(tempCollection).collectionList;
     } catch (e) {
       print(e);
@@ -191,10 +191,10 @@ class ShopifyStore with ShopifyError {
 
   /// Returns the Shop.
   Future<Shop> getShop({bool deleteThisPartOfCache = false}) async {
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final _options = WatchQueryOptions(
       document: gql(getShopQuery),
     );
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -206,10 +206,10 @@ class ShopifyStore with ShopifyError {
   Future<Collection> getCollectionByHandle(String collectionName,
       {bool deleteThisPartOfCache = false}) async {
     try {
-      final WatchQueryOptions _options = WatchQueryOptions(
+      final _options = WatchQueryOptions(
           document: gql(getFeaturedCollectionQuery),
           variables: {'query': collectionName});
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       if (deleteThisPartOfCache) {
         _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -229,7 +229,7 @@ class ShopifyStore with ShopifyError {
       {bool deleteThisPartOfCache = false,
       SortKeyCollection sortKeyCollection = SortKeyCollection.UPDATED_AT,
       bool reverse = false}) async {
-    List<Collection> collectionList = [];
+    var collectionList = <Collection>[];
     Collections tempCollection;
     String? cursor;
     WatchQueryOptions _options;
@@ -241,7 +241,7 @@ class ShopifyStore with ShopifyError {
             'sortKey': sortKeyCollection.parseToString(),
             'reverse': reverse
           });
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       tempCollection = (Collections.fromGraphJson(
           (result.data ?? const {})['collections'] ?? {}));
@@ -279,7 +279,7 @@ class ShopifyStore with ShopifyError {
           'x': x,
           'n': n
         });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     collectionList = (Collections.fromGraphJson(
             (result.data ?? const {})['collections'] ?? {}))
@@ -298,7 +298,7 @@ class ShopifyStore with ShopifyError {
       SortKeyProductCollection sortKeyProductCollection =
           SortKeyProductCollection.CREATED}) async {
     String? cursor;
-    List<Product> productList = [];
+    final productList = <Product>[];
     Collection collection;
     QueryOptions _options;
     do {
@@ -309,7 +309,7 @@ class ShopifyStore with ShopifyError {
             'cursor': cursor,
             'sortKey': sortKeyProductCollection.parseToString()
           });
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       productList
           .addAll(Collection.fromGraphJson(result.data!).products.productList);
@@ -328,12 +328,12 @@ class ShopifyStore with ShopifyError {
   /// [limit] has to be in the range of 0 and 250.
   Future<List<Product>?> getXProductsAfterCursorWithinCollection(
       String id, int limit,
-      {String? startCursor = null,
+      {String? startCursor,
       SortKeyProductCollection sortKey = SortKeyProductCollection.BEST_SELLING,
       bool deleteThisPartOfCache = false,
       bool reverse = false}) async {
-    String? cursor = startCursor;
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final cursor = startCursor;
+    final _options = WatchQueryOptions(
         document: gql(getXProductsAfterCursorWithinCollectionQuery),
         variables: {
           'id': id,
@@ -342,7 +342,7 @@ class ShopifyStore with ShopifyError {
           'sortKey': sortKey.parseToString(),
           'reverse': reverse,
         });
-    final QueryResult result = await _graphQLClient!.query(_options);
+    final result = await _graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -358,7 +358,7 @@ class ShopifyStore with ShopifyError {
       bool deleteThisPartOfCache = false,
       bool reverse = false}) async {
     String? cursor;
-    List<Product> productList = [];
+    final productList = <Product>[];
     Products products;
     WatchQueryOptions _options;
     do {
@@ -370,7 +370,7 @@ class ShopifyStore with ShopifyError {
             'query': query,
             'reverse': reverse
           });
-      final QueryResult result = await _graphQLClient!.query(_options);
+      final result = await _graphQLClient!.query(_options);
       checkForError(result);
       productList.addAll(
           (Products.fromGraphJson((result.data!)['products'])).productList);
@@ -392,7 +392,7 @@ class ShopifyStore with ShopifyError {
       {SortKeyProduct? sortKey,
       bool deleteThisPartOfCache = false,
       bool reverse = false}) async {
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final _options = WatchQueryOptions(
         document: gql(getXProductsOnQueryAfterCursorQuery),
         variables: cursor == null
             ? {
@@ -408,8 +408,7 @@ class ShopifyStore with ShopifyError {
                 'query': query,
                 'reverse': reverse
               });
-    final QueryResult result =
-        await ShopifyConfig.graphQLClient!.query(_options);
+    final result = await ShopifyConfig.graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -424,11 +423,10 @@ class ShopifyStore with ShopifyError {
   Future<List<Metafield>> getMetafieldsFromProduct(
       String productHandle, String namespace,
       {bool deleteThisPartOfCache = false}) async {
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final _options = WatchQueryOptions(
         document: gql(getMetafieldsFromProductQuery),
         variables: {'handle': productHandle, 'namespace': namespace});
-    final QueryResult result =
-        await ShopifyConfig.graphQLClient!.query(_options);
+    final result = await ShopifyConfig.graphQLClient!.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});

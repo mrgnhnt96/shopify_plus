@@ -44,22 +44,24 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   }
 
   List<Widget> _buildProductVariants() {
-    List<Widget> widgetList = [];
-    product.productVariants.forEach((variant) => widgetList.add(ListTile(
-          title: Text(variant.title),
-          subtitle: Row(
-            children: [
-              IconButton(
-                  icon: Icon(Icons.add),
-                  onPressed: () => _addProductToShoppingCart(variant)),
-              IconButton(
-                  icon: Icon(Icons.delete),
-                  onPressed: () =>
-                      _removeProductFromShoppingCart(lineItems.first))
-            ],
-          ),
-          trailing: Text(variant.price.amount.toString()),
-        )));
+    final widgetList = <Widget>[];
+    for (final variant in product.productVariants) {
+      widgetList.add(ListTile(
+        title: Text(variant.title),
+        subtitle: Row(
+          children: [
+            IconButton(
+                icon: const Icon(Icons.add),
+                onPressed: () => _addProductToShoppingCart(variant)),
+            IconButton(
+                icon: const Icon(Icons.delete),
+                onPressed: () =>
+                    _removeProductFromShoppingCart(lineItems.first))
+          ],
+        ),
+        trailing: Text(variant.price.amount.toString()),
+      ));
+    }
     return widgetList;
   }
 

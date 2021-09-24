@@ -6,12 +6,12 @@ mixin ShopifyError {
   void checkForError(QueryResult queryResult, {String? key, String? errorKey}) {
     if (queryResult.hasException) throw queryResult.exception!;
     if (key != null && errorKey != null) {
-      Map<String, Object?> data = queryResult.data as Map<String, Object?>;
-      Map<String, dynamic>? content = data[key] as Map<String, dynamic>?;
+      final data = queryResult.data as Map<String, Object?>;
+      final content = data[key] as Map<String, dynamic>?;
       if (content == null) return;
-      List? errors = content[errorKey] as List<dynamic>?;
+      final errors = content[errorKey] as List<dynamic>?;
       if (errors != null && errors.isNotEmpty) {
-        errors.forEach((error) => print(error));
+        errors.forEach(print);
         throw ShopifyException(key, errorKey, errors: errors);
       }
     }

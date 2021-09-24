@@ -26,14 +26,14 @@ class ShopifyCheckout with ShopifyError {
       {bool getShippingInfo = true,
       bool withPaymentId = false,
       bool deleteThisPartOfCache = false}) async {
-    final WatchQueryOptions _optionsRequireShipping = WatchQueryOptions(
+    final _optionsRequireShipping = WatchQueryOptions(
         document: gql(getCheckoutInfoAboutShipping),
         variables: {
           'id': checkoutId,
         });
-    QueryResult result = await _graphQLClient!.query(_optionsRequireShipping);
+    final result = await _graphQLClient!.query(_optionsRequireShipping);
 
-    final WatchQueryOptions _options = WatchQueryOptions(
+    final _options = WatchQueryOptions(
         document: gql(_requiresShipping(result) == true && getShippingInfo
             ? withPaymentId
                 ? getCheckoutInfoWithPaymentId
@@ -44,7 +44,7 @@ class ShopifyCheckout with ShopifyError {
         variables: {
           'id': checkoutId,
         });
-    final QueryResult _queryResult = (await _graphQLClient!.query(_options));
+    final _queryResult = (await _graphQLClient!.query(_options));
     checkForError(_queryResult);
     if (deleteThisPartOfCache) {
       _graphQLClient!.cache.writeQuery(_options.asRequest, data: {});
@@ -65,7 +65,7 @@ class ShopifyCheckout with ShopifyError {
     String? note,
     bool deleteThisPartOfCache = false,
   }) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
       document: gql(checkoutAttributesUpdateMutation),
       variables: {
         'checkoutId': checkoutId,
@@ -84,7 +84,7 @@ class ShopifyCheckout with ShopifyError {
         },
       },
     );
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutAttributesUpdateV2',
@@ -108,10 +108,9 @@ class ShopifyCheckout with ShopifyError {
       'sortKey': sortKey.parseToString(),
       'reverse': reverse
     });
-    final QueryResult result =
-        await ShopifyConfig.graphQLClient!.query(_options);
+    final result = await ShopifyConfig.graphQLClient!.query(_options);
     checkForError(result);
-    Orders orders = Orders.fromJson(
+    final orders = Orders.fromJson(
         (((result.data ?? const {})['customer'] ?? const {})['orders'] ??
             const {}));
     if (deleteThisPartOfCache) {
@@ -126,13 +125,13 @@ class ShopifyCheckout with ShopifyError {
     Address address, {
     bool deleteThisPartOfCache = false,
   }) async {
-    Map<String, dynamic> variables = address.toJson();
+    final variables = address.toJson();
     variables['checkoutId'] = checkoutId;
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
       document: gql(checkoutShippingAddressUpdateMutation),
       variables: variables,
     );
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutShippingAddressUpdateV2',
@@ -159,7 +158,7 @@ class ShopifyCheckout with ShopifyError {
     bool test = false,
     bool deleteThisPartOfCache = false,
   }) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
       document: gql(compCheckoutWithTokenizedPaymentV2),
       variables: {
         'checkoutId': checkoutId,
@@ -183,7 +182,7 @@ class ShopifyCheckout with ShopifyError {
         }
       },
     );
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutCompleteWithTokenizedPaymentV2',
@@ -194,8 +193,7 @@ class ShopifyCheckout with ShopifyError {
     }
 
     return (result.data!['checkoutCompleteWithTokenizedPaymentV2'] ??
-            const {})['payment']['id'] ??
-        null;
+        const {})['payment']['id'];
   }
 
   /// Helper method for transforming a list of variant ids into a List Of Map<String, dynamic> which looks like this:
@@ -203,14 +201,14 @@ class ShopifyCheckout with ShopifyError {
   /// [{'quantity':AMOUNT,'variantId':'YOUR_VARIANT_ID'}]
   List<Map<String, dynamic>> transformVariantIdListIntoListOfMaps(
       List<String> variantIdList) {
-    List<Map<String, dynamic>> lineItemList = [];
-    variantIdList.forEach((e) {
+    final lineItemList = <Map<String, dynamic>>[];
+    for (final e in variantIdList) {
       if (lineItemList.indexWhere((test) => e == test['variantId']) == -1)
         lineItemList.add({
           'quantity': variantIdList.where((id) => e == id).toList().length,
           'variantId': e
         });
-    });
+    }
     return lineItemList;
   }
 
@@ -218,13 +216,13 @@ class ShopifyCheckout with ShopifyError {
   Future<void> checkoutCustomerAssociate(
       String checkoutId, String customerAccessToken,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(associateCustomer),
         variables: {
           'checkoutId': checkoutId,
           'customerAccessToken': customerAccessToken
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutCustomerAssociateV2',
@@ -238,10 +236,10 @@ class ShopifyCheckout with ShopifyError {
   /// Disassociates the [Customer] from the [Checkout] that [checkoutId] belongs to.
   Future<void> checkoutCustomerDisassociate(String checkoutId,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutCustomerDisassociateMutation),
         variables: {'id': checkoutId});
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutCustomerDisassociateV2',
@@ -255,10 +253,10 @@ class ShopifyCheckout with ShopifyError {
   /// Applies [discountCode] to the [Checkout] that [checkoutId] belongs to.
   Future<void> checkoutDiscountCodeApply(String checkoutId, String discountCode,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutDiscountCodeApplyMutation),
         variables: {'checkoutId': checkoutId, 'discountCode': discountCode});
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutDiscountCodeApplyV2',
@@ -272,10 +270,10 @@ class ShopifyCheckout with ShopifyError {
   /// Removes the applied discount from the [Checkout] that [checkoutId] belongs to.
   Future<void> checkoutDiscountCodeRemove(String checkoutId,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutDiscountCodeRemoveMutation),
         variables: {'checkoutId': checkoutId});
-    QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutDiscountCodeRemove',
@@ -290,10 +288,10 @@ class ShopifyCheckout with ShopifyError {
   Future<void> checkoutGiftCardAppend(
       String checkoutId, List<String> giftCardCodes,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutGiftCardsAppendMutation),
         variables: {'checkoutId': checkoutId, 'giftCardCodes': giftCardCodes});
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutGiftCardsAppend',
@@ -306,7 +304,7 @@ class ShopifyCheckout with ShopifyError {
 
   Future<Checkout> createCheckout(List<LineItem> lineItems,
       {Address? mailingAddress, bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options =
+    final _options =
         MutationOptions(document: gql(createCheckoutMutation), variables: {
       'input': mailingAddress == null
           ? {
@@ -340,7 +338,7 @@ class ShopifyCheckout with ShopifyError {
               }
             }
     });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutCreate',
@@ -358,7 +356,7 @@ class ShopifyCheckout with ShopifyError {
       {required String checkoutId,
       required List<LineItem> lineItems,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(addLineItemsToCheckoutMutation),
         variables: {
           'checkoutId': checkoutId,
@@ -370,7 +368,7 @@ class ShopifyCheckout with ShopifyError {
               }
           ],
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'addLineItemsToCheckout',
@@ -389,7 +387,7 @@ class ShopifyCheckout with ShopifyError {
       {required String checkoutId,
       required List<LineItem> lineItems,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(updateLineItemsInCheckoutMutation),
         variables: {
           'checkoutId': checkoutId,
@@ -401,7 +399,7 @@ class ShopifyCheckout with ShopifyError {
               }
           ],
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'updateLineItemsInCheckout',
@@ -420,14 +418,14 @@ class ShopifyCheckout with ShopifyError {
       {required String checkoutId,
       required List<LineItem> lineItems,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(removeLineItemsFromCheckoutMutation),
         variables: {
           'checkoutId': checkoutId,
           'lineItemIds': [for (var lineItem in lineItems) lineItem.id],
         });
 
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'removeLineItemsFromCheckout',
@@ -446,13 +444,13 @@ class ShopifyCheckout with ShopifyError {
   Future<void> checkoutGiftCardRemove(
       String appliedGiftCardId, String checkoutId,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutGiftCardRemoveMutation),
         variables: {
           'appliedGiftCardId': appliedGiftCardId,
           'checkoutId': checkoutId
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutGiftCardRemoveV2',
@@ -467,13 +465,13 @@ class ShopifyCheckout with ShopifyError {
   Future<Checkout> checkoutShippingLineUpdate(
       String checkoutId, String shippingRateHandle,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutShippingLineUpdateMutation),
         variables: {
           'shippingRateHandle': shippingRateHandle,
           'checkoutId': checkoutId
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutShippingLineUpdate',
@@ -492,10 +490,10 @@ class ShopifyCheckout with ShopifyError {
   /// You can use this mutation for free items or items whose purchase price is covered by a gift card
   Future<void> checkoutCompleteFree(String checkoutId,
       {bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(checkoutCompleteFreeMutation),
         variables: {'checkoutId': checkoutId});
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutCompleteFree',
@@ -515,7 +513,7 @@ class ShopifyCheckout with ShopifyError {
       required String amount,
       required String currencyCode,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options =
+    final _options =
         MutationOptions(document: gql(completeCheckoutWithTokenV3), variables: {
       'checkoutId': checkoutId,
       'payment': {
@@ -526,7 +524,7 @@ class ShopifyCheckout with ShopifyError {
         'type': paymentTokenType.toString()
       }
     });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'checkoutCompleteWithTokenizedPaymentV3',
@@ -538,7 +536,6 @@ class ShopifyCheckout with ShopifyError {
     }
 
     return result.data?['checkoutCompleteWithTokenizedPaymentV3']['payment']
-            ['id'] ??
-        null;
+        ['id'];
   }
 }

@@ -27,7 +27,7 @@ class ShopifyCustomer with ShopifyError {
       required String customerAccessToken,
       required String id,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(customerAddressUpdateMutation),
         variables: {
           'address1': address1,
@@ -43,7 +43,7 @@ class ShopifyCustomer with ShopifyError {
           'customerAccessToken': customerAccessToken,
           'id': id
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'customerAddressUpdate',
@@ -64,7 +64,7 @@ class ShopifyCustomer with ShopifyError {
       String? customerAccessToken,
       bool? acceptsMarketing,
       bool deleteThisPartOfCache = false}) async {
-    Map<String, dynamic> variableMap = {};
+    final variableMap = <String, dynamic>{};
     ({
       'email': email,
       'firstName': firstName,
@@ -75,10 +75,10 @@ class ShopifyCustomer with ShopifyError {
       'customerAccessToken': customerAccessToken
     }).forEach((k, v) => v != {} ? variableMap[k] = v : {});
 
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(createValidMutationString(variableMap)),
         variables: variableMap);
-    QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'customerUpdate',
@@ -103,7 +103,7 @@ class ShopifyCustomer with ShopifyError {
       String? zip,
       String? customerAccessToken,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(customerAddressCreateMutation),
         variables: {
           'address1': address1,
@@ -118,7 +118,7 @@ class ShopifyCustomer with ShopifyError {
           'zip': zip,
           'customerAccessToken': customerAccessToken,
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'customerAddressCreate',
@@ -139,13 +139,13 @@ class ShopifyCustomer with ShopifyError {
       {String? customerAccessToken,
       String? addressId,
       bool deleteThisPartOfCache = false}) async {
-    final MutationOptions _options = MutationOptions(
+    final _options = MutationOptions(
         document: gql(customerAddressDeleteMutation),
         variables: {
           'customerAccessToken': customerAccessToken,
           'id': addressId
         });
-    final QueryResult result = await _graphQLClient!.mutate(_options);
+    final result = await _graphQLClient!.mutate(_options);
     checkForError(
       result,
       key: 'customerAddressDelete',

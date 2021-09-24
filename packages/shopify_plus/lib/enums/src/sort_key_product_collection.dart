@@ -11,6 +11,6 @@ enum SortKeyProductCollection {
 
 extension ParseToStringProductCollection on SortKeyProductCollection{
   String parseToString(){
-    return this.toString().split('.')[1];
+    return toString().split('.')[1];
   }
 }

@@ -28,7 +28,7 @@ class ProductVariant with _$ProductVariant {
   }) = _ProductVariant;
 
   static ProductVariant fromGraphJson(Map<String, dynamic> json) {
-    Map<String, dynamic> nodeJson = json['node'] ?? const {};
+    final Map<String, dynamic> nodeJson = json['node'] ?? const {};
 
     return ProductVariant(
       price: PriceV2.fromJson(nodeJson['priceV2']),
@@ -60,7 +60,7 @@ class ProductVariant with _$ProductVariant {
       _$ProductVariantFromJson(json);
 
   static List<SelectedOption> _getOptionList(Map<String, dynamic> json) {
-    List<SelectedOption> optionList = [];
+    final optionList = <SelectedOption>[];
     json['selectedOptions']?.forEach((v) {
       if (v != null) optionList.add(SelectedOption.fromJson(v ?? const {}));
     });

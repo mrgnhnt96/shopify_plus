@@ -52,15 +52,15 @@ class Article with _$Article {
   }
 
   static _getCommentList(Map<String, dynamic> json) {
-    List<Comment> commentList = [];
+    final commentList = <Comment>[];
     json['edges']?.forEach((comment) =>
         commentList.add(Comment.fromGraphJson(comment ?? const {})));
     return commentList;
   }
 
   static _getTagsList(Map<String, dynamic> json) {
-    List<String> tagsList = [];
-    (json['node'] ?? const {})['tags']?.forEach((tag) => tagsList.add(tag));
+    final tagsList = <String>[];
+    (json['node'] ?? const {})['tags']?.forEach(tagsList.add);
     return tagsList;
   }
 }

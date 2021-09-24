@@ -69,7 +69,7 @@ class Product with _$Product {
   }
 
   static List<Option> _getOptionList(Map<String, dynamic> json) {
-    List<Option> optionList = [];
+    final optionList = <Option>[];
     json['options']?.forEach((v) {
       if (v != null) optionList.add(Option.fromJson(v ?? const {}));
     });
@@ -77,7 +77,7 @@ class Product with _$Product {
   }
 
   static List<String> _getTags(Map<String, dynamic> json) {
-    List<String> tags = [];
+    final tags = <String>[];
     (json['node'] ?? const {})['tags']?.forEach((e) => tags.add(e ?? const {}));
     return tags;
   }
@@ -93,7 +93,7 @@ class Product with _$Product {
   }
 
   static _getImageList(Map<String, dynamic> json) {
-    List<ShopifyImage> imageList = [];
+    final imageList = <ShopifyImage>[];
     if (json['edges'] != null)
       json['edges'].forEach((image) =>
           imageList.add(ShopifyImage.fromJson(image['node'] ?? const {})));
@@ -101,7 +101,7 @@ class Product with _$Product {
   }
 
   static _getMetafieldList(Map<String, dynamic> json) {
-    List<Metafield> metafieldList = [];
+    final metafieldList = <Metafield>[];
     json['edges']?.forEach((metafield) =>
         metafieldList.add(Metafield.fromGraphJson(metafield ?? const {})));
     return metafieldList;

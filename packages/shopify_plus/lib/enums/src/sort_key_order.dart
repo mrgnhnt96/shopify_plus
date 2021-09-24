@@ -7,6 +7,6 @@ enum SortKeyOrder {
 
 extension ParseToStringOrder on SortKeyOrder{
   String parseToString(){
-    return this.toString().split('.')[1];
+    return toString().split('.')[1];
   }
 }

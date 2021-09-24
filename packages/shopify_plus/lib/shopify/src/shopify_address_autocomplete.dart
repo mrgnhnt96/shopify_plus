@@ -43,7 +43,7 @@ class ShopifyAddressAutocomplete with ShopifyError {
         'location': location?.toJson(),
       },
     );
-    final QueryResult result = await _graphQLClient.query(_options);
+    final result = await _graphQLClient.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient.cache.writeQuery(_options.asRequest, data: {});
@@ -65,7 +65,7 @@ class ShopifyAddressAutocomplete with ShopifyError {
         'locale': locale ?? Intl.getCurrentLocale(),
       },
     );
-    final QueryResult result = await _graphQLClient.query(_options);
+    final result = await _graphQLClient.query(_options);
     checkForError(result);
     if (deleteThisPartOfCache) {
       _graphQLClient.cache.writeQuery(_options.asRequest, data: {});

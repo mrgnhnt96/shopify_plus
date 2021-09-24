@@ -33,9 +33,9 @@ class JsonHelper {
 
   static String chooseRightOrderOnCurrencySymbol(
       dynamic amount, String currencyCode) {
-    NumberFormat priceFormat = NumberFormat();
+    final priceFormat = NumberFormat();
     String currencyString;
-    String formattedPrice = priceFormat.format(amountFromJson(amount));
+    final formattedPrice = priceFormat.format(amountFromJson(amount));
     switch (currencyCode) {
       case 'INR':
         {

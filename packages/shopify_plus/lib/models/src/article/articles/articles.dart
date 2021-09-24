@@ -16,7 +16,7 @@ class Articles with _$Articles {
   }
 
   static _getArticleList(Map<String, dynamic> json) {
-    List<Article> articleList = [];
+    final articleList = <Article>[];
     json['edges']?.forEach((article) =>
         articleList.add(Article.fromGraphJson(article ?? const {})));
     return articleList;

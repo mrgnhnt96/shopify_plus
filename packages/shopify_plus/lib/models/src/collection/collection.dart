@@ -23,7 +23,7 @@ class Collection with _$Collection {
   }) = _Collection;
 
   static Collection fromGraphJson(Map<String, dynamic> json) {
-    Map<String, dynamic> nodeJson = json['node'] ?? const {};
+    final Map<String, dynamic> nodeJson = json['node'] ?? const {};
 
     var _products = Products.fromGraphJson(nodeJson['products'] ?? const {});
     final _realProducts = <Product>[];

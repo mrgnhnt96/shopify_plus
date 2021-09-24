@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _currentIndex = 0;
 
-  List<Widget> _tabs = [
+  final List<Widget> _tabs = [
     HomeTab(),
     CollectionTab(),
     SearchTab(),
