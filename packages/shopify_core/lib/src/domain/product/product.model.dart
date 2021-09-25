@@ -5,7 +5,8 @@ part 'product.model.freezed.dart';
 part 'product.model.g.dart';
 
 @freezed
-class Product extends ParentResource with _$Product {
+class Product with _$Product {
+  @Implements(ParentResource)
   const factory Product() = _DefaultProduct;
 
   factory Product.fromJson(Map<String, dynamic> json) =>

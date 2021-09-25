@@ -15,7 +15,8 @@ part 'customer.model.g.dart';
 ///
 /// [tags] - *required access: unauthenticated_read_customer_tags*
 @freezed
-class Customer extends ParentResource with _$Customer {
+class Customer with _$Customer {
+  @Implements(ParentResource)
   const factory Customer({
     /// Indicates whether the customer has consented to be sent marketing material via email.
     @Default(false) bool acceptsMarketing,

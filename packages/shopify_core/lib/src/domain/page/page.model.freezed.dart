@@ -73,6 +73,7 @@ class __$DefaultPageCopyWithImpl<$Res> extends _$PageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(ParentResource)
 class _$_DefaultPage implements _DefaultPage {
   const _$_DefaultPage();
 
@@ -98,7 +99,7 @@ class _$_DefaultPage implements _DefaultPage {
   }
 }
 
-abstract class _DefaultPage implements Page {
+abstract class _DefaultPage implements Page, ParentResource {
   const factory _DefaultPage() = _$_DefaultPage;
 
   factory _DefaultPage.fromJson(Map<String, dynamic> json) =

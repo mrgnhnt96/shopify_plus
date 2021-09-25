@@ -5,7 +5,8 @@ part 'collection.model.freezed.dart';
 part 'collection.model.g.dart';
 
 @freezed
-class Collection extends ParentResource with _$Collection {
+class Collection with _$Collection {
+  @Implements(ParentResource)
   const factory Collection() = _DefaultCollection;
 
   factory Collection.fromJson(Map<String, dynamic> json) =>

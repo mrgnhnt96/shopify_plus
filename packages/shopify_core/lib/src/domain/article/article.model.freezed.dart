@@ -73,6 +73,7 @@ class __$DefaultArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(ParentResource)
 class _$_DefaultArticle implements _DefaultArticle {
   const _$_DefaultArticle();
 
@@ -98,7 +99,7 @@ class _$_DefaultArticle implements _DefaultArticle {
   }
 }
 
-abstract class _DefaultArticle implements Article {
+abstract class _DefaultArticle implements Article, ParentResource {
   const factory _DefaultArticle() = _$_DefaultArticle;
 
   factory _DefaultArticle.fromJson(Map<String, dynamic> json) =

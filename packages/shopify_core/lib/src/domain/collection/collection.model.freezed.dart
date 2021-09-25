@@ -75,6 +75,7 @@ class __$DefaultCollectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(ParentResource)
 class _$_DefaultCollection implements _DefaultCollection {
   const _$_DefaultCollection();
 
@@ -100,7 +101,7 @@ class _$_DefaultCollection implements _DefaultCollection {
   }
 }
 
-abstract class _DefaultCollection implements Collection {
+abstract class _DefaultCollection implements Collection, ParentResource {
   const factory _DefaultCollection() = _$_DefaultCollection;
 
   factory _DefaultCollection.fromJson(Map<String, dynamic> json) =

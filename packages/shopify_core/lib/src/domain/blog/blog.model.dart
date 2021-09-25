@@ -5,7 +5,8 @@ part 'blog.model.freezed.dart';
 part 'blog.model.g.dart';
 
 @freezed
-class Blog extends ParentResource with _$Blog {
+class Blog with _$Blog {
+  @Implements(ParentResource)
   const factory Blog() = _DefaultBlog;
 
   factory Blog.fromJson(Map<String, dynamic> json) => _$BlogFromJson(json);
