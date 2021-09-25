@@ -76,8 +76,10 @@ class __$ProductVariantCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(ParentResource)
+@Implements(Node)
 @Implements(Merchandise)
+@Implements(ParentResource)
+@Implements(MetafieldConnection)
 class _$_ProductVariant extends _ProductVariant {
   const _$_ProductVariant() : super._();
 
@@ -104,7 +106,7 @@ class _$_ProductVariant extends _ProductVariant {
 }
 
 abstract class _ProductVariant extends ProductVariant
-    implements ParentResource, Merchandise {
+    implements Node, Merchandise, ParentResource, MetafieldConnection {
   const factory _ProductVariant() = _$_ProductVariant;
   const _ProductVariant._() : super._();
 
