@@ -8,6 +8,7 @@ part 'estimated_cost.model.g.dart';
 @freezed
 class EstimatedCost with _$EstimatedCost {
   const EstimatedCost._();
+
   const factory EstimatedCost({
     /// The estimated amount, before taxes and discounts, for the customer to pay at checkout.
     required Money subtotalAmount,

@@ -9,6 +9,7 @@ part 'metafield.model.g.dart';
 @freezed
 class Metafield with _$Metafield {
   const Metafield._();
+
   const factory Metafield({
     /// The date and time when the storefront metafield was created.
     required DateTime createdAt,

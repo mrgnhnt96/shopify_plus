@@ -10,6 +10,7 @@ part 'selling_plan_price_adjustment.model.g.dart';
 @freezed
 class SellingPlanPriceAdjustment with _$SellingPlanPriceAdjustment {
   const SellingPlanPriceAdjustment._();
+
   const factory SellingPlanPriceAdjustment({
     /// The type of price adjustment. An adjustment value can have one of three types: percentage, amount off, or a new price.
     required SellingPlanPriceAdjustmentValue adjustmentValue,

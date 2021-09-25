@@ -8,6 +8,7 @@ part 'code_discount_allocation.model.g.dart';
 @freezed
 class CodeDiscountAllocation with _$CodeDiscountAllocation {
   const CodeDiscountAllocation._();
+
   const factory CodeDiscountAllocation({
     /// The code used to apply the discount.
     required String code,

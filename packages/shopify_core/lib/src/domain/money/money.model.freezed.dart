@@ -38,7 +38,10 @@ const $Money = _$MoneyTearOff();
 
 /// @nodoc
 mixin _$Money {
+  /// The decimal money amount
   double get amount => throw _privateConstructorUsedError;
+
+  /// The currency
   String get currencyCode => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -126,8 +129,12 @@ class _$_DefaultMoney extends _DefaultMoney {
       _$$_DefaultMoneyFromJson(json);
 
   @override
+
+  /// The decimal money amount
   final double amount;
   @override
+
+  /// The currency
   final String currencyCode;
 
   @override
@@ -172,8 +179,12 @@ abstract class _DefaultMoney extends Money {
       _$_DefaultMoney.fromJson;
 
   @override
+
+  /// The decimal money amount
   double get amount => throw _privateConstructorUsedError;
   @override
+
+  /// The currency
   String get currencyCode => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

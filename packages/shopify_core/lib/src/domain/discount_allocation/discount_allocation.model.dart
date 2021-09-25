@@ -8,6 +8,7 @@ part 'discount_allocation.model.g.dart';
 @freezed
 class DiscountAllocation with _$DiscountAllocation {
   const DiscountAllocation._();
+
   const factory DiscountAllocation({
     required Money allocatedAmount,
     required DiscountApplication discountApplication,

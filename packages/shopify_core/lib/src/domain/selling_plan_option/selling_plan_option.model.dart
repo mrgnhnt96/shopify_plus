@@ -9,6 +9,7 @@ part 'selling_plan_option.model.g.dart';
 @freezed
 class SellingPlanOption with _$SellingPlanOption {
   const SellingPlanOption._();
+
   const factory SellingPlanOption({
     /// The name of the option (ie "Delivery every").
     String? name,

@@ -10,6 +10,7 @@ part 'fulfillment.model.g.dart';
 @freezed
 class Fulfillment with _$Fulfillment {
   const Fulfillment._();
+
   const factory Fulfillment({
     /// The name of the tracking company
     String? trackingCompany,

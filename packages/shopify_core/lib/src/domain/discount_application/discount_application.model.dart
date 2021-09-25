@@ -1,6 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shopify_core/src/domain/discount_application_edge/discount_application_edge.model.dart';
-import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
 
 part 'discount_application.model.freezed.dart';
 part 'discount_application.model.g.dart';
@@ -9,6 +7,7 @@ part 'discount_application.model.g.dart';
 @freezed
 class DiscountApplication with _$DiscountApplication {
   const DiscountApplication._();
+
   const factory DiscountApplication() = _DefaultDiscountApplication;
 
   factory DiscountApplication.fromJson(Map<String, dynamic> json) =>

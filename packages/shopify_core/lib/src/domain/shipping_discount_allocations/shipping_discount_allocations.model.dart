@@ -7,6 +7,7 @@ part 'shipping_discount_allocations.model.g.dart';
 @freezed
 class ShippingDiscountAllocations with _$ShippingDiscountAllocations {
   const ShippingDiscountAllocations._();
+
   const factory ShippingDiscountAllocations() =
       _DefaultShippingDiscountAllocations;
 

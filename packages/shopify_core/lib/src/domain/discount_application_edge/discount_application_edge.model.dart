@@ -8,6 +8,7 @@ part 'discount_application_edge.model.g.dart';
 @freezed
 class DiscountApplicationEdge with _$DiscountApplicationEdge {
   const DiscountApplicationEdge._();
+
   const factory DiscountApplicationEdge() = _DefaultDiscountApplicationEdge;
 
   factory DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =>

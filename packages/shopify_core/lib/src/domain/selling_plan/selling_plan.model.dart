@@ -11,6 +11,7 @@ part 'selling_plan.model.g.dart';
 @freezed
 class SellingPlan with _$SellingPlan {
   const SellingPlan._();
+
   const factory SellingPlan({
     /// The description of the selling plan.
     String? description,

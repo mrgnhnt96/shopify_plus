@@ -13,6 +13,7 @@ part 'selling_plan_allocation.model.g.dart';
 @freezed
 class SellingPlanAllocation with _$SellingPlanAllocation {
   const SellingPlanAllocation._();
+
   const factory SellingPlanAllocation({
     /// A list of price adjustments, with a maximum of two. When there are two,
     /// the first price adjustment goes into effect at the time of purchase,

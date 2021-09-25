@@ -12,6 +12,7 @@ part 'cart_line.model.g.dart';
 @freezed
 class CartLine with _$CartLine {
   const CartLine._();
+
   const factory CartLine({
     /// The attributes associated with the cart line. Attributes are represented as key-value pairs.
     @Default([]) List<Attribute> attributes,
