@@ -21,8 +21,39 @@ Article _$ArticleFromJson(Map<String, dynamic> json) {
 class _$ArticleTearOff {
   const _$ArticleTearOff();
 
-  _Article call() {
-    return const _Article();
+  _Article call(
+      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      required Blog blog,
+      required String content,
+      required String contentHtml,
+      String? excerpt,
+      String? excerptHtml,
+      required String handle,
+      required String id,
+      ShopifyImage? image,
+      Metafield? metafield,
+      String? onlineStoreUrl,
+      required DateTime publishedAt,
+      Seo? seo,
+      List<String> tags = const [],
+      required String title}) {
+    return _Article(
+      authorV2: authorV2,
+      blog: blog,
+      content: content,
+      contentHtml: contentHtml,
+      excerpt: excerpt,
+      excerptHtml: excerptHtml,
+      handle: handle,
+      id: id,
+      image: image,
+      metafield: metafield,
+      onlineStoreUrl: onlineStoreUrl,
+      publishedAt: publishedAt,
+      seo: seo,
+      tags: tags,
+      title: title,
+    );
   }
 
   Article fromJson(Map<String, Object> json) {
@@ -35,13 +66,83 @@ const $Article = _$ArticleTearOff();
 
 /// @nodoc
 mixin _$Article {
+  /// The article's author.
+  @JsonKey(name: 'authorV2')
+  ArticleAuthor? get authorV2 => throw _privateConstructorUsedError;
+
+  /// The blog that the article belongs to.
+  Blog get blog => throw _privateConstructorUsedError;
+
+  /// Stripped content of the article, single line with HTML tags removed.
+  String get content => throw _privateConstructorUsedError;
+
+  /// The content of the article, complete with HTML formatting.
+  String get contentHtml => throw _privateConstructorUsedError;
+
+  /// Stripped excerpt of the article, single line with HTML tags removed.
+  String? get excerpt => throw _privateConstructorUsedError;
+
+  /// The excerpt of the article, complete with HTML formatting.
+  String? get excerptHtml => throw _privateConstructorUsedError;
+
+  /// A human-friendly unique string for the Article automatically generated from its title.
+  String get handle => throw _privateConstructorUsedError;
+
+  /// A globally-unique identifier.
+  String get id => throw _privateConstructorUsedError;
+
+  /// The image associated with the article.
+  ShopifyImage? get image => throw _privateConstructorUsedError;
+
+  /// Returns a metafield found by namespace and key.
+  Metafield? get metafield => throw _privateConstructorUsedError;
+
+  /// The URL used for viewing the resource on the shop's Online Store. Returns null if the resource is currently not published to the Online Store sales channel.
+  String? get onlineStoreUrl => throw _privateConstructorUsedError;
+
+  /// The date and time when the article was published.
+  DateTime get publishedAt => throw _privateConstructorUsedError;
+
+  /// The article’s SEO information.
+  Seo? get seo => throw _privateConstructorUsedError;
+
+  /// A categorization that a article can be tagged with.
+  List<String> get tags => throw _privateConstructorUsedError;
+
+  /// The article’s name.
+  String get title => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ArticleCopyWith<Article> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ArticleCopyWith<$Res> {
   factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
       _$ArticleCopyWithImpl<$Res>;
+  $Res call(
+      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      Blog blog,
+      String content,
+      String contentHtml,
+      String? excerpt,
+      String? excerptHtml,
+      String handle,
+      String id,
+      ShopifyImage? image,
+      Metafield? metafield,
+      String? onlineStoreUrl,
+      DateTime publishedAt,
+      Seo? seo,
+      List<String> tags,
+      String title});
+
+  $ArticleAuthorCopyWith<$Res>? get authorV2;
+  $BlogCopyWith<$Res> get blog;
+  $ShopifyImageCopyWith<$Res>? get image;
+  $MetafieldCopyWith<$Res>? get metafield;
+  $SeoCopyWith<$Res>? get seo;
 }
 
 /// @nodoc
@@ -51,12 +152,173 @@ class _$ArticleCopyWithImpl<$Res> implements $ArticleCopyWith<$Res> {
   final Article _value;
   // ignore: unused_field
   final $Res Function(Article) _then;
+
+  @override
+  $Res call({
+    Object? authorV2 = freezed,
+    Object? blog = freezed,
+    Object? content = freezed,
+    Object? contentHtml = freezed,
+    Object? excerpt = freezed,
+    Object? excerptHtml = freezed,
+    Object? handle = freezed,
+    Object? id = freezed,
+    Object? image = freezed,
+    Object? metafield = freezed,
+    Object? onlineStoreUrl = freezed,
+    Object? publishedAt = freezed,
+    Object? seo = freezed,
+    Object? tags = freezed,
+    Object? title = freezed,
+  }) {
+    return _then(_value.copyWith(
+      authorV2: authorV2 == freezed
+          ? _value.authorV2
+          : authorV2 // ignore: cast_nullable_to_non_nullable
+              as ArticleAuthor?,
+      blog: blog == freezed
+          ? _value.blog
+          : blog // ignore: cast_nullable_to_non_nullable
+              as Blog,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      contentHtml: contentHtml == freezed
+          ? _value.contentHtml
+          : contentHtml // ignore: cast_nullable_to_non_nullable
+              as String,
+      excerpt: excerpt == freezed
+          ? _value.excerpt
+          : excerpt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      excerptHtml: excerptHtml == freezed
+          ? _value.excerptHtml
+          : excerptHtml // ignore: cast_nullable_to_non_nullable
+              as String?,
+      handle: handle == freezed
+          ? _value.handle
+          : handle // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as ShopifyImage?,
+      metafield: metafield == freezed
+          ? _value.metafield
+          : metafield // ignore: cast_nullable_to_non_nullable
+              as Metafield?,
+      onlineStoreUrl: onlineStoreUrl == freezed
+          ? _value.onlineStoreUrl
+          : onlineStoreUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      publishedAt: publishedAt == freezed
+          ? _value.publishedAt
+          : publishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      seo: seo == freezed
+          ? _value.seo
+          : seo // ignore: cast_nullable_to_non_nullable
+              as Seo?,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+
+  @override
+  $ArticleAuthorCopyWith<$Res>? get authorV2 {
+    if (_value.authorV2 == null) {
+      return null;
+    }
+
+    return $ArticleAuthorCopyWith<$Res>(_value.authorV2!, (value) {
+      return _then(_value.copyWith(authorV2: value));
+    });
+  }
+
+  @override
+  $BlogCopyWith<$Res> get blog {
+    return $BlogCopyWith<$Res>(_value.blog, (value) {
+      return _then(_value.copyWith(blog: value));
+    });
+  }
+
+  @override
+  $ShopifyImageCopyWith<$Res>? get image {
+    if (_value.image == null) {
+      return null;
+    }
+
+    return $ShopifyImageCopyWith<$Res>(_value.image!, (value) {
+      return _then(_value.copyWith(image: value));
+    });
+  }
+
+  @override
+  $MetafieldCopyWith<$Res>? get metafield {
+    if (_value.metafield == null) {
+      return null;
+    }
+
+    return $MetafieldCopyWith<$Res>(_value.metafield!, (value) {
+      return _then(_value.copyWith(metafield: value));
+    });
+  }
+
+  @override
+  $SeoCopyWith<$Res>? get seo {
+    if (_value.seo == null) {
+      return null;
+    }
+
+    return $SeoCopyWith<$Res>(_value.seo!, (value) {
+      return _then(_value.copyWith(seo: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$ArticleCopyWith<$Res> {
+abstract class _$ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
   factory _$ArticleCopyWith(_Article value, $Res Function(_Article) then) =
       __$ArticleCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      Blog blog,
+      String content,
+      String contentHtml,
+      String? excerpt,
+      String? excerptHtml,
+      String handle,
+      String id,
+      ShopifyImage? image,
+      Metafield? metafield,
+      String? onlineStoreUrl,
+      DateTime publishedAt,
+      Seo? seo,
+      List<String> tags,
+      String title});
+
+  @override
+  $ArticleAuthorCopyWith<$Res>? get authorV2;
+  @override
+  $BlogCopyWith<$Res> get blog;
+  @override
+  $ShopifyImageCopyWith<$Res>? get image;
+  @override
+  $MetafieldCopyWith<$Res>? get metafield;
+  @override
+  $SeoCopyWith<$Res>? get seo;
 }
 
 /// @nodoc
@@ -67,29 +329,252 @@ class __$ArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 
   @override
   _Article get _value => super._value as _Article;
+
+  @override
+  $Res call({
+    Object? authorV2 = freezed,
+    Object? blog = freezed,
+    Object? content = freezed,
+    Object? contentHtml = freezed,
+    Object? excerpt = freezed,
+    Object? excerptHtml = freezed,
+    Object? handle = freezed,
+    Object? id = freezed,
+    Object? image = freezed,
+    Object? metafield = freezed,
+    Object? onlineStoreUrl = freezed,
+    Object? publishedAt = freezed,
+    Object? seo = freezed,
+    Object? tags = freezed,
+    Object? title = freezed,
+  }) {
+    return _then(_Article(
+      authorV2: authorV2 == freezed
+          ? _value.authorV2
+          : authorV2 // ignore: cast_nullable_to_non_nullable
+              as ArticleAuthor?,
+      blog: blog == freezed
+          ? _value.blog
+          : blog // ignore: cast_nullable_to_non_nullable
+              as Blog,
+      content: content == freezed
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      contentHtml: contentHtml == freezed
+          ? _value.contentHtml
+          : contentHtml // ignore: cast_nullable_to_non_nullable
+              as String,
+      excerpt: excerpt == freezed
+          ? _value.excerpt
+          : excerpt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      excerptHtml: excerptHtml == freezed
+          ? _value.excerptHtml
+          : excerptHtml // ignore: cast_nullable_to_non_nullable
+              as String?,
+      handle: handle == freezed
+          ? _value.handle
+          : handle // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as ShopifyImage?,
+      metafield: metafield == freezed
+          ? _value.metafield
+          : metafield // ignore: cast_nullable_to_non_nullable
+              as Metafield?,
+      onlineStoreUrl: onlineStoreUrl == freezed
+          ? _value.onlineStoreUrl
+          : onlineStoreUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      publishedAt: publishedAt == freezed
+          ? _value.publishedAt
+          : publishedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      seo: seo == freezed
+          ? _value.seo
+          : seo // ignore: cast_nullable_to_non_nullable
+              as Seo?,
+      tags: tags == freezed
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 @Implements(ParentResource)
+@Implements(MetafieldConnection)
+@Implements(OnlineStorePublishable)
 class _$_Article implements _Article {
-  const _$_Article();
+  const _$_Article(
+      {@JsonKey(name: 'authorV2') this.authorV2,
+      required this.blog,
+      required this.content,
+      required this.contentHtml,
+      this.excerpt,
+      this.excerptHtml,
+      required this.handle,
+      required this.id,
+      this.image,
+      this.metafield,
+      this.onlineStoreUrl,
+      required this.publishedAt,
+      this.seo,
+      this.tags = const [],
+      required this.title});
 
   factory _$_Article.fromJson(Map<String, dynamic> json) =>
       _$$_ArticleFromJson(json);
 
   @override
+
+  /// The article's author.
+  @JsonKey(name: 'authorV2')
+  final ArticleAuthor? authorV2;
+  @override
+
+  /// The blog that the article belongs to.
+  final Blog blog;
+  @override
+
+  /// Stripped content of the article, single line with HTML tags removed.
+  final String content;
+  @override
+
+  /// The content of the article, complete with HTML formatting.
+  final String contentHtml;
+  @override
+
+  /// Stripped excerpt of the article, single line with HTML tags removed.
+  final String? excerpt;
+  @override
+
+  /// The excerpt of the article, complete with HTML formatting.
+  final String? excerptHtml;
+  @override
+
+  /// A human-friendly unique string for the Article automatically generated from its title.
+  final String handle;
+  @override
+
+  /// A globally-unique identifier.
+  final String id;
+  @override
+
+  /// The image associated with the article.
+  final ShopifyImage? image;
+  @override
+
+  /// Returns a metafield found by namespace and key.
+  final Metafield? metafield;
+  @override
+
+  /// The URL used for viewing the resource on the shop's Online Store. Returns null if the resource is currently not published to the Online Store sales channel.
+  final String? onlineStoreUrl;
+  @override
+
+  /// The date and time when the article was published.
+  final DateTime publishedAt;
+  @override
+
+  /// The article’s SEO information.
+  final Seo? seo;
+  @JsonKey(defaultValue: const [])
+  @override
+
+  /// A categorization that a article can be tagged with.
+  final List<String> tags;
+  @override
+
+  /// The article’s name.
+  final String title;
+
+  @override
   String toString() {
-    return 'Article()';
+    return 'Article(authorV2: $authorV2, blog: $blog, content: $content, contentHtml: $contentHtml, excerpt: $excerpt, excerptHtml: $excerptHtml, handle: $handle, id: $id, image: $image, metafield: $metafield, onlineStoreUrl: $onlineStoreUrl, publishedAt: $publishedAt, seo: $seo, tags: $tags, title: $title)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Article);
+    return identical(this, other) ||
+        (other is _Article &&
+            (identical(other.authorV2, authorV2) ||
+                const DeepCollectionEquality()
+                    .equals(other.authorV2, authorV2)) &&
+            (identical(other.blog, blog) ||
+                const DeepCollectionEquality().equals(other.blog, blog)) &&
+            (identical(other.content, content) ||
+                const DeepCollectionEquality()
+                    .equals(other.content, content)) &&
+            (identical(other.contentHtml, contentHtml) ||
+                const DeepCollectionEquality()
+                    .equals(other.contentHtml, contentHtml)) &&
+            (identical(other.excerpt, excerpt) ||
+                const DeepCollectionEquality()
+                    .equals(other.excerpt, excerpt)) &&
+            (identical(other.excerptHtml, excerptHtml) ||
+                const DeepCollectionEquality()
+                    .equals(other.excerptHtml, excerptHtml)) &&
+            (identical(other.handle, handle) ||
+                const DeepCollectionEquality().equals(other.handle, handle)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.metafield, metafield) ||
+                const DeepCollectionEquality()
+                    .equals(other.metafield, metafield)) &&
+            (identical(other.onlineStoreUrl, onlineStoreUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.onlineStoreUrl, onlineStoreUrl)) &&
+            (identical(other.publishedAt, publishedAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.publishedAt, publishedAt)) &&
+            (identical(other.seo, seo) ||
+                const DeepCollectionEquality().equals(other.seo, seo)) &&
+            (identical(other.tags, tags) ||
+                const DeepCollectionEquality().equals(other.tags, tags)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(authorV2) ^
+      const DeepCollectionEquality().hash(blog) ^
+      const DeepCollectionEquality().hash(content) ^
+      const DeepCollectionEquality().hash(contentHtml) ^
+      const DeepCollectionEquality().hash(excerpt) ^
+      const DeepCollectionEquality().hash(excerptHtml) ^
+      const DeepCollectionEquality().hash(handle) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(image) ^
+      const DeepCollectionEquality().hash(metafield) ^
+      const DeepCollectionEquality().hash(onlineStoreUrl) ^
+      const DeepCollectionEquality().hash(publishedAt) ^
+      const DeepCollectionEquality().hash(seo) ^
+      const DeepCollectionEquality().hash(tags) ^
+      const DeepCollectionEquality().hash(title);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ArticleCopyWith<_Article> get copyWith =>
+      __$ArticleCopyWithImpl<_Article>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -97,8 +582,95 @@ class _$_Article implements _Article {
   }
 }
 
-abstract class _Article implements Article, ParentResource {
-  const factory _Article() = _$_Article;
+abstract class _Article
+    implements
+        Article,
+        Node,
+        ParentResource,
+        MetafieldConnection,
+        OnlineStorePublishable {
+  const factory _Article(
+      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      required Blog blog,
+      required String content,
+      required String contentHtml,
+      String? excerpt,
+      String? excerptHtml,
+      required String handle,
+      required String id,
+      ShopifyImage? image,
+      Metafield? metafield,
+      String? onlineStoreUrl,
+      required DateTime publishedAt,
+      Seo? seo,
+      List<String> tags,
+      required String title}) = _$_Article;
 
   factory _Article.fromJson(Map<String, dynamic> json) = _$_Article.fromJson;
+
+  @override
+
+  /// The article's author.
+  @JsonKey(name: 'authorV2')
+  ArticleAuthor? get authorV2 => throw _privateConstructorUsedError;
+  @override
+
+  /// The blog that the article belongs to.
+  Blog get blog => throw _privateConstructorUsedError;
+  @override
+
+  /// Stripped content of the article, single line with HTML tags removed.
+  String get content => throw _privateConstructorUsedError;
+  @override
+
+  /// The content of the article, complete with HTML formatting.
+  String get contentHtml => throw _privateConstructorUsedError;
+  @override
+
+  /// Stripped excerpt of the article, single line with HTML tags removed.
+  String? get excerpt => throw _privateConstructorUsedError;
+  @override
+
+  /// The excerpt of the article, complete with HTML formatting.
+  String? get excerptHtml => throw _privateConstructorUsedError;
+  @override
+
+  /// A human-friendly unique string for the Article automatically generated from its title.
+  String get handle => throw _privateConstructorUsedError;
+  @override
+
+  /// A globally-unique identifier.
+  String get id => throw _privateConstructorUsedError;
+  @override
+
+  /// The image associated with the article.
+  ShopifyImage? get image => throw _privateConstructorUsedError;
+  @override
+
+  /// Returns a metafield found by namespace and key.
+  Metafield? get metafield => throw _privateConstructorUsedError;
+  @override
+
+  /// The URL used for viewing the resource on the shop's Online Store. Returns null if the resource is currently not published to the Online Store sales channel.
+  String? get onlineStoreUrl => throw _privateConstructorUsedError;
+  @override
+
+  /// The date and time when the article was published.
+  DateTime get publishedAt => throw _privateConstructorUsedError;
+  @override
+
+  /// The article’s SEO information.
+  Seo? get seo => throw _privateConstructorUsedError;
+  @override
+
+  /// A categorization that a article can be tagged with.
+  List<String> get tags => throw _privateConstructorUsedError;
+  @override
+
+  /// The article’s name.
+  String get title => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ArticleCopyWith<_Article> get copyWith =>
+      throw _privateConstructorUsedError;
 }
