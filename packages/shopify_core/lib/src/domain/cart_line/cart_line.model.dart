@@ -34,7 +34,7 @@ class CartLine with _$CartLine {
 
     /// The selling plan associated with the cart line and the effect that each selling plan has on variants when they're purchased.
     required SellingPlanAllocation sellingPlanAllocation,
-  }) = _DefaultCartLine;
+  }) = _CartLine;
 
   factory CartLine.fromJson(Map<String, dynamic> json) =>
       _$CartLineFromJson(json);

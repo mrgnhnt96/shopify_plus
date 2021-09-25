@@ -30,7 +30,7 @@ class SellingPlan with _$SellingPlan {
 
     /// Whether purchasing the selling plan will result in multiple deliveries.
     @Default(false) bool recurringDeliveries,
-  }) = _DefaultSellingPlan;
+  }) = _SellingPlan;
 
   factory SellingPlan.fromJson(Map<String, dynamic> json) =>
       _$SellingPlanFromJson(json);

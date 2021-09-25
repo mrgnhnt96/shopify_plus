@@ -15,16 +15,16 @@ final _privateConstructorUsedError = UnsupportedError(
 
 AutomaticDiscountAllocation _$AutomaticDiscountAllocationFromJson(
     Map<String, dynamic> json) {
-  return _DefaultAutomaticDiscountAllocation.fromJson(json);
+  return _AutomaticDiscountAllocation.fromJson(json);
 }
 
 /// @nodoc
 class _$AutomaticDiscountAllocationTearOff {
   const _$AutomaticDiscountAllocationTearOff();
 
-  _DefaultAutomaticDiscountAllocation call(
+  _AutomaticDiscountAllocation call(
       {required Money discountAmount, required String title}) {
-    return _DefaultAutomaticDiscountAllocation(
+    return _AutomaticDiscountAllocation(
       discountAmount: discountAmount,
       title: title,
     );
@@ -98,12 +98,12 @@ class _$AutomaticDiscountAllocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultAutomaticDiscountAllocationCopyWith<$Res>
+abstract class _$AutomaticDiscountAllocationCopyWith<$Res>
     implements $AutomaticDiscountAllocationCopyWith<$Res> {
-  factory _$DefaultAutomaticDiscountAllocationCopyWith(
-          _DefaultAutomaticDiscountAllocation value,
-          $Res Function(_DefaultAutomaticDiscountAllocation) then) =
-      __$DefaultAutomaticDiscountAllocationCopyWithImpl<$Res>;
+  factory _$AutomaticDiscountAllocationCopyWith(
+          _AutomaticDiscountAllocation value,
+          $Res Function(_AutomaticDiscountAllocation) then) =
+      __$AutomaticDiscountAllocationCopyWithImpl<$Res>;
   @override
   $Res call({Money discountAmount, String title});
 
@@ -112,24 +112,24 @@ abstract class _$DefaultAutomaticDiscountAllocationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultAutomaticDiscountAllocationCopyWithImpl<$Res>
+class __$AutomaticDiscountAllocationCopyWithImpl<$Res>
     extends _$AutomaticDiscountAllocationCopyWithImpl<$Res>
-    implements _$DefaultAutomaticDiscountAllocationCopyWith<$Res> {
-  __$DefaultAutomaticDiscountAllocationCopyWithImpl(
-      _DefaultAutomaticDiscountAllocation _value,
-      $Res Function(_DefaultAutomaticDiscountAllocation) _then)
-      : super(_value, (v) => _then(v as _DefaultAutomaticDiscountAllocation));
+    implements _$AutomaticDiscountAllocationCopyWith<$Res> {
+  __$AutomaticDiscountAllocationCopyWithImpl(
+      _AutomaticDiscountAllocation _value,
+      $Res Function(_AutomaticDiscountAllocation) _then)
+      : super(_value, (v) => _then(v as _AutomaticDiscountAllocation));
 
   @override
-  _DefaultAutomaticDiscountAllocation get _value =>
-      super._value as _DefaultAutomaticDiscountAllocation;
+  _AutomaticDiscountAllocation get _value =>
+      super._value as _AutomaticDiscountAllocation;
 
   @override
   $Res call({
     Object? discountAmount = freezed,
     Object? title = freezed,
   }) {
-    return _then(_DefaultAutomaticDiscountAllocation(
+    return _then(_AutomaticDiscountAllocation(
       discountAmount: discountAmount == freezed
           ? _value.discountAmount
           : discountAmount // ignore: cast_nullable_to_non_nullable
@@ -144,15 +144,13 @@ class __$DefaultAutomaticDiscountAllocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultAutomaticDiscountAllocation
-    extends _DefaultAutomaticDiscountAllocation {
-  const _$_DefaultAutomaticDiscountAllocation(
+class _$_AutomaticDiscountAllocation extends _AutomaticDiscountAllocation {
+  const _$_AutomaticDiscountAllocation(
       {required this.discountAmount, required this.title})
       : super._();
 
-  factory _$_DefaultAutomaticDiscountAllocation.fromJson(
-          Map<String, dynamic> json) =>
-      _$$_DefaultAutomaticDiscountAllocationFromJson(json);
+  factory _$_AutomaticDiscountAllocation.fromJson(Map<String, dynamic> json) =>
+      _$$_AutomaticDiscountAllocationFromJson(json);
 
   @override
 
@@ -171,7 +169,7 @@ class _$_DefaultAutomaticDiscountAllocation
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultAutomaticDiscountAllocation &&
+        (other is _AutomaticDiscountAllocation &&
             (identical(other.discountAmount, discountAmount) ||
                 const DeepCollectionEquality()
                     .equals(other.discountAmount, discountAmount)) &&
@@ -187,27 +185,25 @@ class _$_DefaultAutomaticDiscountAllocation
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultAutomaticDiscountAllocationCopyWith<
-          _DefaultAutomaticDiscountAllocation>
-      get copyWith => __$DefaultAutomaticDiscountAllocationCopyWithImpl<
-          _DefaultAutomaticDiscountAllocation>(this, _$identity);
+  _$AutomaticDiscountAllocationCopyWith<_AutomaticDiscountAllocation>
+      get copyWith => __$AutomaticDiscountAllocationCopyWithImpl<
+          _AutomaticDiscountAllocation>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultAutomaticDiscountAllocationToJson(this);
+    return _$$_AutomaticDiscountAllocationToJson(this);
   }
 }
 
-abstract class _DefaultAutomaticDiscountAllocation
+abstract class _AutomaticDiscountAllocation
     extends AutomaticDiscountAllocation {
-  const factory _DefaultAutomaticDiscountAllocation(
+  const factory _AutomaticDiscountAllocation(
       {required Money discountAmount,
-      required String title}) = _$_DefaultAutomaticDiscountAllocation;
-  const _DefaultAutomaticDiscountAllocation._() : super._();
+      required String title}) = _$_AutomaticDiscountAllocation;
+  const _AutomaticDiscountAllocation._() : super._();
 
-  factory _DefaultAutomaticDiscountAllocation.fromJson(
-          Map<String, dynamic> json) =
-      _$_DefaultAutomaticDiscountAllocation.fromJson;
+  factory _AutomaticDiscountAllocation.fromJson(Map<String, dynamic> json) =
+      _$_AutomaticDiscountAllocation.fromJson;
 
   @override
 
@@ -219,7 +215,6 @@ abstract class _DefaultAutomaticDiscountAllocation
   String get title => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultAutomaticDiscountAllocationCopyWith<
-          _DefaultAutomaticDiscountAllocation>
+  _$AutomaticDiscountAllocationCopyWith<_AutomaticDiscountAllocation>
       get copyWith => throw _privateConstructorUsedError;
 }

@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Merchandise _$MerchandiseFromJson(Map<String, dynamic> json) {
-  return _DefaultMerchandise.fromJson(json);
+  return _Merchandise.fromJson(json);
 }
 
 /// @nodoc
 class _$MerchandiseTearOff {
   const _$MerchandiseTearOff();
 
-  _DefaultMerchandise call() {
-    return const _DefaultMerchandise();
+  _Merchandise call() {
+    return const _Merchandise();
   }
 
   Merchandise fromJson(Map<String, Object> json) {
@@ -55,31 +55,30 @@ class _$MerchandiseCopyWithImpl<$Res> implements $MerchandiseCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultMerchandiseCopyWith<$Res> {
-  factory _$DefaultMerchandiseCopyWith(
-          _DefaultMerchandise value, $Res Function(_DefaultMerchandise) then) =
-      __$DefaultMerchandiseCopyWithImpl<$Res>;
+abstract class _$MerchandiseCopyWith<$Res> {
+  factory _$MerchandiseCopyWith(
+          _Merchandise value, $Res Function(_Merchandise) then) =
+      __$MerchandiseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultMerchandiseCopyWithImpl<$Res>
-    extends _$MerchandiseCopyWithImpl<$Res>
-    implements _$DefaultMerchandiseCopyWith<$Res> {
-  __$DefaultMerchandiseCopyWithImpl(
-      _DefaultMerchandise _value, $Res Function(_DefaultMerchandise) _then)
-      : super(_value, (v) => _then(v as _DefaultMerchandise));
+class __$MerchandiseCopyWithImpl<$Res> extends _$MerchandiseCopyWithImpl<$Res>
+    implements _$MerchandiseCopyWith<$Res> {
+  __$MerchandiseCopyWithImpl(
+      _Merchandise _value, $Res Function(_Merchandise) _then)
+      : super(_value, (v) => _then(v as _Merchandise));
 
   @override
-  _DefaultMerchandise get _value => super._value as _DefaultMerchandise;
+  _Merchandise get _value => super._value as _Merchandise;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultMerchandise extends _DefaultMerchandise {
-  const _$_DefaultMerchandise() : super._();
+class _$_Merchandise extends _Merchandise {
+  const _$_Merchandise() : super._();
 
-  factory _$_DefaultMerchandise.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultMerchandiseFromJson(json);
+  factory _$_Merchandise.fromJson(Map<String, dynamic> json) =>
+      _$$_MerchandiseFromJson(json);
 
   @override
   String toString() {
@@ -88,7 +87,7 @@ class _$_DefaultMerchandise extends _DefaultMerchandise {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultMerchandise);
+    return identical(this, other) || (other is _Merchandise);
   }
 
   @override
@@ -96,14 +95,14 @@ class _$_DefaultMerchandise extends _DefaultMerchandise {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultMerchandiseToJson(this);
+    return _$$_MerchandiseToJson(this);
   }
 }
 
-abstract class _DefaultMerchandise extends Merchandise {
-  const factory _DefaultMerchandise() = _$_DefaultMerchandise;
-  const _DefaultMerchandise._() : super._();
+abstract class _Merchandise extends Merchandise {
+  const factory _Merchandise() = _$_Merchandise;
+  const _Merchandise._() : super._();
 
-  factory _DefaultMerchandise.fromJson(Map<String, dynamic> json) =
-      _$_DefaultMerchandise.fromJson;
+  factory _Merchandise.fromJson(Map<String, dynamic> json) =
+      _$_Merchandise.fromJson;
 }

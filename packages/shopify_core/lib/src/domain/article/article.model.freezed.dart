@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Article _$ArticleFromJson(Map<String, dynamic> json) {
-  return _DefaultArticle.fromJson(json);
+  return _Article.fromJson(json);
 }
 
 /// @nodoc
 class _$ArticleTearOff {
   const _$ArticleTearOff();
 
-  _DefaultArticle call() {
-    return const _DefaultArticle();
+  _Article call() {
+    return const _Article();
   }
 
   Article fromJson(Map<String, Object> json) {
@@ -54,31 +54,29 @@ class _$ArticleCopyWithImpl<$Res> implements $ArticleCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultArticleCopyWith<$Res> {
-  factory _$DefaultArticleCopyWith(
-          _DefaultArticle value, $Res Function(_DefaultArticle) then) =
-      __$DefaultArticleCopyWithImpl<$Res>;
+abstract class _$ArticleCopyWith<$Res> {
+  factory _$ArticleCopyWith(_Article value, $Res Function(_Article) then) =
+      __$ArticleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
-    implements _$DefaultArticleCopyWith<$Res> {
-  __$DefaultArticleCopyWithImpl(
-      _DefaultArticle _value, $Res Function(_DefaultArticle) _then)
-      : super(_value, (v) => _then(v as _DefaultArticle));
+class __$ArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
+    implements _$ArticleCopyWith<$Res> {
+  __$ArticleCopyWithImpl(_Article _value, $Res Function(_Article) _then)
+      : super(_value, (v) => _then(v as _Article));
 
   @override
-  _DefaultArticle get _value => super._value as _DefaultArticle;
+  _Article get _value => super._value as _Article;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultArticle implements _DefaultArticle {
-  const _$_DefaultArticle();
+class _$_Article implements _Article {
+  const _$_Article();
 
-  factory _$_DefaultArticle.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultArticleFromJson(json);
+  factory _$_Article.fromJson(Map<String, dynamic> json) =>
+      _$$_ArticleFromJson(json);
 
   @override
   String toString() {
@@ -87,7 +85,7 @@ class _$_DefaultArticle implements _DefaultArticle {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultArticle);
+    return identical(this, other) || (other is _Article);
   }
 
   @override
@@ -95,13 +93,12 @@ class _$_DefaultArticle implements _DefaultArticle {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultArticleToJson(this);
+    return _$$_ArticleToJson(this);
   }
 }
 
-abstract class _DefaultArticle implements Article, ParentResource {
-  const factory _DefaultArticle() = _$_DefaultArticle;
+abstract class _Article implements Article, ParentResource {
+  const factory _Article() = _$_Article;
 
-  factory _DefaultArticle.fromJson(Map<String, dynamic> json) =
-      _$_DefaultArticle.fromJson;
+  factory _Article.fromJson(Map<String, dynamic> json) = _$_Article.fromJson;
 }

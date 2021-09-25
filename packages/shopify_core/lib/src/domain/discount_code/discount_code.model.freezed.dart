@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DiscountCode _$DiscountCodeFromJson(Map<String, dynamic> json) {
-  return _DefaultDiscountCode.fromJson(json);
+  return _DiscountCode.fromJson(json);
 }
 
 /// @nodoc
 class _$DiscountCodeTearOff {
   const _$DiscountCodeTearOff();
 
-  _DefaultDiscountCode call({bool applicable = false, required String code}) {
-    return _DefaultDiscountCode(
+  _DiscountCode call({bool applicable = false, required String code}) {
+    return _DiscountCode(
       applicable: applicable,
       code: code,
     );
@@ -85,32 +85,31 @@ class _$DiscountCodeCopyWithImpl<$Res> implements $DiscountCodeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultDiscountCodeCopyWith<$Res>
+abstract class _$DiscountCodeCopyWith<$Res>
     implements $DiscountCodeCopyWith<$Res> {
-  factory _$DefaultDiscountCodeCopyWith(_DefaultDiscountCode value,
-          $Res Function(_DefaultDiscountCode) then) =
-      __$DefaultDiscountCodeCopyWithImpl<$Res>;
+  factory _$DiscountCodeCopyWith(
+          _DiscountCode value, $Res Function(_DiscountCode) then) =
+      __$DiscountCodeCopyWithImpl<$Res>;
   @override
   $Res call({bool applicable, String code});
 }
 
 /// @nodoc
-class __$DefaultDiscountCodeCopyWithImpl<$Res>
-    extends _$DiscountCodeCopyWithImpl<$Res>
-    implements _$DefaultDiscountCodeCopyWith<$Res> {
-  __$DefaultDiscountCodeCopyWithImpl(
-      _DefaultDiscountCode _value, $Res Function(_DefaultDiscountCode) _then)
-      : super(_value, (v) => _then(v as _DefaultDiscountCode));
+class __$DiscountCodeCopyWithImpl<$Res> extends _$DiscountCodeCopyWithImpl<$Res>
+    implements _$DiscountCodeCopyWith<$Res> {
+  __$DiscountCodeCopyWithImpl(
+      _DiscountCode _value, $Res Function(_DiscountCode) _then)
+      : super(_value, (v) => _then(v as _DiscountCode));
 
   @override
-  _DefaultDiscountCode get _value => super._value as _DefaultDiscountCode;
+  _DiscountCode get _value => super._value as _DiscountCode;
 
   @override
   $Res call({
     Object? applicable = freezed,
     Object? code = freezed,
   }) {
-    return _then(_DefaultDiscountCode(
+    return _then(_DiscountCode(
       applicable: applicable == freezed
           ? _value.applicable
           : applicable // ignore: cast_nullable_to_non_nullable
@@ -125,12 +124,12 @@ class __$DefaultDiscountCodeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultDiscountCode extends _DefaultDiscountCode {
-  const _$_DefaultDiscountCode({this.applicable = false, required this.code})
+class _$_DiscountCode extends _DiscountCode {
+  const _$_DiscountCode({this.applicable = false, required this.code})
       : super._();
 
-  factory _$_DefaultDiscountCode.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultDiscountCodeFromJson(json);
+  factory _$_DiscountCode.fromJson(Map<String, dynamic> json) =>
+      _$$_DiscountCodeFromJson(json);
 
   @JsonKey(defaultValue: false)
   @override
@@ -150,7 +149,7 @@ class _$_DefaultDiscountCode extends _DefaultDiscountCode {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultDiscountCode &&
+        (other is _DiscountCode &&
             (identical(other.applicable, applicable) ||
                 const DeepCollectionEquality()
                     .equals(other.applicable, applicable)) &&
@@ -166,23 +165,22 @@ class _$_DefaultDiscountCode extends _DefaultDiscountCode {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultDiscountCodeCopyWith<_DefaultDiscountCode> get copyWith =>
-      __$DefaultDiscountCodeCopyWithImpl<_DefaultDiscountCode>(
-          this, _$identity);
+  _$DiscountCodeCopyWith<_DiscountCode> get copyWith =>
+      __$DiscountCodeCopyWithImpl<_DiscountCode>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultDiscountCodeToJson(this);
+    return _$$_DiscountCodeToJson(this);
   }
 }
 
-abstract class _DefaultDiscountCode extends DiscountCode {
-  const factory _DefaultDiscountCode({bool applicable, required String code}) =
-      _$_DefaultDiscountCode;
-  const _DefaultDiscountCode._() : super._();
+abstract class _DiscountCode extends DiscountCode {
+  const factory _DiscountCode({bool applicable, required String code}) =
+      _$_DiscountCode;
+  const _DiscountCode._() : super._();
 
-  factory _DefaultDiscountCode.fromJson(Map<String, dynamic> json) =
-      _$_DefaultDiscountCode.fromJson;
+  factory _DiscountCode.fromJson(Map<String, dynamic> json) =
+      _$_DiscountCode.fromJson;
 
   @override
 
@@ -194,6 +192,6 @@ abstract class _DefaultDiscountCode extends DiscountCode {
   String get code => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultDiscountCodeCopyWith<_DefaultDiscountCode> get copyWith =>
+  _$DiscountCodeCopyWith<_DiscountCode> get copyWith =>
       throw _privateConstructorUsedError;
 }

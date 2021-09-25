@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Collection _$CollectionFromJson(Map<String, dynamic> json) {
-  return _DefaultCollection.fromJson(json);
+  return _Collection.fromJson(json);
 }
 
 /// @nodoc
 class _$CollectionTearOff {
   const _$CollectionTearOff();
 
-  _DefaultCollection call() {
-    return const _DefaultCollection();
+  _Collection call() {
+    return const _Collection();
   }
 
   Collection fromJson(Map<String, Object> json) {
@@ -55,32 +55,31 @@ class _$CollectionCopyWithImpl<$Res> implements $CollectionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultCollectionCopyWith<$Res> {
-  factory _$DefaultCollectionCopyWith(
-          _DefaultCollection value, $Res Function(_DefaultCollection) then) =
-      __$DefaultCollectionCopyWithImpl<$Res>;
+abstract class _$CollectionCopyWith<$Res> {
+  factory _$CollectionCopyWith(
+          _Collection value, $Res Function(_Collection) then) =
+      __$CollectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultCollectionCopyWithImpl<$Res>
-    extends _$CollectionCopyWithImpl<$Res>
-    implements _$DefaultCollectionCopyWith<$Res> {
-  __$DefaultCollectionCopyWithImpl(
-      _DefaultCollection _value, $Res Function(_DefaultCollection) _then)
-      : super(_value, (v) => _then(v as _DefaultCollection));
+class __$CollectionCopyWithImpl<$Res> extends _$CollectionCopyWithImpl<$Res>
+    implements _$CollectionCopyWith<$Res> {
+  __$CollectionCopyWithImpl(
+      _Collection _value, $Res Function(_Collection) _then)
+      : super(_value, (v) => _then(v as _Collection));
 
   @override
-  _DefaultCollection get _value => super._value as _DefaultCollection;
+  _Collection get _value => super._value as _Collection;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultCollection implements _DefaultCollection {
-  const _$_DefaultCollection();
+class _$_Collection implements _Collection {
+  const _$_Collection();
 
-  factory _$_DefaultCollection.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultCollectionFromJson(json);
+  factory _$_Collection.fromJson(Map<String, dynamic> json) =>
+      _$$_CollectionFromJson(json);
 
   @override
   String toString() {
@@ -89,7 +88,7 @@ class _$_DefaultCollection implements _DefaultCollection {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultCollection);
+    return identical(this, other) || (other is _Collection);
   }
 
   @override
@@ -97,13 +96,13 @@ class _$_DefaultCollection implements _DefaultCollection {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultCollectionToJson(this);
+    return _$$_CollectionToJson(this);
   }
 }
 
-abstract class _DefaultCollection implements Collection, ParentResource {
-  const factory _DefaultCollection() = _$_DefaultCollection;
+abstract class _Collection implements Collection, ParentResource {
+  const factory _Collection() = _$_Collection;
 
-  factory _DefaultCollection.fromJson(Map<String, dynamic> json) =
-      _$_DefaultCollection.fromJson;
+  factory _Collection.fromJson(Map<String, dynamic> json) =
+      _$_Collection.fromJson;
 }

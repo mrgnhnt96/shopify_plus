@@ -15,7 +15,7 @@ class AvailableShippingRates with _$AvailableShippingRates {
 
     /// The fetched shipping rates. null until the ready field is true.
     List<ShippingRate>? rates,
-  }) = _DefaultAvailableShippingRates;
+  }) = _AvailableShippingRates;
 
   factory AvailableShippingRates.fromJson(Map<String, dynamic> json) =>
       _$AvailableShippingRatesFromJson(json);

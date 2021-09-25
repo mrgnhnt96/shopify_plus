@@ -112,7 +112,7 @@ class Order with _$Order {
 
     ///The total cost of taxes.
     @JsonKey(name: 'totalTaxV2') Money? totalTax,
-  }) = _DefaultOrder;
+  }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 }

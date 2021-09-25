@@ -14,14 +14,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 CartLine _$CartLineFromJson(Map<String, dynamic> json) {
-  return _DefaultCartLine.fromJson(json);
+  return _CartLine.fromJson(json);
 }
 
 /// @nodoc
 class _$CartLineTearOff {
   const _$CartLineTearOff();
 
-  _DefaultCartLine call(
+  _CartLine call(
       {List<Attribute> attributes = const [],
       List<DiscountAllocation> discountAllocations = const [],
       required EstimatedCost estimatedCost,
@@ -29,7 +29,7 @@ class _$CartLineTearOff {
       required Merchandise merchandise,
       required int quantity,
       required SellingPlanAllocation sellingPlanAllocation}) {
-    return _DefaultCartLine(
+    return _CartLine(
       attributes: attributes,
       discountAllocations: discountAllocations,
       estimatedCost: estimatedCost,
@@ -171,11 +171,9 @@ class _$CartLineCopyWithImpl<$Res> implements $CartLineCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultCartLineCopyWith<$Res>
-    implements $CartLineCopyWith<$Res> {
-  factory _$DefaultCartLineCopyWith(
-          _DefaultCartLine value, $Res Function(_DefaultCartLine) then) =
-      __$DefaultCartLineCopyWithImpl<$Res>;
+abstract class _$CartLineCopyWith<$Res> implements $CartLineCopyWith<$Res> {
+  factory _$CartLineCopyWith(_CartLine value, $Res Function(_CartLine) then) =
+      __$CartLineCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<Attribute> attributes,
@@ -195,14 +193,13 @@ abstract class _$DefaultCartLineCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultCartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
-    implements _$DefaultCartLineCopyWith<$Res> {
-  __$DefaultCartLineCopyWithImpl(
-      _DefaultCartLine _value, $Res Function(_DefaultCartLine) _then)
-      : super(_value, (v) => _then(v as _DefaultCartLine));
+class __$CartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
+    implements _$CartLineCopyWith<$Res> {
+  __$CartLineCopyWithImpl(_CartLine _value, $Res Function(_CartLine) _then)
+      : super(_value, (v) => _then(v as _CartLine));
 
   @override
-  _DefaultCartLine get _value => super._value as _DefaultCartLine;
+  _CartLine get _value => super._value as _CartLine;
 
   @override
   $Res call({
@@ -214,7 +211,7 @@ class __$DefaultCartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
     Object? quantity = freezed,
     Object? sellingPlanAllocation = freezed,
   }) {
-    return _then(_DefaultCartLine(
+    return _then(_CartLine(
       attributes: attributes == freezed
           ? _value.attributes
           : attributes // ignore: cast_nullable_to_non_nullable
@@ -249,8 +246,8 @@ class __$DefaultCartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultCartLine extends _DefaultCartLine {
-  const _$_DefaultCartLine(
+class _$_CartLine extends _CartLine {
+  const _$_CartLine(
       {this.attributes = const [],
       this.discountAllocations = const [],
       required this.estimatedCost,
@@ -260,8 +257,8 @@ class _$_DefaultCartLine extends _DefaultCartLine {
       required this.sellingPlanAllocation})
       : super._();
 
-  factory _$_DefaultCartLine.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultCartLineFromJson(json);
+  factory _$_CartLine.fromJson(Map<String, dynamic> json) =>
+      _$$_CartLineFromJson(json);
 
   @JsonKey(defaultValue: const [])
   @override
@@ -302,7 +299,7 @@ class _$_DefaultCartLine extends _DefaultCartLine {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultCartLine &&
+        (other is _CartLine &&
             (identical(other.attributes, attributes) ||
                 const DeepCollectionEquality()
                     .equals(other.attributes, attributes)) &&
@@ -338,29 +335,27 @@ class _$_DefaultCartLine extends _DefaultCartLine {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultCartLineCopyWith<_DefaultCartLine> get copyWith =>
-      __$DefaultCartLineCopyWithImpl<_DefaultCartLine>(this, _$identity);
+  _$CartLineCopyWith<_CartLine> get copyWith =>
+      __$CartLineCopyWithImpl<_CartLine>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultCartLineToJson(this);
+    return _$$_CartLineToJson(this);
   }
 }
 
-abstract class _DefaultCartLine extends CartLine {
-  const factory _DefaultCartLine(
-          {List<Attribute> attributes,
-          List<DiscountAllocation> discountAllocations,
-          required EstimatedCost estimatedCost,
-          required String id,
-          required Merchandise merchandise,
-          required int quantity,
-          required SellingPlanAllocation sellingPlanAllocation}) =
-      _$_DefaultCartLine;
-  const _DefaultCartLine._() : super._();
+abstract class _CartLine extends CartLine {
+  const factory _CartLine(
+      {List<Attribute> attributes,
+      List<DiscountAllocation> discountAllocations,
+      required EstimatedCost estimatedCost,
+      required String id,
+      required Merchandise merchandise,
+      required int quantity,
+      required SellingPlanAllocation sellingPlanAllocation}) = _$_CartLine;
+  const _CartLine._() : super._();
 
-  factory _DefaultCartLine.fromJson(Map<String, dynamic> json) =
-      _$_DefaultCartLine.fromJson;
+  factory _CartLine.fromJson(Map<String, dynamic> json) = _$_CartLine.fromJson;
 
   @override
 
@@ -394,6 +389,6 @@ abstract class _DefaultCartLine extends CartLine {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultCartLineCopyWith<_DefaultCartLine> get copyWith =>
+  _$CartLineCopyWith<_CartLine> get copyWith =>
       throw _privateConstructorUsedError;
 }

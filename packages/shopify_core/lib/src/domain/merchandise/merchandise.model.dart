@@ -8,7 +8,7 @@ part 'merchandise.model.g.dart';
 class Merchandise with _$Merchandise {
   const Merchandise._();
 
-  const factory Merchandise() = _DefaultMerchandise;
+  const factory Merchandise() = _Merchandise;
 
   factory Merchandise.fromJson(Map<String, dynamic> json) =>
       _$MerchandiseFromJson(json);

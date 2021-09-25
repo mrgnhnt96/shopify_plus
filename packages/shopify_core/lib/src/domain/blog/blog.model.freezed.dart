@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Blog _$BlogFromJson(Map<String, dynamic> json) {
-  return _DefaultBlog.fromJson(json);
+  return _Blog.fromJson(json);
 }
 
 /// @nodoc
 class _$BlogTearOff {
   const _$BlogTearOff();
 
-  _DefaultBlog call() {
-    return const _DefaultBlog();
+  _Blog call() {
+    return const _Blog();
   }
 
   Blog fromJson(Map<String, Object> json) {
@@ -54,31 +54,28 @@ class _$BlogCopyWithImpl<$Res> implements $BlogCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultBlogCopyWith<$Res> {
-  factory _$DefaultBlogCopyWith(
-          _DefaultBlog value, $Res Function(_DefaultBlog) then) =
-      __$DefaultBlogCopyWithImpl<$Res>;
+abstract class _$BlogCopyWith<$Res> {
+  factory _$BlogCopyWith(_Blog value, $Res Function(_Blog) then) =
+      __$BlogCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultBlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res>
-    implements _$DefaultBlogCopyWith<$Res> {
-  __$DefaultBlogCopyWithImpl(
-      _DefaultBlog _value, $Res Function(_DefaultBlog) _then)
-      : super(_value, (v) => _then(v as _DefaultBlog));
+class __$BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res>
+    implements _$BlogCopyWith<$Res> {
+  __$BlogCopyWithImpl(_Blog _value, $Res Function(_Blog) _then)
+      : super(_value, (v) => _then(v as _Blog));
 
   @override
-  _DefaultBlog get _value => super._value as _DefaultBlog;
+  _Blog get _value => super._value as _Blog;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultBlog implements _DefaultBlog {
-  const _$_DefaultBlog();
+class _$_Blog implements _Blog {
+  const _$_Blog();
 
-  factory _$_DefaultBlog.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultBlogFromJson(json);
+  factory _$_Blog.fromJson(Map<String, dynamic> json) => _$$_BlogFromJson(json);
 
   @override
   String toString() {
@@ -87,7 +84,7 @@ class _$_DefaultBlog implements _DefaultBlog {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultBlog);
+    return identical(this, other) || (other is _Blog);
   }
 
   @override
@@ -95,13 +92,12 @@ class _$_DefaultBlog implements _DefaultBlog {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultBlogToJson(this);
+    return _$$_BlogToJson(this);
   }
 }
 
-abstract class _DefaultBlog implements Blog, ParentResource {
-  const factory _DefaultBlog() = _$_DefaultBlog;
+abstract class _Blog implements Blog, ParentResource {
+  const factory _Blog() = _$_Blog;
 
-  factory _DefaultBlog.fromJson(Map<String, dynamic> json) =
-      _$_DefaultBlog.fromJson;
+  factory _Blog.fromJson(Map<String, dynamic> json) = _$_Blog.fromJson;
 }

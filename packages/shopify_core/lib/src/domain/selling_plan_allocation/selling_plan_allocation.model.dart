@@ -25,7 +25,7 @@ class SellingPlanAllocation with _$SellingPlanAllocation {
     /// *example:*
     /// an individual selling plan could be '6 weeks of prepaid granola, delivered weekly'
     required SellingPlan sellingPlan,
-  }) = _DefaultSellingPlanAllocation;
+  }) = _SellingPlanAllocation;
 
   factory SellingPlanAllocation.fromJson(Map<String, dynamic> json) =>
       _$SellingPlanAllocationFromJson(json);

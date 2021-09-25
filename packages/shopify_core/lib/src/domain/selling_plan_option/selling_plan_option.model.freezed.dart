@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SellingPlanOption _$SellingPlanOptionFromJson(Map<String, dynamic> json) {
-  return _DefaultSellingPlanOption.fromJson(json);
+  return _SellingPlanOption.fromJson(json);
 }
 
 /// @nodoc
 class _$SellingPlanOptionTearOff {
   const _$SellingPlanOptionTearOff();
 
-  _DefaultSellingPlanOption call({String? name, String? value}) {
-    return _DefaultSellingPlanOption(
+  _SellingPlanOption call({String? name, String? value}) {
+    return _SellingPlanOption(
       name: name,
       value: value,
     );
@@ -86,33 +86,32 @@ class _$SellingPlanOptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultSellingPlanOptionCopyWith<$Res>
+abstract class _$SellingPlanOptionCopyWith<$Res>
     implements $SellingPlanOptionCopyWith<$Res> {
-  factory _$DefaultSellingPlanOptionCopyWith(_DefaultSellingPlanOption value,
-          $Res Function(_DefaultSellingPlanOption) then) =
-      __$DefaultSellingPlanOptionCopyWithImpl<$Res>;
+  factory _$SellingPlanOptionCopyWith(
+          _SellingPlanOption value, $Res Function(_SellingPlanOption) then) =
+      __$SellingPlanOptionCopyWithImpl<$Res>;
   @override
   $Res call({String? name, String? value});
 }
 
 /// @nodoc
-class __$DefaultSellingPlanOptionCopyWithImpl<$Res>
+class __$SellingPlanOptionCopyWithImpl<$Res>
     extends _$SellingPlanOptionCopyWithImpl<$Res>
-    implements _$DefaultSellingPlanOptionCopyWith<$Res> {
-  __$DefaultSellingPlanOptionCopyWithImpl(_DefaultSellingPlanOption _value,
-      $Res Function(_DefaultSellingPlanOption) _then)
-      : super(_value, (v) => _then(v as _DefaultSellingPlanOption));
+    implements _$SellingPlanOptionCopyWith<$Res> {
+  __$SellingPlanOptionCopyWithImpl(
+      _SellingPlanOption _value, $Res Function(_SellingPlanOption) _then)
+      : super(_value, (v) => _then(v as _SellingPlanOption));
 
   @override
-  _DefaultSellingPlanOption get _value =>
-      super._value as _DefaultSellingPlanOption;
+  _SellingPlanOption get _value => super._value as _SellingPlanOption;
 
   @override
   $Res call({
     Object? name = freezed,
     Object? value = freezed,
   }) {
-    return _then(_DefaultSellingPlanOption(
+    return _then(_SellingPlanOption(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -127,11 +126,11 @@ class __$DefaultSellingPlanOptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultSellingPlanOption extends _DefaultSellingPlanOption {
-  const _$_DefaultSellingPlanOption({this.name, this.value}) : super._();
+class _$_SellingPlanOption extends _SellingPlanOption {
+  const _$_SellingPlanOption({this.name, this.value}) : super._();
 
-  factory _$_DefaultSellingPlanOption.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultSellingPlanOptionFromJson(json);
+  factory _$_SellingPlanOption.fromJson(Map<String, dynamic> json) =>
+      _$$_SellingPlanOptionFromJson(json);
 
   @override
 
@@ -150,7 +149,7 @@ class _$_DefaultSellingPlanOption extends _DefaultSellingPlanOption {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultSellingPlanOption &&
+        (other is _SellingPlanOption &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.value, value) ||
@@ -165,23 +164,22 @@ class _$_DefaultSellingPlanOption extends _DefaultSellingPlanOption {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultSellingPlanOptionCopyWith<_DefaultSellingPlanOption> get copyWith =>
-      __$DefaultSellingPlanOptionCopyWithImpl<_DefaultSellingPlanOption>(
-          this, _$identity);
+  _$SellingPlanOptionCopyWith<_SellingPlanOption> get copyWith =>
+      __$SellingPlanOptionCopyWithImpl<_SellingPlanOption>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultSellingPlanOptionToJson(this);
+    return _$$_SellingPlanOptionToJson(this);
   }
 }
 
-abstract class _DefaultSellingPlanOption extends SellingPlanOption {
-  const factory _DefaultSellingPlanOption({String? name, String? value}) =
-      _$_DefaultSellingPlanOption;
-  const _DefaultSellingPlanOption._() : super._();
+abstract class _SellingPlanOption extends SellingPlanOption {
+  const factory _SellingPlanOption({String? name, String? value}) =
+      _$_SellingPlanOption;
+  const _SellingPlanOption._() : super._();
 
-  factory _DefaultSellingPlanOption.fromJson(Map<String, dynamic> json) =
-      _$_DefaultSellingPlanOption.fromJson;
+  factory _SellingPlanOption.fromJson(Map<String, dynamic> json) =
+      _$_SellingPlanOption.fromJson;
 
   @override
 
@@ -193,6 +191,6 @@ abstract class _DefaultSellingPlanOption extends SellingPlanOption {
   String? get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultSellingPlanOptionCopyWith<_DefaultSellingPlanOption> get copyWith =>
+  _$SellingPlanOptionCopyWith<_SellingPlanOption> get copyWith =>
       throw _privateConstructorUsedError;
 }

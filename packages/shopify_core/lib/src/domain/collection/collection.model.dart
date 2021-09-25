@@ -7,7 +7,7 @@ part 'collection.model.g.dart';
 @freezed
 class Collection with _$Collection {
   @Implements(ParentResource)
-  const factory Collection() = _DefaultCollection;
+  const factory Collection() = _Collection;
 
   factory Collection.fromJson(Map<String, dynamic> json) =>
       _$CollectionFromJson(json);

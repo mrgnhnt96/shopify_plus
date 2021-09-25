@@ -37,7 +37,7 @@ class Metafield with _$Metafield {
 
     /// The value of a metafield.
     required String value,
-  }) = _DefaultMetafield;
+  }) = _Metafield;
 
   factory Metafield.fromJson(Map<String, dynamic> json) =>
       _$MetafieldFromJson(json);

@@ -7,7 +7,7 @@ part 'page_info.model.g.dart';
 class PageInfo with _$PageInfo {
   const PageInfo._();
 
-  const factory PageInfo() = _DefaultPageInfo;
+  const factory PageInfo() = _PageInfo;
 
   factory PageInfo.fromJson(Map<String, dynamic> json) =>
       _$PageInfoFromJson(json);

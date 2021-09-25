@@ -9,7 +9,7 @@ class Shop with _$Shop {
   Shop._();
 
   @Implements(ParentResource)
-  const factory Shop() = _DefaultShop;
+  const factory Shop() = _Shop;
 
   factory Shop.fromJson(Map<String, dynamic> json) => _$ShopFromJson(json);
 }

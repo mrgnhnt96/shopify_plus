@@ -6,10 +6,8 @@ part of 'shipping_rate.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultShippingRate _$$_DefaultShippingRateFromJson(
-        Map<String, dynamic> json) =>
-    _$_DefaultShippingRate();
+_$_ShippingRate _$$_ShippingRateFromJson(Map<String, dynamic> json) =>
+    _$_ShippingRate();
 
-Map<String, dynamic> _$$_DefaultShippingRateToJson(
-        _$_DefaultShippingRate instance) =>
+Map<String, dynamic> _$$_ShippingRateToJson(_$_ShippingRate instance) =>
     <String, dynamic>{};

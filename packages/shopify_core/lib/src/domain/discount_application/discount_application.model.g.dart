@@ -6,10 +6,10 @@ part of 'discount_application.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultDiscountApplication _$$_DefaultDiscountApplicationFromJson(
+_$_DiscountApplication _$$_DiscountApplicationFromJson(
         Map<String, dynamic> json) =>
-    _$_DefaultDiscountApplication();
+    _$_DiscountApplication();
 
-Map<String, dynamic> _$$_DefaultDiscountApplicationToJson(
-        _$_DefaultDiscountApplication instance) =>
+Map<String, dynamic> _$$_DiscountApplicationToJson(
+        _$_DiscountApplication instance) =>
     <String, dynamic>{};

@@ -16,7 +16,7 @@ class SellingPlanOption with _$SellingPlanOption {
 
     /// The value of the option (ie "Month").
     String? value,
-  }) = _DefaultSellingPlanOption;
+  }) = _SellingPlanOption;
 
   factory SellingPlanOption.fromJson(Map<String, dynamic> json) =>
       _$SellingPlanOptionFromJson(json);

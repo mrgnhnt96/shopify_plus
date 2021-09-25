@@ -6,8 +6,7 @@ part of 'metafield.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultMetafield _$$_DefaultMetafieldFromJson(Map<String, dynamic> json) =>
-    _$_DefaultMetafield(
+_$_Metafield _$$_MetafieldFromJson(Map<String, dynamic> json) => _$_Metafield(
       createdAt: DateTime.parse(json['createdAt'] as String),
       description: json['description'] as String?,
       id: json['id'] as String,
@@ -20,7 +19,7 @@ _$_DefaultMetafield _$$_DefaultMetafieldFromJson(Map<String, dynamic> json) =>
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$_DefaultMetafieldToJson(_$_DefaultMetafield instance) =>
+Map<String, dynamic> _$$_MetafieldToJson(_$_Metafield instance) =>
     <String, dynamic>{
       'createdAt': instance.createdAt.toIso8601String(),
       'description': instance.description,

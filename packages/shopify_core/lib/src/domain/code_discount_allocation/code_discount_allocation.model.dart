@@ -15,7 +15,7 @@ class CodeDiscountAllocation with _$CodeDiscountAllocation {
 
     /// The discounted amount that has been applied to the cart line
     required Money discountedAmount,
-  }) = _DefaultCodeDiscountAllocation;
+  }) = _CodeDiscountAllocation;
 
   factory CodeDiscountAllocation.fromJson(Map<String, dynamic> json) =>
       _$CodeDiscountAllocationFromJson(json);

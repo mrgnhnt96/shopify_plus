@@ -14,17 +14,17 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Fulfillment _$FulfillmentFromJson(Map<String, dynamic> json) {
-  return _DefaultFulfillment.fromJson(json);
+  return _Fulfillment.fromJson(json);
 }
 
 /// @nodoc
 class _$FulfillmentTearOff {
   const _$FulfillmentTearOff();
 
-  _DefaultFulfillment call(
+  _Fulfillment call(
       {String? trackingCompany,
       List<FulfillmentTrackingInfo> tackingInfo = const []}) {
-    return _DefaultFulfillment(
+    return _Fulfillment(
       trackingCompany: trackingCompany,
       tackingInfo: tackingInfo,
     );
@@ -89,33 +89,32 @@ class _$FulfillmentCopyWithImpl<$Res> implements $FulfillmentCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultFulfillmentCopyWith<$Res>
+abstract class _$FulfillmentCopyWith<$Res>
     implements $FulfillmentCopyWith<$Res> {
-  factory _$DefaultFulfillmentCopyWith(
-          _DefaultFulfillment value, $Res Function(_DefaultFulfillment) then) =
-      __$DefaultFulfillmentCopyWithImpl<$Res>;
+  factory _$FulfillmentCopyWith(
+          _Fulfillment value, $Res Function(_Fulfillment) then) =
+      __$FulfillmentCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? trackingCompany, List<FulfillmentTrackingInfo> tackingInfo});
 }
 
 /// @nodoc
-class __$DefaultFulfillmentCopyWithImpl<$Res>
-    extends _$FulfillmentCopyWithImpl<$Res>
-    implements _$DefaultFulfillmentCopyWith<$Res> {
-  __$DefaultFulfillmentCopyWithImpl(
-      _DefaultFulfillment _value, $Res Function(_DefaultFulfillment) _then)
-      : super(_value, (v) => _then(v as _DefaultFulfillment));
+class __$FulfillmentCopyWithImpl<$Res> extends _$FulfillmentCopyWithImpl<$Res>
+    implements _$FulfillmentCopyWith<$Res> {
+  __$FulfillmentCopyWithImpl(
+      _Fulfillment _value, $Res Function(_Fulfillment) _then)
+      : super(_value, (v) => _then(v as _Fulfillment));
 
   @override
-  _DefaultFulfillment get _value => super._value as _DefaultFulfillment;
+  _Fulfillment get _value => super._value as _Fulfillment;
 
   @override
   $Res call({
     Object? trackingCompany = freezed,
     Object? tackingInfo = freezed,
   }) {
-    return _then(_DefaultFulfillment(
+    return _then(_Fulfillment(
       trackingCompany: trackingCompany == freezed
           ? _value.trackingCompany
           : trackingCompany // ignore: cast_nullable_to_non_nullable
@@ -130,13 +129,12 @@ class __$DefaultFulfillmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultFulfillment extends _DefaultFulfillment {
-  const _$_DefaultFulfillment(
-      {this.trackingCompany, this.tackingInfo = const []})
+class _$_Fulfillment extends _Fulfillment {
+  const _$_Fulfillment({this.trackingCompany, this.tackingInfo = const []})
       : super._();
 
-  factory _$_DefaultFulfillment.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultFulfillmentFromJson(json);
+  factory _$_Fulfillment.fromJson(Map<String, dynamic> json) =>
+      _$$_FulfillmentFromJson(json);
 
   @override
 
@@ -156,7 +154,7 @@ class _$_DefaultFulfillment extends _DefaultFulfillment {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultFulfillment &&
+        (other is _Fulfillment &&
             (identical(other.trackingCompany, trackingCompany) ||
                 const DeepCollectionEquality()
                     .equals(other.trackingCompany, trackingCompany)) &&
@@ -173,23 +171,23 @@ class _$_DefaultFulfillment extends _DefaultFulfillment {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultFulfillmentCopyWith<_DefaultFulfillment> get copyWith =>
-      __$DefaultFulfillmentCopyWithImpl<_DefaultFulfillment>(this, _$identity);
+  _$FulfillmentCopyWith<_Fulfillment> get copyWith =>
+      __$FulfillmentCopyWithImpl<_Fulfillment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultFulfillmentToJson(this);
+    return _$$_FulfillmentToJson(this);
   }
 }
 
-abstract class _DefaultFulfillment extends Fulfillment {
-  const factory _DefaultFulfillment(
+abstract class _Fulfillment extends Fulfillment {
+  const factory _Fulfillment(
       {String? trackingCompany,
-      List<FulfillmentTrackingInfo> tackingInfo}) = _$_DefaultFulfillment;
-  const _DefaultFulfillment._() : super._();
+      List<FulfillmentTrackingInfo> tackingInfo}) = _$_Fulfillment;
+  const _Fulfillment._() : super._();
 
-  factory _DefaultFulfillment.fromJson(Map<String, dynamic> json) =
-      _$_DefaultFulfillment.fromJson;
+  factory _Fulfillment.fromJson(Map<String, dynamic> json) =
+      _$_Fulfillment.fromJson;
 
   @override
 
@@ -202,6 +200,6 @@ abstract class _DefaultFulfillment extends Fulfillment {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultFulfillmentCopyWith<_DefaultFulfillment> get copyWith =>
+  _$FulfillmentCopyWith<_Fulfillment> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Page _$PageFromJson(Map<String, dynamic> json) {
-  return _DefaultPage.fromJson(json);
+  return _Page.fromJson(json);
 }
 
 /// @nodoc
 class _$PageTearOff {
   const _$PageTearOff();
 
-  _DefaultPage call() {
-    return const _DefaultPage();
+  _Page call() {
+    return const _Page();
   }
 
   Page fromJson(Map<String, Object> json) {
@@ -54,31 +54,28 @@ class _$PageCopyWithImpl<$Res> implements $PageCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultPageCopyWith<$Res> {
-  factory _$DefaultPageCopyWith(
-          _DefaultPage value, $Res Function(_DefaultPage) then) =
-      __$DefaultPageCopyWithImpl<$Res>;
+abstract class _$PageCopyWith<$Res> {
+  factory _$PageCopyWith(_Page value, $Res Function(_Page) then) =
+      __$PageCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultPageCopyWithImpl<$Res> extends _$PageCopyWithImpl<$Res>
-    implements _$DefaultPageCopyWith<$Res> {
-  __$DefaultPageCopyWithImpl(
-      _DefaultPage _value, $Res Function(_DefaultPage) _then)
-      : super(_value, (v) => _then(v as _DefaultPage));
+class __$PageCopyWithImpl<$Res> extends _$PageCopyWithImpl<$Res>
+    implements _$PageCopyWith<$Res> {
+  __$PageCopyWithImpl(_Page _value, $Res Function(_Page) _then)
+      : super(_value, (v) => _then(v as _Page));
 
   @override
-  _DefaultPage get _value => super._value as _DefaultPage;
+  _Page get _value => super._value as _Page;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultPage implements _DefaultPage {
-  const _$_DefaultPage();
+class _$_Page implements _Page {
+  const _$_Page();
 
-  factory _$_DefaultPage.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultPageFromJson(json);
+  factory _$_Page.fromJson(Map<String, dynamic> json) => _$$_PageFromJson(json);
 
   @override
   String toString() {
@@ -87,7 +84,7 @@ class _$_DefaultPage implements _DefaultPage {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultPage);
+    return identical(this, other) || (other is _Page);
   }
 
   @override
@@ -95,13 +92,12 @@ class _$_DefaultPage implements _DefaultPage {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultPageToJson(this);
+    return _$$_PageToJson(this);
   }
 }
 
-abstract class _DefaultPage implements Page, ParentResource {
-  const factory _DefaultPage() = _$_DefaultPage;
+abstract class _Page implements Page, ParentResource {
+  const factory _Page() = _$_Page;
 
-  factory _DefaultPage.fromJson(Map<String, dynamic> json) =
-      _$_DefaultPage.fromJson;
+  factory _Page.fromJson(Map<String, dynamic> json) = _$_Page.fromJson;
 }

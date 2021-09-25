@@ -8,8 +8,7 @@ part 'shipping_discount_allocations.model.g.dart';
 class ShippingDiscountAllocations with _$ShippingDiscountAllocations {
   const ShippingDiscountAllocations._();
 
-  const factory ShippingDiscountAllocations() =
-      _DefaultShippingDiscountAllocations;
+  const factory ShippingDiscountAllocations() = _ShippingDiscountAllocations;
 
   factory ShippingDiscountAllocations.fromJson(Map<String, dynamic> json) =>
       _$ShippingDiscountAllocationsFromJson(json);

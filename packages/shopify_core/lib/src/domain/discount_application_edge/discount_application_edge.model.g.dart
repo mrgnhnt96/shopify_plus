@@ -6,10 +6,10 @@ part of 'discount_application_edge.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultDiscountApplicationEdge _$$_DefaultDiscountApplicationEdgeFromJson(
+_$_DiscountApplicationEdge _$$_DiscountApplicationEdgeFromJson(
         Map<String, dynamic> json) =>
-    _$_DefaultDiscountApplicationEdge();
+    _$_DiscountApplicationEdge();
 
-Map<String, dynamic> _$$_DefaultDiscountApplicationEdgeToJson(
-        _$_DefaultDiscountApplicationEdge instance) =>
+Map<String, dynamic> _$$_DiscountApplicationEdgeToJson(
+        _$_DiscountApplicationEdge instance) =>
     <String, dynamic>{};

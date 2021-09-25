@@ -14,7 +14,7 @@ class DiscountCode with _$DiscountCode {
 
     /// The code for the discount
     required String code,
-  }) = _DefaultDiscountCode;
+  }) = _DiscountCode;
 
   factory DiscountCode.fromJson(Map<String, dynamic> json) =>
       _$DiscountCodeFromJson(json);

@@ -9,7 +9,7 @@ part 'discount_application_edge.model.g.dart';
 class DiscountApplicationEdge with _$DiscountApplicationEdge {
   const DiscountApplicationEdge._();
 
-  const factory DiscountApplicationEdge() = _DefaultDiscountApplicationEdge;
+  const factory DiscountApplicationEdge() = _DiscountApplicationEdge;
 
   factory DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =>
       _$DiscountApplicationEdgeFromJson(json);

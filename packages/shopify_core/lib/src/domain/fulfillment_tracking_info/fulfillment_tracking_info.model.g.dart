@@ -6,15 +6,15 @@ part of 'fulfillment_tracking_info.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultFulfillmentTrackingInfo _$$_DefaultFulfillmentTrackingInfoFromJson(
+_$_FulfillmentTrackingInfo _$$_FulfillmentTrackingInfoFromJson(
         Map<String, dynamic> json) =>
-    _$_DefaultFulfillmentTrackingInfo(
+    _$_FulfillmentTrackingInfo(
       number: json['number'] as String?,
       url: json['url'] as String?,
     );
 
-Map<String, dynamic> _$$_DefaultFulfillmentTrackingInfoToJson(
-        _$_DefaultFulfillmentTrackingInfo instance) =>
+Map<String, dynamic> _$$_FulfillmentTrackingInfoToJson(
+        _$_FulfillmentTrackingInfo instance) =>
     <String, dynamic>{
       'number': instance.number,
       'url': instance.url,

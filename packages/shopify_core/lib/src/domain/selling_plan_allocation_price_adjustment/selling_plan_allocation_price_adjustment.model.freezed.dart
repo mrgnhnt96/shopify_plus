@@ -15,19 +15,19 @@ final _privateConstructorUsedError = UnsupportedError(
 
 SellingPlanAllocationPriceAdjustment
     _$SellingPlanAllocationPriceAdjustmentFromJson(Map<String, dynamic> json) {
-  return _DefaultSellingPlanAllocationPriceAdjustment.fromJson(json);
+  return _SellingPlanAllocationPriceAdjustment.fromJson(json);
 }
 
 /// @nodoc
 class _$SellingPlanAllocationPriceAdjustmentTearOff {
   const _$SellingPlanAllocationPriceAdjustmentTearOff();
 
-  _DefaultSellingPlanAllocationPriceAdjustment call(
+  _SellingPlanAllocationPriceAdjustment call(
       {required Money compareAtPrice,
       required Money perDeliveryPrice,
       required Money price,
       Money? unitPrice}) {
-    return _DefaultSellingPlanAllocationPriceAdjustment(
+    return _SellingPlanAllocationPriceAdjustment(
       compareAtPrice: compareAtPrice,
       perDeliveryPrice: perDeliveryPrice,
       price: price,
@@ -166,12 +166,12 @@ class _$SellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<$Res>
+abstract class _$SellingPlanAllocationPriceAdjustmentCopyWith<$Res>
     implements $SellingPlanAllocationPriceAdjustmentCopyWith<$Res> {
-  factory _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith(
-          _DefaultSellingPlanAllocationPriceAdjustment value,
-          $Res Function(_DefaultSellingPlanAllocationPriceAdjustment) then) =
-      __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>;
+  factory _$SellingPlanAllocationPriceAdjustmentCopyWith(
+          _SellingPlanAllocationPriceAdjustment value,
+          $Res Function(_SellingPlanAllocationPriceAdjustment) then) =
+      __$SellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>;
   @override
   $Res call(
       {Money compareAtPrice,
@@ -190,18 +190,17 @@ abstract class _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
+class __$SellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
     extends _$SellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
-    implements _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<$Res> {
-  __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl(
-      _DefaultSellingPlanAllocationPriceAdjustment _value,
-      $Res Function(_DefaultSellingPlanAllocationPriceAdjustment) _then)
-      : super(_value,
-            (v) => _then(v as _DefaultSellingPlanAllocationPriceAdjustment));
+    implements _$SellingPlanAllocationPriceAdjustmentCopyWith<$Res> {
+  __$SellingPlanAllocationPriceAdjustmentCopyWithImpl(
+      _SellingPlanAllocationPriceAdjustment _value,
+      $Res Function(_SellingPlanAllocationPriceAdjustment) _then)
+      : super(_value, (v) => _then(v as _SellingPlanAllocationPriceAdjustment));
 
   @override
-  _DefaultSellingPlanAllocationPriceAdjustment get _value =>
-      super._value as _DefaultSellingPlanAllocationPriceAdjustment;
+  _SellingPlanAllocationPriceAdjustment get _value =>
+      super._value as _SellingPlanAllocationPriceAdjustment;
 
   @override
   $Res call({
@@ -210,7 +209,7 @@ class __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
     Object? price = freezed,
     Object? unitPrice = freezed,
   }) {
-    return _then(_DefaultSellingPlanAllocationPriceAdjustment(
+    return _then(_SellingPlanAllocationPriceAdjustment(
       compareAtPrice: compareAtPrice == freezed
           ? _value.compareAtPrice
           : compareAtPrice // ignore: cast_nullable_to_non_nullable
@@ -233,18 +232,18 @@ class __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultSellingPlanAllocationPriceAdjustment
-    extends _DefaultSellingPlanAllocationPriceAdjustment {
-  const _$_DefaultSellingPlanAllocationPriceAdjustment(
+class _$_SellingPlanAllocationPriceAdjustment
+    extends _SellingPlanAllocationPriceAdjustment {
+  const _$_SellingPlanAllocationPriceAdjustment(
       {required this.compareAtPrice,
       required this.perDeliveryPrice,
       required this.price,
       this.unitPrice})
       : super._();
 
-  factory _$_DefaultSellingPlanAllocationPriceAdjustment.fromJson(
+  factory _$_SellingPlanAllocationPriceAdjustment.fromJson(
           Map<String, dynamic> json) =>
-      _$$_DefaultSellingPlanAllocationPriceAdjustmentFromJson(json);
+      _$$_SellingPlanAllocationPriceAdjustmentFromJson(json);
 
   @override
 
@@ -284,7 +283,7 @@ class _$_DefaultSellingPlanAllocationPriceAdjustment
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultSellingPlanAllocationPriceAdjustment &&
+        (other is _SellingPlanAllocationPriceAdjustment &&
             (identical(other.compareAtPrice, compareAtPrice) ||
                 const DeepCollectionEquality()
                     .equals(other.compareAtPrice, compareAtPrice)) &&
@@ -308,30 +307,29 @@ class _$_DefaultSellingPlanAllocationPriceAdjustment
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<
-          _DefaultSellingPlanAllocationPriceAdjustment>
-      get copyWith =>
-          __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<
-              _DefaultSellingPlanAllocationPriceAdjustment>(this, _$identity);
+  _$SellingPlanAllocationPriceAdjustmentCopyWith<
+          _SellingPlanAllocationPriceAdjustment>
+      get copyWith => __$SellingPlanAllocationPriceAdjustmentCopyWithImpl<
+          _SellingPlanAllocationPriceAdjustment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultSellingPlanAllocationPriceAdjustmentToJson(this);
+    return _$$_SellingPlanAllocationPriceAdjustmentToJson(this);
   }
 }
 
-abstract class _DefaultSellingPlanAllocationPriceAdjustment
+abstract class _SellingPlanAllocationPriceAdjustment
     extends SellingPlanAllocationPriceAdjustment {
-  const factory _DefaultSellingPlanAllocationPriceAdjustment(
+  const factory _SellingPlanAllocationPriceAdjustment(
       {required Money compareAtPrice,
       required Money perDeliveryPrice,
       required Money price,
-      Money? unitPrice}) = _$_DefaultSellingPlanAllocationPriceAdjustment;
-  const _DefaultSellingPlanAllocationPriceAdjustment._() : super._();
+      Money? unitPrice}) = _$_SellingPlanAllocationPriceAdjustment;
+  const _SellingPlanAllocationPriceAdjustment._() : super._();
 
-  factory _DefaultSellingPlanAllocationPriceAdjustment.fromJson(
+  factory _SellingPlanAllocationPriceAdjustment.fromJson(
           Map<String, dynamic> json) =
-      _$_DefaultSellingPlanAllocationPriceAdjustment.fromJson;
+      _$_SellingPlanAllocationPriceAdjustment.fromJson;
 
   @override
 
@@ -364,7 +362,7 @@ abstract class _DefaultSellingPlanAllocationPriceAdjustment
   Money? get unitPrice => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<
-          _DefaultSellingPlanAllocationPriceAdjustment>
+  _$SellingPlanAllocationPriceAdjustmentCopyWith<
+          _SellingPlanAllocationPriceAdjustment>
       get copyWith => throw _privateConstructorUsedError;
 }

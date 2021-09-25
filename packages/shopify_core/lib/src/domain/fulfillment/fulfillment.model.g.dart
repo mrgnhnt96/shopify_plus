@@ -6,9 +6,8 @@ part of 'fulfillment.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultFulfillment _$$_DefaultFulfillmentFromJson(
-        Map<String, dynamic> json) =>
-    _$_DefaultFulfillment(
+_$_Fulfillment _$$_FulfillmentFromJson(Map<String, dynamic> json) =>
+    _$_Fulfillment(
       trackingCompany: json['trackingCompany'] as String?,
       tackingInfo: (json['tackingInfo'] as List<dynamic>?)
               ?.map((e) =>
@@ -17,8 +16,7 @@ _$_DefaultFulfillment _$$_DefaultFulfillmentFromJson(
           [],
     );
 
-Map<String, dynamic> _$$_DefaultFulfillmentToJson(
-        _$_DefaultFulfillment instance) =>
+Map<String, dynamic> _$$_FulfillmentToJson(_$_Fulfillment instance) =>
     <String, dynamic>{
       'trackingCompany': instance.trackingCompany,
       'tackingInfo': instance.tackingInfo,

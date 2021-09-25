@@ -15,7 +15,7 @@ class AutomaticDiscountAllocation with _$AutomaticDiscountAllocation {
 
     /// The title of the allocated discount
     required String title,
-  }) = _DefaultAutomaticDiscountAllocation;
+  }) = _AutomaticDiscountAllocation;
 
   factory AutomaticDiscountAllocation.fromJson(Map<String, dynamic> json) =>
       _$AutomaticDiscountAllocationFromJson(json);

@@ -37,7 +37,7 @@ class SellingPlanAllocationPriceAdjustment
     /// The resulting price per unit for the variant associated with the selling plan.
     /// If the variant isn't sold by quantity or measurement, then this field returns null.
     Money? unitPrice,
-  }) = _DefaultSellingPlanAllocationPriceAdjustment;
+  }) = _SellingPlanAllocationPriceAdjustment;
 
   factory SellingPlanAllocationPriceAdjustment.fromJson(
           Map<String, dynamic> json) =>

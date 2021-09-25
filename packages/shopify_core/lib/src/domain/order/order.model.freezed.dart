@@ -14,14 +14,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Order _$OrderFromJson(Map<String, dynamic> json) {
-  return _DefaultOrder.fromJson(json);
+  return _Order.fromJson(json);
 }
 
 /// @nodoc
 class _$OrderTearOff {
   const _$OrderTearOff();
 
-  _DefaultOrder call(
+  _Order call(
       {@OrderCancelReasonJson()
           OrderCancelReason? cancelReason,
       DateTime? canceledAt,
@@ -60,7 +60,7 @@ class _$OrderTearOff {
           required Money totalShippingPrice,
       @JsonKey(name: 'totalTaxV2')
           Money? totalTax}) {
-    return _DefaultOrder(
+    return _Order(
       cancelReason: cancelReason,
       canceledAt: canceledAt,
       currencyCode: currencyCode,
@@ -553,10 +553,9 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultOrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
-  factory _$DefaultOrderCopyWith(
-          _DefaultOrder value, $Res Function(_DefaultOrder) then) =
-      __$DefaultOrderCopyWithImpl<$Res>;
+abstract class _$OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
+  factory _$OrderCopyWith(_Order value, $Res Function(_Order) then) =
+      __$OrderCopyWithImpl<$Res>;
   @override
   $Res call(
       {@OrderCancelReasonJson() OrderCancelReason? cancelReason,
@@ -621,14 +620,13 @@ abstract class _$DefaultOrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DefaultOrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
-    implements _$DefaultOrderCopyWith<$Res> {
-  __$DefaultOrderCopyWithImpl(
-      _DefaultOrder _value, $Res Function(_DefaultOrder) _then)
-      : super(_value, (v) => _then(v as _DefaultOrder));
+class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
+    implements _$OrderCopyWith<$Res> {
+  __$OrderCopyWithImpl(_Order _value, $Res Function(_Order) _then)
+      : super(_value, (v) => _then(v as _Order));
 
   @override
-  _DefaultOrder get _value => super._value as _DefaultOrder;
+  _Order get _value => super._value as _Order;
 
   @override
   $Res call({
@@ -663,7 +661,7 @@ class __$DefaultOrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
     Object? totalShippingPrice = freezed,
     Object? totalTax = freezed,
   }) {
-    return _then(_DefaultOrder(
+    return _then(_Order(
       cancelReason: cancelReason == freezed
           ? _value.cancelReason
           : cancelReason // ignore: cast_nullable_to_non_nullable
@@ -791,8 +789,8 @@ class __$DefaultOrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultOrder implements _DefaultOrder {
-  const _$_DefaultOrder(
+class _$_Order implements _Order {
+  const _$_Order(
       {@OrderCancelReasonJson() this.cancelReason,
       this.canceledAt,
       required this.currencyCode,
@@ -824,8 +822,8 @@ class _$_DefaultOrder implements _DefaultOrder {
       @JsonKey(name: 'totalShippingPriceV2') required this.totalShippingPrice,
       @JsonKey(name: 'totalTaxV2') this.totalTax});
 
-  factory _$_DefaultOrder.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultOrderFromJson(json);
+  factory _$_Order.fromJson(Map<String, dynamic> json) =>
+      _$$_OrderFromJson(json);
 
   @override
 
@@ -966,7 +964,7 @@ class _$_DefaultOrder implements _DefaultOrder {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultOrder &&
+        (other is _Order &&
             (identical(other.cancelReason, cancelReason) ||
                 const DeepCollectionEquality()
                     .equals(other.cancelReason, cancelReason)) &&
@@ -1078,17 +1076,17 @@ class _$_DefaultOrder implements _DefaultOrder {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultOrderCopyWith<_DefaultOrder> get copyWith =>
-      __$DefaultOrderCopyWithImpl<_DefaultOrder>(this, _$identity);
+  _$OrderCopyWith<_Order> get copyWith =>
+      __$OrderCopyWithImpl<_Order>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultOrderToJson(this);
+    return _$$_OrderToJson(this);
   }
 }
 
-abstract class _DefaultOrder implements Order, ParentResource {
-  const factory _DefaultOrder(
+abstract class _Order implements Order, ParentResource {
+  const factory _Order(
       {@OrderCancelReasonJson()
           OrderCancelReason? cancelReason,
       DateTime? canceledAt,
@@ -1126,10 +1124,9 @@ abstract class _DefaultOrder implements Order, ParentResource {
       @JsonKey(name: 'totalShippingPriceV2')
           required Money totalShippingPrice,
       @JsonKey(name: 'totalTaxV2')
-          Money? totalTax}) = _$_DefaultOrder;
+          Money? totalTax}) = _$_Order;
 
-  factory _DefaultOrder.fromJson(Map<String, dynamic> json) =
-      _$_DefaultOrder.fromJson;
+  factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
 
   @override
 
@@ -1265,6 +1262,5 @@ abstract class _DefaultOrder implements Order, ParentResource {
   Money? get totalTax => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultOrderCopyWith<_DefaultOrder> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$OrderCopyWith<_Order> get copyWith => throw _privateConstructorUsedError;
 }

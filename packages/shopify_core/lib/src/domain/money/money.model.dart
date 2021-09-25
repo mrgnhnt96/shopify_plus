@@ -14,7 +14,7 @@ class Money with _$Money {
 
     /// The currency
     required String currencyCode,
-  }) = _DefaultMoney;
+  }) = _Money;
 
   factory Money.fromJson(Map<String, dynamic> json) => _$MoneyFromJson(json);
 }

@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Shop _$ShopFromJson(Map<String, dynamic> json) {
-  return _DefaultShop.fromJson(json);
+  return _Shop.fromJson(json);
 }
 
 /// @nodoc
 class _$ShopTearOff {
   const _$ShopTearOff();
 
-  _DefaultShop call() {
-    return const _DefaultShop();
+  _Shop call() {
+    return const _Shop();
   }
 
   Shop fromJson(Map<String, Object> json) {
@@ -54,31 +54,28 @@ class _$ShopCopyWithImpl<$Res> implements $ShopCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultShopCopyWith<$Res> {
-  factory _$DefaultShopCopyWith(
-          _DefaultShop value, $Res Function(_DefaultShop) then) =
-      __$DefaultShopCopyWithImpl<$Res>;
+abstract class _$ShopCopyWith<$Res> {
+  factory _$ShopCopyWith(_Shop value, $Res Function(_Shop) then) =
+      __$ShopCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res>
-    implements _$DefaultShopCopyWith<$Res> {
-  __$DefaultShopCopyWithImpl(
-      _DefaultShop _value, $Res Function(_DefaultShop) _then)
-      : super(_value, (v) => _then(v as _DefaultShop));
+class __$ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res>
+    implements _$ShopCopyWith<$Res> {
+  __$ShopCopyWithImpl(_Shop _value, $Res Function(_Shop) _then)
+      : super(_value, (v) => _then(v as _Shop));
 
   @override
-  _DefaultShop get _value => super._value as _DefaultShop;
+  _Shop get _value => super._value as _Shop;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultShop extends _DefaultShop {
-  const _$_DefaultShop() : super._();
+class _$_Shop extends _Shop {
+  const _$_Shop() : super._();
 
-  factory _$_DefaultShop.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultShopFromJson(json);
+  factory _$_Shop.fromJson(Map<String, dynamic> json) => _$$_ShopFromJson(json);
 
   @override
   String toString() {
@@ -87,7 +84,7 @@ class _$_DefaultShop extends _DefaultShop {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultShop);
+    return identical(this, other) || (other is _Shop);
   }
 
   @override
@@ -95,14 +92,13 @@ class _$_DefaultShop extends _DefaultShop {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultShopToJson(this);
+    return _$$_ShopToJson(this);
   }
 }
 
-abstract class _DefaultShop extends Shop implements ParentResource {
-  const factory _DefaultShop() = _$_DefaultShop;
-  const _DefaultShop._() : super._();
+abstract class _Shop extends Shop implements ParentResource {
+  const factory _Shop() = _$_Shop;
+  const _Shop._() : super._();
 
-  factory _DefaultShop.fromJson(Map<String, dynamic> json) =
-      _$_DefaultShop.fromJson;
+  factory _Shop.fromJson(Map<String, dynamic> json) = _$_Shop.fromJson;
 }

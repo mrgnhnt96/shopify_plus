@@ -6,8 +6,7 @@ part of 'order.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultOrder _$$_DefaultOrderFromJson(Map<String, dynamic> json) =>
-    _$_DefaultOrder(
+_$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       cancelReason: _$enumDecodeNullable(
           _$OrderCancelReasonEnumMap, json['cancelReason']),
       canceledAt: json['canceledAt'] == null
@@ -69,8 +68,7 @@ _$_DefaultOrder _$$_DefaultOrderFromJson(Map<String, dynamic> json) =>
           : Money.fromJson(json['totalTaxV2'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DefaultOrderToJson(_$_DefaultOrder instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'cancelReason': _$OrderCancelReasonEnumMap[instance.cancelReason],
       'canceledAt': instance.canceledAt?.toIso8601String(),
       'currencyCode': instance.currencyCode,

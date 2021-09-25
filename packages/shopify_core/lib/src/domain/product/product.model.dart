@@ -7,7 +7,7 @@ part 'product.model.g.dart';
 @freezed
 class Product with _$Product {
   @Implements(ParentResource)
-  const factory Product() = _DefaultProduct;
+  const factory Product() = _Product;
 
   factory Product.fromJson(Map<String, dynamic> json) =>
       _$ProductFromJson(json);

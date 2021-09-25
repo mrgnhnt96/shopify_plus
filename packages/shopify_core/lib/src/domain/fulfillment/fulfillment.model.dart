@@ -17,7 +17,7 @@ class Fulfillment with _$Fulfillment {
 
     /// Tracking information associated with the fulfillment, such as the tracking number and tracking URL
     @Default([]) List<FulfillmentTrackingInfo> tackingInfo,
-  }) = _DefaultFulfillment;
+  }) = _Fulfillment;
 
   factory Fulfillment.fromJson(Map<String, dynamic> json) =>
       _$FulfillmentFromJson(json);

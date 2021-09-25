@@ -15,17 +15,17 @@ final _privateConstructorUsedError = UnsupportedError(
 
 SellingPlanAllocation _$SellingPlanAllocationFromJson(
     Map<String, dynamic> json) {
-  return _DefaultSellingPlanAllocation.fromJson(json);
+  return _SellingPlanAllocation.fromJson(json);
 }
 
 /// @nodoc
 class _$SellingPlanAllocationTearOff {
   const _$SellingPlanAllocationTearOff();
 
-  _DefaultSellingPlanAllocation call(
+  _SellingPlanAllocation call(
       {List<SellingPlanAllocationPriceAdjustment> priceAdjustments = const [],
       required SellingPlan sellingPlan}) {
-    return _DefaultSellingPlanAllocation(
+    return _SellingPlanAllocation(
       priceAdjustments: priceAdjustments,
       sellingPlan: sellingPlan,
     );
@@ -106,12 +106,11 @@ class _$SellingPlanAllocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultSellingPlanAllocationCopyWith<$Res>
+abstract class _$SellingPlanAllocationCopyWith<$Res>
     implements $SellingPlanAllocationCopyWith<$Res> {
-  factory _$DefaultSellingPlanAllocationCopyWith(
-          _DefaultSellingPlanAllocation value,
-          $Res Function(_DefaultSellingPlanAllocation) then) =
-      __$DefaultSellingPlanAllocationCopyWithImpl<$Res>;
+  factory _$SellingPlanAllocationCopyWith(_SellingPlanAllocation value,
+          $Res Function(_SellingPlanAllocation) then) =
+      __$SellingPlanAllocationCopyWithImpl<$Res>;
   @override
   $Res call(
       {List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
@@ -122,24 +121,22 @@ abstract class _$DefaultSellingPlanAllocationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultSellingPlanAllocationCopyWithImpl<$Res>
+class __$SellingPlanAllocationCopyWithImpl<$Res>
     extends _$SellingPlanAllocationCopyWithImpl<$Res>
-    implements _$DefaultSellingPlanAllocationCopyWith<$Res> {
-  __$DefaultSellingPlanAllocationCopyWithImpl(
-      _DefaultSellingPlanAllocation _value,
-      $Res Function(_DefaultSellingPlanAllocation) _then)
-      : super(_value, (v) => _then(v as _DefaultSellingPlanAllocation));
+    implements _$SellingPlanAllocationCopyWith<$Res> {
+  __$SellingPlanAllocationCopyWithImpl(_SellingPlanAllocation _value,
+      $Res Function(_SellingPlanAllocation) _then)
+      : super(_value, (v) => _then(v as _SellingPlanAllocation));
 
   @override
-  _DefaultSellingPlanAllocation get _value =>
-      super._value as _DefaultSellingPlanAllocation;
+  _SellingPlanAllocation get _value => super._value as _SellingPlanAllocation;
 
   @override
   $Res call({
     Object? priceAdjustments = freezed,
     Object? sellingPlan = freezed,
   }) {
-    return _then(_DefaultSellingPlanAllocation(
+    return _then(_SellingPlanAllocation(
       priceAdjustments: priceAdjustments == freezed
           ? _value.priceAdjustments
           : priceAdjustments // ignore: cast_nullable_to_non_nullable
@@ -154,13 +151,13 @@ class __$DefaultSellingPlanAllocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultSellingPlanAllocation extends _DefaultSellingPlanAllocation {
-  const _$_DefaultSellingPlanAllocation(
+class _$_SellingPlanAllocation extends _SellingPlanAllocation {
+  const _$_SellingPlanAllocation(
       {this.priceAdjustments = const [], required this.sellingPlan})
       : super._();
 
-  factory _$_DefaultSellingPlanAllocation.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultSellingPlanAllocationFromJson(json);
+  factory _$_SellingPlanAllocation.fromJson(Map<String, dynamic> json) =>
+      _$$_SellingPlanAllocationFromJson(json);
 
   @JsonKey(defaultValue: const [])
   @override
@@ -185,7 +182,7 @@ class _$_DefaultSellingPlanAllocation extends _DefaultSellingPlanAllocation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultSellingPlanAllocation &&
+        (other is _SellingPlanAllocation &&
             (identical(other.priceAdjustments, priceAdjustments) ||
                 const DeepCollectionEquality()
                     .equals(other.priceAdjustments, priceAdjustments)) &&
@@ -202,24 +199,24 @@ class _$_DefaultSellingPlanAllocation extends _DefaultSellingPlanAllocation {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultSellingPlanAllocationCopyWith<_DefaultSellingPlanAllocation>
-      get copyWith => __$DefaultSellingPlanAllocationCopyWithImpl<
-          _DefaultSellingPlanAllocation>(this, _$identity);
+  _$SellingPlanAllocationCopyWith<_SellingPlanAllocation> get copyWith =>
+      __$SellingPlanAllocationCopyWithImpl<_SellingPlanAllocation>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultSellingPlanAllocationToJson(this);
+    return _$$_SellingPlanAllocationToJson(this);
   }
 }
 
-abstract class _DefaultSellingPlanAllocation extends SellingPlanAllocation {
-  const factory _DefaultSellingPlanAllocation(
+abstract class _SellingPlanAllocation extends SellingPlanAllocation {
+  const factory _SellingPlanAllocation(
       {List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
-      required SellingPlan sellingPlan}) = _$_DefaultSellingPlanAllocation;
-  const _DefaultSellingPlanAllocation._() : super._();
+      required SellingPlan sellingPlan}) = _$_SellingPlanAllocation;
+  const _SellingPlanAllocation._() : super._();
 
-  factory _DefaultSellingPlanAllocation.fromJson(Map<String, dynamic> json) =
-      _$_DefaultSellingPlanAllocation.fromJson;
+  factory _SellingPlanAllocation.fromJson(Map<String, dynamic> json) =
+      _$_SellingPlanAllocation.fromJson;
 
   @override
 
@@ -237,6 +234,6 @@ abstract class _DefaultSellingPlanAllocation extends SellingPlanAllocation {
   SellingPlan get sellingPlan => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultSellingPlanAllocationCopyWith<_DefaultSellingPlanAllocation>
-      get copyWith => throw _privateConstructorUsedError;
+  _$SellingPlanAllocationCopyWith<_SellingPlanAllocation> get copyWith =>
+      throw _privateConstructorUsedError;
 }

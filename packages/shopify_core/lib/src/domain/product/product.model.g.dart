@@ -6,8 +6,7 @@ part of 'product.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultProduct _$$_DefaultProductFromJson(Map<String, dynamic> json) =>
-    _$_DefaultProduct();
+_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product();
 
-Map<String, dynamic> _$$_DefaultProductToJson(_$_DefaultProduct instance) =>
+Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
     <String, dynamic>{};

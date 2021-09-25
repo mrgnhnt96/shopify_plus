@@ -15,16 +15,16 @@ final _privateConstructorUsedError = UnsupportedError(
 
 AvailableShippingRates _$AvailableShippingRatesFromJson(
     Map<String, dynamic> json) {
-  return _DefaultAvailableShippingRates.fromJson(json);
+  return _AvailableShippingRates.fromJson(json);
 }
 
 /// @nodoc
 class _$AvailableShippingRatesTearOff {
   const _$AvailableShippingRatesTearOff();
 
-  _DefaultAvailableShippingRates call(
+  _AvailableShippingRates call(
       {bool ready = false, List<ShippingRate>? rates}) {
-    return _DefaultAvailableShippingRates(
+    return _AvailableShippingRates(
       ready: ready,
       rates: rates,
     );
@@ -88,35 +88,32 @@ class _$AvailableShippingRatesCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultAvailableShippingRatesCopyWith<$Res>
+abstract class _$AvailableShippingRatesCopyWith<$Res>
     implements $AvailableShippingRatesCopyWith<$Res> {
-  factory _$DefaultAvailableShippingRatesCopyWith(
-          _DefaultAvailableShippingRates value,
-          $Res Function(_DefaultAvailableShippingRates) then) =
-      __$DefaultAvailableShippingRatesCopyWithImpl<$Res>;
+  factory _$AvailableShippingRatesCopyWith(_AvailableShippingRates value,
+          $Res Function(_AvailableShippingRates) then) =
+      __$AvailableShippingRatesCopyWithImpl<$Res>;
   @override
   $Res call({bool ready, List<ShippingRate>? rates});
 }
 
 /// @nodoc
-class __$DefaultAvailableShippingRatesCopyWithImpl<$Res>
+class __$AvailableShippingRatesCopyWithImpl<$Res>
     extends _$AvailableShippingRatesCopyWithImpl<$Res>
-    implements _$DefaultAvailableShippingRatesCopyWith<$Res> {
-  __$DefaultAvailableShippingRatesCopyWithImpl(
-      _DefaultAvailableShippingRates _value,
-      $Res Function(_DefaultAvailableShippingRates) _then)
-      : super(_value, (v) => _then(v as _DefaultAvailableShippingRates));
+    implements _$AvailableShippingRatesCopyWith<$Res> {
+  __$AvailableShippingRatesCopyWithImpl(_AvailableShippingRates _value,
+      $Res Function(_AvailableShippingRates) _then)
+      : super(_value, (v) => _then(v as _AvailableShippingRates));
 
   @override
-  _DefaultAvailableShippingRates get _value =>
-      super._value as _DefaultAvailableShippingRates;
+  _AvailableShippingRates get _value => super._value as _AvailableShippingRates;
 
   @override
   $Res call({
     Object? ready = freezed,
     Object? rates = freezed,
   }) {
-    return _then(_DefaultAvailableShippingRates(
+    return _then(_AvailableShippingRates(
       ready: ready == freezed
           ? _value.ready
           : ready // ignore: cast_nullable_to_non_nullable
@@ -131,13 +128,11 @@ class __$DefaultAvailableShippingRatesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultAvailableShippingRates extends _DefaultAvailableShippingRates {
-  const _$_DefaultAvailableShippingRates({this.ready = false, this.rates})
-      : super._();
+class _$_AvailableShippingRates extends _AvailableShippingRates {
+  const _$_AvailableShippingRates({this.ready = false, this.rates}) : super._();
 
-  factory _$_DefaultAvailableShippingRates.fromJson(
-          Map<String, dynamic> json) =>
-      _$$_DefaultAvailableShippingRatesFromJson(json);
+  factory _$_AvailableShippingRates.fromJson(Map<String, dynamic> json) =>
+      _$$_AvailableShippingRatesFromJson(json);
 
   @JsonKey(defaultValue: false)
   @override
@@ -157,7 +152,7 @@ class _$_DefaultAvailableShippingRates extends _DefaultAvailableShippingRates {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultAvailableShippingRates &&
+        (other is _AvailableShippingRates &&
             (identical(other.ready, ready) ||
                 const DeepCollectionEquality().equals(other.ready, ready)) &&
             (identical(other.rates, rates) ||
@@ -172,24 +167,23 @@ class _$_DefaultAvailableShippingRates extends _DefaultAvailableShippingRates {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultAvailableShippingRatesCopyWith<_DefaultAvailableShippingRates>
-      get copyWith => __$DefaultAvailableShippingRatesCopyWithImpl<
-          _DefaultAvailableShippingRates>(this, _$identity);
+  _$AvailableShippingRatesCopyWith<_AvailableShippingRates> get copyWith =>
+      __$AvailableShippingRatesCopyWithImpl<_AvailableShippingRates>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultAvailableShippingRatesToJson(this);
+    return _$$_AvailableShippingRatesToJson(this);
   }
 }
 
-abstract class _DefaultAvailableShippingRates extends AvailableShippingRates {
-  const factory _DefaultAvailableShippingRates(
-      {bool ready,
-      List<ShippingRate>? rates}) = _$_DefaultAvailableShippingRates;
-  const _DefaultAvailableShippingRates._() : super._();
+abstract class _AvailableShippingRates extends AvailableShippingRates {
+  const factory _AvailableShippingRates(
+      {bool ready, List<ShippingRate>? rates}) = _$_AvailableShippingRates;
+  const _AvailableShippingRates._() : super._();
 
-  factory _DefaultAvailableShippingRates.fromJson(Map<String, dynamic> json) =
-      _$_DefaultAvailableShippingRates.fromJson;
+  factory _AvailableShippingRates.fromJson(Map<String, dynamic> json) =
+      _$_AvailableShippingRates.fromJson;
 
   @override
 
@@ -201,6 +195,6 @@ abstract class _DefaultAvailableShippingRates extends AvailableShippingRates {
   List<ShippingRate>? get rates => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultAvailableShippingRatesCopyWith<_DefaultAvailableShippingRates>
-      get copyWith => throw _privateConstructorUsedError;
+  _$AvailableShippingRatesCopyWith<_AvailableShippingRates> get copyWith =>
+      throw _privateConstructorUsedError;
 }

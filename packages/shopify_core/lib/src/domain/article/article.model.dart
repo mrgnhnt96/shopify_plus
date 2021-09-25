@@ -7,7 +7,7 @@ part 'article.model.g.dart';
 @freezed
 class Article with _$Article {
   @Implements(ParentResource)
-  const factory Article() = _DefaultArticle;
+  const factory Article() = _Article;
 
   factory Article.fromJson(Map<String, dynamic> json) =>
       _$ArticleFromJson(json);

@@ -14,17 +14,17 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DiscountAllocation _$DiscountAllocationFromJson(Map<String, dynamic> json) {
-  return _DefaultDiscountAllocation.fromJson(json);
+  return _DiscountAllocation.fromJson(json);
 }
 
 /// @nodoc
 class _$DiscountAllocationTearOff {
   const _$DiscountAllocationTearOff();
 
-  _DefaultDiscountAllocation call(
+  _DiscountAllocation call(
       {required Money allocatedAmount,
       required DiscountApplication discountApplication}) {
-    return _DefaultDiscountAllocation(
+    return _DiscountAllocation(
       allocatedAmount: allocatedAmount,
       discountApplication: discountApplication,
     );
@@ -104,11 +104,11 @@ class _$DiscountAllocationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultDiscountAllocationCopyWith<$Res>
+abstract class _$DiscountAllocationCopyWith<$Res>
     implements $DiscountAllocationCopyWith<$Res> {
-  factory _$DefaultDiscountAllocationCopyWith(_DefaultDiscountAllocation value,
-          $Res Function(_DefaultDiscountAllocation) then) =
-      __$DefaultDiscountAllocationCopyWithImpl<$Res>;
+  factory _$DiscountAllocationCopyWith(
+          _DiscountAllocation value, $Res Function(_DiscountAllocation) then) =
+      __$DiscountAllocationCopyWithImpl<$Res>;
   @override
   $Res call({Money allocatedAmount, DiscountApplication discountApplication});
 
@@ -119,23 +119,22 @@ abstract class _$DefaultDiscountAllocationCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultDiscountAllocationCopyWithImpl<$Res>
+class __$DiscountAllocationCopyWithImpl<$Res>
     extends _$DiscountAllocationCopyWithImpl<$Res>
-    implements _$DefaultDiscountAllocationCopyWith<$Res> {
-  __$DefaultDiscountAllocationCopyWithImpl(_DefaultDiscountAllocation _value,
-      $Res Function(_DefaultDiscountAllocation) _then)
-      : super(_value, (v) => _then(v as _DefaultDiscountAllocation));
+    implements _$DiscountAllocationCopyWith<$Res> {
+  __$DiscountAllocationCopyWithImpl(
+      _DiscountAllocation _value, $Res Function(_DiscountAllocation) _then)
+      : super(_value, (v) => _then(v as _DiscountAllocation));
 
   @override
-  _DefaultDiscountAllocation get _value =>
-      super._value as _DefaultDiscountAllocation;
+  _DiscountAllocation get _value => super._value as _DiscountAllocation;
 
   @override
   $Res call({
     Object? allocatedAmount = freezed,
     Object? discountApplication = freezed,
   }) {
-    return _then(_DefaultDiscountAllocation(
+    return _then(_DiscountAllocation(
       allocatedAmount: allocatedAmount == freezed
           ? _value.allocatedAmount
           : allocatedAmount // ignore: cast_nullable_to_non_nullable
@@ -150,13 +149,13 @@ class __$DefaultDiscountAllocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultDiscountAllocation extends _DefaultDiscountAllocation {
-  const _$_DefaultDiscountAllocation(
+class _$_DiscountAllocation extends _DiscountAllocation {
+  const _$_DiscountAllocation(
       {required this.allocatedAmount, required this.discountApplication})
       : super._();
 
-  factory _$_DefaultDiscountAllocation.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultDiscountAllocationFromJson(json);
+  factory _$_DiscountAllocation.fromJson(Map<String, dynamic> json) =>
+      _$$_DiscountAllocationFromJson(json);
 
   @override
   final Money allocatedAmount;
@@ -171,7 +170,7 @@ class _$_DefaultDiscountAllocation extends _DefaultDiscountAllocation {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultDiscountAllocation &&
+        (other is _DiscountAllocation &&
             (identical(other.allocatedAmount, allocatedAmount) ||
                 const DeepCollectionEquality()
                     .equals(other.allocatedAmount, allocatedAmount)) &&
@@ -188,26 +187,24 @@ class _$_DefaultDiscountAllocation extends _DefaultDiscountAllocation {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultDiscountAllocationCopyWith<_DefaultDiscountAllocation>
-      get copyWith =>
-          __$DefaultDiscountAllocationCopyWithImpl<_DefaultDiscountAllocation>(
-              this, _$identity);
+  _$DiscountAllocationCopyWith<_DiscountAllocation> get copyWith =>
+      __$DiscountAllocationCopyWithImpl<_DiscountAllocation>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultDiscountAllocationToJson(this);
+    return _$$_DiscountAllocationToJson(this);
   }
 }
 
-abstract class _DefaultDiscountAllocation extends DiscountAllocation {
-  const factory _DefaultDiscountAllocation(
+abstract class _DiscountAllocation extends DiscountAllocation {
+  const factory _DiscountAllocation(
           {required Money allocatedAmount,
           required DiscountApplication discountApplication}) =
-      _$_DefaultDiscountAllocation;
-  const _DefaultDiscountAllocation._() : super._();
+      _$_DiscountAllocation;
+  const _DiscountAllocation._() : super._();
 
-  factory _DefaultDiscountAllocation.fromJson(Map<String, dynamic> json) =
-      _$_DefaultDiscountAllocation.fromJson;
+  factory _DiscountAllocation.fromJson(Map<String, dynamic> json) =
+      _$_DiscountAllocation.fromJson;
 
   @override
   Money get allocatedAmount => throw _privateConstructorUsedError;
@@ -216,6 +213,6 @@ abstract class _DefaultDiscountAllocation extends DiscountAllocation {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultDiscountAllocationCopyWith<_DefaultDiscountAllocation>
-      get copyWith => throw _privateConstructorUsedError;
+  _$DiscountAllocationCopyWith<_DiscountAllocation> get copyWith =>
+      throw _privateConstructorUsedError;
 }

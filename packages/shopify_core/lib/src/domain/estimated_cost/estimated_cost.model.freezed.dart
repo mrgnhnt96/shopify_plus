@@ -14,19 +14,19 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 EstimatedCost _$EstimatedCostFromJson(Map<String, dynamic> json) {
-  return _DefaultEstimatedCost.fromJson(json);
+  return _EstimatedCost.fromJson(json);
 }
 
 /// @nodoc
 class _$EstimatedCostTearOff {
   const _$EstimatedCostTearOff();
 
-  _DefaultEstimatedCost call(
+  _EstimatedCost call(
       {required Money subtotalAmount,
       required Money totalAmount,
       Money? totalDutyAmount,
       Money? totalTaxAmount}) {
-    return _DefaultEstimatedCost(
+    return _EstimatedCost(
       subtotalAmount: subtotalAmount,
       totalAmount: totalAmount,
       totalDutyAmount: totalDutyAmount,
@@ -153,11 +153,11 @@ class _$EstimatedCostCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultEstimatedCostCopyWith<$Res>
+abstract class _$EstimatedCostCopyWith<$Res>
     implements $EstimatedCostCopyWith<$Res> {
-  factory _$DefaultEstimatedCostCopyWith(_DefaultEstimatedCost value,
-          $Res Function(_DefaultEstimatedCost) then) =
-      __$DefaultEstimatedCostCopyWithImpl<$Res>;
+  factory _$EstimatedCostCopyWith(
+          _EstimatedCost value, $Res Function(_EstimatedCost) then) =
+      __$EstimatedCostCopyWithImpl<$Res>;
   @override
   $Res call(
       {Money subtotalAmount,
@@ -176,15 +176,15 @@ abstract class _$DefaultEstimatedCostCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultEstimatedCostCopyWithImpl<$Res>
+class __$EstimatedCostCopyWithImpl<$Res>
     extends _$EstimatedCostCopyWithImpl<$Res>
-    implements _$DefaultEstimatedCostCopyWith<$Res> {
-  __$DefaultEstimatedCostCopyWithImpl(
-      _DefaultEstimatedCost _value, $Res Function(_DefaultEstimatedCost) _then)
-      : super(_value, (v) => _then(v as _DefaultEstimatedCost));
+    implements _$EstimatedCostCopyWith<$Res> {
+  __$EstimatedCostCopyWithImpl(
+      _EstimatedCost _value, $Res Function(_EstimatedCost) _then)
+      : super(_value, (v) => _then(v as _EstimatedCost));
 
   @override
-  _DefaultEstimatedCost get _value => super._value as _DefaultEstimatedCost;
+  _EstimatedCost get _value => super._value as _EstimatedCost;
 
   @override
   $Res call({
@@ -193,7 +193,7 @@ class __$DefaultEstimatedCostCopyWithImpl<$Res>
     Object? totalDutyAmount = freezed,
     Object? totalTaxAmount = freezed,
   }) {
-    return _then(_DefaultEstimatedCost(
+    return _then(_EstimatedCost(
       subtotalAmount: subtotalAmount == freezed
           ? _value.subtotalAmount
           : subtotalAmount // ignore: cast_nullable_to_non_nullable
@@ -216,16 +216,16 @@ class __$DefaultEstimatedCostCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultEstimatedCost extends _DefaultEstimatedCost {
-  const _$_DefaultEstimatedCost(
+class _$_EstimatedCost extends _EstimatedCost {
+  const _$_EstimatedCost(
       {required this.subtotalAmount,
       required this.totalAmount,
       this.totalDutyAmount,
       this.totalTaxAmount})
       : super._();
 
-  factory _$_DefaultEstimatedCost.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultEstimatedCostFromJson(json);
+  factory _$_EstimatedCost.fromJson(Map<String, dynamic> json) =>
+      _$$_EstimatedCostFromJson(json);
 
   @override
 
@@ -252,7 +252,7 @@ class _$_DefaultEstimatedCost extends _DefaultEstimatedCost {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultEstimatedCost &&
+        (other is _EstimatedCost &&
             (identical(other.subtotalAmount, subtotalAmount) ||
                 const DeepCollectionEquality()
                     .equals(other.subtotalAmount, subtotalAmount)) &&
@@ -277,26 +277,25 @@ class _$_DefaultEstimatedCost extends _DefaultEstimatedCost {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultEstimatedCostCopyWith<_DefaultEstimatedCost> get copyWith =>
-      __$DefaultEstimatedCostCopyWithImpl<_DefaultEstimatedCost>(
-          this, _$identity);
+  _$EstimatedCostCopyWith<_EstimatedCost> get copyWith =>
+      __$EstimatedCostCopyWithImpl<_EstimatedCost>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultEstimatedCostToJson(this);
+    return _$$_EstimatedCostToJson(this);
   }
 }
 
-abstract class _DefaultEstimatedCost extends EstimatedCost {
-  const factory _DefaultEstimatedCost(
+abstract class _EstimatedCost extends EstimatedCost {
+  const factory _EstimatedCost(
       {required Money subtotalAmount,
       required Money totalAmount,
       Money? totalDutyAmount,
-      Money? totalTaxAmount}) = _$_DefaultEstimatedCost;
-  const _DefaultEstimatedCost._() : super._();
+      Money? totalTaxAmount}) = _$_EstimatedCost;
+  const _EstimatedCost._() : super._();
 
-  factory _DefaultEstimatedCost.fromJson(Map<String, dynamic> json) =
-      _$_DefaultEstimatedCost.fromJson;
+  factory _EstimatedCost.fromJson(Map<String, dynamic> json) =
+      _$_EstimatedCost.fromJson;
 
   @override
 
@@ -316,6 +315,6 @@ abstract class _DefaultEstimatedCost extends EstimatedCost {
   Money? get totalTaxAmount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultEstimatedCostCopyWith<_DefaultEstimatedCost> get copyWith =>
+  _$EstimatedCostCopyWith<_EstimatedCost> get copyWith =>
       throw _privateConstructorUsedError;
 }

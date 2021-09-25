@@ -17,7 +17,7 @@ class SellingPlanPriceAdjustment with _$SellingPlanPriceAdjustment {
 
     /// The number of orders that the price adjustment applies to If the price adjustment always applies, then this field is null.
     int? orderCount,
-  }) = _DefaultSellingPlanPriceAdjustment;
+  }) = _SellingPlanPriceAdjustment;
 
   factory SellingPlanPriceAdjustment.fromJson(Map<String, dynamic> json) =>
       _$SellingPlanPriceAdjustmentFromJson(json);

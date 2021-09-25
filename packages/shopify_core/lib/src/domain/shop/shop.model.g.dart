@@ -6,8 +6,6 @@ part of 'shop.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultShop _$$_DefaultShopFromJson(Map<String, dynamic> json) =>
-    _$_DefaultShop();
+_$_Shop _$$_ShopFromJson(Map<String, dynamic> json) => _$_Shop();
 
-Map<String, dynamic> _$$_DefaultShopToJson(_$_DefaultShop instance) =>
-    <String, dynamic>{};
+Map<String, dynamic> _$$_ShopToJson(_$_Shop instance) => <String, dynamic>{};

@@ -6,8 +6,7 @@ part of 'page_info.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultPageInfo _$$_DefaultPageInfoFromJson(Map<String, dynamic> json) =>
-    _$_DefaultPageInfo();
+_$_PageInfo _$$_PageInfoFromJson(Map<String, dynamic> json) => _$_PageInfo();
 
-Map<String, dynamic> _$$_DefaultPageInfoToJson(_$_DefaultPageInfo instance) =>
+Map<String, dynamic> _$$_PageInfoToJson(_$_PageInfo instance) =>
     <String, dynamic>{};

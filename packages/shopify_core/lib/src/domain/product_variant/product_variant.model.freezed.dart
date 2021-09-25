@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) {
-  return _DefaultProductVariant.fromJson(json);
+  return _ProductVariant.fromJson(json);
 }
 
 /// @nodoc
 class _$ProductVariantTearOff {
   const _$ProductVariantTearOff();
 
-  _DefaultProductVariant call() {
-    return const _DefaultProductVariant();
+  _ProductVariant call() {
+    return const _ProductVariant();
   }
 
   ProductVariant fromJson(Map<String, Object> json) {
@@ -56,33 +56,33 @@ class _$ProductVariantCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultProductVariantCopyWith<$Res> {
-  factory _$DefaultProductVariantCopyWith(_DefaultProductVariant value,
-          $Res Function(_DefaultProductVariant) then) =
-      __$DefaultProductVariantCopyWithImpl<$Res>;
+abstract class _$ProductVariantCopyWith<$Res> {
+  factory _$ProductVariantCopyWith(
+          _ProductVariant value, $Res Function(_ProductVariant) then) =
+      __$ProductVariantCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultProductVariantCopyWithImpl<$Res>
+class __$ProductVariantCopyWithImpl<$Res>
     extends _$ProductVariantCopyWithImpl<$Res>
-    implements _$DefaultProductVariantCopyWith<$Res> {
-  __$DefaultProductVariantCopyWithImpl(_DefaultProductVariant _value,
-      $Res Function(_DefaultProductVariant) _then)
-      : super(_value, (v) => _then(v as _DefaultProductVariant));
+    implements _$ProductVariantCopyWith<$Res> {
+  __$ProductVariantCopyWithImpl(
+      _ProductVariant _value, $Res Function(_ProductVariant) _then)
+      : super(_value, (v) => _then(v as _ProductVariant));
 
   @override
-  _DefaultProductVariant get _value => super._value as _DefaultProductVariant;
+  _ProductVariant get _value => super._value as _ProductVariant;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
 @Implements(Merchandise)
-class _$_DefaultProductVariant extends _DefaultProductVariant {
-  const _$_DefaultProductVariant() : super._();
+class _$_ProductVariant extends _ProductVariant {
+  const _$_ProductVariant() : super._();
 
-  factory _$_DefaultProductVariant.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultProductVariantFromJson(json);
+  factory _$_ProductVariant.fromJson(Map<String, dynamic> json) =>
+      _$$_ProductVariantFromJson(json);
 
   @override
   String toString() {
@@ -91,7 +91,7 @@ class _$_DefaultProductVariant extends _DefaultProductVariant {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultProductVariant);
+    return identical(this, other) || (other is _ProductVariant);
   }
 
   @override
@@ -99,15 +99,15 @@ class _$_DefaultProductVariant extends _DefaultProductVariant {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultProductVariantToJson(this);
+    return _$$_ProductVariantToJson(this);
   }
 }
 
-abstract class _DefaultProductVariant extends ProductVariant
+abstract class _ProductVariant extends ProductVariant
     implements ParentResource, Merchandise {
-  const factory _DefaultProductVariant() = _$_DefaultProductVariant;
-  const _DefaultProductVariant._() : super._();
+  const factory _ProductVariant() = _$_ProductVariant;
+  const _ProductVariant._() : super._();
 
-  factory _DefaultProductVariant.fromJson(Map<String, dynamic> json) =
-      _$_DefaultProductVariant.fromJson;
+  factory _ProductVariant.fromJson(Map<String, dynamic> json) =
+      _$_ProductVariant.fromJson;
 }

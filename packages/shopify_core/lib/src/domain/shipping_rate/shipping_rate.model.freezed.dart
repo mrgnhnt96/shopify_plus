@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 ShippingRate _$ShippingRateFromJson(Map<String, dynamic> json) {
-  return _DefaultShippingRate.fromJson(json);
+  return _ShippingRate.fromJson(json);
 }
 
 /// @nodoc
 class _$ShippingRateTearOff {
   const _$ShippingRateTearOff();
 
-  _DefaultShippingRate call() {
-    return const _DefaultShippingRate();
+  _ShippingRate call() {
+    return const _ShippingRate();
   }
 
   ShippingRate fromJson(Map<String, Object> json) {
@@ -55,31 +55,30 @@ class _$ShippingRateCopyWithImpl<$Res> implements $ShippingRateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultShippingRateCopyWith<$Res> {
-  factory _$DefaultShippingRateCopyWith(_DefaultShippingRate value,
-          $Res Function(_DefaultShippingRate) then) =
-      __$DefaultShippingRateCopyWithImpl<$Res>;
+abstract class _$ShippingRateCopyWith<$Res> {
+  factory _$ShippingRateCopyWith(
+          _ShippingRate value, $Res Function(_ShippingRate) then) =
+      __$ShippingRateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultShippingRateCopyWithImpl<$Res>
-    extends _$ShippingRateCopyWithImpl<$Res>
-    implements _$DefaultShippingRateCopyWith<$Res> {
-  __$DefaultShippingRateCopyWithImpl(
-      _DefaultShippingRate _value, $Res Function(_DefaultShippingRate) _then)
-      : super(_value, (v) => _then(v as _DefaultShippingRate));
+class __$ShippingRateCopyWithImpl<$Res> extends _$ShippingRateCopyWithImpl<$Res>
+    implements _$ShippingRateCopyWith<$Res> {
+  __$ShippingRateCopyWithImpl(
+      _ShippingRate _value, $Res Function(_ShippingRate) _then)
+      : super(_value, (v) => _then(v as _ShippingRate));
 
   @override
-  _DefaultShippingRate get _value => super._value as _DefaultShippingRate;
+  _ShippingRate get _value => super._value as _ShippingRate;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultShippingRate extends _DefaultShippingRate {
-  const _$_DefaultShippingRate() : super._();
+class _$_ShippingRate extends _ShippingRate {
+  const _$_ShippingRate() : super._();
 
-  factory _$_DefaultShippingRate.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultShippingRateFromJson(json);
+  factory _$_ShippingRate.fromJson(Map<String, dynamic> json) =>
+      _$$_ShippingRateFromJson(json);
 
   @override
   String toString() {
@@ -88,7 +87,7 @@ class _$_DefaultShippingRate extends _DefaultShippingRate {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultShippingRate);
+    return identical(this, other) || (other is _ShippingRate);
   }
 
   @override
@@ -96,14 +95,14 @@ class _$_DefaultShippingRate extends _DefaultShippingRate {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultShippingRateToJson(this);
+    return _$$_ShippingRateToJson(this);
   }
 }
 
-abstract class _DefaultShippingRate extends ShippingRate {
-  const factory _DefaultShippingRate() = _$_DefaultShippingRate;
-  const _DefaultShippingRate._() : super._();
+abstract class _ShippingRate extends ShippingRate {
+  const factory _ShippingRate() = _$_ShippingRate;
+  const _ShippingRate._() : super._();
 
-  factory _DefaultShippingRate.fromJson(Map<String, dynamic> json) =
-      _$_DefaultShippingRate.fromJson;
+  factory _ShippingRate.fromJson(Map<String, dynamic> json) =
+      _$_ShippingRate.fromJson;
 }

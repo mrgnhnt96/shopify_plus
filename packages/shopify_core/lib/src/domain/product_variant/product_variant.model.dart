@@ -11,7 +11,7 @@ class ProductVariant with _$ProductVariant {
 
   @Implements(ParentResource)
   @Implements(Merchandise)
-  const factory ProductVariant() = _DefaultProductVariant;
+  const factory ProductVariant() = _ProductVariant;
 
   factory ProductVariant.fromJson(Map<String, dynamic> json) =>
       _$ProductVariantFromJson(json);

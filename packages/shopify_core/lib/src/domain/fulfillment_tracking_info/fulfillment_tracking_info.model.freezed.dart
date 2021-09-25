@@ -15,15 +15,15 @@ final _privateConstructorUsedError = UnsupportedError(
 
 FulfillmentTrackingInfo _$FulfillmentTrackingInfoFromJson(
     Map<String, dynamic> json) {
-  return _DefaultFulfillmentTrackingInfo.fromJson(json);
+  return _FulfillmentTrackingInfo.fromJson(json);
 }
 
 /// @nodoc
 class _$FulfillmentTrackingInfoTearOff {
   const _$FulfillmentTrackingInfoTearOff();
 
-  _DefaultFulfillmentTrackingInfo call({String? number, String? url}) {
-    return _DefaultFulfillmentTrackingInfo(
+  _FulfillmentTrackingInfo call({String? number, String? url}) {
+    return _FulfillmentTrackingInfo(
       number: number,
       url: url,
     );
@@ -87,35 +87,33 @@ class _$FulfillmentTrackingInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultFulfillmentTrackingInfoCopyWith<$Res>
+abstract class _$FulfillmentTrackingInfoCopyWith<$Res>
     implements $FulfillmentTrackingInfoCopyWith<$Res> {
-  factory _$DefaultFulfillmentTrackingInfoCopyWith(
-          _DefaultFulfillmentTrackingInfo value,
-          $Res Function(_DefaultFulfillmentTrackingInfo) then) =
-      __$DefaultFulfillmentTrackingInfoCopyWithImpl<$Res>;
+  factory _$FulfillmentTrackingInfoCopyWith(_FulfillmentTrackingInfo value,
+          $Res Function(_FulfillmentTrackingInfo) then) =
+      __$FulfillmentTrackingInfoCopyWithImpl<$Res>;
   @override
   $Res call({String? number, String? url});
 }
 
 /// @nodoc
-class __$DefaultFulfillmentTrackingInfoCopyWithImpl<$Res>
+class __$FulfillmentTrackingInfoCopyWithImpl<$Res>
     extends _$FulfillmentTrackingInfoCopyWithImpl<$Res>
-    implements _$DefaultFulfillmentTrackingInfoCopyWith<$Res> {
-  __$DefaultFulfillmentTrackingInfoCopyWithImpl(
-      _DefaultFulfillmentTrackingInfo _value,
-      $Res Function(_DefaultFulfillmentTrackingInfo) _then)
-      : super(_value, (v) => _then(v as _DefaultFulfillmentTrackingInfo));
+    implements _$FulfillmentTrackingInfoCopyWith<$Res> {
+  __$FulfillmentTrackingInfoCopyWithImpl(_FulfillmentTrackingInfo _value,
+      $Res Function(_FulfillmentTrackingInfo) _then)
+      : super(_value, (v) => _then(v as _FulfillmentTrackingInfo));
 
   @override
-  _DefaultFulfillmentTrackingInfo get _value =>
-      super._value as _DefaultFulfillmentTrackingInfo;
+  _FulfillmentTrackingInfo get _value =>
+      super._value as _FulfillmentTrackingInfo;
 
   @override
   $Res call({
     Object? number = freezed,
     Object? url = freezed,
   }) {
-    return _then(_DefaultFulfillmentTrackingInfo(
+    return _then(_FulfillmentTrackingInfo(
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
@@ -130,13 +128,11 @@ class __$DefaultFulfillmentTrackingInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultFulfillmentTrackingInfo
-    extends _DefaultFulfillmentTrackingInfo {
-  const _$_DefaultFulfillmentTrackingInfo({this.number, this.url}) : super._();
+class _$_FulfillmentTrackingInfo extends _FulfillmentTrackingInfo {
+  const _$_FulfillmentTrackingInfo({this.number, this.url}) : super._();
 
-  factory _$_DefaultFulfillmentTrackingInfo.fromJson(
-          Map<String, dynamic> json) =>
-      _$$_DefaultFulfillmentTrackingInfoFromJson(json);
+  factory _$_FulfillmentTrackingInfo.fromJson(Map<String, dynamic> json) =>
+      _$$_FulfillmentTrackingInfoFromJson(json);
 
   @override
 
@@ -155,7 +151,7 @@ class _$_DefaultFulfillmentTrackingInfo
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultFulfillmentTrackingInfo &&
+        (other is _FulfillmentTrackingInfo &&
             (identical(other.number, number) ||
                 const DeepCollectionEquality().equals(other.number, number)) &&
             (identical(other.url, url) ||
@@ -170,23 +166,23 @@ class _$_DefaultFulfillmentTrackingInfo
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultFulfillmentTrackingInfoCopyWith<_DefaultFulfillmentTrackingInfo>
-      get copyWith => __$DefaultFulfillmentTrackingInfoCopyWithImpl<
-          _DefaultFulfillmentTrackingInfo>(this, _$identity);
+  _$FulfillmentTrackingInfoCopyWith<_FulfillmentTrackingInfo> get copyWith =>
+      __$FulfillmentTrackingInfoCopyWithImpl<_FulfillmentTrackingInfo>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultFulfillmentTrackingInfoToJson(this);
+    return _$$_FulfillmentTrackingInfoToJson(this);
   }
 }
 
-abstract class _DefaultFulfillmentTrackingInfo extends FulfillmentTrackingInfo {
-  const factory _DefaultFulfillmentTrackingInfo({String? number, String? url}) =
-      _$_DefaultFulfillmentTrackingInfo;
-  const _DefaultFulfillmentTrackingInfo._() : super._();
+abstract class _FulfillmentTrackingInfo extends FulfillmentTrackingInfo {
+  const factory _FulfillmentTrackingInfo({String? number, String? url}) =
+      _$_FulfillmentTrackingInfo;
+  const _FulfillmentTrackingInfo._() : super._();
 
-  factory _DefaultFulfillmentTrackingInfo.fromJson(Map<String, dynamic> json) =
-      _$_DefaultFulfillmentTrackingInfo.fromJson;
+  factory _FulfillmentTrackingInfo.fromJson(Map<String, dynamic> json) =
+      _$_FulfillmentTrackingInfo.fromJson;
 
   @override
 
@@ -198,6 +194,6 @@ abstract class _DefaultFulfillmentTrackingInfo extends FulfillmentTrackingInfo {
   String? get url => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultFulfillmentTrackingInfoCopyWith<_DefaultFulfillmentTrackingInfo>
-      get copyWith => throw _privateConstructorUsedError;
+  _$FulfillmentTrackingInfoCopyWith<_FulfillmentTrackingInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }

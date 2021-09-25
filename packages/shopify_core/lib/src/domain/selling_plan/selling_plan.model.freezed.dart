@@ -14,21 +14,21 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SellingPlan _$SellingPlanFromJson(Map<String, dynamic> json) {
-  return _DefaultSellingPlan.fromJson(json);
+  return _SellingPlan.fromJson(json);
 }
 
 /// @nodoc
 class _$SellingPlanTearOff {
   const _$SellingPlanTearOff();
 
-  _DefaultSellingPlan call(
+  _SellingPlan call(
       {String? description,
       required String id,
       required String name,
       List<SellingPlanOption> options = const [],
       List<SellingPlanPriceAdjustment> priceAdjustments = const [],
       bool recurringDeliveries = false}) {
-    return _DefaultSellingPlan(
+    return _SellingPlan(
       description: description,
       id: id,
       name: name,
@@ -134,11 +134,11 @@ class _$SellingPlanCopyWithImpl<$Res> implements $SellingPlanCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultSellingPlanCopyWith<$Res>
+abstract class _$SellingPlanCopyWith<$Res>
     implements $SellingPlanCopyWith<$Res> {
-  factory _$DefaultSellingPlanCopyWith(
-          _DefaultSellingPlan value, $Res Function(_DefaultSellingPlan) then) =
-      __$DefaultSellingPlanCopyWithImpl<$Res>;
+  factory _$SellingPlanCopyWith(
+          _SellingPlan value, $Res Function(_SellingPlan) then) =
+      __$SellingPlanCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? description,
@@ -150,15 +150,14 @@ abstract class _$DefaultSellingPlanCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultSellingPlanCopyWithImpl<$Res>
-    extends _$SellingPlanCopyWithImpl<$Res>
-    implements _$DefaultSellingPlanCopyWith<$Res> {
-  __$DefaultSellingPlanCopyWithImpl(
-      _DefaultSellingPlan _value, $Res Function(_DefaultSellingPlan) _then)
-      : super(_value, (v) => _then(v as _DefaultSellingPlan));
+class __$SellingPlanCopyWithImpl<$Res> extends _$SellingPlanCopyWithImpl<$Res>
+    implements _$SellingPlanCopyWith<$Res> {
+  __$SellingPlanCopyWithImpl(
+      _SellingPlan _value, $Res Function(_SellingPlan) _then)
+      : super(_value, (v) => _then(v as _SellingPlan));
 
   @override
-  _DefaultSellingPlan get _value => super._value as _DefaultSellingPlan;
+  _SellingPlan get _value => super._value as _SellingPlan;
 
   @override
   $Res call({
@@ -169,7 +168,7 @@ class __$DefaultSellingPlanCopyWithImpl<$Res>
     Object? priceAdjustments = freezed,
     Object? recurringDeliveries = freezed,
   }) {
-    return _then(_DefaultSellingPlan(
+    return _then(_SellingPlan(
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -200,8 +199,8 @@ class __$DefaultSellingPlanCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultSellingPlan extends _DefaultSellingPlan {
-  const _$_DefaultSellingPlan(
+class _$_SellingPlan extends _SellingPlan {
+  const _$_SellingPlan(
       {this.description,
       required this.id,
       required this.name,
@@ -210,8 +209,8 @@ class _$_DefaultSellingPlan extends _DefaultSellingPlan {
       this.recurringDeliveries = false})
       : super._();
 
-  factory _$_DefaultSellingPlan.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultSellingPlanFromJson(json);
+  factory _$_SellingPlan.fromJson(Map<String, dynamic> json) =>
+      _$$_SellingPlanFromJson(json);
 
   @override
 
@@ -249,7 +248,7 @@ class _$_DefaultSellingPlan extends _DefaultSellingPlan {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultSellingPlan &&
+        (other is _SellingPlan &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -280,27 +279,27 @@ class _$_DefaultSellingPlan extends _DefaultSellingPlan {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultSellingPlanCopyWith<_DefaultSellingPlan> get copyWith =>
-      __$DefaultSellingPlanCopyWithImpl<_DefaultSellingPlan>(this, _$identity);
+  _$SellingPlanCopyWith<_SellingPlan> get copyWith =>
+      __$SellingPlanCopyWithImpl<_SellingPlan>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultSellingPlanToJson(this);
+    return _$$_SellingPlanToJson(this);
   }
 }
 
-abstract class _DefaultSellingPlan extends SellingPlan {
-  const factory _DefaultSellingPlan(
+abstract class _SellingPlan extends SellingPlan {
+  const factory _SellingPlan(
       {String? description,
       required String id,
       required String name,
       List<SellingPlanOption> options,
       List<SellingPlanPriceAdjustment> priceAdjustments,
-      bool recurringDeliveries}) = _$_DefaultSellingPlan;
-  const _DefaultSellingPlan._() : super._();
+      bool recurringDeliveries}) = _$_SellingPlan;
+  const _SellingPlan._() : super._();
 
-  factory _DefaultSellingPlan.fromJson(Map<String, dynamic> json) =
-      _$_DefaultSellingPlan.fromJson;
+  factory _SellingPlan.fromJson(Map<String, dynamic> json) =
+      _$_SellingPlan.fromJson;
 
   @override
 
@@ -329,6 +328,6 @@ abstract class _DefaultSellingPlan extends SellingPlan {
   bool get recurringDeliveries => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultSellingPlanCopyWith<_DefaultSellingPlan> get copyWith =>
+  _$SellingPlanCopyWith<_SellingPlan> get copyWith =>
       throw _privateConstructorUsedError;
 }

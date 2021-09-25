@@ -6,10 +6,10 @@ part of 'selling_plan_allocation_price_adjustment.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultSellingPlanAllocationPriceAdjustment
-    _$$_DefaultSellingPlanAllocationPriceAdjustmentFromJson(
+_$_SellingPlanAllocationPriceAdjustment
+    _$$_SellingPlanAllocationPriceAdjustmentFromJson(
             Map<String, dynamic> json) =>
-        _$_DefaultSellingPlanAllocationPriceAdjustment(
+        _$_SellingPlanAllocationPriceAdjustment(
           compareAtPrice:
               Money.fromJson(json['compareAtPrice'] as Map<String, dynamic>),
           perDeliveryPrice:
@@ -20,8 +20,8 @@ _$_DefaultSellingPlanAllocationPriceAdjustment
               : Money.fromJson(json['unitPrice'] as Map<String, dynamic>),
         );
 
-Map<String, dynamic> _$$_DefaultSellingPlanAllocationPriceAdjustmentToJson(
-        _$_DefaultSellingPlanAllocationPriceAdjustment instance) =>
+Map<String, dynamic> _$$_SellingPlanAllocationPriceAdjustmentToJson(
+        _$_SellingPlanAllocationPriceAdjustment instance) =>
     <String, dynamic>{
       'compareAtPrice': instance.compareAtPrice,
       'perDeliveryPrice': instance.perDeliveryPrice,

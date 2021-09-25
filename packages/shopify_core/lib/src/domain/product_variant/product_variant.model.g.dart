@@ -6,10 +6,8 @@ part of 'product_variant.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultProductVariant _$$_DefaultProductVariantFromJson(
-        Map<String, dynamic> json) =>
-    _$_DefaultProductVariant();
+_$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
+    _$_ProductVariant();
 
-Map<String, dynamic> _$$_DefaultProductVariantToJson(
-        _$_DefaultProductVariant instance) =>
+Map<String, dynamic> _$$_ProductVariantToJson(_$_ProductVariant instance) =>
     <String, dynamic>{};

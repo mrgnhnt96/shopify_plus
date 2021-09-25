@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PageInfo _$PageInfoFromJson(Map<String, dynamic> json) {
-  return _DefaultPageInfo.fromJson(json);
+  return _PageInfo.fromJson(json);
 }
 
 /// @nodoc
 class _$PageInfoTearOff {
   const _$PageInfoTearOff();
 
-  _DefaultPageInfo call() {
-    return const _DefaultPageInfo();
+  _PageInfo call() {
+    return const _PageInfo();
   }
 
   PageInfo fromJson(Map<String, Object> json) {
@@ -54,30 +54,28 @@ class _$PageInfoCopyWithImpl<$Res> implements $PageInfoCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultPageInfoCopyWith<$Res> {
-  factory _$DefaultPageInfoCopyWith(
-          _DefaultPageInfo value, $Res Function(_DefaultPageInfo) then) =
-      __$DefaultPageInfoCopyWithImpl<$Res>;
+abstract class _$PageInfoCopyWith<$Res> {
+  factory _$PageInfoCopyWith(_PageInfo value, $Res Function(_PageInfo) then) =
+      __$PageInfoCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultPageInfoCopyWithImpl<$Res> extends _$PageInfoCopyWithImpl<$Res>
-    implements _$DefaultPageInfoCopyWith<$Res> {
-  __$DefaultPageInfoCopyWithImpl(
-      _DefaultPageInfo _value, $Res Function(_DefaultPageInfo) _then)
-      : super(_value, (v) => _then(v as _DefaultPageInfo));
+class __$PageInfoCopyWithImpl<$Res> extends _$PageInfoCopyWithImpl<$Res>
+    implements _$PageInfoCopyWith<$Res> {
+  __$PageInfoCopyWithImpl(_PageInfo _value, $Res Function(_PageInfo) _then)
+      : super(_value, (v) => _then(v as _PageInfo));
 
   @override
-  _DefaultPageInfo get _value => super._value as _DefaultPageInfo;
+  _PageInfo get _value => super._value as _PageInfo;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultPageInfo extends _DefaultPageInfo {
-  const _$_DefaultPageInfo() : super._();
+class _$_PageInfo extends _PageInfo {
+  const _$_PageInfo() : super._();
 
-  factory _$_DefaultPageInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultPageInfoFromJson(json);
+  factory _$_PageInfo.fromJson(Map<String, dynamic> json) =>
+      _$$_PageInfoFromJson(json);
 
   @override
   String toString() {
@@ -86,7 +84,7 @@ class _$_DefaultPageInfo extends _DefaultPageInfo {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultPageInfo);
+    return identical(this, other) || (other is _PageInfo);
   }
 
   @override
@@ -94,14 +92,13 @@ class _$_DefaultPageInfo extends _DefaultPageInfo {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultPageInfoToJson(this);
+    return _$$_PageInfoToJson(this);
   }
 }
 
-abstract class _DefaultPageInfo extends PageInfo {
-  const factory _DefaultPageInfo() = _$_DefaultPageInfo;
-  const _DefaultPageInfo._() : super._();
+abstract class _PageInfo extends PageInfo {
+  const factory _PageInfo() = _$_PageInfo;
+  const _PageInfo._() : super._();
 
-  factory _DefaultPageInfo.fromJson(Map<String, dynamic> json) =
-      _$_DefaultPageInfo.fromJson;
+  factory _PageInfo.fromJson(Map<String, dynamic> json) = _$_PageInfo.fromJson;
 }

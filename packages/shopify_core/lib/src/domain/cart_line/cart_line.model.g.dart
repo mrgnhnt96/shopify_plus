@@ -6,8 +6,7 @@ part of 'cart_line.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultCartLine _$$_DefaultCartLineFromJson(Map<String, dynamic> json) =>
-    _$_DefaultCartLine(
+_$_CartLine _$$_CartLineFromJson(Map<String, dynamic> json) => _$_CartLine(
       attributes: (json['attributes'] as List<dynamic>?)
               ?.map((e) => Attribute.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -27,7 +26,7 @@ _$_DefaultCartLine _$$_DefaultCartLineFromJson(Map<String, dynamic> json) =>
           json['sellingPlanAllocation'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DefaultCartLineToJson(_$_DefaultCartLine instance) =>
+Map<String, dynamic> _$$_CartLineToJson(_$_CartLine instance) =>
     <String, dynamic>{
       'attributes': instance.attributes,
       'discountAllocations': instance.discountAllocations,

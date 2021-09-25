@@ -15,15 +15,15 @@ final _privateConstructorUsedError = UnsupportedError(
 
 DiscountApplicationEdge _$DiscountApplicationEdgeFromJson(
     Map<String, dynamic> json) {
-  return _DefaultDiscountApplicationEdge.fromJson(json);
+  return _DiscountApplicationEdge.fromJson(json);
 }
 
 /// @nodoc
 class _$DiscountApplicationEdgeTearOff {
   const _$DiscountApplicationEdgeTearOff();
 
-  _DefaultDiscountApplicationEdge call() {
-    return const _DefaultDiscountApplicationEdge();
+  _DiscountApplicationEdge call() {
+    return const _DiscountApplicationEdge();
   }
 
   DiscountApplicationEdge fromJson(Map<String, Object> json) {
@@ -57,36 +57,32 @@ class _$DiscountApplicationEdgeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultDiscountApplicationEdgeCopyWith<$Res> {
-  factory _$DefaultDiscountApplicationEdgeCopyWith(
-          _DefaultDiscountApplicationEdge value,
-          $Res Function(_DefaultDiscountApplicationEdge) then) =
-      __$DefaultDiscountApplicationEdgeCopyWithImpl<$Res>;
+abstract class _$DiscountApplicationEdgeCopyWith<$Res> {
+  factory _$DiscountApplicationEdgeCopyWith(_DiscountApplicationEdge value,
+          $Res Function(_DiscountApplicationEdge) then) =
+      __$DiscountApplicationEdgeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultDiscountApplicationEdgeCopyWithImpl<$Res>
+class __$DiscountApplicationEdgeCopyWithImpl<$Res>
     extends _$DiscountApplicationEdgeCopyWithImpl<$Res>
-    implements _$DefaultDiscountApplicationEdgeCopyWith<$Res> {
-  __$DefaultDiscountApplicationEdgeCopyWithImpl(
-      _DefaultDiscountApplicationEdge _value,
-      $Res Function(_DefaultDiscountApplicationEdge) _then)
-      : super(_value, (v) => _then(v as _DefaultDiscountApplicationEdge));
+    implements _$DiscountApplicationEdgeCopyWith<$Res> {
+  __$DiscountApplicationEdgeCopyWithImpl(_DiscountApplicationEdge _value,
+      $Res Function(_DiscountApplicationEdge) _then)
+      : super(_value, (v) => _then(v as _DiscountApplicationEdge));
 
   @override
-  _DefaultDiscountApplicationEdge get _value =>
-      super._value as _DefaultDiscountApplicationEdge;
+  _DiscountApplicationEdge get _value =>
+      super._value as _DiscountApplicationEdge;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultDiscountApplicationEdge
-    extends _DefaultDiscountApplicationEdge {
-  const _$_DefaultDiscountApplicationEdge() : super._();
+class _$_DiscountApplicationEdge extends _DiscountApplicationEdge {
+  const _$_DiscountApplicationEdge() : super._();
 
-  factory _$_DefaultDiscountApplicationEdge.fromJson(
-          Map<String, dynamic> json) =>
-      _$$_DefaultDiscountApplicationEdgeFromJson(json);
+  factory _$_DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =>
+      _$$_DiscountApplicationEdgeFromJson(json);
 
   @override
   String toString() {
@@ -95,7 +91,7 @@ class _$_DefaultDiscountApplicationEdge
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultDiscountApplicationEdge);
+    return identical(this, other) || (other is _DiscountApplicationEdge);
   }
 
   @override
@@ -103,15 +99,14 @@ class _$_DefaultDiscountApplicationEdge
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultDiscountApplicationEdgeToJson(this);
+    return _$$_DiscountApplicationEdgeToJson(this);
   }
 }
 
-abstract class _DefaultDiscountApplicationEdge extends DiscountApplicationEdge {
-  const factory _DefaultDiscountApplicationEdge() =
-      _$_DefaultDiscountApplicationEdge;
-  const _DefaultDiscountApplicationEdge._() : super._();
+abstract class _DiscountApplicationEdge extends DiscountApplicationEdge {
+  const factory _DiscountApplicationEdge() = _$_DiscountApplicationEdge;
+  const _DiscountApplicationEdge._() : super._();
 
-  factory _DefaultDiscountApplicationEdge.fromJson(Map<String, dynamic> json) =
-      _$_DefaultDiscountApplicationEdge.fromJson;
+  factory _DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =
+      _$_DiscountApplicationEdge.fromJson;
 }

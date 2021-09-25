@@ -6,9 +6,8 @@ part of 'selling_plan.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultSellingPlan _$$_DefaultSellingPlanFromJson(
-        Map<String, dynamic> json) =>
-    _$_DefaultSellingPlan(
+_$_SellingPlan _$$_SellingPlanFromJson(Map<String, dynamic> json) =>
+    _$_SellingPlan(
       description: json['description'] as String?,
       id: json['id'] as String,
       name: json['name'] as String,
@@ -25,8 +24,7 @@ _$_DefaultSellingPlan _$$_DefaultSellingPlanFromJson(
       recurringDeliveries: json['recurringDeliveries'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_DefaultSellingPlanToJson(
-        _$_DefaultSellingPlan instance) =>
+Map<String, dynamic> _$$_SellingPlanToJson(_$_SellingPlan instance) =>
     <String, dynamic>{
       'description': instance.description,
       'id': instance.id,

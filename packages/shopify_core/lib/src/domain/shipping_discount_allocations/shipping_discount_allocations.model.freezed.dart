@@ -15,15 +15,15 @@ final _privateConstructorUsedError = UnsupportedError(
 
 ShippingDiscountAllocations _$ShippingDiscountAllocationsFromJson(
     Map<String, dynamic> json) {
-  return _DefaultShippingDiscountAllocations.fromJson(json);
+  return _ShippingDiscountAllocations.fromJson(json);
 }
 
 /// @nodoc
 class _$ShippingDiscountAllocationsTearOff {
   const _$ShippingDiscountAllocationsTearOff();
 
-  _DefaultShippingDiscountAllocations call() {
-    return const _DefaultShippingDiscountAllocations();
+  _ShippingDiscountAllocations call() {
+    return const _ShippingDiscountAllocations();
   }
 
   ShippingDiscountAllocations fromJson(Map<String, Object> json) {
@@ -58,36 +58,34 @@ class _$ShippingDiscountAllocationsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultShippingDiscountAllocationsCopyWith<$Res> {
-  factory _$DefaultShippingDiscountAllocationsCopyWith(
-          _DefaultShippingDiscountAllocations value,
-          $Res Function(_DefaultShippingDiscountAllocations) then) =
-      __$DefaultShippingDiscountAllocationsCopyWithImpl<$Res>;
+abstract class _$ShippingDiscountAllocationsCopyWith<$Res> {
+  factory _$ShippingDiscountAllocationsCopyWith(
+          _ShippingDiscountAllocations value,
+          $Res Function(_ShippingDiscountAllocations) then) =
+      __$ShippingDiscountAllocationsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultShippingDiscountAllocationsCopyWithImpl<$Res>
+class __$ShippingDiscountAllocationsCopyWithImpl<$Res>
     extends _$ShippingDiscountAllocationsCopyWithImpl<$Res>
-    implements _$DefaultShippingDiscountAllocationsCopyWith<$Res> {
-  __$DefaultShippingDiscountAllocationsCopyWithImpl(
-      _DefaultShippingDiscountAllocations _value,
-      $Res Function(_DefaultShippingDiscountAllocations) _then)
-      : super(_value, (v) => _then(v as _DefaultShippingDiscountAllocations));
+    implements _$ShippingDiscountAllocationsCopyWith<$Res> {
+  __$ShippingDiscountAllocationsCopyWithImpl(
+      _ShippingDiscountAllocations _value,
+      $Res Function(_ShippingDiscountAllocations) _then)
+      : super(_value, (v) => _then(v as _ShippingDiscountAllocations));
 
   @override
-  _DefaultShippingDiscountAllocations get _value =>
-      super._value as _DefaultShippingDiscountAllocations;
+  _ShippingDiscountAllocations get _value =>
+      super._value as _ShippingDiscountAllocations;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultShippingDiscountAllocations
-    extends _DefaultShippingDiscountAllocations {
-  const _$_DefaultShippingDiscountAllocations() : super._();
+class _$_ShippingDiscountAllocations extends _ShippingDiscountAllocations {
+  const _$_ShippingDiscountAllocations() : super._();
 
-  factory _$_DefaultShippingDiscountAllocations.fromJson(
-          Map<String, dynamic> json) =>
-      _$$_DefaultShippingDiscountAllocationsFromJson(json);
+  factory _$_ShippingDiscountAllocations.fromJson(Map<String, dynamic> json) =>
+      _$$_ShippingDiscountAllocationsFromJson(json);
 
   @override
   String toString() {
@@ -96,8 +94,7 @@ class _$_DefaultShippingDiscountAllocations
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _DefaultShippingDiscountAllocations);
+    return identical(this, other) || (other is _ShippingDiscountAllocations);
   }
 
   @override
@@ -105,17 +102,15 @@ class _$_DefaultShippingDiscountAllocations
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultShippingDiscountAllocationsToJson(this);
+    return _$$_ShippingDiscountAllocationsToJson(this);
   }
 }
 
-abstract class _DefaultShippingDiscountAllocations
+abstract class _ShippingDiscountAllocations
     extends ShippingDiscountAllocations {
-  const factory _DefaultShippingDiscountAllocations() =
-      _$_DefaultShippingDiscountAllocations;
-  const _DefaultShippingDiscountAllocations._() : super._();
+  const factory _ShippingDiscountAllocations() = _$_ShippingDiscountAllocations;
+  const _ShippingDiscountAllocations._() : super._();
 
-  factory _DefaultShippingDiscountAllocations.fromJson(
-          Map<String, dynamic> json) =
-      _$_DefaultShippingDiscountAllocations.fromJson;
+  factory _ShippingDiscountAllocations.fromJson(Map<String, dynamic> json) =
+      _$_ShippingDiscountAllocations.fromJson;
 }

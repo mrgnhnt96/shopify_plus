@@ -6,9 +6,8 @@ part of 'collection.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultCollection _$$_DefaultCollectionFromJson(Map<String, dynamic> json) =>
-    _$_DefaultCollection();
+_$_Collection _$$_CollectionFromJson(Map<String, dynamic> json) =>
+    _$_Collection();
 
-Map<String, dynamic> _$$_DefaultCollectionToJson(
-        _$_DefaultCollection instance) =>
+Map<String, dynamic> _$$_CollectionToJson(_$_Collection instance) =>
     <String, dynamic>{};

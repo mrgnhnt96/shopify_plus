@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Product _$ProductFromJson(Map<String, dynamic> json) {
-  return _DefaultProduct.fromJson(json);
+  return _Product.fromJson(json);
 }
 
 /// @nodoc
 class _$ProductTearOff {
   const _$ProductTearOff();
 
-  _DefaultProduct call() {
-    return const _DefaultProduct();
+  _Product call() {
+    return const _Product();
   }
 
   Product fromJson(Map<String, Object> json) {
@@ -54,31 +54,29 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultProductCopyWith<$Res> {
-  factory _$DefaultProductCopyWith(
-          _DefaultProduct value, $Res Function(_DefaultProduct) then) =
-      __$DefaultProductCopyWithImpl<$Res>;
+abstract class _$ProductCopyWith<$Res> {
+  factory _$ProductCopyWith(_Product value, $Res Function(_Product) then) =
+      __$ProductCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
-    implements _$DefaultProductCopyWith<$Res> {
-  __$DefaultProductCopyWithImpl(
-      _DefaultProduct _value, $Res Function(_DefaultProduct) _then)
-      : super(_value, (v) => _then(v as _DefaultProduct));
+class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
+    implements _$ProductCopyWith<$Res> {
+  __$ProductCopyWithImpl(_Product _value, $Res Function(_Product) _then)
+      : super(_value, (v) => _then(v as _Product));
 
   @override
-  _DefaultProduct get _value => super._value as _DefaultProduct;
+  _Product get _value => super._value as _Product;
 }
 
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
-class _$_DefaultProduct implements _DefaultProduct {
-  const _$_DefaultProduct();
+class _$_Product implements _Product {
+  const _$_Product();
 
-  factory _$_DefaultProduct.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultProductFromJson(json);
+  factory _$_Product.fromJson(Map<String, dynamic> json) =>
+      _$$_ProductFromJson(json);
 
   @override
   String toString() {
@@ -87,7 +85,7 @@ class _$_DefaultProduct implements _DefaultProduct {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultProduct);
+    return identical(this, other) || (other is _Product);
   }
 
   @override
@@ -95,13 +93,12 @@ class _$_DefaultProduct implements _DefaultProduct {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultProductToJson(this);
+    return _$$_ProductToJson(this);
   }
 }
 
-abstract class _DefaultProduct implements Product, ParentResource {
-  const factory _DefaultProduct() = _$_DefaultProduct;
+abstract class _Product implements Product, ParentResource {
+  const factory _Product() = _$_Product;
 
-  factory _DefaultProduct.fromJson(Map<String, dynamic> json) =
-      _$_DefaultProduct.fromJson;
+  factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
 }

@@ -7,7 +7,7 @@ part 'blog.model.g.dart';
 @freezed
 class Blog with _$Blog {
   @Implements(ParentResource)
-  const factory Blog() = _DefaultBlog;
+  const factory Blog() = _Blog;
 
   factory Blog.fromJson(Map<String, dynamic> json) => _$BlogFromJson(json);
 }

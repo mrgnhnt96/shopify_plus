@@ -14,15 +14,15 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DiscountApplication _$DiscountApplicationFromJson(Map<String, dynamic> json) {
-  return _DefaultDiscountApplication.fromJson(json);
+  return _DiscountApplication.fromJson(json);
 }
 
 /// @nodoc
 class _$DiscountApplicationTearOff {
   const _$DiscountApplicationTearOff();
 
-  _DefaultDiscountApplication call() {
-    return const _DefaultDiscountApplication();
+  _DiscountApplication call() {
+    return const _DiscountApplication();
   }
 
   DiscountApplication fromJson(Map<String, Object> json) {
@@ -56,33 +56,31 @@ class _$DiscountApplicationCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$DefaultDiscountApplicationCopyWith<$Res> {
-  factory _$DefaultDiscountApplicationCopyWith(
-          _DefaultDiscountApplication value,
-          $Res Function(_DefaultDiscountApplication) then) =
-      __$DefaultDiscountApplicationCopyWithImpl<$Res>;
+abstract class _$DiscountApplicationCopyWith<$Res> {
+  factory _$DiscountApplicationCopyWith(_DiscountApplication value,
+          $Res Function(_DiscountApplication) then) =
+      __$DiscountApplicationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DefaultDiscountApplicationCopyWithImpl<$Res>
+class __$DiscountApplicationCopyWithImpl<$Res>
     extends _$DiscountApplicationCopyWithImpl<$Res>
-    implements _$DefaultDiscountApplicationCopyWith<$Res> {
-  __$DefaultDiscountApplicationCopyWithImpl(_DefaultDiscountApplication _value,
-      $Res Function(_DefaultDiscountApplication) _then)
-      : super(_value, (v) => _then(v as _DefaultDiscountApplication));
+    implements _$DiscountApplicationCopyWith<$Res> {
+  __$DiscountApplicationCopyWithImpl(
+      _DiscountApplication _value, $Res Function(_DiscountApplication) _then)
+      : super(_value, (v) => _then(v as _DiscountApplication));
 
   @override
-  _DefaultDiscountApplication get _value =>
-      super._value as _DefaultDiscountApplication;
+  _DiscountApplication get _value => super._value as _DiscountApplication;
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultDiscountApplication extends _DefaultDiscountApplication {
-  const _$_DefaultDiscountApplication() : super._();
+class _$_DiscountApplication extends _DiscountApplication {
+  const _$_DiscountApplication() : super._();
 
-  factory _$_DefaultDiscountApplication.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultDiscountApplicationFromJson(json);
+  factory _$_DiscountApplication.fromJson(Map<String, dynamic> json) =>
+      _$$_DiscountApplicationFromJson(json);
 
   @override
   String toString() {
@@ -91,7 +89,7 @@ class _$_DefaultDiscountApplication extends _DefaultDiscountApplication {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DefaultDiscountApplication);
+    return identical(this, other) || (other is _DiscountApplication);
   }
 
   @override
@@ -99,14 +97,14 @@ class _$_DefaultDiscountApplication extends _DefaultDiscountApplication {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultDiscountApplicationToJson(this);
+    return _$$_DiscountApplicationToJson(this);
   }
 }
 
-abstract class _DefaultDiscountApplication extends DiscountApplication {
-  const factory _DefaultDiscountApplication() = _$_DefaultDiscountApplication;
-  const _DefaultDiscountApplication._() : super._();
+abstract class _DiscountApplication extends DiscountApplication {
+  const factory _DiscountApplication() = _$_DiscountApplication;
+  const _DiscountApplication._() : super._();
 
-  factory _DefaultDiscountApplication.fromJson(Map<String, dynamic> json) =
-      _$_DefaultDiscountApplication.fromJson;
+  factory _DiscountApplication.fromJson(Map<String, dynamic> json) =
+      _$_DiscountApplication.fromJson;
 }

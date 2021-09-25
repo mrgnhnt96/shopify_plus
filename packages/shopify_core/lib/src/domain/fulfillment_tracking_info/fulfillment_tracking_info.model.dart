@@ -16,7 +16,7 @@ class FulfillmentTrackingInfo with _$FulfillmentTrackingInfo {
 
     /// The URL to track the fulfillment
     String? url,
-  }) = _DefaultFulfillmentTrackingInfo;
+  }) = _FulfillmentTrackingInfo;
 
   factory FulfillmentTrackingInfo.fromJson(Map<String, dynamic> json) =>
       _$FulfillmentTrackingInfoFromJson(json);

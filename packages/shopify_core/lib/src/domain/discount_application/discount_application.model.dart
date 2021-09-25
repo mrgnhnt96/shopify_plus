@@ -8,7 +8,7 @@ part 'discount_application.model.g.dart';
 class DiscountApplication with _$DiscountApplication {
   const DiscountApplication._();
 
-  const factory DiscountApplication() = _DefaultDiscountApplication;
+  const factory DiscountApplication() = _DiscountApplication;
 
   factory DiscountApplication.fromJson(Map<String, dynamic> json) =>
       _$DiscountApplicationFromJson(json);

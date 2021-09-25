@@ -12,7 +12,7 @@ class DiscountAllocation with _$DiscountAllocation {
   const factory DiscountAllocation({
     required Money allocatedAmount,
     required DiscountApplication discountApplication,
-  }) = _DefaultDiscountAllocation;
+  }) = _DiscountAllocation;
 
   factory DiscountAllocation.fromJson(Map<String, dynamic> json) =>
       _$DiscountAllocationFromJson(json);

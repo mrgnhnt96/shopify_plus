@@ -14,14 +14,14 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Metafield _$MetafieldFromJson(Map<String, dynamic> json) {
-  return _DefaultMetafield.fromJson(json);
+  return _Metafield.fromJson(json);
 }
 
 /// @nodoc
 class _$MetafieldTearOff {
   const _$MetafieldTearOff();
 
-  _DefaultMetafield call(
+  _Metafield call(
       {required DateTime createdAt,
       String? description,
       required String id,
@@ -31,7 +31,7 @@ class _$MetafieldTearOff {
       required String type,
       required DateTime updatedAt,
       required String value}) {
-    return _DefaultMetafield(
+    return _Metafield(
       createdAt: createdAt,
       description: description,
       id: id,
@@ -174,11 +174,10 @@ class _$MetafieldCopyWithImpl<$Res> implements $MetafieldCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$DefaultMetafieldCopyWith<$Res>
-    implements $MetafieldCopyWith<$Res> {
-  factory _$DefaultMetafieldCopyWith(
-          _DefaultMetafield value, $Res Function(_DefaultMetafield) then) =
-      __$DefaultMetafieldCopyWithImpl<$Res>;
+abstract class _$MetafieldCopyWith<$Res> implements $MetafieldCopyWith<$Res> {
+  factory _$MetafieldCopyWith(
+          _Metafield value, $Res Function(_Metafield) then) =
+      __$MetafieldCopyWithImpl<$Res>;
   @override
   $Res call(
       {DateTime createdAt,
@@ -196,15 +195,13 @@ abstract class _$DefaultMetafieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DefaultMetafieldCopyWithImpl<$Res>
-    extends _$MetafieldCopyWithImpl<$Res>
-    implements _$DefaultMetafieldCopyWith<$Res> {
-  __$DefaultMetafieldCopyWithImpl(
-      _DefaultMetafield _value, $Res Function(_DefaultMetafield) _then)
-      : super(_value, (v) => _then(v as _DefaultMetafield));
+class __$MetafieldCopyWithImpl<$Res> extends _$MetafieldCopyWithImpl<$Res>
+    implements _$MetafieldCopyWith<$Res> {
+  __$MetafieldCopyWithImpl(_Metafield _value, $Res Function(_Metafield) _then)
+      : super(_value, (v) => _then(v as _Metafield));
 
   @override
-  _DefaultMetafield get _value => super._value as _DefaultMetafield;
+  _Metafield get _value => super._value as _Metafield;
 
   @override
   $Res call({
@@ -218,7 +215,7 @@ class __$DefaultMetafieldCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? value = freezed,
   }) {
-    return _then(_DefaultMetafield(
+    return _then(_Metafield(
       createdAt: createdAt == freezed
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -261,8 +258,8 @@ class __$DefaultMetafieldCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DefaultMetafield extends _DefaultMetafield {
-  const _$_DefaultMetafield(
+class _$_Metafield extends _Metafield {
+  const _$_Metafield(
       {required this.createdAt,
       this.description,
       required this.id,
@@ -274,8 +271,8 @@ class _$_DefaultMetafield extends _DefaultMetafield {
       required this.value})
       : super._();
 
-  factory _$_DefaultMetafield.fromJson(Map<String, dynamic> json) =>
-      _$$_DefaultMetafieldFromJson(json);
+  factory _$_Metafield.fromJson(Map<String, dynamic> json) =>
+      _$$_MetafieldFromJson(json);
 
   @override
 
@@ -322,7 +319,7 @@ class _$_DefaultMetafield extends _DefaultMetafield {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultMetafield &&
+        (other is _Metafield &&
             (identical(other.createdAt, createdAt) ||
                 const DeepCollectionEquality()
                     .equals(other.createdAt, createdAt)) &&
@@ -363,17 +360,17 @@ class _$_DefaultMetafield extends _DefaultMetafield {
 
   @JsonKey(ignore: true)
   @override
-  _$DefaultMetafieldCopyWith<_DefaultMetafield> get copyWith =>
-      __$DefaultMetafieldCopyWithImpl<_DefaultMetafield>(this, _$identity);
+  _$MetafieldCopyWith<_Metafield> get copyWith =>
+      __$MetafieldCopyWithImpl<_Metafield>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DefaultMetafieldToJson(this);
+    return _$$_MetafieldToJson(this);
   }
 }
 
-abstract class _DefaultMetafield extends Metafield {
-  const factory _DefaultMetafield(
+abstract class _Metafield extends Metafield {
+  const factory _Metafield(
       {required DateTime createdAt,
       String? description,
       required String id,
@@ -382,11 +379,11 @@ abstract class _DefaultMetafield extends Metafield {
       required ParentResource parentResource,
       required String type,
       required DateTime updatedAt,
-      required String value}) = _$_DefaultMetafield;
-  const _DefaultMetafield._() : super._();
+      required String value}) = _$_Metafield;
+  const _Metafield._() : super._();
 
-  factory _DefaultMetafield.fromJson(Map<String, dynamic> json) =
-      _$_DefaultMetafield.fromJson;
+  factory _Metafield.fromJson(Map<String, dynamic> json) =
+      _$_Metafield.fromJson;
 
   @override
 
@@ -426,6 +423,6 @@ abstract class _DefaultMetafield extends Metafield {
   String get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$DefaultMetafieldCopyWith<_DefaultMetafield> get copyWith =>
+  _$MetafieldCopyWith<_Metafield> get copyWith =>
       throw _privateConstructorUsedError;
 }

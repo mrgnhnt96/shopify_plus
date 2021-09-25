@@ -6,8 +6,7 @@ part of 'article.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultArticle _$$_DefaultArticleFromJson(Map<String, dynamic> json) =>
-    _$_DefaultArticle();
+_$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article();
 
-Map<String, dynamic> _$$_DefaultArticleToJson(_$_DefaultArticle instance) =>
+Map<String, dynamic> _$$_ArticleToJson(_$_Article instance) =>
     <String, dynamic>{};

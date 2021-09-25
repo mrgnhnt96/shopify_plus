@@ -6,10 +6,8 @@ part of 'merchandise.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DefaultMerchandise _$$_DefaultMerchandiseFromJson(
-        Map<String, dynamic> json) =>
-    _$_DefaultMerchandise();
+_$_Merchandise _$$_MerchandiseFromJson(Map<String, dynamic> json) =>
+    _$_Merchandise();
 
-Map<String, dynamic> _$$_DefaultMerchandiseToJson(
-        _$_DefaultMerchandise instance) =>
+Map<String, dynamic> _$$_MerchandiseToJson(_$_Merchandise instance) =>
     <String, dynamic>{};

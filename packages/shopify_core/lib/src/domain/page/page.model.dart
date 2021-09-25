@@ -7,7 +7,7 @@ part 'page.model.g.dart';
 @freezed
 class Page with _$Page {
   @Implements(ParentResource)
-  const factory Page() = _DefaultPage;
+  const factory Page() = _Page;
 
   factory Page.fromJson(Map<String, dynamic> json) => _$PageFromJson(json);
 }

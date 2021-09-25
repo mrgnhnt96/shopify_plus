@@ -21,7 +21,7 @@ class EstimatedCost with _$EstimatedCost {
 
     /// The estimated tax amount for the customer to pay at checkout.
     Money? totalTaxAmount,
-  }) = _DefaultEstimatedCost;
+  }) = _EstimatedCost;
 
   factory EstimatedCost.fromJson(Map<String, dynamic> json) =>
       _$EstimatedCostFromJson(json);
