@@ -21,8 +21,11 @@ PageInfo _$PageInfoFromJson(Map<String, dynamic> json) {
 class _$PageInfoTearOff {
   const _$PageInfoTearOff();
 
-  _PageInfo call() {
-    return const _PageInfo();
+  _PageInfo call({required bool hasNextPage, required bool hasPreviousPage}) {
+    return _PageInfo(
+      hasNextPage: hasNextPage,
+      hasPreviousPage: hasPreviousPage,
+    );
   }
 
   PageInfo fromJson(Map<String, Object> json) {
@@ -35,13 +38,23 @@ const $PageInfo = _$PageInfoTearOff();
 
 /// @nodoc
 mixin _$PageInfo {
+  /// Indicates if there are more pages to fetch.
+  bool get hasNextPage => throw _privateConstructorUsedError;
+
+  /// Indicates if there are any pages prior to the current page.
+  bool get hasPreviousPage => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PageInfoCopyWith<PageInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PageInfoCopyWith<$Res> {
   factory $PageInfoCopyWith(PageInfo value, $Res Function(PageInfo) then) =
       _$PageInfoCopyWithImpl<$Res>;
+  $Res call({bool hasNextPage, bool hasPreviousPage});
 }
 
 /// @nodoc
@@ -51,12 +64,31 @@ class _$PageInfoCopyWithImpl<$Res> implements $PageInfoCopyWith<$Res> {
   final PageInfo _value;
   // ignore: unused_field
   final $Res Function(PageInfo) _then;
+
+  @override
+  $Res call({
+    Object? hasNextPage = freezed,
+    Object? hasPreviousPage = freezed,
+  }) {
+    return _then(_value.copyWith(
+      hasNextPage: hasNextPage == freezed
+          ? _value.hasNextPage
+          : hasNextPage // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPreviousPage: hasPreviousPage == freezed
+          ? _value.hasPreviousPage
+          : hasPreviousPage // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$PageInfoCopyWith<$Res> {
+abstract class _$PageInfoCopyWith<$Res> implements $PageInfoCopyWith<$Res> {
   factory _$PageInfoCopyWith(_PageInfo value, $Res Function(_PageInfo) then) =
       __$PageInfoCopyWithImpl<$Res>;
+  @override
+  $Res call({bool hasNextPage, bool hasPreviousPage});
 }
 
 /// @nodoc
@@ -67,28 +99,70 @@ class __$PageInfoCopyWithImpl<$Res> extends _$PageInfoCopyWithImpl<$Res>
 
   @override
   _PageInfo get _value => super._value as _PageInfo;
+
+  @override
+  $Res call({
+    Object? hasNextPage = freezed,
+    Object? hasPreviousPage = freezed,
+  }) {
+    return _then(_PageInfo(
+      hasNextPage: hasNextPage == freezed
+          ? _value.hasNextPage
+          : hasNextPage // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPreviousPage: hasPreviousPage == freezed
+          ? _value.hasPreviousPage
+          : hasPreviousPage // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_PageInfo extends _PageInfo {
-  const _$_PageInfo() : super._();
+  const _$_PageInfo({required this.hasNextPage, required this.hasPreviousPage})
+      : super._();
 
   factory _$_PageInfo.fromJson(Map<String, dynamic> json) =>
       _$$_PageInfoFromJson(json);
 
   @override
+
+  /// Indicates if there are more pages to fetch.
+  final bool hasNextPage;
+  @override
+
+  /// Indicates if there are any pages prior to the current page.
+  final bool hasPreviousPage;
+
+  @override
   String toString() {
-    return 'PageInfo()';
+    return 'PageInfo(hasNextPage: $hasNextPage, hasPreviousPage: $hasPreviousPage)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _PageInfo);
+    return identical(this, other) ||
+        (other is _PageInfo &&
+            (identical(other.hasNextPage, hasNextPage) ||
+                const DeepCollectionEquality()
+                    .equals(other.hasNextPage, hasNextPage)) &&
+            (identical(other.hasPreviousPage, hasPreviousPage) ||
+                const DeepCollectionEquality()
+                    .equals(other.hasPreviousPage, hasPreviousPage)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(hasNextPage) ^
+      const DeepCollectionEquality().hash(hasPreviousPage);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PageInfoCopyWith<_PageInfo> get copyWith =>
+      __$PageInfoCopyWithImpl<_PageInfo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -97,8 +171,22 @@ class _$_PageInfo extends _PageInfo {
 }
 
 abstract class _PageInfo extends PageInfo {
-  const factory _PageInfo() = _$_PageInfo;
+  const factory _PageInfo(
+      {required bool hasNextPage, required bool hasPreviousPage}) = _$_PageInfo;
   const _PageInfo._() : super._();
 
   factory _PageInfo.fromJson(Map<String, dynamic> json) = _$_PageInfo.fromJson;
+
+  @override
+
+  /// Indicates if there are more pages to fetch.
+  bool get hasNextPage => throw _privateConstructorUsedError;
+  @override
+
+  /// Indicates if there are any pages prior to the current page.
+  bool get hasPreviousPage => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$PageInfoCopyWith<_PageInfo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
