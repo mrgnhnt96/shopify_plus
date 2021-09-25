@@ -3,7 +3,9 @@ import 'package:shopify_core/src/domain/discount_allocation/discount_allocation.
 import 'package:shopify_core/src/domain/fulfillment/fulfillment.model.dart';
 import 'package:shopify_core/src/domain/mailing_address/mailing_address.model.dart';
 import 'package:shopify_core/src/domain/metafield/metafield.model.dart';
+import 'package:shopify_core/src/domain/metafield_connection/metafield_connection.model.dart';
 import 'package:shopify_core/src/domain/money/money.model.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/enum/order_cancel_reason.dart';
 import 'package:shopify_core/src/enum/order_financial_status.dart';
 import 'package:shopify_core/src/enum/order_fulfillment_status.dart';
@@ -20,7 +22,9 @@ part 'order.model.g.dart';
 /// *required access unauthenticated_read_customers*
 @freezed
 class Order with _$Order {
+  @Implements(Node)
   @Implements(ParentResource)
+  @Implements(MetafieldConnection)
   const factory Order({
     ///The reason for the order's cancellation. Returns null if the order wasn't canceled.
     @OrderCancelReasonJson() OrderCancelReason? cancelReason,

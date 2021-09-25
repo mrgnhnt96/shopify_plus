@@ -788,7 +788,9 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 @Implements(ParentResource)
+@Implements(MetafieldConnection)
 class _$_Order implements _Order {
   const _$_Order(
       {@OrderCancelReasonJson() this.cancelReason,
@@ -1085,7 +1087,8 @@ class _$_Order implements _Order {
   }
 }
 
-abstract class _Order implements Order, ParentResource {
+abstract class _Order
+    implements Order, Node, ParentResource, MetafieldConnection {
   const factory _Order(
       {@OrderCancelReasonJson()
           OrderCancelReason? cancelReason,

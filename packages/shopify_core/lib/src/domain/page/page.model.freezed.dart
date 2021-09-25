@@ -71,7 +71,10 @@ class __$PageCopyWithImpl<$Res> extends _$PageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 @Implements(ParentResource)
+@Implements(MetafieldConnection)
+@Implements(OnlineStorePublishable)
 class _$_Page implements _Page {
   const _$_Page();
 
@@ -96,7 +99,13 @@ class _$_Page implements _Page {
   }
 }
 
-abstract class _Page implements Page, ParentResource {
+abstract class _Page
+    implements
+        Page,
+        Node,
+        ParentResource,
+        MetafieldConnection,
+        OnlineStorePublishable {
   const factory _Page() = _$_Page;
 
   factory _Page.fromJson(Map<String, dynamic> json) = _$_Page.fromJson;
