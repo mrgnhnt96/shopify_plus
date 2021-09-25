@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
 
 part 'mailing_address.model.freezed.dart';
 part 'mailing_address.model.g.dart';
@@ -6,6 +7,7 @@ part 'mailing_address.model.g.dart';
 /// Represents a mailing address for customers and shipping.
 @freezed
 class MailingAddress with _$MailingAddress {
+  @Implements(Node)
   const factory MailingAddress({
     /// The first line of the address. Typically the street address or PO Box number.
     String? address1,

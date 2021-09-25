@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 
 part 'metafield.model.freezed.dart';
@@ -10,6 +11,7 @@ part 'metafield.model.g.dart';
 class Metafield with _$Metafield {
   const Metafield._();
 
+  @Implements(Node)
   const factory Metafield({
     /// The date and time when the storefront metafield was created.
     required DateTime createdAt,

@@ -412,6 +412,7 @@ class __$MailingAddressCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 class _$_MailingAddress implements _MailingAddress {
   const _$_MailingAddress(
       {this.address1,
@@ -610,7 +611,7 @@ class _$_MailingAddress implements _MailingAddress {
   }
 }
 
-abstract class _MailingAddress implements MailingAddress {
+abstract class _MailingAddress implements MailingAddress, Node {
   const factory _MailingAddress(
       {String? address1,
       String? address2,
