@@ -266,6 +266,7 @@ class __$CartCopyWithImpl<$Res> extends _$CartCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 class _$_Cart implements _Cart {
   const _$_Cart(
       {this.attributes = const [],
@@ -379,7 +380,7 @@ class _$_Cart implements _Cart {
   }
 }
 
-abstract class _Cart implements Cart {
+abstract class _Cart implements Cart, Node {
   const factory _Cart(
       {List<Attribute> attributes,
       required BuyerIdentity buyerIdentity,

@@ -5,6 +5,7 @@ import 'package:shopify_core/src/domain/available_shipping_rates/available_shipp
 import 'package:shopify_core/src/domain/buyer_identity/buyer_identity.model.dart';
 import 'package:shopify_core/src/domain/mailing_address/mailing_address.model.dart';
 import 'package:shopify_core/src/domain/money/money.model.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/order/order.model.dart';
 import 'package:shopify_core/src/domain/shipping_discount_allocations/shipping_discount_allocations.model.dart';
 import 'package:shopify_core/src/domain/shipping_rate/shipping_rate.model.dart';
@@ -17,6 +18,7 @@ part 'checkout.model.g.dart';
 /// *required access unauthenticated_read_checkouts*
 @freezed
 class Checkout with _$Checkout {
+  @Implements(Node)
   const factory Checkout({
     /// The gift cards used on the checkout.
     @Default([]) List<AppliedGiftCard> appliedGiftCards,

@@ -3,6 +3,7 @@ import 'package:shopify_core/src/domain/attribute/attribute.model.dart';
 import 'package:shopify_core/src/domain/buyer_identity/buyer_identity.model.dart';
 import 'package:shopify_core/src/domain/discount_code/discount_code.model.dart';
 import 'package:shopify_core/src/domain/estimated_cost/estimated_cost.model.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
 
 part 'cart.model.freezed.dart';
 part 'cart.model.g.dart';
@@ -10,6 +11,7 @@ part 'cart.model.g.dart';
 /// A cart represents the merchandise that a buyer intends to purchase, and the estimated cost associated with the cart
 @freezed
 class Cart with _$Cart {
+  @Implements(Node)
   const factory Cart({
     /// The attributes associated with the cart. Attributes are represented as key-value pairs.
     @Default([]) List<Attribute> attributes,

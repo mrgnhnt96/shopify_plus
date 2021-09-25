@@ -274,7 +274,9 @@ class __$CollectionCopyWithImpl<$Res> extends _$CollectionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 @Implements(ParentResource)
+@Implements(OnlineStorePublishable)
 class _$_Collection implements _Collection {
   const _$_Collection(
       {required this.description,
@@ -385,7 +387,8 @@ class _$_Collection implements _Collection {
   }
 }
 
-abstract class _Collection implements Collection, ParentResource {
+abstract class _Collection
+    implements Collection, Node, ParentResource, OnlineStorePublishable {
   const factory _Collection(
       {required String description,
       required String descriptionHtml,

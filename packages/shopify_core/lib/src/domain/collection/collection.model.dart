@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/metafield/metafield.model.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
+import 'package:shopify_core/src/domain/online_store_publishable/online_store_publishable.model.dart';
 import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_core/src/domain/shopify_image/shopify_image.model.dart';
 
@@ -11,7 +13,9 @@ part 'collection.model.g.dart';
 /// *requires access: unauthenticated_read_product_listings*
 @freezed
 class Collection with _$Collection {
+  @Implements(Node)
   @Implements(ParentResource)
+  @Implements(OnlineStorePublishable)
   const factory Collection({
     ///Stripped description of the collection, single line with HTML tags removed.
     required String description,

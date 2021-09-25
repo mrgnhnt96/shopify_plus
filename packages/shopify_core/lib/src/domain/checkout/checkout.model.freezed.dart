@@ -699,6 +699,7 @@ class __$CheckoutCopyWithImpl<$Res> extends _$CheckoutCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 class _$_Checkout implements _Checkout {
   const _$_Checkout(
       {this.appliedGiftCards = const [],
@@ -972,7 +973,7 @@ class _$_Checkout implements _Checkout {
   }
 }
 
-abstract class _Checkout implements Checkout {
+abstract class _Checkout implements Checkout, Node {
   const factory _Checkout(
       {List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,

@@ -3,6 +3,7 @@ import 'package:shopify_core/src/domain/attribute/attribute.model.dart';
 import 'package:shopify_core/src/domain/discount_allocation/discount_allocation.model.dart';
 import 'package:shopify_core/src/domain/estimated_cost/estimated_cost.model.dart';
 import 'package:shopify_core/src/domain/merchandise/merchandise.model.dart';
+import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/selling_plan_allocation/selling_plan_allocation.model.dart';
 
 part 'cart_line.model.freezed.dart';
@@ -11,6 +12,7 @@ part 'cart_line.model.g.dart';
 /// Represents information about the merchandise in the cart
 @freezed
 class CartLine with _$CartLine {
+  @Implements(Node)
   const CartLine._();
 
   const factory CartLine({
