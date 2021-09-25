@@ -22,8 +22,17 @@ SellingPlanAllocationPriceAdjustment
 class _$SellingPlanAllocationPriceAdjustmentTearOff {
   const _$SellingPlanAllocationPriceAdjustmentTearOff();
 
-  _DefaultSellingPlanAllocationPriceAdjustment call() {
-    return const _DefaultSellingPlanAllocationPriceAdjustment();
+  _DefaultSellingPlanAllocationPriceAdjustment call(
+      {required Money compareAtPrice,
+      required Money perDeliveryPrice,
+      required Money price,
+      Money? unitPrice}) {
+    return _DefaultSellingPlanAllocationPriceAdjustment(
+      compareAtPrice: compareAtPrice,
+      perDeliveryPrice: perDeliveryPrice,
+      price: price,
+      unitPrice: unitPrice,
+    );
   }
 
   SellingPlanAllocationPriceAdjustment fromJson(Map<String, Object> json) {
@@ -37,7 +46,36 @@ const $SellingPlanAllocationPriceAdjustment =
 
 /// @nodoc
 mixin _$SellingPlanAllocationPriceAdjustment {
+  /// The price of the variant when it's purchased without a selling plan for the same
+  /// number of deliveries.
+  ///
+  /// *example:*
+  /// if a customer purchases 6 deliveries of $10.00
+  /// granola separately, then the price is 6 x $10.00 = $60.00.
+  Money get compareAtPrice => throw _privateConstructorUsedError;
+
+  /// The effective price for a single delivery.
+  ///
+  /// *example:* for a prepaid subscription
+  /// plan that includes 6 deliveries at the price of $48.00, the per delivery price is $8.00.
+  Money get perDeliveryPrice => throw _privateConstructorUsedError;
+
+  /// The price of the variant when it's purchased with a selling plan
+  ///
+  /// *example:*
+  /// for a prepaid subscription plan that includes 6 deliveries of $10.00 granola,
+  /// where the customer gets 20% off, the price is 6 x $10.00 x 0.80 = $48.00.
+  Money get price => throw _privateConstructorUsedError;
+
+  /// The resulting price per unit for the variant associated with the selling plan.
+  /// If the variant isn't sold by quantity or measurement, then this field returns null.
+  Money? get unitPrice => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SellingPlanAllocationPriceAdjustmentCopyWith<
+          SellingPlanAllocationPriceAdjustment>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -46,6 +84,16 @@ abstract class $SellingPlanAllocationPriceAdjustmentCopyWith<$Res> {
           SellingPlanAllocationPriceAdjustment value,
           $Res Function(SellingPlanAllocationPriceAdjustment) then) =
       _$SellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>;
+  $Res call(
+      {Money compareAtPrice,
+      Money perDeliveryPrice,
+      Money price,
+      Money? unitPrice});
+
+  $MoneyCopyWith<$Res> get compareAtPrice;
+  $MoneyCopyWith<$Res> get perDeliveryPrice;
+  $MoneyCopyWith<$Res> get price;
+  $MoneyCopyWith<$Res>? get unitPrice;
 }
 
 /// @nodoc
@@ -56,14 +104,89 @@ class _$SellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
   final SellingPlanAllocationPriceAdjustment _value;
   // ignore: unused_field
   final $Res Function(SellingPlanAllocationPriceAdjustment) _then;
+
+  @override
+  $Res call({
+    Object? compareAtPrice = freezed,
+    Object? perDeliveryPrice = freezed,
+    Object? price = freezed,
+    Object? unitPrice = freezed,
+  }) {
+    return _then(_value.copyWith(
+      compareAtPrice: compareAtPrice == freezed
+          ? _value.compareAtPrice
+          : compareAtPrice // ignore: cast_nullable_to_non_nullable
+              as Money,
+      perDeliveryPrice: perDeliveryPrice == freezed
+          ? _value.perDeliveryPrice
+          : perDeliveryPrice // ignore: cast_nullable_to_non_nullable
+              as Money,
+      price: price == freezed
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Money,
+      unitPrice: unitPrice == freezed
+          ? _value.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as Money?,
+    ));
+  }
+
+  @override
+  $MoneyCopyWith<$Res> get compareAtPrice {
+    return $MoneyCopyWith<$Res>(_value.compareAtPrice, (value) {
+      return _then(_value.copyWith(compareAtPrice: value));
+    });
+  }
+
+  @override
+  $MoneyCopyWith<$Res> get perDeliveryPrice {
+    return $MoneyCopyWith<$Res>(_value.perDeliveryPrice, (value) {
+      return _then(_value.copyWith(perDeliveryPrice: value));
+    });
+  }
+
+  @override
+  $MoneyCopyWith<$Res> get price {
+    return $MoneyCopyWith<$Res>(_value.price, (value) {
+      return _then(_value.copyWith(price: value));
+    });
+  }
+
+  @override
+  $MoneyCopyWith<$Res>? get unitPrice {
+    if (_value.unitPrice == null) {
+      return null;
+    }
+
+    return $MoneyCopyWith<$Res>(_value.unitPrice!, (value) {
+      return _then(_value.copyWith(unitPrice: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<$Res> {
+abstract class _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<$Res>
+    implements $SellingPlanAllocationPriceAdjustmentCopyWith<$Res> {
   factory _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith(
           _DefaultSellingPlanAllocationPriceAdjustment value,
           $Res Function(_DefaultSellingPlanAllocationPriceAdjustment) then) =
       __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {Money compareAtPrice,
+      Money perDeliveryPrice,
+      Money price,
+      Money? unitPrice});
+
+  @override
+  $MoneyCopyWith<$Res> get compareAtPrice;
+  @override
+  $MoneyCopyWith<$Res> get perDeliveryPrice;
+  @override
+  $MoneyCopyWith<$Res> get price;
+  @override
+  $MoneyCopyWith<$Res>? get unitPrice;
 }
 
 /// @nodoc
@@ -79,31 +202,117 @@ class __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<$Res>
   @override
   _DefaultSellingPlanAllocationPriceAdjustment get _value =>
       super._value as _DefaultSellingPlanAllocationPriceAdjustment;
+
+  @override
+  $Res call({
+    Object? compareAtPrice = freezed,
+    Object? perDeliveryPrice = freezed,
+    Object? price = freezed,
+    Object? unitPrice = freezed,
+  }) {
+    return _then(_DefaultSellingPlanAllocationPriceAdjustment(
+      compareAtPrice: compareAtPrice == freezed
+          ? _value.compareAtPrice
+          : compareAtPrice // ignore: cast_nullable_to_non_nullable
+              as Money,
+      perDeliveryPrice: perDeliveryPrice == freezed
+          ? _value.perDeliveryPrice
+          : perDeliveryPrice // ignore: cast_nullable_to_non_nullable
+              as Money,
+      price: price == freezed
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Money,
+      unitPrice: unitPrice == freezed
+          ? _value.unitPrice
+          : unitPrice // ignore: cast_nullable_to_non_nullable
+              as Money?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_DefaultSellingPlanAllocationPriceAdjustment
     extends _DefaultSellingPlanAllocationPriceAdjustment {
-  const _$_DefaultSellingPlanAllocationPriceAdjustment() : super._();
+  const _$_DefaultSellingPlanAllocationPriceAdjustment(
+      {required this.compareAtPrice,
+      required this.perDeliveryPrice,
+      required this.price,
+      this.unitPrice})
+      : super._();
 
   factory _$_DefaultSellingPlanAllocationPriceAdjustment.fromJson(
           Map<String, dynamic> json) =>
       _$$_DefaultSellingPlanAllocationPriceAdjustmentFromJson(json);
 
   @override
+
+  /// The price of the variant when it's purchased without a selling plan for the same
+  /// number of deliveries.
+  ///
+  /// *example:*
+  /// if a customer purchases 6 deliveries of $10.00
+  /// granola separately, then the price is 6 x $10.00 = $60.00.
+  final Money compareAtPrice;
+  @override
+
+  /// The effective price for a single delivery.
+  ///
+  /// *example:* for a prepaid subscription
+  /// plan that includes 6 deliveries at the price of $48.00, the per delivery price is $8.00.
+  final Money perDeliveryPrice;
+  @override
+
+  /// The price of the variant when it's purchased with a selling plan
+  ///
+  /// *example:*
+  /// for a prepaid subscription plan that includes 6 deliveries of $10.00 granola,
+  /// where the customer gets 20% off, the price is 6 x $10.00 x 0.80 = $48.00.
+  final Money price;
+  @override
+
+  /// The resulting price per unit for the variant associated with the selling plan.
+  /// If the variant isn't sold by quantity or measurement, then this field returns null.
+  final Money? unitPrice;
+
+  @override
   String toString() {
-    return 'SellingPlanAllocationPriceAdjustment()';
+    return 'SellingPlanAllocationPriceAdjustment(compareAtPrice: $compareAtPrice, perDeliveryPrice: $perDeliveryPrice, price: $price, unitPrice: $unitPrice)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultSellingPlanAllocationPriceAdjustment);
+        (other is _DefaultSellingPlanAllocationPriceAdjustment &&
+            (identical(other.compareAtPrice, compareAtPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.compareAtPrice, compareAtPrice)) &&
+            (identical(other.perDeliveryPrice, perDeliveryPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.perDeliveryPrice, perDeliveryPrice)) &&
+            (identical(other.price, price) ||
+                const DeepCollectionEquality().equals(other.price, price)) &&
+            (identical(other.unitPrice, unitPrice) ||
+                const DeepCollectionEquality()
+                    .equals(other.unitPrice, unitPrice)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(compareAtPrice) ^
+      const DeepCollectionEquality().hash(perDeliveryPrice) ^
+      const DeepCollectionEquality().hash(price) ^
+      const DeepCollectionEquality().hash(unitPrice);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<
+          _DefaultSellingPlanAllocationPriceAdjustment>
+      get copyWith =>
+          __$DefaultSellingPlanAllocationPriceAdjustmentCopyWithImpl<
+              _DefaultSellingPlanAllocationPriceAdjustment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -113,11 +322,49 @@ class _$_DefaultSellingPlanAllocationPriceAdjustment
 
 abstract class _DefaultSellingPlanAllocationPriceAdjustment
     extends SellingPlanAllocationPriceAdjustment {
-  const factory _DefaultSellingPlanAllocationPriceAdjustment() =
-      _$_DefaultSellingPlanAllocationPriceAdjustment;
+  const factory _DefaultSellingPlanAllocationPriceAdjustment(
+      {required Money compareAtPrice,
+      required Money perDeliveryPrice,
+      required Money price,
+      Money? unitPrice}) = _$_DefaultSellingPlanAllocationPriceAdjustment;
   const _DefaultSellingPlanAllocationPriceAdjustment._() : super._();
 
   factory _DefaultSellingPlanAllocationPriceAdjustment.fromJson(
           Map<String, dynamic> json) =
       _$_DefaultSellingPlanAllocationPriceAdjustment.fromJson;
+
+  @override
+
+  /// The price of the variant when it's purchased without a selling plan for the same
+  /// number of deliveries.
+  ///
+  /// *example:*
+  /// if a customer purchases 6 deliveries of $10.00
+  /// granola separately, then the price is 6 x $10.00 = $60.00.
+  Money get compareAtPrice => throw _privateConstructorUsedError;
+  @override
+
+  /// The effective price for a single delivery.
+  ///
+  /// *example:* for a prepaid subscription
+  /// plan that includes 6 deliveries at the price of $48.00, the per delivery price is $8.00.
+  Money get perDeliveryPrice => throw _privateConstructorUsedError;
+  @override
+
+  /// The price of the variant when it's purchased with a selling plan
+  ///
+  /// *example:*
+  /// for a prepaid subscription plan that includes 6 deliveries of $10.00 granola,
+  /// where the customer gets 20% off, the price is 6 x $10.00 x 0.80 = $48.00.
+  Money get price => throw _privateConstructorUsedError;
+  @override
+
+  /// The resulting price per unit for the variant associated with the selling plan.
+  /// If the variant isn't sold by quantity or measurement, then this field returns null.
+  Money? get unitPrice => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DefaultSellingPlanAllocationPriceAdjustmentCopyWith<
+          _DefaultSellingPlanAllocationPriceAdjustment>
+      get copyWith => throw _privateConstructorUsedError;
 }
