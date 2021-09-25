@@ -71,7 +71,10 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 @Implements(ParentResource)
+@Implements(MetafieldConnection)
+@Implements(OnlineStorePublishable)
 class _$_Product implements _Product {
   const _$_Product();
 
@@ -97,7 +100,13 @@ class _$_Product implements _Product {
   }
 }
 
-abstract class _Product implements Product, ParentResource {
+abstract class _Product
+    implements
+        Product,
+        Node,
+        ParentResource,
+        MetafieldConnection,
+        OnlineStorePublishable {
   const factory _Product() = _$_Product;
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
