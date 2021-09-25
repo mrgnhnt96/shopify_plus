@@ -72,6 +72,7 @@ class __$ShopCopyWithImpl<$Res> extends _$ShopCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @Implements(ParentResource)
+@Implements(MetafieldConnection)
 class _$_Shop extends _Shop {
   const _$_Shop() : super._();
 
@@ -96,7 +97,8 @@ class _$_Shop extends _Shop {
   }
 }
 
-abstract class _Shop extends Shop implements ParentResource {
+abstract class _Shop extends Shop
+    implements ParentResource, MetafieldConnection {
   const factory _Shop() = _$_Shop;
   const _Shop._() : super._();
 
