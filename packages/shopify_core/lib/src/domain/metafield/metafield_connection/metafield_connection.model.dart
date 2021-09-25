@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shopify_core/src/domain/metafield_edge/metafield_edge.model.dart';
+import 'package:shopify_core/src/domain/metafield/metafield_edge/metafield_edge.dart';
 import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
 
 part 'metafield_connection.model.freezed.dart';

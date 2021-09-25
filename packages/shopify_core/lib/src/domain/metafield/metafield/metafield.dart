@@ -1,0 +1,1 @@
+export 'metafield.model.dart';
