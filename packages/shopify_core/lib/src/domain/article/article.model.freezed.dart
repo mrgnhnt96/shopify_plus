@@ -22,7 +22,7 @@ class _$ArticleTearOff {
   const _$ArticleTearOff();
 
   _Article call(
-      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      {@JsonKey(name: 'authorV2') ArticleAuthor? author,
       required Blog blog,
       required String content,
       required String contentHtml,
@@ -38,7 +38,7 @@ class _$ArticleTearOff {
       List<String> tags = const [],
       required String title}) {
     return _Article(
-      authorV2: authorV2,
+      author: author,
       blog: blog,
       content: content,
       contentHtml: contentHtml,
@@ -68,7 +68,7 @@ const $Article = _$ArticleTearOff();
 mixin _$Article {
   /// The article's author.
   @JsonKey(name: 'authorV2')
-  ArticleAuthor? get authorV2 => throw _privateConstructorUsedError;
+  ArticleAuthor? get author => throw _privateConstructorUsedError;
 
   /// The blog that the article belongs to.
   Blog get blog => throw _privateConstructorUsedError;
@@ -88,7 +88,7 @@ mixin _$Article {
   /// A human-friendly unique string for the Article automatically generated from its title.
   String get handle => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The image associated with the article.
@@ -122,7 +122,7 @@ abstract class $ArticleCopyWith<$Res> {
   factory $ArticleCopyWith(Article value, $Res Function(Article) then) =
       _$ArticleCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      {@JsonKey(name: 'authorV2') ArticleAuthor? author,
       Blog blog,
       String content,
       String contentHtml,
@@ -138,7 +138,7 @@ abstract class $ArticleCopyWith<$Res> {
       List<String> tags,
       String title});
 
-  $ArticleAuthorCopyWith<$Res>? get authorV2;
+  $ArticleAuthorCopyWith<$Res>? get author;
   $BlogCopyWith<$Res> get blog;
   $ShopifyImageCopyWith<$Res>? get image;
   $MetafieldCopyWith<$Res>? get metafield;
@@ -155,7 +155,7 @@ class _$ArticleCopyWithImpl<$Res> implements $ArticleCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? authorV2 = freezed,
+    Object? author = freezed,
     Object? blog = freezed,
     Object? content = freezed,
     Object? contentHtml = freezed,
@@ -172,9 +172,9 @@ class _$ArticleCopyWithImpl<$Res> implements $ArticleCopyWith<$Res> {
     Object? title = freezed,
   }) {
     return _then(_value.copyWith(
-      authorV2: authorV2 == freezed
-          ? _value.authorV2
-          : authorV2 // ignore: cast_nullable_to_non_nullable
+      author: author == freezed
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
               as ArticleAuthor?,
       blog: blog == freezed
           ? _value.blog
@@ -236,13 +236,13 @@ class _$ArticleCopyWithImpl<$Res> implements $ArticleCopyWith<$Res> {
   }
 
   @override
-  $ArticleAuthorCopyWith<$Res>? get authorV2 {
-    if (_value.authorV2 == null) {
+  $ArticleAuthorCopyWith<$Res>? get author {
+    if (_value.author == null) {
       return null;
     }
 
-    return $ArticleAuthorCopyWith<$Res>(_value.authorV2!, (value) {
-      return _then(_value.copyWith(authorV2: value));
+    return $ArticleAuthorCopyWith<$Res>(_value.author!, (value) {
+      return _then(_value.copyWith(author: value));
     });
   }
 
@@ -293,7 +293,7 @@ abstract class _$ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       __$ArticleCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      {@JsonKey(name: 'authorV2') ArticleAuthor? author,
       Blog blog,
       String content,
       String contentHtml,
@@ -310,7 +310,7 @@ abstract class _$ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       String title});
 
   @override
-  $ArticleAuthorCopyWith<$Res>? get authorV2;
+  $ArticleAuthorCopyWith<$Res>? get author;
   @override
   $BlogCopyWith<$Res> get blog;
   @override
@@ -332,7 +332,7 @@ class __$ArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? authorV2 = freezed,
+    Object? author = freezed,
     Object? blog = freezed,
     Object? content = freezed,
     Object? contentHtml = freezed,
@@ -349,9 +349,9 @@ class __$ArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
     Object? title = freezed,
   }) {
     return _then(_Article(
-      authorV2: authorV2 == freezed
-          ? _value.authorV2
-          : authorV2 // ignore: cast_nullable_to_non_nullable
+      author: author == freezed
+          ? _value.author
+          : author // ignore: cast_nullable_to_non_nullable
               as ArticleAuthor?,
       blog: blog == freezed
           ? _value.blog
@@ -419,9 +419,9 @@ class __$ArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 @Implements(ParentResource)
 @Implements(MetafieldConnection)
 @Implements(OnlineStorePublishable)
-class _$_Article implements _Article {
+class _$_Article extends _Article {
   const _$_Article(
-      {@JsonKey(name: 'authorV2') this.authorV2,
+      {@JsonKey(name: 'authorV2') this.author,
       required this.blog,
       required this.content,
       required this.contentHtml,
@@ -435,7 +435,8 @@ class _$_Article implements _Article {
       required this.publishedAt,
       this.seo,
       this.tags = const [],
-      required this.title});
+      required this.title})
+      : super._();
 
   factory _$_Article.fromJson(Map<String, dynamic> json) =>
       _$$_ArticleFromJson(json);
@@ -444,7 +445,7 @@ class _$_Article implements _Article {
 
   /// The article's author.
   @JsonKey(name: 'authorV2')
-  final ArticleAuthor? authorV2;
+  final ArticleAuthor? author;
   @override
 
   /// The blog that the article belongs to.
@@ -471,7 +472,7 @@ class _$_Article implements _Article {
   final String handle;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -505,16 +506,15 @@ class _$_Article implements _Article {
 
   @override
   String toString() {
-    return 'Article(authorV2: $authorV2, blog: $blog, content: $content, contentHtml: $contentHtml, excerpt: $excerpt, excerptHtml: $excerptHtml, handle: $handle, id: $id, image: $image, metafield: $metafield, onlineStoreUrl: $onlineStoreUrl, publishedAt: $publishedAt, seo: $seo, tags: $tags, title: $title)';
+    return 'Article(author: $author, blog: $blog, content: $content, contentHtml: $contentHtml, excerpt: $excerpt, excerptHtml: $excerptHtml, handle: $handle, id: $id, image: $image, metafield: $metafield, onlineStoreUrl: $onlineStoreUrl, publishedAt: $publishedAt, seo: $seo, tags: $tags, title: $title)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Article &&
-            (identical(other.authorV2, authorV2) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorV2, authorV2)) &&
+            (identical(other.author, author) ||
+                const DeepCollectionEquality().equals(other.author, author)) &&
             (identical(other.blog, blog) ||
                 const DeepCollectionEquality().equals(other.blog, blog)) &&
             (identical(other.content, content) ||
@@ -555,7 +555,7 @@ class _$_Article implements _Article {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(authorV2) ^
+      const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(blog) ^
       const DeepCollectionEquality().hash(content) ^
       const DeepCollectionEquality().hash(contentHtml) ^
@@ -582,15 +582,14 @@ class _$_Article implements _Article {
   }
 }
 
-abstract class _Article
+abstract class _Article extends Article
     implements
-        Article,
         Node,
         ParentResource,
         MetafieldConnection,
         OnlineStorePublishable {
   const factory _Article(
-      {@JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+      {@JsonKey(name: 'authorV2') ArticleAuthor? author,
       required Blog blog,
       required String content,
       required String contentHtml,
@@ -605,6 +604,7 @@ abstract class _Article
       Seo? seo,
       List<String> tags,
       required String title}) = _$_Article;
+  const _Article._() : super._();
 
   factory _Article.fromJson(Map<String, dynamic> json) = _$_Article.fromJson;
 
@@ -612,7 +612,7 @@ abstract class _Article
 
   /// The article's author.
   @JsonKey(name: 'authorV2')
-  ArticleAuthor? get authorV2 => throw _privateConstructorUsedError;
+  ArticleAuthor? get author => throw _privateConstructorUsedError;
   @override
 
   /// The blog that the article belongs to.
@@ -639,7 +639,7 @@ abstract class _Article
   String get handle => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

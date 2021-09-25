@@ -8,9 +8,14 @@ import 'package:shopify_core/src/domain/node/node.model.dart';
 part 'cart.model.freezed.dart';
 part 'cart.model.g.dart';
 
+/// {@template cart}
 /// A cart represents the merchandise that a buyer intends to purchase, and the estimated cost associated with the cart
+/// {@endtemplate}
 @freezed
 class Cart with _$Cart {
+  const Cart._();
+
+  /// {@macro cart}
   @Implements(Node)
   const factory Cart({
     /// The attributes associated with the cart. Attributes are represented as key-value pairs.
@@ -31,7 +36,7 @@ class Cart with _$Cart {
     /// The estimated costs that the buyer will pay at checkout.
     required EstimatedCost estimatedCost,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// A note that is associated with the cart. For example, the note can be a personalized message to the buyer.
@@ -41,5 +46,6 @@ class Cart with _$Cart {
     required DateTime updatedAt,
   }) = _Cart;
 
+  /// {@macro from_json}
   factory Cart.fromJson(Map<String, dynamic> json) => _$CartFromJson(json);
 }

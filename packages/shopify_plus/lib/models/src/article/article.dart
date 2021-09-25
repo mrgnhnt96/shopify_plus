@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
 
 import 'author_v_2/author_v_2.dart';
 import 'comment/comment.dart';

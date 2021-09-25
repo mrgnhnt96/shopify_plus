@@ -11,18 +11,23 @@ import 'package:shopify_core/src/domain/shopify_image/shopify_image.model.dart';
 part 'article.model.freezed.dart';
 part 'article.model.g.dart';
 
+/// {@template article}
 /// An article in an online store blog
 ///
 /// *requires access: unauthenticated_read_content*
+/// {@endtemplate}
 @freezed
 class Article with _$Article {
+  const Article._();
+
+  /// {@macro article}
   @Implements(Node)
   @Implements(ParentResource)
   @Implements(MetafieldConnection)
   @Implements(OnlineStorePublishable)
   const factory Article({
     /// The article's author.
-    @JsonKey(name: 'authorV2') ArticleAuthor? authorV2,
+    @JsonKey(name: 'authorV2') ArticleAuthor? author,
 
     /// The blog that the article belongs to.
     required Blog blog,
@@ -42,7 +47,7 @@ class Article with _$Article {
     /// A human-friendly unique string for the Article automatically generated from its title.
     required String handle,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The image associated with the article.
@@ -67,6 +72,7 @@ class Article with _$Article {
     required String title,
   }) = _Article;
 
+  /// {@macro from_json}
   factory Article.fromJson(Map<String, dynamic> json) =>
       _$ArticleFromJson(json);
 }

@@ -60,7 +60,7 @@ mixin _$Metafield {
   /// The description of a metafield.
   String? get description => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The key name for a metafield.
@@ -285,7 +285,7 @@ class _$_Metafield extends _Metafield {
   final String? description;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -396,7 +396,7 @@ abstract class _Metafield extends Metafield implements Node {
   String? get description => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

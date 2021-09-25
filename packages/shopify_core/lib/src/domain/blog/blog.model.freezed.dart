@@ -61,7 +61,7 @@ mixin _$Blog {
   /// A human-friendly unique string for the Blog automatically generated from its title.
   String get handle => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// Returns a metafield found by namespace and key.
@@ -275,7 +275,7 @@ class __$BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res>
 @Implements(ParentResource)
 @Implements(MetafieldConnection)
 @Implements(OnlineStorePublishable)
-class _$_Blog implements _Blog {
+class _$_Blog extends _Blog {
   const _$_Blog(
       {this.articleByHandle,
       this.authors = const [],
@@ -284,7 +284,8 @@ class _$_Blog implements _Blog {
       this.metafield,
       this.onlineStoreUrl,
       this.seo,
-      required this.title});
+      required this.title})
+      : super._();
 
   factory _$_Blog.fromJson(Map<String, dynamic> json) => _$$_BlogFromJson(json);
 
@@ -303,7 +304,7 @@ class _$_Blog implements _Blog {
   final String handle;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -376,9 +377,8 @@ class _$_Blog implements _Blog {
   }
 }
 
-abstract class _Blog
+abstract class _Blog extends Blog
     implements
-        Blog,
         Node,
         ParentResource,
         MetafieldConnection,
@@ -392,6 +392,7 @@ abstract class _Blog
       String? onlineStoreUrl,
       Seo? seo,
       required String title}) = _$_Blog;
+  const _Blog._() : super._();
 
   factory _Blog.fromJson(Map<String, dynamic> json) = _$_Blog.fromJson;
 
@@ -409,7 +410,7 @@ abstract class _Blog
   String get handle => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

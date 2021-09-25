@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/product/product.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/product/product.dart';
 
 part 'products.freezed.dart';
 part 'products.g.dart';

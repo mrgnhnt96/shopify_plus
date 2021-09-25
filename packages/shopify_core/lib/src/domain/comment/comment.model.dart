@@ -5,13 +5,16 @@ import 'package:shopify_core/src/domain/node/node.model.dart';
 part 'comment.model.freezed.dart';
 part 'comment.model.g.dart';
 
+/// {@template comment}
 /// A comment on an article
 ///
 /// *requires access: unauthenticated_read_content*
+/// {@endtemplate}
 @freezed
 class Comment with _$Comment {
   const Comment._();
 
+  /// {@macro comment}
   @Implements(Node)
   const factory Comment({
     /// The comment’s author.
@@ -23,10 +26,11 @@ class Comment with _$Comment {
     /// The content of the comment, complete with HTML formatting.
     required String contentHtml,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
   }) = _Comment;
 
+  /// {@macro from_json}
   factory Comment.fromJson(Map<String, dynamic> json) =>
       _$CommentFromJson(json);
 }

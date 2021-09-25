@@ -1,8 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 import 'package:shopify_plus/models/src/product/selected_option/selected_option.dart';
 import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
 import 'package:shopify_plus/models/src/product/unit_price_measurement/unit_price_measurement.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'product_variant.freezed.dart';
 part 'product_variant.g.dart';

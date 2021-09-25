@@ -102,7 +102,7 @@ mixin _$MailingAddress {
   /// A comma-separated list of the values for city, province, and country.
   String? get formattedArea => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The last name of the customer.
@@ -413,7 +413,7 @@ class __$MailingAddressCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @Implements(Node)
-class _$_MailingAddress implements _MailingAddress {
+class _$_MailingAddress extends _MailingAddress {
   const _$_MailingAddress(
       {this.address1,
       this.address2,
@@ -432,7 +432,8 @@ class _$_MailingAddress implements _MailingAddress {
       this.phone,
       this.province,
       this.provinceCode,
-      this.zip});
+      this.zip})
+      : super._();
 
   factory _$_MailingAddress.fromJson(Map<String, dynamic> json) =>
       _$$_MailingAddressFromJson(json);
@@ -478,7 +479,7 @@ class _$_MailingAddress implements _MailingAddress {
   final String? formattedArea;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -611,7 +612,7 @@ class _$_MailingAddress implements _MailingAddress {
   }
 }
 
-abstract class _MailingAddress implements MailingAddress, Node {
+abstract class _MailingAddress extends MailingAddress implements Node {
   const factory _MailingAddress(
       {String? address1,
       String? address2,
@@ -631,6 +632,7 @@ abstract class _MailingAddress implements MailingAddress, Node {
       String? province,
       String? provinceCode,
       String? zip}) = _$_MailingAddress;
+  const _MailingAddress._() : super._();
 
   factory _MailingAddress.fromJson(Map<String, dynamic> json) =
       _$_MailingAddress.fromJson;
@@ -676,7 +678,7 @@ abstract class _MailingAddress implements MailingAddress, Node {
   String? get formattedArea => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

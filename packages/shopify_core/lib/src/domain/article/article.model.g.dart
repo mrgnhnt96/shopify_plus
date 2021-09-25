@@ -7,7 +7,7 @@ part of 'article.model.dart';
 // **************************************************************************
 
 _$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
-      authorV2: json['authorV2'] == null
+      author: json['authorV2'] == null
           ? null
           : ArticleAuthor.fromJson(json['authorV2'] as Map<String, dynamic>),
       blog: Blog.fromJson(json['blog'] as Map<String, dynamic>),
@@ -36,7 +36,7 @@ _$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
 
 Map<String, dynamic> _$$_ArticleToJson(_$_Article instance) =>
     <String, dynamic>{
-      'authorV2': instance.authorV2,
+      'authorV2': instance.author,
       'blog': instance.blog,
       'content': instance.content,
       'contentHtml': instance.contentHtml,

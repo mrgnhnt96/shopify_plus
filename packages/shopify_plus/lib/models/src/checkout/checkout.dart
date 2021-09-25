@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_plus/models/src/order/order.dart';
 import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../json_helper.dart';
 import 'applied_gift_cards/applied_gift_cards.dart';

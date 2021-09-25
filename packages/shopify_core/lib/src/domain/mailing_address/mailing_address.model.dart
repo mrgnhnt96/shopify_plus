@@ -4,9 +4,14 @@ import 'package:shopify_core/src/domain/node/node.model.dart';
 part 'mailing_address.model.freezed.dart';
 part 'mailing_address.model.g.dart';
 
+/// {@template mailing_address}
 /// Represents a mailing address for customers and shipping.
+/// {@endtemplate}
 @freezed
 class MailingAddress with _$MailingAddress {
+  const MailingAddress._();
+
+  /// {@macro mailing_address}
   @Implements(Node)
   const factory MailingAddress({
     /// The first line of the address. Typically the street address or PO Box number.
@@ -38,7 +43,7 @@ class MailingAddress with _$MailingAddress {
     /// A comma-separated list of the values for city, province, and country.
     String? formattedArea,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The last name of the customer.
@@ -72,6 +77,7 @@ class MailingAddress with _$MailingAddress {
     String? zip,
   }) = _MailingAddress;
 
+  /// {@macro from_json}
   factory MailingAddress.fromJson(Map<String, dynamic> json) =>
       _$MailingAddressFromJson(json);
 }

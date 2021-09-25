@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_plus/models/src/checkout/product_variant_checkout/product_variant_checkout.dart';
 import 'package:shopify_plus/models/src/order/discount_allocations/discount_allocations.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'line_item.freezed.dart';
 part 'line_item.g.dart';

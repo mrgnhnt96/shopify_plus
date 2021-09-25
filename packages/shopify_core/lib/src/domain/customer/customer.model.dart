@@ -7,6 +7,7 @@ import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.da
 part 'customer.model.freezed.dart';
 part 'customer.model.g.dart';
 
+/// {@template customer}
 /// A customer represents a customer account with the shop.
 /// Customer accounts store contact information for the customer,
 /// saving logged-in customers the trouble of having to provide it at every checkout.
@@ -14,8 +15,12 @@ part 'customer.model.g.dart';
 /// *required access unauthenticated_read_customers*
 ///
 /// [tags] - *required access: unauthenticated_read_customer_tags*
+/// {@endtemplate}
 @freezed
 class Customer with _$Customer {
+  const Customer._();
+
+  /// {@macro customer}
   @Implements(ParentResource)
   @Implements(MetafieldConnection)
   const factory Customer({
@@ -62,6 +67,7 @@ class Customer with _$Customer {
     required DateTime updatedAt,
   }) = _Customer;
 
+  /// {@macro from_json}
   factory Customer.fromJson(Map<String, dynamic> json) =>
       _$CustomerFromJson(json);
 }

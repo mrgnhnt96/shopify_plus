@@ -5,22 +5,27 @@ import 'package:shopify_core/src/domain/mailing_address/mailing_address.model.da
 import 'package:shopify_core/src/domain/metafield/metafield.dart';
 import 'package:shopify_core/src/domain/money/money.model.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
+import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_core/src/enum/order_cancel_reason.dart';
 import 'package:shopify_core/src/enum/order_financial_status.dart';
 import 'package:shopify_core/src/enum/order_fulfillment_status.dart';
-import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 
 part 'order.model.freezed.dart';
 part 'order.model.g.dart';
 
+/// {@template order}
 /// An order is a customer’s completed request to purchase one or
 /// more products from a shop. An order is created when a
 /// customer completes the checkout process, during which
 /// time they provides an email address, billing address and payment information.
 ///
 /// *required access unauthenticated_read_customers*
+/// {@endtemplate}
 @freezed
 class Order with _$Order {
+  const Order._();
+
+  /// {@macro order}
   @Implements(Node)
   @Implements(ParentResource)
   @Implements(MetafieldConnection)
@@ -117,5 +122,6 @@ class Order with _$Order {
     @JsonKey(name: 'totalTaxV2') Money? totalTax,
   }) = _Order;
 
+  /// {@macro from_json}
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 }

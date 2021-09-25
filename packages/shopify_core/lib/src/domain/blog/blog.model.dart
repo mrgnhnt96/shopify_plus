@@ -10,8 +10,14 @@ import 'package:shopify_core/src/domain/seo/seo.model.dart';
 part 'blog.model.freezed.dart';
 part 'blog.model.g.dart';
 
+/// {@template blog}
+/// An online store blog
+/// {@endtemplate}
 @freezed
 class Blog with _$Blog {
+  const Blog._();
+
+  /// {@macro blog}
   @Implements(Node)
   @Implements(ParentResource)
   @Implements(MetafieldConnection)
@@ -26,7 +32,7 @@ class Blog with _$Blog {
     /// A human-friendly unique string for the Blog automatically generated from its title.
     required String handle,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// Returns a metafield found by namespace and key.
@@ -42,5 +48,6 @@ class Blog with _$Blog {
     required String title,
   }) = _Blog;
 
+  /// {@macro from_json}
   factory Blog.fromJson(Map<String, dynamic> json) => _$BlogFromJson(json);
 }

@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 
 part 'discount_allocations.freezed.dart';
 part 'discount_allocations.g.dart';

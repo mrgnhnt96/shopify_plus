@@ -54,7 +54,7 @@ mixin _$AppliedGiftCard {
   @JsonKey(name: 'balanceV2')
   Money get balance => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The last characters of the gift card.
@@ -241,7 +241,7 @@ class _$_AppliedGiftCard implements _AppliedGiftCard {
   final Money balance;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -320,7 +320,7 @@ abstract class _AppliedGiftCard implements AppliedGiftCard, Node {
   Money get balance => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

@@ -5,9 +5,12 @@ import 'package:shopify_core/src/domain/node/node.model.dart';
 part 'applied_gift_card.model.freezed.dart';
 part 'applied_gift_card.model.g.dart';
 
+/// {@template applied_gift_card}
 /// Details about the gift card used on the checkout.
+/// {@endtemplate}
 @freezed
 class AppliedGiftCard with _$AppliedGiftCard {
+  /// {@macro applied_gift_card}
   @Implements(Node)
   const factory AppliedGiftCard({
     /// The amount that was taken from the gift card by applying it.
@@ -16,7 +19,7 @@ class AppliedGiftCard with _$AppliedGiftCard {
     /// The amount left on the gift card.
     @JsonKey(name: 'balanceV2') required Money balance,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The last characters of the gift card.
@@ -26,6 +29,7 @@ class AppliedGiftCard with _$AppliedGiftCard {
     required Money presentmentAmountUsed,
   }) = _AppliedGiftCard;
 
+  /// {@macro from_json}
   factory AppliedGiftCard.fromJson(Map<String, dynamic> json) =>
       _$AppliedGiftCardFromJson(json);
 }

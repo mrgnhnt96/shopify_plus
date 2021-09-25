@@ -1,55 +1,86 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_core/util/string_extension.dart';
 
+/// {@template order_fulfillment_status}
+/// The fulfillment status of the order
+/// {@endtemplate}
 enum OrderFulfillmentStatus {
+  /// {@macro order_fulfillment_status}
+  /// is `FULFILLED`
   fulfilled,
+
+  /// {@macro order_fulfillment_status}
+  /// is `IN_PROGRESS`
   inProgress,
+
+  /// {@macro order_fulfillment_status}
+  /// is `ON_HOLD`
   onHold,
+
+  /// {@macro order_fulfillment_status}
+  /// is `OPEN`
   open,
+
+  /// {@macro order_fulfillment_status}
+  /// is `PARTIALLY_FULFILLED`
   partiallyFulfilled,
+
+  /// {@macro order_fulfillment_status}
+  /// is `PENDING_FULFILLMENT`
   pendingFulfillment,
+
+  /// {@macro order_fulfillment_status}
+  /// is `RESTOCKED`
   restocked,
+
+  /// {@macro order_fulfillment_status}
+  /// is `SCHEDULED`
   scheduled,
+
+  /// {@macro order_fulfillment_status}
+  /// is `UNFULFILLED`
   unfulfilled,
 }
 
+/// {@macro json_converter}
 class OrderFulfillmentStatusJson
     extends JsonConverter<OrderFulfillmentStatus, String> {
+  /// {@macro json_converter}
   const OrderFulfillmentStatusJson();
 
-  static const fulfilledName = 'FULFILLED';
-  static const inProgressName = 'IN_PROGRESS';
-  static const onHoldName = 'ON_HOLD';
-  static const openName = 'OPEN';
-  static const partiallyFulfilledName = 'PARTIALLY_FULFILLED';
-  static const pendingFulfillmentName = 'PENDING_FULFILLMENT';
-  static const restockedName = 'RESTOCKED';
-  static const scheduledName = 'SCHEDULED';
-  static const unfulfilledName = 'UNFULFILLED';
+  static const _fulfilledName = 'FULFILLED';
+  static const _inProgressName = 'IN_PROGRESS';
+  static const _onHoldName = 'ON_HOLD';
+  static const _openName = 'OPEN';
+  static const _partiallyFulfilledName = 'PARTIALLY_FULFILLED';
+  static const _pendingFulfillmentName = 'PENDING_FULFILLMENT';
+  static const _restockedName = 'RESTOCKED';
+  static const _scheduledName = 'SCHEDULED';
+  static const _unfulfilledName = 'UNFULFILLED';
 
   @override
   OrderFulfillmentStatus fromJson(String json) {
     switch (json.toLowerCase()) {
-      case OrderFulfillmentStatusJson.fulfilledName:
+      case OrderFulfillmentStatusJson._fulfilledName:
         return OrderFulfillmentStatus.fulfilled;
-      case OrderFulfillmentStatusJson.inProgressName:
+      case OrderFulfillmentStatusJson._inProgressName:
         return OrderFulfillmentStatus.inProgress;
-      case OrderFulfillmentStatusJson.onHoldName:
+      case OrderFulfillmentStatusJson._onHoldName:
         return OrderFulfillmentStatus.onHold;
-      case OrderFulfillmentStatusJson.openName:
+      case OrderFulfillmentStatusJson._openName:
         return OrderFulfillmentStatus.open;
-      case OrderFulfillmentStatusJson.partiallyFulfilledName:
+      case OrderFulfillmentStatusJson._partiallyFulfilledName:
         return OrderFulfillmentStatus.partiallyFulfilled;
-      case OrderFulfillmentStatusJson.pendingFulfillmentName:
+      case OrderFulfillmentStatusJson._pendingFulfillmentName:
         return OrderFulfillmentStatus.pendingFulfillment;
-      case OrderFulfillmentStatusJson.restockedName:
+      case OrderFulfillmentStatusJson._restockedName:
         return OrderFulfillmentStatus.restocked;
-      case OrderFulfillmentStatusJson.scheduledName:
+      case OrderFulfillmentStatusJson._scheduledName:
         return OrderFulfillmentStatus.scheduled;
-      case OrderFulfillmentStatusJson.unfulfilledName:
+      case OrderFulfillmentStatusJson._unfulfilledName:
         return OrderFulfillmentStatus.unfulfilled;
       default:
-        throw Exception(
-            'Could not determine the constructor for mapping from JSON');
+        throw Exception('Unknown OrderFulfillmentStatus: $json');
     }
   }
 
@@ -57,39 +88,57 @@ class OrderFulfillmentStatusJson
   String toJson(OrderFulfillmentStatus object) => object.name;
 }
 
+/// {@macro enum_x}
 extension OrderCancelReasonX on OrderFulfillmentStatus {
-  /// formatted like "AUTHORIZED"
-  String get name {
+  /// {@macro enum_x.map}
+  T map<T>({
+    required T fulfilled,
+    required T inProgress,
+    required T onHold,
+    required T open,
+    required T partiallyFulfilled,
+    required T pendingFulfillment,
+    required T restocked,
+    required T scheduled,
+    required T unfulfilled,
+  }) {
     switch (this) {
       case OrderFulfillmentStatus.fulfilled:
-        return OrderFulfillmentStatusJson.fulfilledName;
+        return fulfilled;
       case OrderFulfillmentStatus.inProgress:
-        return OrderFulfillmentStatusJson.inProgressName;
+        return inProgress;
       case OrderFulfillmentStatus.onHold:
-        return OrderFulfillmentStatusJson.onHoldName;
+        return onHold;
       case OrderFulfillmentStatus.open:
-        return OrderFulfillmentStatusJson.openName;
+        return open;
       case OrderFulfillmentStatus.partiallyFulfilled:
-        return OrderFulfillmentStatusJson.partiallyFulfilledName;
+        return partiallyFulfilled;
       case OrderFulfillmentStatus.pendingFulfillment:
-        return OrderFulfillmentStatusJson.pendingFulfillmentName;
+        return pendingFulfillment;
       case OrderFulfillmentStatus.restocked:
-        return OrderFulfillmentStatusJson.restockedName;
+        return restocked;
       case OrderFulfillmentStatus.scheduled:
-        return OrderFulfillmentStatusJson.scheduledName;
+        return scheduled;
       case OrderFulfillmentStatus.unfulfilled:
-        return OrderFulfillmentStatusJson.unfulfilledName;
+        return unfulfilled;
     }
   }
 
-  /// formatted like "Authorized"
-  String get displayName {
-    String format(String name) {
-      final firstLetter = name.substring(0, 1).toUpperCase();
-      final rest = name.substring(1).toLowerCase();
-      return '$firstLetter$rest';
-    }
-
-    return format(name);
+  /// {@macro enum_x.name}
+  String get name {
+    return map(
+      fulfilled: OrderFulfillmentStatusJson._fulfilledName,
+      inProgress: OrderFulfillmentStatusJson._inProgressName,
+      onHold: OrderFulfillmentStatusJson._onHoldName,
+      open: OrderFulfillmentStatusJson._openName,
+      partiallyFulfilled: OrderFulfillmentStatusJson._partiallyFulfilledName,
+      pendingFulfillment: OrderFulfillmentStatusJson._pendingFulfillmentName,
+      restocked: OrderFulfillmentStatusJson._restockedName,
+      scheduled: OrderFulfillmentStatusJson._scheduledName,
+      unfulfilled: OrderFulfillmentStatusJson._unfulfilledName,
+    );
   }
+
+  /// {@macro enum_x.displayName}
+  String get displayName => name.capitalize();
 }

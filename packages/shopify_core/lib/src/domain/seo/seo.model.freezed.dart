@@ -21,8 +21,11 @@ Seo _$SeoFromJson(Map<String, dynamic> json) {
 class _$SeoTearOff {
   const _$SeoTearOff();
 
-  _Seo call() {
-    return const _Seo();
+  _Seo call({String? description, String? title}) {
+    return _Seo(
+      description: description,
+      title: title,
+    );
   }
 
   Seo fromJson(Map<String, Object> json) {
@@ -35,13 +38,22 @@ const $Seo = _$SeoTearOff();
 
 /// @nodoc
 mixin _$Seo {
+  /// The meta description.
+  String? get description => throw _privateConstructorUsedError;
+
+  /// The SEO title.
+  String? get title => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SeoCopyWith<Seo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SeoCopyWith<$Res> {
   factory $SeoCopyWith(Seo value, $Res Function(Seo) then) =
       _$SeoCopyWithImpl<$Res>;
+  $Res call({String? description, String? title});
 }
 
 /// @nodoc
@@ -51,12 +63,31 @@ class _$SeoCopyWithImpl<$Res> implements $SeoCopyWith<$Res> {
   final Seo _value;
   // ignore: unused_field
   final $Res Function(Seo) _then;
+
+  @override
+  $Res call({
+    Object? description = freezed,
+    Object? title = freezed,
+  }) {
+    return _then(_value.copyWith(
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$SeoCopyWith<$Res> {
+abstract class _$SeoCopyWith<$Res> implements $SeoCopyWith<$Res> {
   factory _$SeoCopyWith(_Seo value, $Res Function(_Seo) then) =
       __$SeoCopyWithImpl<$Res>;
+  @override
+  $Res call({String? description, String? title});
 }
 
 /// @nodoc
@@ -67,27 +98,67 @@ class __$SeoCopyWithImpl<$Res> extends _$SeoCopyWithImpl<$Res>
 
   @override
   _Seo get _value => super._value as _Seo;
+
+  @override
+  $Res call({
+    Object? description = freezed,
+    Object? title = freezed,
+  }) {
+    return _then(_Seo(
+      description: description == freezed
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_Seo extends _Seo {
-  const _$_Seo() : super._();
+  const _$_Seo({this.description, this.title}) : super._();
 
   factory _$_Seo.fromJson(Map<String, dynamic> json) => _$$_SeoFromJson(json);
 
   @override
+
+  /// The meta description.
+  final String? description;
+  @override
+
+  /// The SEO title.
+  final String? title;
+
+  @override
   String toString() {
-    return 'Seo()';
+    return 'Seo(description: $description, title: $title)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Seo);
+    return identical(this, other) ||
+        (other is _Seo &&
+            (identical(other.description, description) ||
+                const DeepCollectionEquality()
+                    .equals(other.description, description)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(description) ^
+      const DeepCollectionEquality().hash(title);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SeoCopyWith<_Seo> get copyWith =>
+      __$SeoCopyWithImpl<_Seo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -96,8 +167,20 @@ class _$_Seo extends _Seo {
 }
 
 abstract class _Seo extends Seo {
-  const factory _Seo() = _$_Seo;
+  const factory _Seo({String? description, String? title}) = _$_Seo;
   const _Seo._() : super._();
 
   factory _Seo.fromJson(Map<String, dynamic> json) = _$_Seo.fromJson;
+
+  @override
+
+  /// The meta description.
+  String? get description => throw _privateConstructorUsedError;
+  @override
+
+  /// The SEO title.
+  String? get title => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$SeoCopyWith<_Seo> get copyWith => throw _privateConstructorUsedError;
 }

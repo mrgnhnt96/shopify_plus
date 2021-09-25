@@ -1,6 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'product_variant_checkout.freezed.dart';
 part 'product_variant_checkout.g.dart';

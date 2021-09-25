@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/product/price_v_2/price_v_2.dart';
 
 import 'line_items_order/line_items_order.dart';
 import 'shipping_address/shipping_address.dart';

@@ -51,7 +51,7 @@ mixin _$SellingPlan {
   /// The description of the selling plan.
   String? get description => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The name of the selling plan. For example, '6 weeks of prepaid granola, delivered weekly'.
@@ -218,7 +218,7 @@ class _$_SellingPlan extends _SellingPlan {
   final String? description;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -307,7 +307,7 @@ abstract class _SellingPlan extends SellingPlan {
   String? get description => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

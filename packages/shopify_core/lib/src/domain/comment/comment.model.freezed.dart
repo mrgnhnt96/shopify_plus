@@ -53,7 +53,7 @@ mixin _$Comment {
   /// The content of the comment, complete with HTML formatting.
   String get contentHtml => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -191,7 +191,7 @@ class _$_Comment extends _Comment {
   final String contentHtml;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
 
   @override
@@ -258,7 +258,7 @@ abstract class _Comment extends Comment implements Node {
   String get contentHtml => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

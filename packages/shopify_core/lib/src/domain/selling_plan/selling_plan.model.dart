@@ -5,18 +5,21 @@ import 'package:shopify_core/src/domain/selling_plan_price_adjustment/selling_pl
 part 'selling_plan.model.freezed.dart';
 part 'selling_plan.model.g.dart';
 
+/// {@template selling_plan}
 /// Represents how products and variants can be sold and purchased.
 ///
 /// *requires access: unauthenticated_read_selling_plans*
+/// {@endtemplate}
 @freezed
 class SellingPlan with _$SellingPlan {
   const SellingPlan._();
 
+  /// {@macro selling_plan}
   const factory SellingPlan({
     /// The description of the selling plan.
     String? description,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The name of the selling plan. For example, '6 weeks of prepaid granola, delivered weekly'.
@@ -32,6 +35,7 @@ class SellingPlan with _$SellingPlan {
     @Default(false) bool recurringDeliveries,
   }) = _SellingPlan;
 
+  /// {@macro from_json}
   factory SellingPlan.fromJson(Map<String, dynamic> json) =>
       _$SellingPlanFromJson(json);
 }

@@ -4,13 +4,16 @@ import 'package:shopify_core/src/domain/fulfillment_tracking_info/fulfillment_tr
 part 'fulfillment.model.freezed.dart';
 part 'fulfillment.model.g.dart';
 
+/// {@template fulfillment}
 /// Represents a single fulfillment in an order.
 ///
 /// *required access unauthenticated_read_customers*
+/// {@endtemplate}
 @freezed
 class Fulfillment with _$Fulfillment {
   const Fulfillment._();
 
+  /// {@macro fulfillment}
   const factory Fulfillment({
     /// The name of the tracking company
     String? trackingCompany,
@@ -19,6 +22,7 @@ class Fulfillment with _$Fulfillment {
     @Default([]) List<FulfillmentTrackingInfo> tackingInfo,
   }) = _Fulfillment;
 
+  /// {@macro from_json}
   factory Fulfillment.fromJson(Map<String, dynamic> json) =>
       _$FulfillmentFromJson(json);
 }

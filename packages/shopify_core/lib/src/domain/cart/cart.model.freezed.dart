@@ -72,7 +72,7 @@ mixin _$Cart {
   /// The estimated costs that the buyer will pay at checkout.
   EstimatedCost get estimatedCost => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// A note that is associated with the cart. For example, the note can be a personalized message to the buyer.
@@ -267,7 +267,7 @@ class __$CartCopyWithImpl<$Res> extends _$CartCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @Implements(Node)
-class _$_Cart implements _Cart {
+class _$_Cart extends _Cart {
   const _$_Cart(
       {this.attributes = const [],
       required this.buyerIdentity,
@@ -277,7 +277,8 @@ class _$_Cart implements _Cart {
       required this.estimatedCost,
       required this.id,
       this.note,
-      required this.updatedAt});
+      required this.updatedAt})
+      : super._();
 
   factory _$_Cart.fromJson(Map<String, dynamic> json) => _$$_CartFromJson(json);
 
@@ -309,7 +310,7 @@ class _$_Cart implements _Cart {
   final EstimatedCost estimatedCost;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -380,7 +381,7 @@ class _$_Cart implements _Cart {
   }
 }
 
-abstract class _Cart implements Cart, Node {
+abstract class _Cart extends Cart implements Node {
   const factory _Cart(
       {List<Attribute> attributes,
       required BuyerIdentity buyerIdentity,
@@ -391,6 +392,7 @@ abstract class _Cart implements Cart, Node {
       required String id,
       String? note,
       required DateTime updatedAt}) = _$_Cart;
+  const _Cart._() : super._();
 
   factory _Cart.fromJson(Map<String, dynamic> json) = _$_Cart.fromJson;
 
@@ -420,7 +422,7 @@ abstract class _Cart implements Cart, Node {
   EstimatedCost get estimatedCost => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

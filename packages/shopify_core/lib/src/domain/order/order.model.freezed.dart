@@ -791,7 +791,7 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
 @Implements(Node)
 @Implements(ParentResource)
 @Implements(MetafieldConnection)
-class _$_Order implements _Order {
+class _$_Order extends _Order {
   const _$_Order(
       {@OrderCancelReasonJson() this.cancelReason,
       this.canceledAt,
@@ -822,7 +822,8 @@ class _$_Order implements _Order {
       @JsonKey(name: 'totalPriceV2') required this.totalPrice,
       @JsonKey(name: 'totalRefundedV2') required this.totalRefunded,
       @JsonKey(name: 'totalShippingPriceV2') required this.totalShippingPrice,
-      @JsonKey(name: 'totalTaxV2') this.totalTax});
+      @JsonKey(name: 'totalTaxV2') this.totalTax})
+      : super._();
 
   factory _$_Order.fromJson(Map<String, dynamic> json) =>
       _$$_OrderFromJson(json);
@@ -1087,8 +1088,8 @@ class _$_Order implements _Order {
   }
 }
 
-abstract class _Order
-    implements Order, Node, ParentResource, MetafieldConnection {
+abstract class _Order extends Order
+    implements Node, ParentResource, MetafieldConnection {
   const factory _Order(
       {@OrderCancelReasonJson()
           OrderCancelReason? cancelReason,
@@ -1128,6 +1129,7 @@ abstract class _Order
           required Money totalShippingPrice,
       @JsonKey(name: 'totalTaxV2')
           Money? totalTax}) = _$_Order;
+  const _Order._() : super._();
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
 

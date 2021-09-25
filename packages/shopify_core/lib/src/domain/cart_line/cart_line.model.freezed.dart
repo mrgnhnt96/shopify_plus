@@ -60,7 +60,7 @@ mixin _$CartLine {
   /// The estimated cost of the merchandise that the buyer will pay for at checkout.
   EstimatedCost get estimatedCost => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The merchandise that the buyer intends to purchase.
@@ -246,6 +246,7 @@ class __$CartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(Node)
 class _$_CartLine extends _CartLine {
   const _$_CartLine(
       {this.attributes = const [],
@@ -276,7 +277,7 @@ class _$_CartLine extends _CartLine {
   final EstimatedCost estimatedCost;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -344,7 +345,7 @@ class _$_CartLine extends _CartLine {
   }
 }
 
-abstract class _CartLine extends CartLine {
+abstract class _CartLine extends CartLine implements Node {
   const factory _CartLine(
       {List<Attribute> attributes,
       List<DiscountAllocation> discountAllocations,
@@ -372,7 +373,7 @@ abstract class _CartLine extends CartLine {
   EstimatedCost get estimatedCost => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 

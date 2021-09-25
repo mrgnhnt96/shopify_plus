@@ -6,7 +6,62 @@ part of 'product.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product();
+_$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
+      availableForSale: json['availableForSale'] as bool? ?? false,
+      compareAtPriceRange: ProductPriceRange.fromJson(
+          json['compareAtPriceRange'] as Map<String, dynamic>),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      description: json['description'] as String,
+      descriptionHtml: json['descriptionHtml'] as String,
+      handle: json['handle'] as String,
+      id: json['id'] as String,
+      metafield: json['metafield'] == null
+          ? null
+          : Metafield.fromJson(json['metafield'] as Map<String, dynamic>),
+      onlineStoreUrl: json['onlineStoreUrl'] as String?,
+      options: json['options'] == null
+          ? []
+          : ProductOption.fromJson(json['options'] as Map<String, dynamic>),
+      priceRange: ProductPriceRange.fromJson(
+          json['priceRange'] as Map<String, dynamic>),
+      productType: json['productType'] as String,
+      publishedAt: DateTime.parse(json['publishedAt'] as String),
+      requiresSellingPlan: json['requiresSellingPlan'] as bool? ?? false,
+      seo: Seo.fromJson(json['seo'] as Map<String, dynamic>),
+      tags:
+          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              [],
+      title: json['title'] as String,
+      totalInventory: json['totalInventory'] as int,
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      variantBySelectedOptions: json['variantBySelectedOptions'] == null
+          ? null
+          : ProductVariant.fromJson(
+              json['variantBySelectedOptions'] as Map<String, dynamic>),
+      vendor: json['vendor'] as String,
+    );
 
 Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
-    <String, dynamic>{};
+    <String, dynamic>{
+      'availableForSale': instance.availableForSale,
+      'compareAtPriceRange': instance.compareAtPriceRange,
+      'createdAt': instance.createdAt.toIso8601String(),
+      'description': instance.description,
+      'descriptionHtml': instance.descriptionHtml,
+      'handle': instance.handle,
+      'id': instance.id,
+      'metafield': instance.metafield,
+      'onlineStoreUrl': instance.onlineStoreUrl,
+      'options': instance.options,
+      'priceRange': instance.priceRange,
+      'productType': instance.productType,
+      'publishedAt': instance.publishedAt.toIso8601String(),
+      'requiresSellingPlan': instance.requiresSellingPlan,
+      'seo': instance.seo,
+      'tags': instance.tags,
+      'title': instance.title,
+      'totalInventory': instance.totalInventory,
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'variantBySelectedOptions': instance.variantBySelectedOptions,
+      'vendor': instance.vendor,
+    };

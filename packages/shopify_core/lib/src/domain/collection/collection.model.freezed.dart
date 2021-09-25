@@ -277,7 +277,7 @@ class __$CollectionCopyWithImpl<$Res> extends _$CollectionCopyWithImpl<$Res>
 @Implements(Node)
 @Implements(ParentResource)
 @Implements(OnlineStorePublishable)
-class _$_Collection implements _Collection {
+class _$_Collection extends _Collection {
   const _$_Collection(
       {required this.description,
       required this.descriptionHtml,
@@ -287,7 +287,8 @@ class _$_Collection implements _Collection {
       this.metafield,
       this.onlineStoreUrl,
       required this.title,
-      required this.updatedAt});
+      required this.updatedAt})
+      : super._();
 
   factory _$_Collection.fromJson(Map<String, dynamic> json) =>
       _$$_CollectionFromJson(json);
@@ -387,8 +388,8 @@ class _$_Collection implements _Collection {
   }
 }
 
-abstract class _Collection
-    implements Collection, Node, ParentResource, OnlineStorePublishable {
+abstract class _Collection extends Collection
+    implements Node, ParentResource, OnlineStorePublishable {
   const factory _Collection(
       {required String description,
       required String descriptionHtml,
@@ -399,6 +400,7 @@ abstract class _Collection
       String? onlineStoreUrl,
       required String title,
       required DateTime updatedAt}) = _$_Collection;
+  const _Collection._() : super._();
 
   factory _Collection.fromJson(Map<String, dynamic> json) =
       _$_Collection.fromJson;

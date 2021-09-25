@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/address_autocomplete/matched_substring/matched_substring.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/address_autocomplete/matched_substring/matched_substring.dart';
 
 part 'address_prediction.freezed.dart';
 part 'address_prediction.g.dart';

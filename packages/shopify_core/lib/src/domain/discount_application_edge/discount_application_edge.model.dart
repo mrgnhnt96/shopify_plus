@@ -4,11 +4,14 @@ import 'package:shopify_core/src/domain/discount_application/discount_applicatio
 part 'discount_application_edge.model.freezed.dart';
 part 'discount_application_edge.model.g.dart';
 
+/// {@template discount_application_edge}
 /// An auto-generated type which holds one DiscountApplication and a cursor during pagination
+/// {@endtemplate}
 @freezed
 class DiscountApplicationEdge with _$DiscountApplicationEdge {
   const DiscountApplicationEdge._();
 
+  /// {@macro discount_application_edge}
   const factory DiscountApplicationEdge({
     /// A cursor for use in pagination.
     required String cursor,
@@ -17,6 +20,7 @@ class DiscountApplicationEdge with _$DiscountApplicationEdge {
     required DiscountApplication node,
   }) = _DiscountApplicationEdge;
 
+  /// {@macro from_json}
   factory DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =>
       _$DiscountApplicationEdgeFromJson(json);
 }

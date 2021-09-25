@@ -76,8 +76,8 @@ class __$ParentResourceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_ParentResource implements _ParentResource {
-  const _$_ParentResource();
+class _$_ParentResource extends _ParentResource {
+  const _$_ParentResource() : super._();
 
   factory _$_ParentResource.fromJson(Map<String, dynamic> json) =>
       _$$_ParentResourceFromJson(json);
@@ -101,8 +101,9 @@ class _$_ParentResource implements _ParentResource {
   }
 }
 
-abstract class _ParentResource implements ParentResource {
+abstract class _ParentResource extends ParentResource {
   const factory _ParentResource() = _$_ParentResource;
+  const _ParentResource._() : super._();
 
   factory _ParentResource.fromJson(Map<String, dynamic> json) =
       _$_ParentResource.fromJson;

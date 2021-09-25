@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/shopify_user/address/address.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/shopify_user/address/address.dart';
 
 part 'addresses.freezed.dart';
 part 'addresses.g.dart';

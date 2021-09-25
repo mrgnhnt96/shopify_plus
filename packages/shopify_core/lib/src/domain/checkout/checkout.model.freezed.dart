@@ -39,7 +39,7 @@ class _$CheckoutTearOff {
       bool ready = false,
       required bool requiresShipping,
       MailingAddress? shippingAddress,
-      List<ShippingDiscountAllocations> shippingDiscountAllocations = const [],
+      List<DiscountAllocation> shippingDiscountAllocations = const [],
       ShippingRate? shippingLine,
       @JsonKey(name: 'subtotalPriceV2') required Money subtotalPrice,
       bool taxExempt = false,
@@ -116,7 +116,7 @@ mixin _$Checkout {
   /// The email attached to this checkout.
   String? get email => throw _privateConstructorUsedError;
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   /// The sum of all the prices of all the items in the checkout. Duties, taxes, shipping and discounts excluded.
@@ -145,7 +145,7 @@ mixin _$Checkout {
   MailingAddress? get shippingAddress => throw _privateConstructorUsedError;
 
   /// The discounts that have been allocated onto the shipping line by discount applications.
-  List<ShippingDiscountAllocations> get shippingDiscountAllocations =>
+  List<DiscountAllocation> get shippingDiscountAllocations =>
       throw _privateConstructorUsedError;
 
   /// Once a shipping rate is selected by the customer it is transitioned to a ShippingLine object.
@@ -206,7 +206,7 @@ abstract class $CheckoutCopyWith<$Res> {
       bool ready,
       bool requiresShipping,
       MailingAddress? shippingAddress,
-      List<ShippingDiscountAllocations> shippingDiscountAllocations,
+      List<DiscountAllocation> shippingDiscountAllocations,
       ShippingRate? shippingLine,
       @JsonKey(name: 'subtotalPriceV2') Money subtotalPrice,
       bool taxExempt,
@@ -340,7 +340,7 @@ class _$CheckoutCopyWithImpl<$Res> implements $CheckoutCopyWith<$Res> {
       shippingDiscountAllocations: shippingDiscountAllocations == freezed
           ? _value.shippingDiscountAllocations
           : shippingDiscountAllocations // ignore: cast_nullable_to_non_nullable
-              as List<ShippingDiscountAllocations>,
+              as List<DiscountAllocation>,
       shippingLine: shippingLine == freezed
           ? _value.shippingLine
           : shippingLine // ignore: cast_nullable_to_non_nullable
@@ -510,7 +510,7 @@ abstract class _$CheckoutCopyWith<$Res> implements $CheckoutCopyWith<$Res> {
       bool ready,
       bool requiresShipping,
       MailingAddress? shippingAddress,
-      List<ShippingDiscountAllocations> shippingDiscountAllocations,
+      List<DiscountAllocation> shippingDiscountAllocations,
       ShippingRate? shippingLine,
       @JsonKey(name: 'subtotalPriceV2') Money subtotalPrice,
       bool taxExempt,
@@ -656,7 +656,7 @@ class __$CheckoutCopyWithImpl<$Res> extends _$CheckoutCopyWithImpl<$Res>
       shippingDiscountAllocations: shippingDiscountAllocations == freezed
           ? _value.shippingDiscountAllocations
           : shippingDiscountAllocations // ignore: cast_nullable_to_non_nullable
-              as List<ShippingDiscountAllocations>,
+              as List<DiscountAllocation>,
       shippingLine: shippingLine == freezed
           ? _value.shippingLine
           : shippingLine // ignore: cast_nullable_to_non_nullable
@@ -700,7 +700,7 @@ class __$CheckoutCopyWithImpl<$Res> extends _$CheckoutCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 @Implements(Node)
-class _$_Checkout implements _Checkout {
+class _$_Checkout extends _Checkout {
   const _$_Checkout(
       {this.appliedGiftCards = const [],
       this.availableShippingRates,
@@ -728,7 +728,8 @@ class _$_Checkout implements _Checkout {
       @JsonKey(name: 'totalPriceV2') this.totalPrice,
       @JsonKey(name: 'totalTaxV2') this.totalTax,
       required this.updatedAt,
-      required this.webUrl});
+      required this.webUrl})
+      : super._();
 
   factory _$_Checkout.fromJson(Map<String, dynamic> json) =>
       _$$_CheckoutFromJson(json);
@@ -769,7 +770,7 @@ class _$_Checkout implements _Checkout {
   final String? email;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   final String id;
   @override
 
@@ -809,7 +810,7 @@ class _$_Checkout implements _Checkout {
   @override
 
   /// The discounts that have been allocated onto the shipping line by discount applications.
-  final List<ShippingDiscountAllocations> shippingDiscountAllocations;
+  final List<DiscountAllocation> shippingDiscountAllocations;
   @override
 
   /// Once a shipping rate is selected by the customer it is transitioned to a ShippingLine object.
@@ -973,7 +974,7 @@ class _$_Checkout implements _Checkout {
   }
 }
 
-abstract class _Checkout implements Checkout, Node {
+abstract class _Checkout extends Checkout implements Node {
   const factory _Checkout(
       {List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
@@ -992,7 +993,7 @@ abstract class _Checkout implements Checkout, Node {
       bool ready,
       required bool requiresShipping,
       MailingAddress? shippingAddress,
-      List<ShippingDiscountAllocations> shippingDiscountAllocations,
+      List<DiscountAllocation> shippingDiscountAllocations,
       ShippingRate? shippingLine,
       @JsonKey(name: 'subtotalPriceV2') required Money subtotalPrice,
       bool taxExempt,
@@ -1002,6 +1003,7 @@ abstract class _Checkout implements Checkout, Node {
       @JsonKey(name: 'totalTaxV2') Money? totalTax,
       required DateTime updatedAt,
       required String webUrl}) = _$_Checkout;
+  const _Checkout._() : super._();
 
   factory _Checkout.fromJson(Map<String, dynamic> json) = _$_Checkout.fromJson;
 
@@ -1041,7 +1043,7 @@ abstract class _Checkout implements Checkout, Node {
   String? get email => throw _privateConstructorUsedError;
   @override
 
-  /// A globally-unique identifier.
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
 
@@ -1079,7 +1081,7 @@ abstract class _Checkout implements Checkout, Node {
   @override
 
   /// The discounts that have been allocated onto the shipping line by discount applications.
-  List<ShippingDiscountAllocations> get shippingDiscountAllocations =>
+  List<DiscountAllocation> get shippingDiscountAllocations =>
       throw _privateConstructorUsedError;
   @override
 

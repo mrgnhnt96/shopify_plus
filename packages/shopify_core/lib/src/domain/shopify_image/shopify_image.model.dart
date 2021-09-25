@@ -3,11 +3,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'shopify_image.model.freezed.dart';
 part 'shopify_image.model.g.dart';
 
+/// {@template shopify_image}
 /// Represents an image resource
+/// {@endtemplate}
 @freezed
 class ShopifyImage with _$ShopifyImage {
   const ShopifyImage._();
 
+  /// {@macro shopify_image}
   const factory ShopifyImage({
     /// A word or phrase to share the nature or contents of an image.
     String? altText,
@@ -34,6 +37,7 @@ class ShopifyImage with _$ShopifyImage {
     int? width,
   }) = _ShopifyImage;
 
+  /// {@macro from_json}
   factory ShopifyImage.fromJson(Map<String, dynamic> json) =>
       _$ShopifyImageFromJson(json);
 }

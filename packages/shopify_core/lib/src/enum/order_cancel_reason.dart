@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_core/util/string_extension.dart';
 
 /// Represents the reason for the order's cancellation
 enum OrderCancelReason {
@@ -18,7 +19,10 @@ enum OrderCancelReason {
   other,
 }
 
+/// {@macro json_converter}
 class OrderCancelReasonJson extends JsonConverter<OrderCancelReason, String> {
+  /// {@macro json_converter}
+
   const OrderCancelReasonJson();
 
   static const _customerName = 'CUSTOMER';
@@ -38,7 +42,6 @@ class OrderCancelReasonJson extends JsonConverter<OrderCancelReason, String> {
         return OrderCancelReason.fraud;
       case _inventoryName:
         return OrderCancelReason.inventory;
-
       default:
         return OrderCancelReason.other;
     }
@@ -48,19 +51,41 @@ class OrderCancelReasonJson extends JsonConverter<OrderCancelReason, String> {
   String toJson(OrderCancelReason object) => object.name;
 }
 
+/// {@macro enum_x}
 extension OrderCancelReasonX on OrderCancelReason {
-  String get name {
+  /// {@macro enum_x.map}
+  T map<T>({
+    required T customer,
+    required T declined,
+    required T fraud,
+    required T inventory,
+    required T other,
+  }) {
     switch (this) {
       case OrderCancelReason.customer:
-        return OrderCancelReasonJson._customerName;
+        return customer;
       case OrderCancelReason.declined:
-        return OrderCancelReasonJson._declinedName;
+        return declined;
       case OrderCancelReason.fraud:
-        return OrderCancelReasonJson._fraudName;
+        return fraud;
       case OrderCancelReason.inventory:
-        return OrderCancelReasonJson._inventoryName;
+        return inventory;
       case OrderCancelReason.other:
-        return OrderCancelReasonJson._otherName;
+        return other;
     }
   }
+
+  /// {@macro enum_x.name}
+  String get name {
+    return map(
+      customer: OrderCancelReasonJson._customerName,
+      declined: OrderCancelReasonJson._declinedName,
+      fraud: OrderCancelReasonJson._fraudName,
+      inventory: OrderCancelReasonJson._inventoryName,
+      other: OrderCancelReasonJson._otherName,
+    );
+  }
+
+  /// {@macro enum_x.displayName}
+  String get displayName => name.capitalize();
 }

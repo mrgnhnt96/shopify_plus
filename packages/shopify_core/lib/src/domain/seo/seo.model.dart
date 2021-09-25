@@ -3,14 +3,24 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'seo.model.freezed.dart';
 part 'seo.model.g.dart';
 
-// TODO: Add properties, constructors, and methods
+/// {@template seo}
+/// SEO information
+///
+/// *requires access to content or product listings*
+/// {@endtemplate}
 @freezed
-class Seo with _$Seo  {
+class Seo with _$Seo {
   const Seo._();
 
-  const factory Seo() = _Seo;
+  /// {@macro seo}
+  const factory Seo({
+    /// The meta description.
+    String? description,
 
-  factory Seo.fromJson(Map<String, dynamic> json) =>
-      _$SeoFromJson(json);
+    /// The SEO title.
+    String? title,
+  }) = _Seo;
 
+  /// {@macro from_json}
+  factory Seo.fromJson(Map<String, dynamic> json) => _$SeoFromJson(json);
 }

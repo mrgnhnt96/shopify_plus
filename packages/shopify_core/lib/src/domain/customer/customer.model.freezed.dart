@@ -361,7 +361,7 @@ class __$CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
 @JsonSerializable()
 @Implements(ParentResource)
 @Implements(MetafieldConnection)
-class _$_Customer implements _Customer {
+class _$_Customer extends _Customer {
   const _$_Customer(
       {this.acceptsMarketing = false,
       required this.createdAt,
@@ -375,7 +375,8 @@ class _$_Customer implements _Customer {
       this.metafield,
       this.phone,
       this.tags = const [],
-      required this.updatedAt});
+      required this.updatedAt})
+      : super._();
 
   factory _$_Customer.fromJson(Map<String, dynamic> json) =>
       _$$_CustomerFromJson(json);
@@ -511,8 +512,8 @@ class _$_Customer implements _Customer {
   }
 }
 
-abstract class _Customer
-    implements Customer, ParentResource, MetafieldConnection {
+abstract class _Customer extends Customer
+    implements ParentResource, MetafieldConnection {
   const factory _Customer(
       {bool acceptsMarketing,
       required DateTime createdAt,
@@ -527,6 +528,7 @@ abstract class _Customer
       String? phone,
       List<String> tags,
       required DateTime updatedAt}) = _$_Customer;
+  const _Customer._() : super._();
 
   factory _Customer.fromJson(Map<String, dynamic> json) = _$_Customer.fromJson;
 

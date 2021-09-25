@@ -5,15 +5,18 @@ import 'package:shopify_core/src/domain/selling_plan_allocation_price_adjustment
 part 'selling_plan_allocation.model.freezed.dart';
 part 'selling_plan_allocation.model.g.dart';
 
+/// {@template selling_plan_allocation}
 /// Represents an association between a variant and a selling plan.
 /// Selling plan allocations describe the options offered for each variant,
 /// and the price of the variant when purchased with a selling plan
 ///
 /// *requires access: unauthenticated_read_selling_plans*
+/// {@endtemplate}
 @freezed
 class SellingPlanAllocation with _$SellingPlanAllocation {
   const SellingPlanAllocation._();
 
+  /// {@macro selling_plan_allocation}
   const factory SellingPlanAllocation({
     /// A list of price adjustments, with a maximum of two. When there are two,
     /// the first price adjustment goes into effect at the time of purchase,
@@ -27,6 +30,7 @@ class SellingPlanAllocation with _$SellingPlanAllocation {
     required SellingPlan sellingPlan,
   }) = _SellingPlanAllocation;
 
+  /// {@macro from_json}
   factory SellingPlanAllocation.fromJson(Map<String, dynamic> json) =>
       _$SellingPlanAllocationFromJson(json);
 }

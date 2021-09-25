@@ -5,12 +5,15 @@ import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.da
 part 'metafield.model.freezed.dart';
 part 'metafield.model.g.dart';
 
+/// {@template metafield}
 /// Metafields represent custom metadata attached to a resource.
 /// Metafields can be sorted into namespaces and are comprised of keys, values, and value types.
+/// {@endtemplate}
 @freezed
 class Metafield with _$Metafield {
   const Metafield._();
 
+  /// {@macro metafield}
   @Implements(Node)
   const factory Metafield({
     /// The date and time when the storefront metafield was created.
@@ -19,7 +22,7 @@ class Metafield with _$Metafield {
     /// The description of a metafield.
     String? description,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The key name for a metafield.
@@ -41,6 +44,7 @@ class Metafield with _$Metafield {
     required String value,
   }) = _Metafield;
 
+  /// {@macro from_json}
   factory Metafield.fromJson(Map<String, dynamic> json) =>
       _$MetafieldFromJson(json);
 }

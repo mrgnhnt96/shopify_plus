@@ -4,14 +4,17 @@ import 'package:shopify_core/src/domain/money/money.model.dart';
 part 'selling_plan_allocation_price_adjustment.model.freezed.dart';
 part 'selling_plan_allocation_price_adjustment.model.g.dart';
 
+/// {@template selling_plan_allocation_price_adjustment}
 /// The resulting prices for variants when they're purchased with a specific selling plan
 ///
 /// *requires access: unauthenticated_read_selling_plans*
+/// {@endtemplate}
 @freezed
 class SellingPlanAllocationPriceAdjustment
     with _$SellingPlanAllocationPriceAdjustment {
   const SellingPlanAllocationPriceAdjustment._();
 
+  /// {@macro selling_plan_allocation_price_adjustment}
   const factory SellingPlanAllocationPriceAdjustment({
     /// The price of the variant when it's purchased without a selling plan for the same
     /// number of deliveries.
@@ -39,6 +42,7 @@ class SellingPlanAllocationPriceAdjustment
     Money? unitPrice,
   }) = _SellingPlanAllocationPriceAdjustment;
 
+  /// {@macro from_json}
   factory SellingPlanAllocationPriceAdjustment.fromJson(
           Map<String, dynamic> json) =>
       _$SellingPlanAllocationPriceAdjustmentFromJson(json);

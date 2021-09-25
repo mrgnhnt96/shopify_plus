@@ -42,12 +42,12 @@ _$_Checkout _$$_CheckoutFromJson(Map<String, dynamic> json) => _$_Checkout(
           ? null
           : MailingAddress.fromJson(
               json['shippingAddress'] as Map<String, dynamic>),
-      shippingDiscountAllocations:
-          (json['shippingDiscountAllocations'] as List<dynamic>?)
-                  ?.map((e) => ShippingDiscountAllocations.fromJson(
-                      e as Map<String, dynamic>))
-                  .toList() ??
-              [],
+      shippingDiscountAllocations: (json['shippingDiscountAllocations']
+                  as List<dynamic>?)
+              ?.map(
+                  (e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
       shippingLine: json['shippingLine'] == null
           ? null
           : ShippingRate.fromJson(json['shippingLine'] as Map<String, dynamic>),

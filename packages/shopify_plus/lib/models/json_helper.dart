@@ -15,7 +15,7 @@ class JsonHelper {
     }
 
     return (json['edges'] as List)
-        .map((e) => LineItem.fromGraphJson(e))
+        .map(LineItem.fromGraphJson)
         .toList();
   }
 

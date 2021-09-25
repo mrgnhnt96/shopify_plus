@@ -173,9 +173,10 @@ class __$BuyerIdentityCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BuyerIdentity implements _BuyerIdentity {
+class _$_BuyerIdentity extends _BuyerIdentity {
   const _$_BuyerIdentity(
-      {this.countryCode, this.customer, this.email, this.phone});
+      {this.countryCode, this.customer, this.email, this.phone})
+      : super._();
 
   factory _$_BuyerIdentity.fromJson(Map<String, dynamic> json) =>
       _$$_BuyerIdentityFromJson(json);
@@ -237,12 +238,13 @@ class _$_BuyerIdentity implements _BuyerIdentity {
   }
 }
 
-abstract class _BuyerIdentity implements BuyerIdentity {
+abstract class _BuyerIdentity extends BuyerIdentity {
   const factory _BuyerIdentity(
       {String? countryCode,
       Customer? customer,
       String? email,
       String? phone}) = _$_BuyerIdentity;
+  const _BuyerIdentity._() : super._();
 
   factory _BuyerIdentity.fromJson(Map<String, dynamic> json) =
       _$_BuyerIdentity.fromJson;

@@ -3,13 +3,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'article_author.model.freezed.dart';
 part 'article_author.model.g.dart';
 
+/// {@template article_author}
 /// The author of an article.
 ///
 /// *requires access: unauthenticated_read_content*
+/// {@endtemplate}
 @freezed
 class ArticleAuthor with _$ArticleAuthor {
   const ArticleAuthor._();
 
+  /// {@macro article_author}
   const factory ArticleAuthor({
     /// The author's bio.
     String? bio,
@@ -27,6 +30,7 @@ class ArticleAuthor with _$ArticleAuthor {
     required String name,
   }) = _ArticleAuthor;
 
+  /// {@macro from_json}
   factory ArticleAuthor.fromJson(Map<String, dynamic> json) =>
       _$ArticleAuthorFromJson(json);
 }

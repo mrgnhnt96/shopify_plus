@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/order/line_item_order/line_item_order.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/order/line_item_order/line_item_order.dart';
 
 part 'line_items_order.freezed.dart';
 part 'line_items_order.g.dart';

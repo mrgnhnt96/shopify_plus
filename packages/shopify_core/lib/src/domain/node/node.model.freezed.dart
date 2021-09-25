@@ -37,7 +37,7 @@ const $Node = _$NodeTearOff();
 
 /// @nodoc
 mixin _$Node {
-  /// a globally-unique identifier
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -112,7 +112,7 @@ class _$_Node extends _Node {
 
   @override
 
-  /// a globally-unique identifier
+  /// {@macro id}
   final String id;
 
   @override
@@ -151,7 +151,7 @@ abstract class _Node extends Node {
 
   @override
 
-  /// a globally-unique identifier
+  /// {@macro id}
   String get id => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

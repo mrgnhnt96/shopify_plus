@@ -123,9 +123,10 @@ class __$AttributeCopyWithImpl<$Res> extends _$AttributeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Attribute implements _Attribute {
+class _$_Attribute extends _Attribute {
   const _$_Attribute(
-      {@JsonKey(name: 'key') required this.name, required this.value});
+      {@JsonKey(name: 'key') required this.name, required this.value})
+      : super._();
 
   factory _$_Attribute.fromJson(Map<String, dynamic> json) =>
       _$$_AttributeFromJson(json);
@@ -172,10 +173,11 @@ class _$_Attribute implements _Attribute {
   }
 }
 
-abstract class _Attribute implements Attribute {
+abstract class _Attribute extends Attribute {
   const factory _Attribute(
       {@JsonKey(name: 'key') required String name,
       required String value}) = _$_Attribute;
+  const _Attribute._() : super._();
 
   factory _Attribute.fromJson(Map<String, dynamic> json) =
       _$_Attribute.fromJson;

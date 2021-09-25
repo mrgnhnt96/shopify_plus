@@ -8,11 +8,16 @@ import 'package:shopify_core/src/domain/shopify_image/shopify_image.model.dart';
 part 'collection.model.freezed.dart';
 part 'collection.model.g.dart';
 
+/// {@template collection}
 /// A collection represents a grouping of products that a shop owner can create to organize them or make their shops easier to browse
 ///
 /// *requires access: unauthenticated_read_product_listings*
+/// {@endtemplate}
 @freezed
 class Collection with _$Collection {
+  const Collection._();
+
+  /// {@macro collection}
   @Implements(Node)
   @Implements(ParentResource)
   @Implements(OnlineStorePublishable)
@@ -45,6 +50,7 @@ class Collection with _$Collection {
     required DateTime updatedAt,
   }) = _Collection;
 
+  /// {@macro from_json}
   factory Collection.fromJson(Map<String, dynamic> json) =>
       _$CollectionFromJson(json);
 }

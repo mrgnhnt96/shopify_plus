@@ -1,8 +1,8 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_plus/models/models.dart';
 import 'package:shopify_plus/models/src/product/product_variant/product_variant.dart';
 import 'package:shopify_plus/models/src/product/products/products.dart';
 import 'package:shopify_plus/models/src/product/shopify_image/shopify_image.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'collection.freezed.dart';
 part 'collection.g.dart';

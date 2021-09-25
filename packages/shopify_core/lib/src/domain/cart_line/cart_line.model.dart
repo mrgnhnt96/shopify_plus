@@ -9,12 +9,15 @@ import 'package:shopify_core/src/domain/selling_plan_allocation/selling_plan_all
 part 'cart_line.model.freezed.dart';
 part 'cart_line.model.g.dart';
 
+/// {@template cart_line}
 /// Represents information about the merchandise in the cart
+/// {@endtemplate}
 @freezed
 class CartLine with _$CartLine {
-  @Implements(Node)
   const CartLine._();
 
+  /// {@macro cart_line}
+  @Implements(Node)
   const factory CartLine({
     /// The attributes associated with the cart line. Attributes are represented as key-value pairs.
     @Default([]) List<Attribute> attributes,
@@ -25,7 +28,7 @@ class CartLine with _$CartLine {
     /// The estimated cost of the merchandise that the buyer will pay for at checkout.
     required EstimatedCost estimatedCost,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The merchandise that the buyer intends to purchase.
@@ -38,6 +41,7 @@ class CartLine with _$CartLine {
     required SellingPlanAllocation sellingPlanAllocation,
   }) = _CartLine;
 
+  /// {@macro from_json}
   factory CartLine.fromJson(Map<String, dynamic> json) =>
       _$CartLineFromJson(json);
 }

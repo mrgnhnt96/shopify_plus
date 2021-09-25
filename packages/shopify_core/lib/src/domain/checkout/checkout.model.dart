@@ -3,21 +3,26 @@ import 'package:shopify_core/src/domain/applied_gift_card/applied_gift_card.mode
 import 'package:shopify_core/src/domain/attribute/attribute.model.dart';
 import 'package:shopify_core/src/domain/available_shipping_rates/available_shipping_rates.model.dart';
 import 'package:shopify_core/src/domain/buyer_identity/buyer_identity.model.dart';
+import 'package:shopify_core/src/domain/discount_allocation/discount_allocation.model.dart';
 import 'package:shopify_core/src/domain/mailing_address/mailing_address.model.dart';
 import 'package:shopify_core/src/domain/money/money.model.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/order/order.model.dart';
-import 'package:shopify_core/src/domain/shipping_discount_allocations/shipping_discount_allocations.model.dart';
 import 'package:shopify_core/src/domain/shipping_rate/shipping_rate.model.dart';
 
 part 'checkout.model.freezed.dart';
 part 'checkout.model.g.dart';
 
+/// {@template checkout}
 /// A container for all the information required to checkout items and pay
 ///
 /// *required access unauthenticated_read_checkouts*
+/// {@endtemplate}
 @freezed
 class Checkout with _$Checkout {
+  const Checkout._();
+
+  /// {@macro checkout}
   @Implements(Node)
   const factory Checkout({
     /// The gift cards used on the checkout.
@@ -44,7 +49,7 @@ class Checkout with _$Checkout {
     /// The email attached to this checkout.
     String? email,
 
-    /// A globally-unique identifier.
+    /// {@macro id}
     required String id,
 
     /// The sum of all the prices of all the items in the checkout. Duties, taxes, shipping and discounts excluded.
@@ -72,7 +77,7 @@ class Checkout with _$Checkout {
     MailingAddress? shippingAddress,
 
     /// The discounts that have been allocated onto the shipping line by discount applications.
-    @Default([]) List<ShippingDiscountAllocations> shippingDiscountAllocations,
+    @Default([]) List<DiscountAllocation> shippingDiscountAllocations,
 
     /// Once a shipping rate is selected by the customer it is transitioned to a ShippingLine object.
     ShippingRate? shippingLine,
@@ -102,6 +107,7 @@ class Checkout with _$Checkout {
     required String webUrl,
   }) = _Checkout;
 
+  /// {@macro from_json}
   factory Checkout.fromJson(Map<String, dynamic> json) =>
       _$CheckoutFromJson(json);
 }

@@ -1,5 +1,5 @@
-import 'package:shopify_plus/models/src/checkout/shipping_rates/shipping_rates.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_plus/models/src/checkout/shipping_rates/shipping_rates.dart';
 
 part 'available_shipping_rates.freezed.dart';
 part 'available_shipping_rates.g.dart';
