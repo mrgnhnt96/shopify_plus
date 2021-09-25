@@ -22,8 +22,12 @@ DiscountApplicationEdge _$DiscountApplicationEdgeFromJson(
 class _$DiscountApplicationEdgeTearOff {
   const _$DiscountApplicationEdgeTearOff();
 
-  _DiscountApplicationEdge call() {
-    return const _DiscountApplicationEdge();
+  _DiscountApplicationEdge call(
+      {required String cursor, required DiscountApplication node}) {
+    return _DiscountApplicationEdge(
+      cursor: cursor,
+      node: node,
+    );
   }
 
   DiscountApplicationEdge fromJson(Map<String, Object> json) {
@@ -36,7 +40,16 @@ const $DiscountApplicationEdge = _$DiscountApplicationEdgeTearOff();
 
 /// @nodoc
 mixin _$DiscountApplicationEdge {
+  /// A cursor for use in pagination.
+  String get cursor => throw _privateConstructorUsedError;
+
+  /// The item at the end of DiscountApplicationEdge
+  DiscountApplication get node => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DiscountApplicationEdgeCopyWith<DiscountApplicationEdge> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -44,6 +57,9 @@ abstract class $DiscountApplicationEdgeCopyWith<$Res> {
   factory $DiscountApplicationEdgeCopyWith(DiscountApplicationEdge value,
           $Res Function(DiscountApplicationEdge) then) =
       _$DiscountApplicationEdgeCopyWithImpl<$Res>;
+  $Res call({String cursor, DiscountApplication node});
+
+  $DiscountApplicationCopyWith<$Res> get node;
 }
 
 /// @nodoc
@@ -54,13 +70,43 @@ class _$DiscountApplicationEdgeCopyWithImpl<$Res>
   final DiscountApplicationEdge _value;
   // ignore: unused_field
   final $Res Function(DiscountApplicationEdge) _then;
+
+  @override
+  $Res call({
+    Object? cursor = freezed,
+    Object? node = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cursor: cursor == freezed
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String,
+      node: node == freezed
+          ? _value.node
+          : node // ignore: cast_nullable_to_non_nullable
+              as DiscountApplication,
+    ));
+  }
+
+  @override
+  $DiscountApplicationCopyWith<$Res> get node {
+    return $DiscountApplicationCopyWith<$Res>(_value.node, (value) {
+      return _then(_value.copyWith(node: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$DiscountApplicationEdgeCopyWith<$Res> {
+abstract class _$DiscountApplicationEdgeCopyWith<$Res>
+    implements $DiscountApplicationEdgeCopyWith<$Res> {
   factory _$DiscountApplicationEdgeCopyWith(_DiscountApplicationEdge value,
           $Res Function(_DiscountApplicationEdge) then) =
       __$DiscountApplicationEdgeCopyWithImpl<$Res>;
+  @override
+  $Res call({String cursor, DiscountApplication node});
+
+  @override
+  $DiscountApplicationCopyWith<$Res> get node;
 }
 
 /// @nodoc
@@ -74,28 +120,69 @@ class __$DiscountApplicationEdgeCopyWithImpl<$Res>
   @override
   _DiscountApplicationEdge get _value =>
       super._value as _DiscountApplicationEdge;
+
+  @override
+  $Res call({
+    Object? cursor = freezed,
+    Object? node = freezed,
+  }) {
+    return _then(_DiscountApplicationEdge(
+      cursor: cursor == freezed
+          ? _value.cursor
+          : cursor // ignore: cast_nullable_to_non_nullable
+              as String,
+      node: node == freezed
+          ? _value.node
+          : node // ignore: cast_nullable_to_non_nullable
+              as DiscountApplication,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$_DiscountApplicationEdge extends _DiscountApplicationEdge {
-  const _$_DiscountApplicationEdge() : super._();
+  const _$_DiscountApplicationEdge({required this.cursor, required this.node})
+      : super._();
 
   factory _$_DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =>
       _$$_DiscountApplicationEdgeFromJson(json);
 
   @override
+
+  /// A cursor for use in pagination.
+  final String cursor;
+  @override
+
+  /// The item at the end of DiscountApplicationEdge
+  final DiscountApplication node;
+
+  @override
   String toString() {
-    return 'DiscountApplicationEdge()';
+    return 'DiscountApplicationEdge(cursor: $cursor, node: $node)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DiscountApplicationEdge);
+    return identical(this, other) ||
+        (other is _DiscountApplicationEdge &&
+            (identical(other.cursor, cursor) ||
+                const DeepCollectionEquality().equals(other.cursor, cursor)) &&
+            (identical(other.node, node) ||
+                const DeepCollectionEquality().equals(other.node, node)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(cursor) ^
+      const DeepCollectionEquality().hash(node);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DiscountApplicationEdgeCopyWith<_DiscountApplicationEdge> get copyWith =>
+      __$DiscountApplicationEdgeCopyWithImpl<_DiscountApplicationEdge>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -104,9 +191,24 @@ class _$_DiscountApplicationEdge extends _DiscountApplicationEdge {
 }
 
 abstract class _DiscountApplicationEdge extends DiscountApplicationEdge {
-  const factory _DiscountApplicationEdge() = _$_DiscountApplicationEdge;
+  const factory _DiscountApplicationEdge(
+      {required String cursor,
+      required DiscountApplication node}) = _$_DiscountApplicationEdge;
   const _DiscountApplicationEdge._() : super._();
 
   factory _DiscountApplicationEdge.fromJson(Map<String, dynamic> json) =
       _$_DiscountApplicationEdge.fromJson;
+
+  @override
+
+  /// A cursor for use in pagination.
+  String get cursor => throw _privateConstructorUsedError;
+  @override
+
+  /// The item at the end of DiscountApplicationEdge
+  DiscountApplication get node => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$DiscountApplicationEdgeCopyWith<_DiscountApplicationEdge> get copyWith =>
+      throw _privateConstructorUsedError;
 }
