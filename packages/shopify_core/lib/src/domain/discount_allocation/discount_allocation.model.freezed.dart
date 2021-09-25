@@ -40,7 +40,10 @@ const $DiscountAllocation = _$DiscountAllocationTearOff();
 
 /// @nodoc
 mixin _$DiscountAllocation {
+  /// Amount of discount allocated
   Money get allocatedAmount => throw _privateConstructorUsedError;
+
+  /// The discount this allocated amount originated from
   DiscountApplication get discountApplication =>
       throw _privateConstructorUsedError;
 
@@ -158,8 +161,12 @@ class _$_DiscountAllocation extends _DiscountAllocation {
       _$$_DiscountAllocationFromJson(json);
 
   @override
+
+  /// Amount of discount allocated
   final Money allocatedAmount;
   @override
+
+  /// The discount this allocated amount originated from
   final DiscountApplication discountApplication;
 
   @override
@@ -207,8 +214,12 @@ abstract class _DiscountAllocation extends DiscountAllocation {
       _$_DiscountAllocation.fromJson;
 
   @override
+
+  /// Amount of discount allocated
   Money get allocatedAmount => throw _privateConstructorUsedError;
   @override
+
+  /// The discount this allocated amount originated from
   DiscountApplication get discountApplication =>
       throw _privateConstructorUsedError;
   @override

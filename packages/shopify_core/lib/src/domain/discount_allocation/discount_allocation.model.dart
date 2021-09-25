@@ -5,12 +5,16 @@ import 'package:shopify_core/src/domain/money/money.model.dart';
 part 'discount_allocation.model.freezed.dart';
 part 'discount_allocation.model.g.dart';
 
+/// An amount discounting the line that has been allocated by a discount
 @freezed
 class DiscountAllocation with _$DiscountAllocation {
   const DiscountAllocation._();
 
   const factory DiscountAllocation({
+    /// Amount of discount allocated
     required Money allocatedAmount,
+
+    /// The discount this allocated amount originated from
     required DiscountApplication discountApplication,
   }) = _DiscountAllocation;
 
