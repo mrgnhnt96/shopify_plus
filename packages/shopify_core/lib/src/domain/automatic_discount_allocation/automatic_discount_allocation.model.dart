@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_core/src/domain/discount_application/discount_application.model.dart';
 import 'package:shopify_core/src/domain/money/money.model.dart';
 
 part 'automatic_discount_allocation.model.freezed.dart';
@@ -9,6 +10,7 @@ part 'automatic_discount_allocation.model.g.dart';
 class AutomaticDiscountAllocation with _$AutomaticDiscountAllocation {
   const AutomaticDiscountAllocation._();
 
+  @Implements(DiscountApplication)
   const factory AutomaticDiscountAllocation({
     /// The discounted amount that has been applied to the cart line
     required Money discountAmount,

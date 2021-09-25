@@ -144,6 +144,7 @@ class __$AutomaticDiscountAllocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(DiscountApplication)
 class _$_AutomaticDiscountAllocation extends _AutomaticDiscountAllocation {
   const _$_AutomaticDiscountAllocation(
       {required this.discountAmount, required this.title})
@@ -195,8 +196,8 @@ class _$_AutomaticDiscountAllocation extends _AutomaticDiscountAllocation {
   }
 }
 
-abstract class _AutomaticDiscountAllocation
-    extends AutomaticDiscountAllocation {
+abstract class _AutomaticDiscountAllocation extends AutomaticDiscountAllocation
+    implements DiscountApplication {
   const factory _AutomaticDiscountAllocation(
       {required Money discountAmount,
       required String title}) = _$_AutomaticDiscountAllocation;
