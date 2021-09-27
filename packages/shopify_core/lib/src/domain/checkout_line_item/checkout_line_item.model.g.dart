@@ -38,3 +38,21 @@ Map<String, dynamic> _$$_CheckoutLineItemToJson(_$_CheckoutLineItem instance) =>
       'unitPrice': instance.unitPrice,
       'variant': instance.variant,
     };
+
+_$CheckoutLineItemInput _$$CheckoutLineItemInputFromJson(
+        Map<String, dynamic> json) =>
+    _$CheckoutLineItemInput(
+      customAttributes: (json['customAttributes'] as List<dynamic>?)
+          ?.map((e) => Attribute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      quantity: json['quantity'] as int,
+      variantId: json['variantId'] as String,
+    );
+
+Map<String, dynamic> _$$CheckoutLineItemInputToJson(
+        _$CheckoutLineItemInput instance) =>
+    <String, dynamic>{
+      'customAttributes': instance.customAttributes,
+      'quantity': instance.quantity,
+      'variantId': instance.variantId,
+    };
