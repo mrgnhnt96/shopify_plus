@@ -75,7 +75,7 @@ class OrderFinancialStatusJson
 }
 
 /// {@macro enum_x}
-extension OrderCancelReasonX on OrderFinancialStatus {
+extension OrderFinancialStatusX on OrderFinancialStatus {
   /// {@macro enum_x.map}
   T map<T>({
     required T authorized,

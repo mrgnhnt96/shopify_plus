@@ -89,7 +89,7 @@ class OrderFulfillmentStatusJson
 }
 
 /// {@macro enum_x}
-extension OrderCancelReasonX on OrderFulfillmentStatus {
+extension OrderFulfillmentStatusX on OrderFulfillmentStatus {
   /// {@macro enum_x.map}
   T map<T>({
     required T fulfilled,
