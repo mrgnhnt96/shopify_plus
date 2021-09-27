@@ -22,11 +22,18 @@ class _$DiscountApplicationTearOff {
   const _$DiscountApplicationTearOff();
 
   _DiscountApplication call(
-      {List<DiscountApplicationEdge> edges = const [],
-      required PageInfo pageInfo}) {
+      {@DiscountApplicationAllocationMethodJson()
+          required DiscountApplicationAllocationMethod allocationMethod,
+      @DiscountApplicationTargetSelectionJson()
+          required DiscountApplicationTargetSelection targetSelection,
+      @DiscountApplicationTargetTypeJson()
+          required DiscountApplicationTargetType targetType,
+      required PricingValue value}) {
     return _DiscountApplication(
-      edges: edges,
-      pageInfo: pageInfo,
+      allocationMethod: allocationMethod,
+      targetSelection: targetSelection,
+      targetType: targetType,
+      value: value,
     );
   }
 
@@ -40,13 +47,23 @@ const $DiscountApplication = _$DiscountApplicationTearOff();
 
 /// @nodoc
 mixin _$DiscountApplication {
-  /// A list of edges.
-  List<DiscountApplicationEdge> get edges => throw _privateConstructorUsedError;
+  /// The method by which the discount's value is allocated to its entitled items.
+  @DiscountApplicationAllocationMethodJson()
+  DiscountApplicationAllocationMethod get allocationMethod =>
+      throw _privateConstructorUsedError;
 
-  /// Information to aid in pagination.
-  ///
-  /// An auto-generated type which holds one DiscountApplication and a cursor during pagination.
-  PageInfo get pageInfo => throw _privateConstructorUsedError;
+  /// Which lines of targetType that the discount is allocated over.
+  @DiscountApplicationTargetSelectionJson()
+  DiscountApplicationTargetSelection get targetSelection =>
+      throw _privateConstructorUsedError;
+
+  /// The type of line that the discount is applicable towards.
+  @DiscountApplicationTargetTypeJson()
+  DiscountApplicationTargetType get targetType =>
+      throw _privateConstructorUsedError;
+
+  /// The value of the discount application.
+  PricingValue get value => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -59,9 +76,16 @@ abstract class $DiscountApplicationCopyWith<$Res> {
   factory $DiscountApplicationCopyWith(
           DiscountApplication value, $Res Function(DiscountApplication) then) =
       _$DiscountApplicationCopyWithImpl<$Res>;
-  $Res call({List<DiscountApplicationEdge> edges, PageInfo pageInfo});
+  $Res call(
+      {@DiscountApplicationAllocationMethodJson()
+          DiscountApplicationAllocationMethod allocationMethod,
+      @DiscountApplicationTargetSelectionJson()
+          DiscountApplicationTargetSelection targetSelection,
+      @DiscountApplicationTargetTypeJson()
+          DiscountApplicationTargetType targetType,
+      PricingValue value});
 
-  $PageInfoCopyWith<$Res> get pageInfo;
+  $PricingValueCopyWith<$Res> get value;
 }
 
 /// @nodoc
@@ -75,25 +99,35 @@ class _$DiscountApplicationCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? edges = freezed,
-    Object? pageInfo = freezed,
+    Object? allocationMethod = freezed,
+    Object? targetSelection = freezed,
+    Object? targetType = freezed,
+    Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      edges: edges == freezed
-          ? _value.edges
-          : edges // ignore: cast_nullable_to_non_nullable
-              as List<DiscountApplicationEdge>,
-      pageInfo: pageInfo == freezed
-          ? _value.pageInfo
-          : pageInfo // ignore: cast_nullable_to_non_nullable
-              as PageInfo,
+      allocationMethod: allocationMethod == freezed
+          ? _value.allocationMethod
+          : allocationMethod // ignore: cast_nullable_to_non_nullable
+              as DiscountApplicationAllocationMethod,
+      targetSelection: targetSelection == freezed
+          ? _value.targetSelection
+          : targetSelection // ignore: cast_nullable_to_non_nullable
+              as DiscountApplicationTargetSelection,
+      targetType: targetType == freezed
+          ? _value.targetType
+          : targetType // ignore: cast_nullable_to_non_nullable
+              as DiscountApplicationTargetType,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as PricingValue,
     ));
   }
 
   @override
-  $PageInfoCopyWith<$Res> get pageInfo {
-    return $PageInfoCopyWith<$Res>(_value.pageInfo, (value) {
-      return _then(_value.copyWith(pageInfo: value));
+  $PricingValueCopyWith<$Res> get value {
+    return $PricingValueCopyWith<$Res>(_value.value, (value) {
+      return _then(_value.copyWith(value: value));
     });
   }
 }
@@ -105,10 +139,17 @@ abstract class _$DiscountApplicationCopyWith<$Res>
           $Res Function(_DiscountApplication) then) =
       __$DiscountApplicationCopyWithImpl<$Res>;
   @override
-  $Res call({List<DiscountApplicationEdge> edges, PageInfo pageInfo});
+  $Res call(
+      {@DiscountApplicationAllocationMethodJson()
+          DiscountApplicationAllocationMethod allocationMethod,
+      @DiscountApplicationTargetSelectionJson()
+          DiscountApplicationTargetSelection targetSelection,
+      @DiscountApplicationTargetTypeJson()
+          DiscountApplicationTargetType targetType,
+      PricingValue value});
 
   @override
-  $PageInfoCopyWith<$Res> get pageInfo;
+  $PricingValueCopyWith<$Res> get value;
 }
 
 /// @nodoc
@@ -124,18 +165,28 @@ class __$DiscountApplicationCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? edges = freezed,
-    Object? pageInfo = freezed,
+    Object? allocationMethod = freezed,
+    Object? targetSelection = freezed,
+    Object? targetType = freezed,
+    Object? value = freezed,
   }) {
     return _then(_DiscountApplication(
-      edges: edges == freezed
-          ? _value.edges
-          : edges // ignore: cast_nullable_to_non_nullable
-              as List<DiscountApplicationEdge>,
-      pageInfo: pageInfo == freezed
-          ? _value.pageInfo
-          : pageInfo // ignore: cast_nullable_to_non_nullable
-              as PageInfo,
+      allocationMethod: allocationMethod == freezed
+          ? _value.allocationMethod
+          : allocationMethod // ignore: cast_nullable_to_non_nullable
+              as DiscountApplicationAllocationMethod,
+      targetSelection: targetSelection == freezed
+          ? _value.targetSelection
+          : targetSelection // ignore: cast_nullable_to_non_nullable
+              as DiscountApplicationTargetSelection,
+      targetType: targetType == freezed
+          ? _value.targetType
+          : targetType // ignore: cast_nullable_to_non_nullable
+              as DiscountApplicationTargetType,
+      value: value == freezed
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as PricingValue,
     ));
   }
 }
@@ -143,45 +194,68 @@ class __$DiscountApplicationCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_DiscountApplication extends _DiscountApplication {
-  const _$_DiscountApplication({this.edges = const [], required this.pageInfo})
+  const _$_DiscountApplication(
+      {@DiscountApplicationAllocationMethodJson()
+          required this.allocationMethod,
+      @DiscountApplicationTargetSelectionJson()
+          required this.targetSelection,
+      @DiscountApplicationTargetTypeJson()
+          required this.targetType,
+      required this.value})
       : super._();
 
   factory _$_DiscountApplication.fromJson(Map<String, dynamic> json) =>
       _$$_DiscountApplicationFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
-  /// A list of edges.
-  final List<DiscountApplicationEdge> edges;
+  /// The method by which the discount's value is allocated to its entitled items.
+  @DiscountApplicationAllocationMethodJson()
+  final DiscountApplicationAllocationMethod allocationMethod;
   @override
 
-  /// Information to aid in pagination.
-  ///
-  /// An auto-generated type which holds one DiscountApplication and a cursor during pagination.
-  final PageInfo pageInfo;
+  /// Which lines of targetType that the discount is allocated over.
+  @DiscountApplicationTargetSelectionJson()
+  final DiscountApplicationTargetSelection targetSelection;
+  @override
+
+  /// The type of line that the discount is applicable towards.
+  @DiscountApplicationTargetTypeJson()
+  final DiscountApplicationTargetType targetType;
+  @override
+
+  /// The value of the discount application.
+  final PricingValue value;
 
   @override
   String toString() {
-    return 'DiscountApplication(edges: $edges, pageInfo: $pageInfo)';
+    return 'DiscountApplication(allocationMethod: $allocationMethod, targetSelection: $targetSelection, targetType: $targetType, value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DiscountApplication &&
-            (identical(other.edges, edges) ||
-                const DeepCollectionEquality().equals(other.edges, edges)) &&
-            (identical(other.pageInfo, pageInfo) ||
+            (identical(other.allocationMethod, allocationMethod) ||
                 const DeepCollectionEquality()
-                    .equals(other.pageInfo, pageInfo)));
+                    .equals(other.allocationMethod, allocationMethod)) &&
+            (identical(other.targetSelection, targetSelection) ||
+                const DeepCollectionEquality()
+                    .equals(other.targetSelection, targetSelection)) &&
+            (identical(other.targetType, targetType) ||
+                const DeepCollectionEquality()
+                    .equals(other.targetType, targetType)) &&
+            (identical(other.value, value) ||
+                const DeepCollectionEquality().equals(other.value, value)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(edges) ^
-      const DeepCollectionEquality().hash(pageInfo);
+      const DeepCollectionEquality().hash(allocationMethod) ^
+      const DeepCollectionEquality().hash(targetSelection) ^
+      const DeepCollectionEquality().hash(targetType) ^
+      const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
   @override
@@ -197,8 +271,13 @@ class _$_DiscountApplication extends _DiscountApplication {
 
 abstract class _DiscountApplication extends DiscountApplication {
   const factory _DiscountApplication(
-      {List<DiscountApplicationEdge> edges,
-      required PageInfo pageInfo}) = _$_DiscountApplication;
+      {@DiscountApplicationAllocationMethodJson()
+          required DiscountApplicationAllocationMethod allocationMethod,
+      @DiscountApplicationTargetSelectionJson()
+          required DiscountApplicationTargetSelection targetSelection,
+      @DiscountApplicationTargetTypeJson()
+          required DiscountApplicationTargetType targetType,
+      required PricingValue value}) = _$_DiscountApplication;
   const _DiscountApplication._() : super._();
 
   factory _DiscountApplication.fromJson(Map<String, dynamic> json) =
@@ -206,14 +285,26 @@ abstract class _DiscountApplication extends DiscountApplication {
 
   @override
 
-  /// A list of edges.
-  List<DiscountApplicationEdge> get edges => throw _privateConstructorUsedError;
+  /// The method by which the discount's value is allocated to its entitled items.
+  @DiscountApplicationAllocationMethodJson()
+  DiscountApplicationAllocationMethod get allocationMethod =>
+      throw _privateConstructorUsedError;
   @override
 
-  /// Information to aid in pagination.
-  ///
-  /// An auto-generated type which holds one DiscountApplication and a cursor during pagination.
-  PageInfo get pageInfo => throw _privateConstructorUsedError;
+  /// Which lines of targetType that the discount is allocated over.
+  @DiscountApplicationTargetSelectionJson()
+  DiscountApplicationTargetSelection get targetSelection =>
+      throw _privateConstructorUsedError;
+  @override
+
+  /// The type of line that the discount is applicable towards.
+  @DiscountApplicationTargetTypeJson()
+  DiscountApplicationTargetType get targetType =>
+      throw _privateConstructorUsedError;
+  @override
+
+  /// The value of the discount application.
+  PricingValue get value => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$DiscountApplicationCopyWith<_DiscountApplication> get copyWith =>

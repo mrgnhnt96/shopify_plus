@@ -1,39 +1,37 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shopify_core/src/domain/discount_application_edge/discount_application_edge.model.dart';
-import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
+import 'package:shopify_core/src/domain/pricing_value/pricing_value.model.dart';
+import 'package:shopify_core/src/enum/discount_application_allocation_method.dart';
+import 'package:shopify_core/src/enum/discount_application_target_selection.dart';
+import 'package:shopify_core/src/enum/discount_application_target_type.dart';
 
 part 'discount_application.model.freezed.dart';
 part 'discount_application.model.g.dart';
 
-//TODO: figure out the other fields...
-// https://shopify.dev/api/storefront/reference/checkouts/discountapplication
-/*
-allocationMethod (DiscountApplicationAllocationMethod!)
-The method by which the discount's value is allocated to its entitled items.
-
-targetSelection (DiscountApplicationTargetSelection!)
-Which lines of targetType that the discount is allocated over.
-
-targetType (DiscountApplicationTargetType!)
-The type of line that the discount is applicable towards.
-
-value (PricingValue!)
-The value of the discount application.
-*/
+/// {@template discount_application}
+/// {@endtemplate}
 @freezed
 class DiscountApplication with _$DiscountApplication {
   const DiscountApplication._();
 
+  /// {@macro discount_application}
   const factory DiscountApplication({
-    /// A list of edges.
-    @Default([]) List<DiscountApplicationEdge> edges,
+    /// The method by which the discount's value is allocated to its entitled items.
+    @DiscountApplicationAllocationMethodJson()
+        required DiscountApplicationAllocationMethod allocationMethod,
 
-    /// Information to aid in pagination.
-    ///
-    /// An auto-generated type which holds one DiscountApplication and a cursor during pagination.
-    required PageInfo pageInfo,
+    /// Which lines of targetType that the discount is allocated over.
+    @DiscountApplicationTargetSelectionJson()
+        required DiscountApplicationTargetSelection targetSelection,
+
+    /// The type of line that the discount is applicable towards.
+    @DiscountApplicationTargetTypeJson()
+        required DiscountApplicationTargetType targetType,
+
+    /// The value of the discount application.
+    required PricingValue value,
   }) = _DiscountApplication;
 
+  /// {@macro from_json}
   factory DiscountApplication.fromJson(Map<String, dynamic> json) =>
       _$DiscountApplicationFromJson(json);
 }
