@@ -40,7 +40,6 @@ class _$MetafieldTearOff {
       required String id,
       required String key,
       required String namespace,
-      required ParentResource parentResource,
       required String type,
       required DateTime updatedAt,
       required String value}) {
@@ -50,7 +49,6 @@ class _$MetafieldTearOff {
       id: id,
       key: key,
       namespace: namespace,
-      parentResource: parentResource,
       type: type,
       updatedAt: updatedAt,
       value: value,
@@ -98,7 +96,6 @@ mixin _$Metafield {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)
@@ -119,7 +116,6 @@ mixin _$Metafield {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -138,7 +134,6 @@ mixin _$Metafield {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -204,12 +199,9 @@ abstract class _$MetafieldCopyWith<$Res> {
       String id,
       String key,
       String namespace,
-      ParentResource parentResource,
       String type,
       DateTime updatedAt,
       String value});
-
-  $ParentResourceCopyWith<$Res> get parentResource;
 }
 
 /// @nodoc
@@ -228,7 +220,6 @@ class __$MetafieldCopyWithImpl<$Res> extends _$MetafieldCopyWithImpl<$Res>
     Object? id = freezed,
     Object? key = freezed,
     Object? namespace = freezed,
-    Object? parentResource = freezed,
     Object? type = freezed,
     Object? updatedAt = freezed,
     Object? value = freezed,
@@ -254,10 +245,6 @@ class __$MetafieldCopyWithImpl<$Res> extends _$MetafieldCopyWithImpl<$Res>
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
               as String,
-      parentResource: parentResource == freezed
-          ? _value.parentResource
-          : parentResource // ignore: cast_nullable_to_non_nullable
-              as ParentResource,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -272,13 +259,6 @@ class __$MetafieldCopyWithImpl<$Res> extends _$MetafieldCopyWithImpl<$Res>
               as String,
     ));
   }
-
-  @override
-  $ParentResourceCopyWith<$Res> get parentResource {
-    return $ParentResourceCopyWith<$Res>(_value.parentResource, (value) {
-      return _then(_value.copyWith(parentResource: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -291,7 +271,6 @@ class _$_Metafield extends _Metafield {
       required this.id,
       required this.key,
       required this.namespace,
-      required this.parentResource,
       required this.type,
       required this.updatedAt,
       required this.value})
@@ -323,9 +302,9 @@ class _$_Metafield extends _Metafield {
   @override
 
   /// The parent object that the metafield belongs to.
-  final ParentResource parentResource;
-  @override
-
+  ///
+  /// Cannot set this up yet...
+// required ParentResource parentResource,
   /// The type name of the metafield. See the list of supported types.
   final String type;
   @override
@@ -339,7 +318,7 @@ class _$_Metafield extends _Metafield {
 
   @override
   String toString() {
-    return 'Metafield(createdAt: $createdAt, description: $description, id: $id, key: $key, namespace: $namespace, parentResource: $parentResource, type: $type, updatedAt: $updatedAt, value: $value)';
+    return 'Metafield(createdAt: $createdAt, description: $description, id: $id, key: $key, namespace: $namespace, type: $type, updatedAt: $updatedAt, value: $value)';
   }
 
   @override
@@ -359,9 +338,6 @@ class _$_Metafield extends _Metafield {
             (identical(other.namespace, namespace) ||
                 const DeepCollectionEquality()
                     .equals(other.namespace, namespace)) &&
-            (identical(other.parentResource, parentResource) ||
-                const DeepCollectionEquality()
-                    .equals(other.parentResource, parentResource)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -379,7 +355,6 @@ class _$_Metafield extends _Metafield {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(key) ^
       const DeepCollectionEquality().hash(namespace) ^
-      const DeepCollectionEquality().hash(parentResource) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(updatedAt) ^
       const DeepCollectionEquality().hash(value);
@@ -398,7 +373,6 @@ class _$_Metafield extends _Metafield {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)
@@ -410,8 +384,8 @@ class _$_Metafield extends _Metafield {
             Metafield? metafield, MetafieldConnection metafields)
         hasMetafields,
   }) {
-    return $default(createdAt, description, id, key, namespace, parentResource,
-        type, updatedAt, value);
+    return $default(
+        createdAt, description, id, key, namespace, type, updatedAt, value);
   }
 
   @override
@@ -423,7 +397,6 @@ class _$_Metafield extends _Metafield {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -433,8 +406,8 @@ class _$_Metafield extends _Metafield {
     TResult Function(Metafield? metafield, MetafieldConnection metafields)?
         hasMetafields,
   }) {
-    return $default?.call(createdAt, description, id, key, namespace,
-        parentResource, type, updatedAt, value);
+    return $default?.call(
+        createdAt, description, id, key, namespace, type, updatedAt, value);
   }
 
   @override
@@ -446,7 +419,6 @@ class _$_Metafield extends _Metafield {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -458,8 +430,8 @@ class _$_Metafield extends _Metafield {
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(createdAt, description, id, key, namespace,
-          parentResource, type, updatedAt, value);
+      return $default(
+          createdAt, description, id, key, namespace, type, updatedAt, value);
     }
     return orElse();
   }
@@ -514,7 +486,6 @@ abstract class _Metafield extends Metafield implements Node {
       required String id,
       required String key,
       required String namespace,
-      required ParentResource parentResource,
       required String type,
       required DateTime updatedAt,
       required String value}) = _$_Metafield;
@@ -539,8 +510,9 @@ abstract class _Metafield extends Metafield implements Node {
   String get namespace => throw _privateConstructorUsedError;
 
   /// The parent object that the metafield belongs to.
-  ParentResource get parentResource => throw _privateConstructorUsedError;
-
+  ///
+  /// Cannot set this up yet...
+// required ParentResource parentResource,
   /// The type name of the metafield. See the list of supported types.
   String get type => throw _privateConstructorUsedError;
 
@@ -655,7 +627,6 @@ class _$MetafieldConnection extends MetafieldConnection {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)
@@ -679,7 +650,6 @@ class _$MetafieldConnection extends MetafieldConnection {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -701,7 +671,6 @@ class _$MetafieldConnection extends MetafieldConnection {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -877,7 +846,6 @@ class _$MetafieldEdge extends MetafieldEdge {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)
@@ -901,7 +869,6 @@ class _$MetafieldEdge extends MetafieldEdge {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -923,7 +890,6 @@ class _$MetafieldEdge extends MetafieldEdge {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -1104,7 +1070,6 @@ class _$HasMetafields extends HasMetafields {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)
@@ -1128,7 +1093,6 @@ class _$HasMetafields extends HasMetafields {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?
@@ -1150,7 +1114,6 @@ class _$HasMetafields extends HasMetafields {
             String id,
             String key,
             String namespace,
-            ParentResource parentResource,
             String type,
             DateTime updatedAt,
             String value)?

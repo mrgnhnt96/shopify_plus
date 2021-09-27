@@ -17,6 +17,10 @@ part 'parent_resource.model.g.dart';
 /// - ProductVariant
 /// - Shop
 /// {@endtemplate}
+///
+/// ! not using due to complexity.
+///
+/// ? Only used in `metafield`
 @freezed
 abstract class ParentResource with _$ParentResource {
   const ParentResource._();

@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
-import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 
 part 'metafield.model.freezed.dart';
 part 'metafield.model.g.dart';
@@ -33,7 +32,9 @@ class Metafield with _$Metafield {
     required String namespace,
 
     /// The parent object that the metafield belongs to.
-    required ParentResource parentResource,
+    ///
+    /// Cannot set this up yet...
+    // required ParentResource parentResource,
 
     /// The type name of the metafield. See the list of supported types.
     required String type,
