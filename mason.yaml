@@ -1,3 +1,5 @@
 bricks:
   model:
-    path: bricks/model
+    path: ./bricks/model
+  pagination:
+    path: ./bricks/pagination
