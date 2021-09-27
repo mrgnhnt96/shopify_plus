@@ -16,6 +16,18 @@ part 'media.model.g.dart';
 class Media with _$Media {
   const Media._();
 
+  /// {@macro media}
+  const factory Media({
+    /// A word or phrase to share the nature or contents of a media.
+    String? alt,
+
+    /// The media content type.
+    @MediaContentTypeJson() required MediaContentType mediaContentType,
+
+    /// The preview image for the media.
+    ShopifyImage? previewImage,
+  }) = _Media;
+
   /// Represents a Shopify hosted image
   ///
   /// *requires access: unauthenticated_read_product_listings*

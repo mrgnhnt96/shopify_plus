@@ -15,6 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 Media _$MediaFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType'] as String?) {
+    case 'default':
+      return _Media.fromJson(json);
     case 'image':
       return MediaImage.fromJson(json);
     case 'model3d':
@@ -37,6 +39,17 @@ Media _$MediaFromJson(Map<String, dynamic> json) {
 /// @nodoc
 class _$MediaTearOff {
   const _$MediaTearOff();
+
+  _Media call(
+      {String? alt,
+      @MediaContentTypeJson() required MediaContentType mediaContentType,
+      ShopifyImage? previewImage}) {
+    return _Media(
+      alt: alt,
+      mediaContentType: mediaContentType,
+      previewImage: previewImage,
+    );
+  }
 
   MediaImage image(
       {String? alt,
@@ -128,7 +141,12 @@ const $Media = _$MediaTearOff();
 /// @nodoc
 mixin _$Media {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -165,7 +183,12 @@ mixin _$Media {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -201,7 +224,12 @@ mixin _$Media {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -238,7 +266,8 @@ mixin _$Media {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -248,7 +277,8 @@ mixin _$Media {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -258,7 +288,8 @@ mixin _$Media {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -284,6 +315,329 @@ class _$MediaCopyWithImpl<$Res> implements $MediaCopyWith<$Res> {
   final Media _value;
   // ignore: unused_field
   final $Res Function(Media) _then;
+}
+
+/// @nodoc
+abstract class _$MediaCopyWith<$Res> {
+  factory _$MediaCopyWith(_Media value, $Res Function(_Media) then) =
+      __$MediaCopyWithImpl<$Res>;
+  $Res call(
+      {String? alt,
+      @MediaContentTypeJson() MediaContentType mediaContentType,
+      ShopifyImage? previewImage});
+
+  $ShopifyImageCopyWith<$Res>? get previewImage;
+}
+
+/// @nodoc
+class __$MediaCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
+    implements _$MediaCopyWith<$Res> {
+  __$MediaCopyWithImpl(_Media _value, $Res Function(_Media) _then)
+      : super(_value, (v) => _then(v as _Media));
+
+  @override
+  _Media get _value => super._value as _Media;
+
+  @override
+  $Res call({
+    Object? alt = freezed,
+    Object? mediaContentType = freezed,
+    Object? previewImage = freezed,
+  }) {
+    return _then(_Media(
+      alt: alt == freezed
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mediaContentType: mediaContentType == freezed
+          ? _value.mediaContentType
+          : mediaContentType // ignore: cast_nullable_to_non_nullable
+              as MediaContentType,
+      previewImage: previewImage == freezed
+          ? _value.previewImage
+          : previewImage // ignore: cast_nullable_to_non_nullable
+              as ShopifyImage?,
+    ));
+  }
+
+  @override
+  $ShopifyImageCopyWith<$Res>? get previewImage {
+    if (_value.previewImage == null) {
+      return null;
+    }
+
+    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
+      return _then(_value.copyWith(previewImage: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Media extends _Media {
+  const _$_Media(
+      {this.alt,
+      @MediaContentTypeJson() required this.mediaContentType,
+      this.previewImage})
+      : super._();
+
+  factory _$_Media.fromJson(Map<String, dynamic> json) =>
+      _$$_MediaFromJson(json);
+
+  @override
+
+  /// A word or phrase to share the nature or contents of a media.
+  final String? alt;
+  @override
+
+  /// The media content type.
+  @MediaContentTypeJson()
+  final MediaContentType mediaContentType;
+  @override
+
+  /// The preview image for the media.
+  final ShopifyImage? previewImage;
+
+  @override
+  String toString() {
+    return 'Media(alt: $alt, mediaContentType: $mediaContentType, previewImage: $previewImage)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Media &&
+            (identical(other.alt, alt) ||
+                const DeepCollectionEquality().equals(other.alt, alt)) &&
+            (identical(other.mediaContentType, mediaContentType) ||
+                const DeepCollectionEquality()
+                    .equals(other.mediaContentType, mediaContentType)) &&
+            (identical(other.previewImage, previewImage) ||
+                const DeepCollectionEquality()
+                    .equals(other.previewImage, previewImage)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(alt) ^
+      const DeepCollectionEquality().hash(mediaContentType) ^
+      const DeepCollectionEquality().hash(previewImage);
+
+  @JsonKey(ignore: true)
+  @override
+  _$MediaCopyWith<_Media> get copyWith =>
+      __$MediaCopyWithImpl<_Media>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
+    required TResult Function(
+            String? alt,
+            String id,
+            ShopifyImage? image,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        image,
+    required TResult Function(
+            String? alt,
+            String id,
+            List<Model3dSource> sources,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        model3d,
+    required TResult Function(
+            String? alt,
+            @MediaHostJson() MediaHost host,
+            String id,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage,
+            List<VideoSource> sources)
+        video,
+    required TResult Function(
+            String? alt,
+            String embeddedUrl,
+            @MediaHostJson() MediaHost host,
+            String id,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        externalVideo,
+    required TResult Function(String cursor, Media node) edge,
+    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
+        paginated,
+  }) {
+    return $default(alt, mediaContentType, previewImage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
+    TResult Function(
+            String? alt,
+            String id,
+            ShopifyImage? image,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        image,
+    TResult Function(
+            String? alt,
+            String id,
+            List<Model3dSource> sources,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        model3d,
+    TResult Function(
+            String? alt,
+            @MediaHostJson() MediaHost host,
+            String id,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage,
+            List<VideoSource> sources)?
+        video,
+    TResult Function(
+            String? alt,
+            String embeddedUrl,
+            @MediaHostJson() MediaHost host,
+            String id,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        externalVideo,
+    TResult Function(String cursor, Media node)? edge,
+    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
+  }) {
+    return $default?.call(alt, mediaContentType, previewImage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
+    TResult Function(
+            String? alt,
+            String id,
+            ShopifyImage? image,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        image,
+    TResult Function(
+            String? alt,
+            String id,
+            List<Model3dSource> sources,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        model3d,
+    TResult Function(
+            String? alt,
+            @MediaHostJson() MediaHost host,
+            String id,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage,
+            List<VideoSource> sources)?
+        video,
+    TResult Function(
+            String? alt,
+            String embeddedUrl,
+            @MediaHostJson() MediaHost host,
+            String id,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        externalVideo,
+    TResult Function(String cursor, Media node)? edge,
+    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(alt, mediaContentType, previewImage);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
+    required TResult Function(MediaImage value) image,
+    required TResult Function(Model3d value) model3d,
+    required TResult Function(Video value) video,
+    required TResult Function(ExternalVideo value) externalVideo,
+    required TResult Function(MediaEdge value) edge,
+    required TResult Function(MediaPagination value) paginated,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
+    TResult Function(MediaImage value)? image,
+    TResult Function(Model3d value)? model3d,
+    TResult Function(Video value)? video,
+    TResult Function(ExternalVideo value)? externalVideo,
+    TResult Function(MediaEdge value)? edge,
+    TResult Function(MediaPagination value)? paginated,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
+    TResult Function(MediaImage value)? image,
+    TResult Function(Model3d value)? model3d,
+    TResult Function(Video value)? video,
+    TResult Function(ExternalVideo value)? externalVideo,
+    TResult Function(MediaEdge value)? edge,
+    TResult Function(MediaPagination value)? paginated,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MediaToJson(this)..['runtimeType'] = 'default';
+  }
+}
+
+abstract class _Media extends Media {
+  const factory _Media(
+      {String? alt,
+      @MediaContentTypeJson() required MediaContentType mediaContentType,
+      ShopifyImage? previewImage}) = _$_Media;
+  const _Media._() : super._();
+
+  factory _Media.fromJson(Map<String, dynamic> json) = _$_Media.fromJson;
+
+  /// A word or phrase to share the nature or contents of a media.
+  String? get alt => throw _privateConstructorUsedError;
+
+  /// The media content type.
+  @MediaContentTypeJson()
+  MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+
+  /// The preview image for the media.
+  ShopifyImage? get previewImage => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$MediaCopyWith<_Media> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -441,7 +795,12 @@ class _$MediaImage extends MediaImage {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -481,7 +840,12 @@ class _$MediaImage extends MediaImage {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -520,7 +884,12 @@ class _$MediaImage extends MediaImage {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -563,7 +932,8 @@ class _$MediaImage extends MediaImage {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -576,7 +946,8 @@ class _$MediaImage extends MediaImage {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -589,7 +960,8 @@ class _$MediaImage extends MediaImage {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -785,7 +1157,12 @@ class _$Model3d extends Model3d {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -825,7 +1202,12 @@ class _$Model3d extends Model3d {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -864,7 +1246,12 @@ class _$Model3d extends Model3d {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -907,7 +1294,8 @@ class _$Model3d extends Model3d {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -920,7 +1308,8 @@ class _$Model3d extends Model3d {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -933,7 +1322,8 @@ class _$Model3d extends Model3d {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -1140,7 +1530,12 @@ class _$Video extends Video {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -1180,7 +1575,12 @@ class _$Video extends Video {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -1219,7 +1619,12 @@ class _$Video extends Video {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -1262,7 +1667,8 @@ class _$Video extends Video {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -1275,7 +1681,8 @@ class _$Video extends Video {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -1288,7 +1695,8 @@ class _$Video extends Video {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -1504,7 +1912,12 @@ class _$ExternalVideo extends ExternalVideo {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -1545,7 +1958,12 @@ class _$ExternalVideo extends ExternalVideo {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -1585,7 +2003,12 @@ class _$ExternalVideo extends ExternalVideo {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -1629,7 +2052,8 @@ class _$ExternalVideo extends ExternalVideo {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -1642,7 +2066,8 @@ class _$ExternalVideo extends ExternalVideo {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -1655,7 +2080,8 @@ class _$ExternalVideo extends ExternalVideo {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -1801,7 +2227,12 @@ class _$MediaEdge extends MediaEdge {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -1841,7 +2272,12 @@ class _$MediaEdge extends MediaEdge {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -1880,7 +2316,12 @@ class _$MediaEdge extends MediaEdge {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -1923,7 +2364,8 @@ class _$MediaEdge extends MediaEdge {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -1936,7 +2378,8 @@ class _$MediaEdge extends MediaEdge {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -1949,7 +2392,8 @@ class _$MediaEdge extends MediaEdge {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -2079,7 +2523,12 @@ class _$MediaPagination extends MediaPagination {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)
+        $default, {
     required TResult Function(
             String? alt,
             String id,
@@ -2119,7 +2568,12 @@ class _$MediaPagination extends MediaPagination {
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -2158,7 +2612,12 @@ class _$MediaPagination extends MediaPagination {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String? alt,
+            @MediaContentTypeJson() MediaContentType mediaContentType,
+            ShopifyImage? previewImage)?
+        $default, {
     TResult Function(
             String? alt,
             String id,
@@ -2201,7 +2660,8 @@ class _$MediaPagination extends MediaPagination {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object?>({
+  TResult map<TResult extends Object?>(
+    TResult Function(_Media value) $default, {
     required TResult Function(MediaImage value) image,
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
@@ -2214,7 +2674,8 @@ class _$MediaPagination extends MediaPagination {
 
   @override
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
@@ -2227,7 +2688,8 @@ class _$MediaPagination extends MediaPagination {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Media value)? $default, {
     TResult Function(MediaImage value)? image,
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,

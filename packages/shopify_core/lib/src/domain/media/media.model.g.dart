@@ -6,6 +6,22 @@ part of 'media.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$_Media _$$_MediaFromJson(Map<String, dynamic> json) => _$_Media(
+      alt: json['alt'] as String?,
+      mediaContentType: const MediaContentTypeJson()
+          .fromJson(json['mediaContentType'] as String),
+      previewImage: json['previewImage'] == null
+          ? null
+          : ShopifyImage.fromJson(json['previewImage'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_MediaToJson(_$_Media instance) => <String, dynamic>{
+      'alt': instance.alt,
+      'mediaContentType':
+          const MediaContentTypeJson().toJson(instance.mediaContentType),
+      'previewImage': instance.previewImage,
+    };
+
 _$MediaImage _$$MediaImageFromJson(Map<String, dynamic> json) => _$MediaImage(
       alt: json['alt'] as String?,
       id: json['id'] as String,
