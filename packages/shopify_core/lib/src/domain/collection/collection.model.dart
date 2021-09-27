@@ -51,7 +51,7 @@ class Collection with _$Collection {
     required DateTime updatedAt,
   }) = _Collection;
 
-  /// An auto-generated type which holds one Collection and a cursor during pagination.
+  /// {@macro edge}
   const factory Collection.edge({
     /// A cursor for use in pagination.
     required String cursor,
@@ -60,7 +60,7 @@ class Collection with _$Collection {
     required Collection node,
   }) = CollectionEdge;
 
-  /// An auto-generated type which holds one Collection and a cursor during pagination.
+  /// {@macro pagination}
   const factory Collection.paginated({
     /// A list of edges
     required List<CollectionEdge> edges,

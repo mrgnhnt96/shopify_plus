@@ -49,3 +49,13 @@ abstract class _EnumX {
   /// {@endtemplate}
   String get code;
 }
+
+/// {@template pagination}
+///  An auto-generated type for paginating through multiple objects.
+/// {@endtemplate}
+class _Pagination {}
+
+/// {@template edge}
+/// An auto-generated type which holds one object and a cursor during pagination.
+/// {@endtemplate}
+class _Edge {}
