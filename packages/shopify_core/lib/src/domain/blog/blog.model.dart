@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/article/article.model.dart';
 import 'package:shopify_core/src/domain/article_author/article_author.model.dart';
-import 'package:shopify_core/src/domain/metafield/metafield.dart';
+import 'package:shopify_core/src/domain/metafield/metafield.model.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/online_store_publishable/online_store_publishable.model.dart';
 import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
