@@ -48,3 +48,83 @@ Map<String, dynamic> _$$_CustomerToJson(_$_Customer instance) =>
       'tags': instance.tags,
       'updatedAt': instance.updatedAt.toIso8601String(),
     };
+
+_$CustomerCreateAccessToken _$$CustomerCreateAccessTokenFromJson(
+        Map<String, dynamic> json) =>
+    _$CustomerCreateAccessToken(
+      email: json['email'] as String,
+      password: json['password'] as String,
+    );
+
+Map<String, dynamic> _$$CustomerCreateAccessTokenToJson(
+        _$CustomerCreateAccessToken instance) =>
+    <String, dynamic>{
+      'email': instance.email,
+      'password': instance.password,
+    };
+
+_$CustomerActivate _$$CustomerActivateFromJson(Map<String, dynamic> json) =>
+    _$CustomerActivate(
+      activationToken: json['activationToken'] as String,
+      password: json['password'] as String,
+    );
+
+Map<String, dynamic> _$$CustomerActivateToJson(_$CustomerActivate instance) =>
+    <String, dynamic>{
+      'activationToken': instance.activationToken,
+      'password': instance.password,
+    };
+
+_$CustomerCreate _$$CustomerCreateFromJson(Map<String, dynamic> json) =>
+    _$CustomerCreate(
+      acceptsMarketing: json['acceptsMarketing'] as bool?,
+      email: json['email'] as String,
+      firstName: json['firstName'] as String?,
+      lastName: json['lastName'] as String?,
+      password: json['password'] as String,
+      phone: json['phone'] as String?,
+    );
+
+Map<String, dynamic> _$$CustomerCreateToJson(_$CustomerCreate instance) =>
+    <String, dynamic>{
+      'acceptsMarketing': instance.acceptsMarketing,
+      'email': instance.email,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'password': instance.password,
+      'phone': instance.phone,
+    };
+
+_$CustomerResetPassword _$$CustomerResetPasswordFromJson(
+        Map<String, dynamic> json) =>
+    _$CustomerResetPassword(
+      password: json['password'] as String,
+      resetToken: json['resetToken'] as String,
+    );
+
+Map<String, dynamic> _$$CustomerResetPasswordToJson(
+        _$CustomerResetPassword instance) =>
+    <String, dynamic>{
+      'password': instance.password,
+      'resetToken': instance.resetToken,
+    };
+
+_$CustomerUpdate _$$CustomerUpdateFromJson(Map<String, dynamic> json) =>
+    _$CustomerUpdate(
+      acceptsMarketing: json['acceptsMarketing'] as bool?,
+      email: json['email'] as String?,
+      firstName: json['firstName'] as String?,
+      lastName: json['lastName'] as String?,
+      password: json['password'] as String?,
+      phone: json['phone'] as String?,
+    );
+
+Map<String, dynamic> _$$CustomerUpdateToJson(_$CustomerUpdate instance) =>
+    <String, dynamic>{
+      'acceptsMarketing': instance.acceptsMarketing,
+      'email': instance.email,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'password': instance.password,
+      'phone': instance.phone,
+    };
