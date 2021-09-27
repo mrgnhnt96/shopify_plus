@@ -29,3 +29,24 @@ Map<String, dynamic> _$$_CreditCardToJson(_$_CreditCard instance) =>
       'lastName': instance.lastName,
       'maskedNumber': instance.maskedNumber,
     };
+
+_$CreditCardPaymentInput _$$CreditCardPaymentInputFromJson(
+        Map<String, dynamic> json) =>
+    _$CreditCardPaymentInput(
+      amount: Money.fromJson(json['amount'] as Map<String, dynamic>),
+      billingAddress: MailingAddressInput.fromJson(
+          json['billingAddress'] as Map<String, dynamic>),
+      idempotencyKey: json['idempotencyKey'] as String,
+      test: json['test'] as bool? ?? false,
+      vaultId: json['vaultId'] as String,
+    );
+
+Map<String, dynamic> _$$CreditCardPaymentInputToJson(
+        _$CreditCardPaymentInput instance) =>
+    <String, dynamic>{
+      'amount': instance.amount,
+      'billingAddress': instance.billingAddress,
+      'idempotencyKey': instance.idempotencyKey,
+      'test': instance.test,
+      'vaultId': instance.vaultId,
+    };
