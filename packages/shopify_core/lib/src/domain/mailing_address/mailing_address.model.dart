@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
+import 'package:shopify_core/src/enum/country_code.dart';
 
 part 'mailing_address.model.freezed.dart';
 part 'mailing_address.model.g.dart';
@@ -76,6 +77,41 @@ class MailingAddress with _$MailingAddress {
 
     String? zip,
   }) = _MailingAddress;
+
+  /// Specifies the fields accepted to create or update a mailing address
+  const factory MailingAddress.create({
+    /// The first line of the address. Typically the street address or PO Box number.
+    String? address1,
+
+    /// The second line of the address. Typically the number of the apartment, suite, or unit.
+    String? address2,
+
+    /// The name of the city, district, village, or town.
+    String? city,
+
+    /// The name of the customer's company or organization.
+    String? company,
+
+    /// The name of the country.
+    @CountryCodeJson() CountryCode? country,
+
+    /// The first name of the customer.
+    String? firstName,
+
+    /// The last name of the customer.
+    String? lastName,
+
+    /// A unique phone number for the customer.
+    ///
+    /// Formatted using E.164 standard. For example, +16135551111.
+    String? phone,
+
+    /// The region of the address, such as the province, state, or district.
+    String? province,
+
+    /// The zip or postal code of the address.
+    String? zip,
+  }) = MailingAddressInput;
 
   /// {@macro from_json}
   factory MailingAddress.fromJson(Map<String, dynamic> json) =>
