@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'code_discount_allocation.model.dart';
+part of 'cart_code_discount_allocation.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CodeDiscountAllocation _$$_CodeDiscountAllocationFromJson(
+_$_CartCodeDiscountAllocation _$$_CartCodeDiscountAllocationFromJson(
         Map<String, dynamic> json) =>
-    _$_CodeDiscountAllocation(
+    _$_CartCodeDiscountAllocation(
       code: json['code'] as String,
       discountedAmount:
           Money.fromJson(json['discountedAmount'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_CodeDiscountAllocationToJson(
-        _$_CodeDiscountAllocation instance) =>
+Map<String, dynamic> _$$_CartCodeDiscountAllocationToJson(
+        _$_CartCodeDiscountAllocation instance) =>
     <String, dynamic>{
       'code': instance.code,
       'discountedAmount': instance.discountedAmount,
