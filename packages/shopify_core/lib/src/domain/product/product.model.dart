@@ -112,24 +112,6 @@ class Product with _$Product {
     required String vendor,
   }) = _Product;
 
-  /// {@macro edge}
-  const factory Product.edge({
-    /// A cursor for use in pagination.
-    required String cursor,
-
-    /// The item at the end of ProductEdge.
-    required Product node,
-  }) = ProductEdge;
-
-  /// {@macro pagination}
-  const factory Product.pagination({
-    /// A list of edges.
-    required List<ProductEdge> edges,
-
-    /// Information to aid in pagination.
-    required PageInfo pageInfo,
-  }) = ProductPagination;
-
   /// {@macro from_json}
   factory Product.fromJson(Map<String, dynamic> json) =>
       _$ProductFromJson(json);
