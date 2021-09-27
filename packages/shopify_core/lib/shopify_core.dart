@@ -1,1 +1,0 @@
-library shopify_core;
