@@ -56,3 +56,23 @@ Map<String, dynamic> _$$CheckoutLineItemInputToJson(
       'quantity': instance.quantity,
       'variantId': instance.variantId,
     };
+
+_$CheckoutLineItemUpdateInput _$$CheckoutLineItemUpdateInputFromJson(
+        Map<String, dynamic> json) =>
+    _$CheckoutLineItemUpdateInput(
+      customAttributes: (json['customAttributes'] as List<dynamic>?)
+          ?.map((e) => Attribute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      id: json['id'] as String?,
+      quantity: json['quantity'] as int?,
+      variantId: json['variantId'] as String?,
+    );
+
+Map<String, dynamic> _$$CheckoutLineItemUpdateInputToJson(
+        _$CheckoutLineItemUpdateInput instance) =>
+    <String, dynamic>{
+      'customAttributes': instance.customAttributes,
+      'id': instance.id,
+      'quantity': instance.quantity,
+      'variantId': instance.variantId,
+    };

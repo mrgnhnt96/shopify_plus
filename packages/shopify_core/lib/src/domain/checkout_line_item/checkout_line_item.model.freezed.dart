@@ -19,6 +19,8 @@ CheckoutLineItem _$CheckoutLineItemFromJson(Map<String, dynamic> json) {
       return _CheckoutLineItem.fromJson(json);
     case 'create':
       return CheckoutLineItemInput.fromJson(json);
+    case 'update':
+      return CheckoutLineItemUpdateInput.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'CheckoutLineItem',
@@ -60,6 +62,19 @@ class _$CheckoutLineItemTearOff {
     );
   }
 
+  CheckoutLineItemUpdateInput update(
+      {List<Attribute>? customAttributes,
+      String? id,
+      int? quantity,
+      String? variantId}) {
+    return CheckoutLineItemUpdateInput(
+      customAttributes: customAttributes,
+      id: id,
+      quantity: quantity,
+      variantId: variantId,
+    );
+  }
+
   CheckoutLineItem fromJson(Map<String, Object> json) {
     return CheckoutLineItem.fromJson(json);
   }
@@ -70,9 +85,6 @@ const $CheckoutLineItem = _$CheckoutLineItemTearOff();
 
 /// @nodoc
 mixin _$CheckoutLineItem {
-  /// The quantity of the line item.
-  int get quantity => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
@@ -87,6 +99,9 @@ mixin _$CheckoutLineItem {
     required TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)
         create,
+    required TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)
+        update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -103,6 +118,9 @@ mixin _$CheckoutLineItem {
     TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)?
         create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,6 +137,9 @@ mixin _$CheckoutLineItem {
     TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)?
         create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -126,25 +147,25 @@ mixin _$CheckoutLineItem {
   TResult map<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value) $default, {
     required TResult Function(CheckoutLineItemInput value) create,
+    required TResult Function(CheckoutLineItemUpdateInput value) update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value)? $default, {
     TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value)? $default, {
     TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $CheckoutLineItemCopyWith<CheckoutLineItem> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -152,7 +173,6 @@ abstract class $CheckoutLineItemCopyWith<$Res> {
   factory $CheckoutLineItemCopyWith(
           CheckoutLineItem value, $Res Function(CheckoutLineItem) then) =
       _$CheckoutLineItemCopyWithImpl<$Res>;
-  $Res call({int quantity});
 }
 
 /// @nodoc
@@ -163,27 +183,13 @@ class _$CheckoutLineItemCopyWithImpl<$Res>
   final CheckoutLineItem _value;
   // ignore: unused_field
   final $Res Function(CheckoutLineItem) _then;
-
-  @override
-  $Res call({
-    Object? quantity = freezed,
-  }) {
-    return _then(_value.copyWith(
-      quantity: quantity == freezed
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class _$CheckoutLineItemCopyWith<$Res>
-    implements $CheckoutLineItemCopyWith<$Res> {
+abstract class _$CheckoutLineItemCopyWith<$Res> {
   factory _$CheckoutLineItemCopyWith(
           _CheckoutLineItem value, $Res Function(_CheckoutLineItem) then) =
       __$CheckoutLineItemCopyWithImpl<$Res>;
-  @override
   $Res call(
       {List<Attribute> customAttributes,
       List<DiscountAllocation> discountAllocations,
@@ -381,6 +387,9 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
     required TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)
         create,
+    required TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)
+        update,
   }) {
     return $default(customAttributes, discountAllocations, id, quantity, title,
         unitPrice, variant);
@@ -401,6 +410,9 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
     TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)?
         create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
   }) {
     return $default?.call(customAttributes, discountAllocations, id, quantity,
         title, unitPrice, variant);
@@ -421,6 +433,9 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
     TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)?
         create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -435,6 +450,7 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
   TResult map<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value) $default, {
     required TResult Function(CheckoutLineItemInput value) create,
+    required TResult Function(CheckoutLineItemUpdateInput value) update,
   }) {
     return $default(this);
   }
@@ -444,6 +460,7 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
   TResult? mapOrNull<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value)? $default, {
     TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
   }) {
     return $default?.call(this);
   }
@@ -453,6 +470,7 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value)? $default, {
     TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -490,7 +508,6 @@ abstract class _CheckoutLineItem extends CheckoutLineItem implements Node {
 
   /// A globally-unique identifier.
   String get id => throw _privateConstructorUsedError;
-  @override
 
   /// The quantity of the line item.
   int get quantity => throw _privateConstructorUsedError;
@@ -503,19 +520,16 @@ abstract class _CheckoutLineItem extends CheckoutLineItem implements Node {
 
   /// Product variant of the line item.
   ProductVariant? get variant => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   _$CheckoutLineItemCopyWith<_CheckoutLineItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CheckoutLineItemInputCopyWith<$Res>
-    implements $CheckoutLineItemCopyWith<$Res> {
+abstract class $CheckoutLineItemInputCopyWith<$Res> {
   factory $CheckoutLineItemInputCopyWith(CheckoutLineItemInput value,
           $Res Function(CheckoutLineItemInput) then) =
       _$CheckoutLineItemInputCopyWithImpl<$Res>;
-  @override
   $Res call(
       {List<Attribute>? customAttributes, int quantity, String variantId});
 }
@@ -625,6 +639,9 @@ class _$CheckoutLineItemInput extends CheckoutLineItemInput {
     required TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)
         create,
+    required TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)
+        update,
   }) {
     return create(customAttributes, quantity, variantId);
   }
@@ -644,6 +661,9 @@ class _$CheckoutLineItemInput extends CheckoutLineItemInput {
     TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)?
         create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
   }) {
     return create?.call(customAttributes, quantity, variantId);
   }
@@ -663,6 +683,9 @@ class _$CheckoutLineItemInput extends CheckoutLineItemInput {
     TResult Function(
             List<Attribute>? customAttributes, int quantity, String variantId)?
         create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -676,6 +699,7 @@ class _$CheckoutLineItemInput extends CheckoutLineItemInput {
   TResult map<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value) $default, {
     required TResult Function(CheckoutLineItemInput value) create,
+    required TResult Function(CheckoutLineItemUpdateInput value) update,
   }) {
     return create(this);
   }
@@ -685,6 +709,7 @@ class _$CheckoutLineItemInput extends CheckoutLineItemInput {
   TResult? mapOrNull<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value)? $default, {
     TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
   }) {
     return create?.call(this);
   }
@@ -694,6 +719,7 @@ class _$CheckoutLineItemInput extends CheckoutLineItemInput {
   TResult maybeMap<TResult extends Object?>(
     TResult Function(_CheckoutLineItem value)? $default, {
     TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -720,15 +746,269 @@ abstract class CheckoutLineItemInput extends CheckoutLineItem {
 
   /// Extra information in the form of an array of Key-Value pairs about the line item.
   List<Attribute>? get customAttributes => throw _privateConstructorUsedError;
-  @override
 
   /// The quantity of the line item.
   int get quantity => throw _privateConstructorUsedError;
 
   /// The identifier of the product variant for the line item.
   String get variantId => throw _privateConstructorUsedError;
-  @override
   @JsonKey(ignore: true)
   $CheckoutLineItemInputCopyWith<CheckoutLineItemInput> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CheckoutLineItemUpdateInputCopyWith<$Res> {
+  factory $CheckoutLineItemUpdateInputCopyWith(
+          CheckoutLineItemUpdateInput value,
+          $Res Function(CheckoutLineItemUpdateInput) then) =
+      _$CheckoutLineItemUpdateInputCopyWithImpl<$Res>;
+  $Res call(
+      {List<Attribute>? customAttributes,
+      String? id,
+      int? quantity,
+      String? variantId});
+}
+
+/// @nodoc
+class _$CheckoutLineItemUpdateInputCopyWithImpl<$Res>
+    extends _$CheckoutLineItemCopyWithImpl<$Res>
+    implements $CheckoutLineItemUpdateInputCopyWith<$Res> {
+  _$CheckoutLineItemUpdateInputCopyWithImpl(CheckoutLineItemUpdateInput _value,
+      $Res Function(CheckoutLineItemUpdateInput) _then)
+      : super(_value, (v) => _then(v as CheckoutLineItemUpdateInput));
+
+  @override
+  CheckoutLineItemUpdateInput get _value =>
+      super._value as CheckoutLineItemUpdateInput;
+
+  @override
+  $Res call({
+    Object? customAttributes = freezed,
+    Object? id = freezed,
+    Object? quantity = freezed,
+    Object? variantId = freezed,
+  }) {
+    return _then(CheckoutLineItemUpdateInput(
+      customAttributes: customAttributes == freezed
+          ? _value.customAttributes
+          : customAttributes // ignore: cast_nullable_to_non_nullable
+              as List<Attribute>?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: quantity == freezed
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      variantId: variantId == freezed
+          ? _value.variantId
+          : variantId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CheckoutLineItemUpdateInput extends CheckoutLineItemUpdateInput {
+  const _$CheckoutLineItemUpdateInput(
+      {this.customAttributes, this.id, this.quantity, this.variantId})
+      : assert(!((id == null) && (variantId == null)),
+            'An id or variantId must be provided'),
+        super._();
+
+  factory _$CheckoutLineItemUpdateInput.fromJson(Map<String, dynamic> json) =>
+      _$$CheckoutLineItemUpdateInputFromJson(json);
+
+  @override
+
+  /// Extra information about the line item.
+  final List<Attribute>? customAttributes;
+  @override
+
+  /// The identifier of the line item.
+  final String? id;
+  @override
+
+  /// The quantity of the line item.
+  final int? quantity;
+  @override
+
+  /// The variant identifier of the line item.
+  final String? variantId;
+
+  @override
+  String toString() {
+    return 'CheckoutLineItem.update(customAttributes: $customAttributes, id: $id, quantity: $quantity, variantId: $variantId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CheckoutLineItemUpdateInput &&
+            (identical(other.customAttributes, customAttributes) ||
+                const DeepCollectionEquality()
+                    .equals(other.customAttributes, customAttributes)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.quantity, quantity) ||
+                const DeepCollectionEquality()
+                    .equals(other.quantity, quantity)) &&
+            (identical(other.variantId, variantId) ||
+                const DeepCollectionEquality()
+                    .equals(other.variantId, variantId)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(customAttributes) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(quantity) ^
+      const DeepCollectionEquality().hash(variantId);
+
+  @JsonKey(ignore: true)
+  @override
+  $CheckoutLineItemUpdateInputCopyWith<CheckoutLineItemUpdateInput>
+      get copyWith => _$CheckoutLineItemUpdateInputCopyWithImpl<
+          CheckoutLineItemUpdateInput>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            List<Attribute> customAttributes,
+            List<DiscountAllocation> discountAllocations,
+            String id,
+            int quantity,
+            String title,
+            Money? unitPrice,
+            ProductVariant? variant)
+        $default, {
+    required TResult Function(
+            List<Attribute>? customAttributes, int quantity, String variantId)
+        create,
+    required TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)
+        update,
+  }) {
+    return update(customAttributes, id, quantity, variantId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(
+            List<Attribute> customAttributes,
+            List<DiscountAllocation> discountAllocations,
+            String id,
+            int quantity,
+            String title,
+            Money? unitPrice,
+            ProductVariant? variant)?
+        $default, {
+    TResult Function(
+            List<Attribute>? customAttributes, int quantity, String variantId)?
+        create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
+  }) {
+    return update?.call(customAttributes, id, quantity, variantId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            List<Attribute> customAttributes,
+            List<DiscountAllocation> discountAllocations,
+            String id,
+            int quantity,
+            String title,
+            Money? unitPrice,
+            ProductVariant? variant)?
+        $default, {
+    TResult Function(
+            List<Attribute>? customAttributes, int quantity, String variantId)?
+        create,
+    TResult Function(List<Attribute>? customAttributes, String? id,
+            int? quantity, String? variantId)?
+        update,
+    required TResult orElse(),
+  }) {
+    if (update != null) {
+      return update(customAttributes, id, quantity, variantId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_CheckoutLineItem value) $default, {
+    required TResult Function(CheckoutLineItemInput value) create,
+    required TResult Function(CheckoutLineItemUpdateInput value) update,
+  }) {
+    return update(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_CheckoutLineItem value)? $default, {
+    TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
+  }) {
+    return update?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_CheckoutLineItem value)? $default, {
+    TResult Function(CheckoutLineItemInput value)? create,
+    TResult Function(CheckoutLineItemUpdateInput value)? update,
+    required TResult orElse(),
+  }) {
+    if (update != null) {
+      return update(this);
+    }
+    return orElse();
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CheckoutLineItemUpdateInputToJson(this)
+      ..['runtimeType'] = 'update';
+  }
+}
+
+abstract class CheckoutLineItemUpdateInput extends CheckoutLineItem {
+  const factory CheckoutLineItemUpdateInput(
+      {List<Attribute>? customAttributes,
+      String? id,
+      int? quantity,
+      String? variantId}) = _$CheckoutLineItemUpdateInput;
+  const CheckoutLineItemUpdateInput._() : super._();
+
+  factory CheckoutLineItemUpdateInput.fromJson(Map<String, dynamic> json) =
+      _$CheckoutLineItemUpdateInput.fromJson;
+
+  /// Extra information about the line item.
+  List<Attribute>? get customAttributes => throw _privateConstructorUsedError;
+
+  /// The identifier of the line item.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// The quantity of the line item.
+  int? get quantity => throw _privateConstructorUsedError;
+
+  /// The variant identifier of the line item.
+  String? get variantId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CheckoutLineItemUpdateInputCopyWith<CheckoutLineItemUpdateInput>
+      get copyWith => throw _privateConstructorUsedError;
 }

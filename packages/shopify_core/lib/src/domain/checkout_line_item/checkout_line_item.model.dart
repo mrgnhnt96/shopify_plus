@@ -54,6 +54,23 @@ class CheckoutLineItem with _$CheckoutLineItem {
     required String variantId,
   }) = CheckoutLineItemInput;
 
+  /// Specifies the input fields to update a line item on a checkout
+  @Assert('!((id == null) && (variantId == null))',
+      'An id or variantId must be provided')
+  const factory CheckoutLineItem.update({
+    /// Extra information about the line item.
+    List<Attribute>? customAttributes,
+
+    /// The identifier of the line item.
+    String? id,
+
+    /// The quantity of the line item.
+    int? quantity,
+
+    /// The variant identifier of the line item.
+    String? variantId,
+  }) = CheckoutLineItemUpdateInput;
+
   /// {@macro from_json}
   factory CheckoutLineItem.fromJson(Map<String, dynamic> json) =>
       _$CheckoutLineItemFromJson(json);
