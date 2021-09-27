@@ -65,3 +65,29 @@ Map<String, dynamic> _$$_ProductToJson(_$_Product instance) =>
       'variantBySelectedOptions': instance.variantBySelectedOptions,
       'vendor': instance.vendor,
     };
+
+_$ProductEdge _$$ProductEdgeFromJson(Map<String, dynamic> json) =>
+    _$ProductEdge(
+      cursor: json['cursor'] as String,
+      node: Product.fromJson(json['node'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ProductEdgeToJson(_$ProductEdge instance) =>
+    <String, dynamic>{
+      'cursor': instance.cursor,
+      'node': instance.node,
+    };
+
+_$ProductPagination _$$ProductPaginationFromJson(Map<String, dynamic> json) =>
+    _$ProductPagination(
+      edges: (json['edges'] as List<dynamic>)
+          .map((e) => ProductEdge.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      pageInfo: PageInfo.fromJson(json['pageInfo'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ProductPaginationToJson(_$ProductPagination instance) =>
+    <String, dynamic>{
+      'edges': instance.edges,
+      'pageInfo': instance.pageInfo,
+    };

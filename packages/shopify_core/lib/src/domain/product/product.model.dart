@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/metafield/metafield.model.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/online_store_publishable/online_store_publishable.model.dart';
+import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
 import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_core/src/domain/product_option/product_option.model.dart';
 import 'package:shopify_core/src/domain/product_price_range/product_price_range.model.dart';
@@ -110,6 +111,24 @@ class Product with _$Product {
     /// The product’s vendor name.
     required String vendor,
   }) = _Product;
+
+  /// {@macro edge}
+  const factory Product.edge({
+    /// A cursor for use in pagination.
+    required String cursor,
+
+    /// The item at the end of ProductEdge.
+    required Product node,
+  }) = ProductEdge;
+
+  /// {@macro pagination}
+  const factory Product.pagination({
+    /// A list of edges.
+    required List<ProductEdge> edges,
+
+    /// Information to aid in pagination.
+    required PageInfo pageInfo,
+  }) = ProductPagination;
 
   /// {@macro from_json}
   factory Product.fromJson(Map<String, dynamic> json) =>
