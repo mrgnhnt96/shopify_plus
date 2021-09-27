@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:shopify_core/src/domain/pricing_value/pricing_value.model.dart';
 
 part 'money.model.freezed.dart';
 part 'money.model.g.dart';
@@ -11,6 +12,7 @@ class Money with _$Money {
   const Money._();
 
   /// {@macro money}
+  @Implements(PricingValue)
   const factory Money({
     /// The decimal money amount
     required double amount,

@@ -119,6 +119,7 @@ class __$MoneyCopyWithImpl<$Res> extends _$MoneyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@Implements(PricingValue)
 class _$_Money extends _Money {
   const _$_Money({required this.amount, required this.currencyCode})
       : super._();
@@ -168,7 +169,7 @@ class _$_Money extends _Money {
   }
 }
 
-abstract class _Money extends Money {
+abstract class _Money extends Money implements PricingValue {
   const factory _Money({required double amount, required String currencyCode}) =
       _$_Money;
   const _Money._() : super._();
