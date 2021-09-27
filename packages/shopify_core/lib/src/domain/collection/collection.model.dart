@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/metafield/metafield.model.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
 import 'package:shopify_core/src/domain/online_store_publishable/online_store_publishable.model.dart';
+import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
 import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_core/src/domain/shopify_image/shopify_image.model.dart';
 
@@ -49,6 +50,24 @@ class Collection with _$Collection {
     ///The date and time when the collection was last modified
     required DateTime updatedAt,
   }) = _Collection;
+
+  /// An auto-generated type which holds one Collection and a cursor during pagination.
+  const factory Collection.edge({
+    /// A cursor for use in pagination.
+    required String cursor,
+
+    /// The item at the end of CollectionEdge.
+    required Collection node,
+  }) = CollectionEdge;
+
+  /// An auto-generated type which holds one Collection and a cursor during pagination.
+  const factory Collection.paginated({
+    /// A list of edges
+    required List<CollectionEdge> edges,
+
+    /// Information to aid in pagination
+    required PageInfo pageInfo,
+  }) = CollectionPagination;
 
   /// {@macro from_json}
   factory Collection.fromJson(Map<String, dynamic> json) =>

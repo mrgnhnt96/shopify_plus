@@ -33,3 +33,31 @@ Map<String, dynamic> _$$_CollectionToJson(_$_Collection instance) =>
       'title': instance.title,
       'updatedAt': instance.updatedAt.toIso8601String(),
     };
+
+_$CollectionEdge _$$CollectionEdgeFromJson(Map<String, dynamic> json) =>
+    _$CollectionEdge(
+      cursor: json['cursor'] as String,
+      node: Collection.fromJson(json['node'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$CollectionEdgeToJson(_$CollectionEdge instance) =>
+    <String, dynamic>{
+      'cursor': instance.cursor,
+      'node': instance.node,
+    };
+
+_$CollectionPagination _$$CollectionPaginationFromJson(
+        Map<String, dynamic> json) =>
+    _$CollectionPagination(
+      edges: (json['edges'] as List<dynamic>)
+          .map((e) => CollectionEdge.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      pageInfo: PageInfo.fromJson(json['pageInfo'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$CollectionPaginationToJson(
+        _$CollectionPagination instance) =>
+    <String, dynamic>{
+      'edges': instance.edges,
+      'pageInfo': instance.pageInfo,
+    };
