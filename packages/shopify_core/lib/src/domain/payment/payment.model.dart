@@ -55,6 +55,30 @@ class Payment with _$Payment {
     Transaction? transaction,
   }) = _Payment;
 
+  /// Specifies the fields required to complete a checkout with a tokenized payment
+  const factory Payment.tokenized({
+    /// The amount of the payment.
+    required Money amount,
+
+    /// The billing address for the payment.
+    required MailingAddressInput billingAddress,
+
+    /// A unique client generated key used to avoid duplicate charges. When a duplicate payment is found, the original is returned instead of creating a new one. For more information, refer to Idempotent requests.
+    required String idempotencyKey,
+
+    /// Public Hash Key used for AndroidPay payments only.
+    String? identifier,
+
+    /// A simple string or JSON containing the required payment data for the tokenized payment.
+    required String paymentData,
+
+    /// Executes the payment in test mode if possible. Defaults to false.
+    @Default(false) bool test,
+
+    /// The type of payment token.
+    required String type,
+  }) = TokenizedPaymentInput;
+
   /// {@macro from_json}
   factory Payment.fromJson(Map<String, dynamic> json) =>
       _$PaymentFromJson(json);
