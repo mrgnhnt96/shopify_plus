@@ -3,3 +3,5 @@ bricks:
     path: ./bricks/model
   pagination:
     path: ./bricks/pagination
+  enum:
+    path: ./bricks/enum
