@@ -86,7 +86,7 @@ class MeasurementUnitJson extends JsonConverter<MeasurementUnit, String> {
   }
 
   @override
-  String toJson(MeasurementUnit object) => object.name;
+  String toJson(MeasurementUnit object) => object.symbol;
 }
 
 /// {@macro enum_x}
