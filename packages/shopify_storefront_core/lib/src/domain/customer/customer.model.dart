@@ -14,7 +14,7 @@ part 'customer.model.g.dart';
 ///
 /// *required access unauthenticated_read_customers*
 ///
-/// [tags] - *required access: unauthenticated_read_customer_tags*
+/// `tags` - *required access: unauthenticated_read_customer_tags*
 /// {@endtemplate}
 @freezed
 class Customer with _$Customer {
