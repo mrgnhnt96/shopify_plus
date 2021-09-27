@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_core/src/domain/node/node.model.dart';
+import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
 import 'package:shopify_core/src/domain/parent_resource/parent_resource.model.dart';
 
 part 'metafield.model.freezed.dart';
@@ -43,6 +44,33 @@ class Metafield with _$Metafield {
     /// The value of a metafield.
     required String value,
   }) = _Metafield;
+
+  /// An auto-generated type for paginating through multiple Metafields
+  const factory Metafield.connection({
+    /// A list of edges.
+    @Default([]) List<MetafieldEdge> edges,
+
+    /// Information to aid in pagination.
+    required PageInfo pageInfo,
+  }) = MetafieldConnection;
+
+  /// An auto-generated type which holds one Metafield and a cursor during pagination
+  const factory Metafield.edge({
+    /// A cursor for use in pagination.
+    required String cursor,
+
+    /// The item at the end of MetafieldEdge.
+    required Metafield node,
+  }) = MetafieldEdge;
+
+  /// Represents information about the metafields associated to the specified resource
+  const factory Metafield.hasMetafields({
+    /// Returns a metafield found by namespace and key
+    Metafield? metafield,
+
+    /// A paginated list of metafields associated with the resource
+    required MetafieldConnection metafields,
+  }) = HasMetafields;
 
   /// {@macro from_json}
   factory Metafield.fromJson(Map<String, dynamic> json) =>
