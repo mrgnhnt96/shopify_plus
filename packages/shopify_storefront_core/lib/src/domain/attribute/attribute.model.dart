@@ -13,7 +13,7 @@ class Attribute with _$Attribute {
   /// {@macro attribute}
   const factory Attribute({
     /// Key or name of the attribute
-    @JsonKey(name: 'key') required String name,
+    required String key,
 
     /// Value of the attribute
     required String value,

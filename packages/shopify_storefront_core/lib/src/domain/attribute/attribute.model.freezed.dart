@@ -21,10 +21,9 @@ Attribute _$AttributeFromJson(Map<String, dynamic> json) {
 class _$AttributeTearOff {
   const _$AttributeTearOff();
 
-  _Attribute call(
-      {@JsonKey(name: 'key') required String name, required String value}) {
+  _Attribute call({required String key, required String value}) {
     return _Attribute(
-      name: name,
+      key: key,
       value: value,
     );
   }
@@ -40,8 +39,7 @@ const $Attribute = _$AttributeTearOff();
 /// @nodoc
 mixin _$Attribute {
   /// Key or name of the attribute
-  @JsonKey(name: 'key')
-  String get name => throw _privateConstructorUsedError;
+  String get key => throw _privateConstructorUsedError;
 
   /// Value of the attribute
   String get value => throw _privateConstructorUsedError;
@@ -56,7 +54,7 @@ mixin _$Attribute {
 abstract class $AttributeCopyWith<$Res> {
   factory $AttributeCopyWith(Attribute value, $Res Function(Attribute) then) =
       _$AttributeCopyWithImpl<$Res>;
-  $Res call({@JsonKey(name: 'key') String name, String value});
+  $Res call({String key, String value});
 }
 
 /// @nodoc
@@ -69,13 +67,13 @@ class _$AttributeCopyWithImpl<$Res> implements $AttributeCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? key = freezed,
     Object? value = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      key: key == freezed
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
               as String,
       value: value == freezed
           ? _value.value
@@ -91,7 +89,7 @@ abstract class _$AttributeCopyWith<$Res> implements $AttributeCopyWith<$Res> {
           _Attribute value, $Res Function(_Attribute) then) =
       __$AttributeCopyWithImpl<$Res>;
   @override
-  $Res call({@JsonKey(name: 'key') String name, String value});
+  $Res call({String key, String value});
 }
 
 /// @nodoc
@@ -105,13 +103,13 @@ class __$AttributeCopyWithImpl<$Res> extends _$AttributeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? key = freezed,
     Object? value = freezed,
   }) {
     return _then(_Attribute(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      key: key == freezed
+          ? _value.key
+          : key // ignore: cast_nullable_to_non_nullable
               as String,
       value: value == freezed
           ? _value.value
@@ -124,9 +122,7 @@ class __$AttributeCopyWithImpl<$Res> extends _$AttributeCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Attribute extends _Attribute {
-  const _$_Attribute(
-      {@JsonKey(name: 'key') required this.name, required this.value})
-      : super._();
+  const _$_Attribute({required this.key, required this.value}) : super._();
 
   factory _$_Attribute.fromJson(Map<String, dynamic> json) =>
       _$$_AttributeFromJson(json);
@@ -134,8 +130,7 @@ class _$_Attribute extends _Attribute {
   @override
 
   /// Key or name of the attribute
-  @JsonKey(name: 'key')
-  final String name;
+  final String key;
   @override
 
   /// Value of the attribute
@@ -143,15 +138,15 @@ class _$_Attribute extends _Attribute {
 
   @override
   String toString() {
-    return 'Attribute(name: $name, value: $value)';
+    return 'Attribute(key: $key, value: $value)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Attribute &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.key, key) ||
+                const DeepCollectionEquality().equals(other.key, key)) &&
             (identical(other.value, value) ||
                 const DeepCollectionEquality().equals(other.value, value)));
   }
@@ -159,7 +154,7 @@ class _$_Attribute extends _Attribute {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(key) ^
       const DeepCollectionEquality().hash(value);
 
   @JsonKey(ignore: true)
@@ -174,9 +169,8 @@ class _$_Attribute extends _Attribute {
 }
 
 abstract class _Attribute extends Attribute {
-  const factory _Attribute(
-      {@JsonKey(name: 'key') required String name,
-      required String value}) = _$_Attribute;
+  const factory _Attribute({required String key, required String value}) =
+      _$_Attribute;
   const _Attribute._() : super._();
 
   factory _Attribute.fromJson(Map<String, dynamic> json) =
@@ -185,8 +179,7 @@ abstract class _Attribute extends Attribute {
   @override
 
   /// Key or name of the attribute
-  @JsonKey(name: 'key')
-  String get name => throw _privateConstructorUsedError;
+  String get key => throw _privateConstructorUsedError;
   @override
 
   /// Value of the attribute
