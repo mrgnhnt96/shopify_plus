@@ -47,7 +47,6 @@ export 'order/order.model.dart';
 export 'order_line_item/order_line_item.model.dart';
 export 'page/page.model.dart';
 export 'page_info/page_info.model.dart';
-export 'parent_resource/parent_resource.model.dart';
 export 'payment/payment.model.dart';
 export 'payment_settings/payment_settings.model.dart';
 export 'price_range_filter/price_range_filter.model.dart';

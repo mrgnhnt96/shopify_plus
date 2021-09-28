@@ -1,8 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/src/domain/metafield/metafield.model.dart';
-import 'package:shopify_storefront_core/src/domain/node/node.model.dart';
-import 'package:shopify_storefront_core/src/domain/online_store_publishable/online_store_publishable.model.dart';
-import 'package:shopify_storefront_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_storefront_core/src/domain/product_option/product_option.model.dart';
 import 'package:shopify_storefront_core/src/domain/product_price_range/product_price_range.model.dart';
 import 'package:shopify_storefront_core/src/domain/product_variant/product_variant.model.dart';

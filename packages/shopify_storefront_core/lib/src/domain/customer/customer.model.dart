@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/src/domain/checkout/checkout.model.dart';
 import 'package:shopify_storefront_core/src/domain/mailing_address/mailing_address.model.dart';
 import 'package:shopify_storefront_core/src/domain/metafield/metafield.model.dart';
-import 'package:shopify_storefront_core/src/domain/parent_resource/parent_resource.model.dart';
 
 part 'customer.model.freezed.dart';
 part 'customer.model.g.dart';

@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/src/domain/domain/domain.model.dart';
 import 'package:shopify_storefront_core/src/domain/metafield/metafield.model.dart';
-import 'package:shopify_storefront_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_storefront_core/src/domain/payment_settings/payment_settings.model.dart';
 import 'package:shopify_storefront_core/src/domain/shop_policy/shop_policy.model.dart';
 import 'package:shopify_storefront_core/src/enum/country_code.dart';

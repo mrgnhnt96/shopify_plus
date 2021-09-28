@@ -4,8 +4,6 @@ import 'package:shopify_storefront_core/src/domain/fulfillment/fulfillment.model
 import 'package:shopify_storefront_core/src/domain/mailing_address/mailing_address.model.dart';
 import 'package:shopify_storefront_core/src/domain/metafield/metafield.model.dart';
 import 'package:shopify_storefront_core/src/domain/money/money.model.dart';
-import 'package:shopify_storefront_core/src/domain/node/node.model.dart';
-import 'package:shopify_storefront_core/src/domain/parent_resource/parent_resource.model.dart';
 import 'package:shopify_storefront_core/src/enum/order_cancel_reason.dart';
 import 'package:shopify_storefront_core/src/enum/order_financial_status.dart';
 import 'package:shopify_storefront_core/src/enum/order_fulfillment_status.dart';
