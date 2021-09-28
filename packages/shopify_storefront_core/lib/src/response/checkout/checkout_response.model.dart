@@ -23,7 +23,7 @@ class CheckoutResponse with _$CheckoutResponse {
     /// The list of errors that occurred from executing the mutation
     /// {@endtemplate}
     required List<CheckoutUserError>? checkoutUserErrors,
-  }) = _CheckoutResponse;
+  }) = CheckoutResponseDefault;
 
   /// Checkout response when checkout is being completed with payment
   const factory CheckoutResponse.payment({

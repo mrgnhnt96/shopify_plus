@@ -6,8 +6,9 @@ part of 'checkout_response.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CheckoutResponse _$$_CheckoutResponseFromJson(Map<String, dynamic> json) =>
-    _$_CheckoutResponse(
+_$CheckoutResponseDefault _$$CheckoutResponseDefaultFromJson(
+        Map<String, dynamic> json) =>
+    _$CheckoutResponseDefault(
       checkout: json['checkout'] == null
           ? null
           : Checkout.fromJson(json['checkout'] as Map<String, dynamic>),
@@ -16,7 +17,8 @@ _$_CheckoutResponse _$$_CheckoutResponseFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_CheckoutResponseToJson(_$_CheckoutResponse instance) =>
+Map<String, dynamic> _$$CheckoutResponseDefaultToJson(
+        _$CheckoutResponseDefault instance) =>
     <String, dynamic>{
       'checkout': instance.checkout,
       'checkoutUserErrors': instance.checkoutUserErrors,

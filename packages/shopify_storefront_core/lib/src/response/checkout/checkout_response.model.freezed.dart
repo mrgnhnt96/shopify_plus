@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 CheckoutResponse _$CheckoutResponseFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType'] as String?) {
     case 'default':
-      return _CheckoutResponse.fromJson(json);
+      return CheckoutResponseDefault.fromJson(json);
     case 'payment':
       return CheckoutResponsePayment.fromJson(json);
     case 'create':
@@ -34,10 +34,10 @@ CheckoutResponse _$CheckoutResponseFromJson(Map<String, dynamic> json) {
 class _$CheckoutResponseTearOff {
   const _$CheckoutResponseTearOff();
 
-  _CheckoutResponse call(
+  CheckoutResponseDefault call(
       {Checkout? checkout,
       required List<CheckoutUserError>? checkoutUserErrors}) {
-    return _CheckoutResponse(
+    return CheckoutResponseDefault(
       checkout: checkout,
       checkoutUserErrors: checkoutUserErrors,
     );
@@ -148,7 +148,7 @@ mixin _$CheckoutResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value) $default, {
+    TResult Function(CheckoutResponseDefault value) $default, {
     required TResult Function(CheckoutResponsePayment value) payment,
     required TResult Function(CheckoutResponseCreate value) create,
     required TResult Function(CheckoutResponseCustomer value) customer,
@@ -156,7 +156,7 @@ mixin _$CheckoutResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -164,7 +164,7 @@ mixin _$CheckoutResponse {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -226,11 +226,11 @@ class _$CheckoutResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CheckoutResponseCopyWith<$Res>
+abstract class $CheckoutResponseDefaultCopyWith<$Res>
     implements $CheckoutResponseCopyWith<$Res> {
-  factory _$CheckoutResponseCopyWith(
-          _CheckoutResponse value, $Res Function(_CheckoutResponse) then) =
-      __$CheckoutResponseCopyWithImpl<$Res>;
+  factory $CheckoutResponseDefaultCopyWith(CheckoutResponseDefault value,
+          $Res Function(CheckoutResponseDefault) then) =
+      _$CheckoutResponseDefaultCopyWithImpl<$Res>;
   @override
   $Res call({Checkout? checkout, List<CheckoutUserError>? checkoutUserErrors});
 
@@ -239,22 +239,22 @@ abstract class _$CheckoutResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CheckoutResponseCopyWithImpl<$Res>
+class _$CheckoutResponseDefaultCopyWithImpl<$Res>
     extends _$CheckoutResponseCopyWithImpl<$Res>
-    implements _$CheckoutResponseCopyWith<$Res> {
-  __$CheckoutResponseCopyWithImpl(
-      _CheckoutResponse _value, $Res Function(_CheckoutResponse) _then)
-      : super(_value, (v) => _then(v as _CheckoutResponse));
+    implements $CheckoutResponseDefaultCopyWith<$Res> {
+  _$CheckoutResponseDefaultCopyWithImpl(CheckoutResponseDefault _value,
+      $Res Function(CheckoutResponseDefault) _then)
+      : super(_value, (v) => _then(v as CheckoutResponseDefault));
 
   @override
-  _CheckoutResponse get _value => super._value as _CheckoutResponse;
+  CheckoutResponseDefault get _value => super._value as CheckoutResponseDefault;
 
   @override
   $Res call({
     Object? checkout = freezed,
     Object? checkoutUserErrors = freezed,
   }) {
-    return _then(_CheckoutResponse(
+    return _then(CheckoutResponseDefault(
       checkout: checkout == freezed
           ? _value.checkout
           : checkout // ignore: cast_nullable_to_non_nullable
@@ -269,12 +269,13 @@ class __$CheckoutResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CheckoutResponse extends _CheckoutResponse {
-  const _$_CheckoutResponse({this.checkout, required this.checkoutUserErrors})
+class _$CheckoutResponseDefault extends CheckoutResponseDefault {
+  const _$CheckoutResponseDefault(
+      {this.checkout, required this.checkoutUserErrors})
       : super._();
 
-  factory _$_CheckoutResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_CheckoutResponseFromJson(json);
+  factory _$CheckoutResponseDefault.fromJson(Map<String, dynamic> json) =>
+      _$$CheckoutResponseDefaultFromJson(json);
 
   @override
 
@@ -297,7 +298,7 @@ class _$_CheckoutResponse extends _CheckoutResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CheckoutResponse &&
+        (other is CheckoutResponseDefault &&
             (identical(other.checkout, checkout) ||
                 const DeepCollectionEquality()
                     .equals(other.checkout, checkout)) &&
@@ -314,8 +315,9 @@ class _$_CheckoutResponse extends _CheckoutResponse {
 
   @JsonKey(ignore: true)
   @override
-  _$CheckoutResponseCopyWith<_CheckoutResponse> get copyWith =>
-      __$CheckoutResponseCopyWithImpl<_CheckoutResponse>(this, _$identity);
+  $CheckoutResponseDefaultCopyWith<CheckoutResponseDefault> get copyWith =>
+      _$CheckoutResponseDefaultCopyWithImpl<CheckoutResponseDefault>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -381,7 +383,7 @@ class _$_CheckoutResponse extends _CheckoutResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value) $default, {
+    TResult Function(CheckoutResponseDefault value) $default, {
     required TResult Function(CheckoutResponsePayment value) payment,
     required TResult Function(CheckoutResponseCreate value) create,
     required TResult Function(CheckoutResponseCustomer value) customer,
@@ -392,7 +394,7 @@ class _$_CheckoutResponse extends _CheckoutResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -403,7 +405,7 @@ class _$_CheckoutResponse extends _CheckoutResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -417,19 +419,19 @@ class _$_CheckoutResponse extends _CheckoutResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CheckoutResponseToJson(this)..['runtimeType'] = 'default';
+    return _$$CheckoutResponseDefaultToJson(this)..['runtimeType'] = 'default';
   }
 }
 
-abstract class _CheckoutResponse extends CheckoutResponse {
-  const factory _CheckoutResponse(
+abstract class CheckoutResponseDefault extends CheckoutResponse {
+  const factory CheckoutResponseDefault(
           {Checkout? checkout,
           required List<CheckoutUserError>? checkoutUserErrors}) =
-      _$_CheckoutResponse;
-  const _CheckoutResponse._() : super._();
+      _$CheckoutResponseDefault;
+  const CheckoutResponseDefault._() : super._();
 
-  factory _CheckoutResponse.fromJson(Map<String, dynamic> json) =
-      _$_CheckoutResponse.fromJson;
+  factory CheckoutResponseDefault.fromJson(Map<String, dynamic> json) =
+      _$CheckoutResponseDefault.fromJson;
 
   @override
 
@@ -446,7 +448,7 @@ abstract class _CheckoutResponse extends CheckoutResponse {
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$CheckoutResponseCopyWith<_CheckoutResponse> get copyWith =>
+  $CheckoutResponseDefaultCopyWith<CheckoutResponseDefault> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -631,7 +633,7 @@ class _$CheckoutResponsePayment extends CheckoutResponsePayment {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value) $default, {
+    TResult Function(CheckoutResponseDefault value) $default, {
     required TResult Function(CheckoutResponsePayment value) payment,
     required TResult Function(CheckoutResponseCreate value) create,
     required TResult Function(CheckoutResponseCustomer value) customer,
@@ -642,7 +644,7 @@ class _$CheckoutResponsePayment extends CheckoutResponsePayment {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -653,7 +655,7 @@ class _$CheckoutResponsePayment extends CheckoutResponsePayment {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -869,7 +871,7 @@ class _$CheckoutResponseCreate extends CheckoutResponseCreate {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value) $default, {
+    TResult Function(CheckoutResponseDefault value) $default, {
     required TResult Function(CheckoutResponsePayment value) payment,
     required TResult Function(CheckoutResponseCreate value) create,
     required TResult Function(CheckoutResponseCustomer value) customer,
@@ -880,7 +882,7 @@ class _$CheckoutResponseCreate extends CheckoutResponseCreate {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -891,7 +893,7 @@ class _$CheckoutResponseCreate extends CheckoutResponseCreate {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -1120,7 +1122,7 @@ class _$CheckoutResponseCustomer extends CheckoutResponseCustomer {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value) $default, {
+    TResult Function(CheckoutResponseDefault value) $default, {
     required TResult Function(CheckoutResponsePayment value) payment,
     required TResult Function(CheckoutResponseCreate value) create,
     required TResult Function(CheckoutResponseCustomer value) customer,
@@ -1131,7 +1133,7 @@ class _$CheckoutResponseCustomer extends CheckoutResponseCustomer {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
@@ -1142,7 +1144,7 @@ class _$CheckoutResponseCustomer extends CheckoutResponseCustomer {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_CheckoutResponse value)? $default, {
+    TResult Function(CheckoutResponseDefault value)? $default, {
     TResult Function(CheckoutResponsePayment value)? payment,
     TResult Function(CheckoutResponseCreate value)? create,
     TResult Function(CheckoutResponseCustomer value)? customer,
