@@ -15,7 +15,7 @@ class {{#pascalCase}}{{className}}{{/pascalCase}}Error with _${{#pascalCase}}{{c
   /// {@macro {{#snakeCase}}{{className}}{{/snakeCase}}_error}
   const factory {{#pascalCase}}{{className}}{{/pascalCase}}Error({
     /// The error code.
-    @<T>Json <T>? code,
+    @<T>Json() <T>? code,
 
     /// The path to the input field that caused the error.
     List<String>? field,
