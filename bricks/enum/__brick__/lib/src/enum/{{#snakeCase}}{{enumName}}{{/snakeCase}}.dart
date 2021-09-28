@@ -45,6 +45,20 @@ extension {{#pascalCase}}{{enumName}}{{/pascalCase}}X on {{#pascalCase}}{{enumNa
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    {{#values}}T? {{#camelCase}}{{name}}{{/camelCase}},
+    {{/values}}
+  }) {
+    switch (this) {
+       {{#values}}
+       case {{#pascalCase}}{{enumName}}{{/pascalCase}}.{{#camelCase}}{{name}}{{/camelCase}}:
+          if ({{#camelCase}}{{name}}{{/camelCase}} == null) return orElse;
+          return {{#camelCase}}{{name}}{{/camelCase}};{{/values}}
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
