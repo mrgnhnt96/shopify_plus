@@ -1,4 +1,3 @@
-import 'package:shopify_storefront/shopify_storefront.dart';
 import 'package:shopify_storefront/src/util/mutation.dart';
 import 'package:shopify_storefront_core/shopify_core.dart';
 
