@@ -5,3 +5,5 @@ bricks:
     path: ./bricks/pagination
   enum:
     path: ./bricks/enum
+  response:
+    path: ./bricks/response
