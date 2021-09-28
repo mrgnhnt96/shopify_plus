@@ -9,3 +9,5 @@ bricks:
     path: ./bricks/response
   error:
     path: ./bricks/error
+  mutation:
+    path: ./bricks/mutation
