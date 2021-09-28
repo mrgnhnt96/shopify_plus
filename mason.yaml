@@ -7,3 +7,5 @@ bricks:
     path: ./bricks/enum
   response:
     path: ./bricks/response
+  error:
+    path: ./bricks/error
