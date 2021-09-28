@@ -77,6 +77,34 @@ extension CartErrorCodeX on CartErrorCode {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? invalid,
+    T? invalidMerchandiseLine,
+    T? lessThan,
+    T? missingDiscountCode,
+    T? missingNote,
+  }) {
+    switch (this) {
+      case CartErrorCode.invalid:
+        if (invalid == null) return orElse;
+        return invalid;
+      case CartErrorCode.invalidMerchandiseLine:
+        if (invalidMerchandiseLine == null) return orElse;
+        return invalidMerchandiseLine;
+      case CartErrorCode.lessThan:
+        if (lessThan == null) return orElse;
+        return lessThan;
+      case CartErrorCode.missingDiscountCode:
+        if (missingDiscountCode == null) return orElse;
+        return missingDiscountCode;
+      case CartErrorCode.missingNote:
+        if (missingNote == null) return orElse;
+        return missingNote;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
