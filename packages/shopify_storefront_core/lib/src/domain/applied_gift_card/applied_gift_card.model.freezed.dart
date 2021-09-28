@@ -217,7 +217,6 @@ class __$AppliedGiftCardCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_AppliedGiftCard implements _AppliedGiftCard {
   const _$_AppliedGiftCard(
       {@JsonKey(name: 'amountUsedV2') required this.amountUsed,
@@ -297,7 +296,7 @@ class _$_AppliedGiftCard implements _AppliedGiftCard {
   }
 }
 
-abstract class _AppliedGiftCard implements AppliedGiftCard, Node {
+abstract class _AppliedGiftCard implements AppliedGiftCard {
   const factory _AppliedGiftCard(
       {@JsonKey(name: 'amountUsedV2') required Money amountUsed,
       @JsonKey(name: 'balanceV2') required Money balance,

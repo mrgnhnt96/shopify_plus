@@ -113,7 +113,6 @@ class __$PricingPercentageValueCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(PricingValue)
 class _$_PricingPercentageValue extends _PricingPercentageValue {
   const _$_PricingPercentageValue(this.percentage) : super._();
 
@@ -155,8 +154,7 @@ class _$_PricingPercentageValue extends _PricingPercentageValue {
   }
 }
 
-abstract class _PricingPercentageValue extends PricingPercentageValue
-    implements PricingValue {
+abstract class _PricingPercentageValue extends PricingPercentageValue {
   const factory _PricingPercentageValue(double percentage) =
       _$_PricingPercentageValue;
   const _PricingPercentageValue._() : super._();

@@ -23,10 +23,6 @@ class ProductVariant with _$ProductVariant {
   const ProductVariant._();
 
   /// {@macro product_variant}
-  @Implements(Node)
-  @Implements(Merchandise)
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
   const factory ProductVariant({
     /// Indicates if the product variant is available for sale.
     @Default(false) bool availableForSale,

@@ -13,7 +13,6 @@ class MailingAddress with _$MailingAddress {
   const MailingAddress._();
 
   /// {@macro mailing_address}
-  @Implements(Node)
   const factory MailingAddress({
     /// The first line of the address. Typically the street address or PO Box number.
     String? address1,

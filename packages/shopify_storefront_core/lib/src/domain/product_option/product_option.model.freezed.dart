@@ -143,7 +143,6 @@ class __$ProductOptionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_ProductOption extends _ProductOption {
   const _$_ProductOption(
       {required this.id, required this.name, required this.values})
@@ -200,7 +199,7 @@ class _$_ProductOption extends _ProductOption {
   }
 }
 
-abstract class _ProductOption extends ProductOption implements Node {
+abstract class _ProductOption extends ProductOption {
   const factory _ProductOption(
       {required String id,
       required String name,

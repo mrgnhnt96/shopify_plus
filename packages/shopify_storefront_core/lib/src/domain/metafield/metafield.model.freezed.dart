@@ -263,7 +263,6 @@ class __$MetafieldCopyWithImpl<$Res> extends _$MetafieldCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_Metafield extends _Metafield {
   const _$_Metafield(
       {required this.createdAt,
@@ -479,7 +478,7 @@ class _$_Metafield extends _Metafield {
   }
 }
 
-abstract class _Metafield extends Metafield implements Node {
+abstract class _Metafield extends Metafield {
   const factory _Metafield(
       {required DateTime createdAt,
       String? description,

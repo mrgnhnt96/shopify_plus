@@ -12,7 +12,6 @@ class PricingPercentageValue with _$PricingPercentageValue {
   const PricingPercentageValue._();
 
   /// {@macro pricing_percentage_value}
-  @Implements(PricingValue)
   const factory PricingPercentageValue(
     /// The percentage value of the object
     double percentage,

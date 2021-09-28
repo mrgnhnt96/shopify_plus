@@ -18,10 +18,6 @@ class Page with _$Page {
   const Page._();
 
   /// {@template page}
-  @Implements(Node)
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
-  @Implements(OnlineStorePublishable)
   const factory Page({
     /// The description of the page, complete with HTML formatting.
     required String body,

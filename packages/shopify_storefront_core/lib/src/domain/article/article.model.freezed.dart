@@ -415,10 +415,6 @@ class __$ArticleCopyWithImpl<$Res> extends _$ArticleCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
-@Implements(ParentResource)
-@Implements(MetafieldConnection)
-@Implements(OnlineStorePublishable)
 class _$_Article extends _Article {
   const _$_Article(
       {@JsonKey(name: 'authorV2') this.author,
@@ -582,12 +578,7 @@ class _$_Article extends _Article {
   }
 }
 
-abstract class _Article extends Article
-    implements
-        Node,
-        ParentResource,
-        MetafieldConnection,
-        OnlineStorePublishable {
+abstract class _Article extends Article {
   const factory _Article(
       {@JsonKey(name: 'authorV2') ArticleAuthor? author,
       required Blog blog,

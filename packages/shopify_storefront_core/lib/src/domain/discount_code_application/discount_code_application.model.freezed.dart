@@ -229,7 +229,6 @@ class __$DiscountCodeApplicationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(DiscountApplication)
 class _$_DiscountCodeApplication extends _DiscountCodeApplication {
   const _$_DiscountCodeApplication(
       {@DiscountApplicationAllocationMethodJson()
@@ -323,8 +322,7 @@ class _$_DiscountCodeApplication extends _DiscountCodeApplication {
   }
 }
 
-abstract class _DiscountCodeApplication extends DiscountCodeApplication
-    implements DiscountApplication {
+abstract class _DiscountCodeApplication extends DiscountCodeApplication {
   const factory _DiscountCodeApplication(
       {@DiscountApplicationAllocationMethodJson()
           required DiscountApplicationAllocationMethod allocationMethod,

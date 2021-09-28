@@ -483,10 +483,6 @@ class __$ProductVariantCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
-@Implements(Merchandise)
-@Implements(ParentResource)
-@Implements(MetafieldConnection)
 class _$_ProductVariant extends _ProductVariant {
   const _$_ProductVariant(
       {this.availableForSale = false,
@@ -677,8 +673,7 @@ class _$_ProductVariant extends _ProductVariant {
   }
 }
 
-abstract class _ProductVariant extends ProductVariant
-    implements Node, Merchandise, ParentResource, MetafieldConnection {
+abstract class _ProductVariant extends ProductVariant {
   const factory _ProductVariant(
       {bool availableForSale,
       @JsonKey(name: 'compareAtPriceV2') required Money compareAtPrice,

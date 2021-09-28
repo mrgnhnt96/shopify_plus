@@ -13,7 +13,6 @@ class AutomaticDiscountAllocation with _$AutomaticDiscountAllocation {
   const AutomaticDiscountAllocation._();
 
   /// {@macro automatic_discount_allocation}
-  @Implements(DiscountApplication)
   const factory AutomaticDiscountAllocation({
     /// The discounted amount that has been applied to the cart line
     required Money discountAmount,

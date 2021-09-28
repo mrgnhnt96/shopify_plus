@@ -418,8 +418,6 @@ class __$CustomerCopyWithImpl<$Res> extends _$CustomerCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(ParentResource)
-@Implements(MetafieldConnection)
 class _$_Customer extends _Customer {
   const _$_Customer(
       {this.acceptsMarketing = false,
@@ -756,8 +754,7 @@ class _$_Customer extends _Customer {
   }
 }
 
-abstract class _Customer extends Customer
-    implements ParentResource, MetafieldConnection {
+abstract class _Customer extends Customer {
   const factory _Customer(
       {bool acceptsMarketing,
       required DateTime createdAt,

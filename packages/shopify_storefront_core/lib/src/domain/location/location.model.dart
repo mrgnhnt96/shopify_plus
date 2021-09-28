@@ -15,7 +15,6 @@ class Location with _$Location {
   const Location._();
 
   /// {@macro location}
-  @Implements(Node)
   const factory Location({
     /// The address of the location.
     required LocationAddress address,

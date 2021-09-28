@@ -12,7 +12,6 @@ class ShopPolicy with _$ShopPolicy {
   const ShopPolicy._();
 
   /// {@macro shop_policy}
-  @Implements(Node)
   const factory ShopPolicy({
     /// Policy text, maximum size of 64kb.
     required String body,

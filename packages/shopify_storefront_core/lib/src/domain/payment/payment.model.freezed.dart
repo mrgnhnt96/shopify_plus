@@ -378,7 +378,6 @@ class __$PaymentCopyWithImpl<$Res> extends _$PaymentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_Payment extends _Payment {
   const _$_Payment(
       {@JsonKey(name: 'amountV2') required this.amount,
@@ -655,7 +654,7 @@ class _$_Payment extends _Payment {
   }
 }
 
-abstract class _Payment extends Payment implements Node {
+abstract class _Payment extends Payment {
   const factory _Payment(
       {@JsonKey(name: 'amountV2') required Money amount,
       MailingAddress? billingAddress,

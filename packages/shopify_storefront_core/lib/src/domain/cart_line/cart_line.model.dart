@@ -17,7 +17,6 @@ class CartLine with _$CartLine {
   const CartLine._();
 
   /// {@macro cart_line}
-  @Implements(Node)
   const factory CartLine({
     /// The attributes associated with the cart line. Attributes are represented as key-value pairs.
     @Default([]) List<Attribute> attributes,

@@ -25,7 +25,6 @@ class Checkout with _$Checkout {
   const Checkout._();
 
   /// {@macro checkout}
-  @Implements(Node)
   const factory Checkout({
     /// The gift cards used on the checkout.
     @Default([]) List<AppliedGiftCard> appliedGiftCards,

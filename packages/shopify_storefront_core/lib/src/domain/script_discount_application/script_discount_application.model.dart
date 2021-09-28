@@ -16,7 +16,6 @@ class ScriptDiscountApplication with _$ScriptDiscountApplication {
   const ScriptDiscountApplication._();
 
   /// {@macro script_discount_application}
-  @Implements(DiscountApplication)
   const factory ScriptDiscountApplication({
     /// The method by which the discount's value is allocated to its entitled items.
     @DiscountApplicationAllocationMethodJson()

@@ -18,10 +18,6 @@ class Blog with _$Blog {
   const Blog._();
 
   /// {@macro blog}
-  @Implements(Node)
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
-  @Implements(OnlineStorePublishable)
   const factory Blog({
     /// Find an article by its handle.
     Article? articleByHandle,

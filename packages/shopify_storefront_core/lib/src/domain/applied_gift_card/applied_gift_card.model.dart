@@ -11,7 +11,6 @@ part 'applied_gift_card.model.g.dart';
 @freezed
 class AppliedGiftCard with _$AppliedGiftCard {
   /// {@macro applied_gift_card}
-  @Implements(Node)
   const factory AppliedGiftCard({
     /// The amount that was taken from the gift card by applying it.
     @JsonKey(name: 'amountUsedV2') required Money amountUsed,

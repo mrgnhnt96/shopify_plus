@@ -15,7 +15,6 @@ class ProductOption with _$ProductOption {
   const ProductOption._();
 
   /// {@macro product_option}
-  @Implements(Node)
   const factory ProductOption({
     /// {@macro id}
     required String id,

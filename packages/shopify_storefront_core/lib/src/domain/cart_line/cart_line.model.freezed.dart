@@ -246,7 +246,6 @@ class __$CartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_CartLine extends _CartLine {
   const _$_CartLine(
       {this.attributes = const [],
@@ -345,7 +344,7 @@ class _$_CartLine extends _CartLine {
   }
 }
 
-abstract class _CartLine extends CartLine implements Node {
+abstract class _CartLine extends CartLine {
   const factory _CartLine(
       {List<Attribute> attributes,
       List<DiscountAllocation> discountAllocations,

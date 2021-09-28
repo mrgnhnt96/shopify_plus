@@ -16,7 +16,6 @@ class DiscountCodeApplication with _$DiscountCodeApplication {
   const DiscountCodeApplication._();
 
   /// {@macro discount_code_application}
-  @Implements(DiscountApplication)
   const factory DiscountCodeApplication({
     /// The method by which the discount's value is allocated to its entitled items.
     @DiscountApplicationAllocationMethodJson()

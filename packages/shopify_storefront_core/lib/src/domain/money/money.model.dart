@@ -13,7 +13,6 @@ class Money with _$Money {
   const Money._();
 
   /// {@macro money}
-  @Implements(PricingValue)
   const factory Money({
     /// The decimal money amount
     required double amount,

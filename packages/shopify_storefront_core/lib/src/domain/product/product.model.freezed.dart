@@ -539,10 +539,6 @@ class __$ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
-@Implements(ParentResource)
-@Implements(MetafieldConnection)
-@Implements(OnlineStorePublishable)
 class _$_Product extends _Product {
   const _$_Product(
       {this.availableForSale = false,
@@ -783,12 +779,7 @@ class _$_Product extends _Product {
   }
 }
 
-abstract class _Product extends Product
-    implements
-        Node,
-        ParentResource,
-        MetafieldConnection,
-        OnlineStorePublishable {
+abstract class _Product extends Product {
   const factory _Product(
       {bool availableForSale,
       required ProductPriceRange compareAtPriceRange,

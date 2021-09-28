@@ -26,9 +26,6 @@ class Order with _$Order {
   const Order._();
 
   /// {@macro order}
-  @Implements(Node)
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
   const factory Order({
     ///The reason for the order's cancellation. Returns null if the order wasn't canceled.
     @OrderCancelReasonJson() OrderCancelReason? cancelReason,

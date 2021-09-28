@@ -149,7 +149,6 @@ class __$LocationCopyWithImpl<$Res> extends _$LocationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_Location extends _Location {
   const _$_Location(
       {required this.address, required this.id, required this.name})
@@ -207,7 +206,7 @@ class _$_Location extends _Location {
   }
 }
 
-abstract class _Location extends Location implements Node {
+abstract class _Location extends Location {
   const factory _Location(
       {required LocationAddress address,
       required String id,

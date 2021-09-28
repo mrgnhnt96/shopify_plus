@@ -291,10 +291,6 @@ class __$PageCopyWithImpl<$Res> extends _$PageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
-@Implements(ParentResource)
-@Implements(MetafieldConnection)
-@Implements(OnlineStorePublishable)
 class _$_Page extends _Page {
   const _$_Page(
       {required this.body,
@@ -413,12 +409,7 @@ class _$_Page extends _Page {
   }
 }
 
-abstract class _Page extends Page
-    implements
-        Node,
-        ParentResource,
-        MetafieldConnection,
-        OnlineStorePublishable {
+abstract class _Page extends Page {
   const factory _Page(
       {required String body,
       required String bodySummary,

@@ -21,10 +21,6 @@ class Article with _$Article {
   const Article._();
 
   /// {@macro article}
-  @Implements(Node)
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
-  @Implements(OnlineStorePublishable)
   const factory Article({
     /// The article's author.
     @JsonKey(name: 'authorV2') ArticleAuthor? author,

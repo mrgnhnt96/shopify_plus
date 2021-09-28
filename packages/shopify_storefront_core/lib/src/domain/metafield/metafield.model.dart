@@ -14,7 +14,6 @@ class Metafield with _$Metafield {
   const Metafield._();
 
   /// {@macro metafield}
-  @Implements(Node)
   const factory Metafield({
     /// The date and time when the storefront metafield was created.
     required DateTime createdAt,

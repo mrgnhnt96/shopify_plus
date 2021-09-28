@@ -19,9 +19,6 @@ class Collection with _$Collection {
   const Collection._();
 
   /// {@macro collection}
-  @Implements(Node)
-  @Implements(ParentResource)
-  @Implements(OnlineStorePublishable)
   const factory Collection({
     ///Stripped description of the collection, single line with HTML tags removed.
     required String description,

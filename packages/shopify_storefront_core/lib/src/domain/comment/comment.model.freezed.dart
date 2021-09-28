@@ -165,7 +165,6 @@ class __$CommentCopyWithImpl<$Res> extends _$CommentCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_Comment extends _Comment {
   const _$_Comment(
       {required this.author,
@@ -234,7 +233,7 @@ class _$_Comment extends _Comment {
   }
 }
 
-abstract class _Comment extends Comment implements Node {
+abstract class _Comment extends Comment {
   const factory _Comment(
       {required CommentAuthor author,
       required String content,

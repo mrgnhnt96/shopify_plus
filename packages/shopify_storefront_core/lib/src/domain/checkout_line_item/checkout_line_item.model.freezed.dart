@@ -281,7 +281,6 @@ class __$CheckoutLineItemCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_CheckoutLineItem extends _CheckoutLineItem {
   const _$_CheckoutLineItem(
       {this.customAttributes = const [],
@@ -485,7 +484,7 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
   }
 }
 
-abstract class _CheckoutLineItem extends CheckoutLineItem implements Node {
+abstract class _CheckoutLineItem extends CheckoutLineItem {
   const factory _CheckoutLineItem(
       {List<Attribute> customAttributes,
       List<DiscountAllocation> discountAllocations,

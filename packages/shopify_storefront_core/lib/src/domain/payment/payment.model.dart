@@ -19,7 +19,6 @@ class Payment with _$Payment {
   const Payment._();
 
   /// {@macro payment}
-  @Implements(Node)
   const factory Payment({
     /// The amount of the payment.
     @JsonKey(name: 'amountV2') required Money amount,

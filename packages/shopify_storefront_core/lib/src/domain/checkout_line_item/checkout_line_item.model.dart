@@ -18,7 +18,6 @@ class CheckoutLineItem with _$CheckoutLineItem {
   const CheckoutLineItem._();
 
   /// {@macro checkout_line_item}
-  @Implements(Node)
   const factory CheckoutLineItem({
     /// Extra information in the form of an array of Key-Value pairs about the line item.
     @Default([]) List<Attribute> customAttributes,

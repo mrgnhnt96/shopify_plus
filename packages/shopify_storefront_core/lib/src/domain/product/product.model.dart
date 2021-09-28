@@ -25,10 +25,6 @@ class Product with _$Product {
   const Product._();
 
   /// {@macro product}
-  @Implements(Node)
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
-  @Implements(OnlineStorePublishable)
   const factory Product({
     /// Indicates if at least one product variant is available for sale.
     @Default(false) bool availableForSale,

@@ -271,10 +271,6 @@ class __$BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
-@Implements(ParentResource)
-@Implements(MetafieldConnection)
-@Implements(OnlineStorePublishable)
 class _$_Blog extends _Blog {
   const _$_Blog(
       {this.articleByHandle,
@@ -377,12 +373,7 @@ class _$_Blog extends _Blog {
   }
 }
 
-abstract class _Blog extends Blog
-    implements
-        Node,
-        ParentResource,
-        MetafieldConnection,
-        OnlineStorePublishable {
+abstract class _Blog extends Blog {
   const factory _Blog(
       {Article? articleByHandle,
       List<ArticleAuthor> authors,

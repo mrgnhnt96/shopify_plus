@@ -15,7 +15,6 @@ class Comment with _$Comment {
   const Comment._();
 
   /// {@macro comment}
-  @Implements(Node)
   const factory Comment({
     /// The comment’s author.
     required CommentAuthor author,

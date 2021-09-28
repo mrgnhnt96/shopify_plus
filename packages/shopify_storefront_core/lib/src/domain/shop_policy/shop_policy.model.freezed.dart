@@ -170,7 +170,6 @@ class __$ShopPolicyCopyWithImpl<$Res> extends _$ShopPolicyCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-@Implements(Node)
 class _$_ShopPolicy extends _ShopPolicy {
   const _$_ShopPolicy(
       {required this.body,
@@ -245,7 +244,7 @@ class _$_ShopPolicy extends _ShopPolicy {
   }
 }
 
-abstract class _ShopPolicy extends ShopPolicy implements Node {
+abstract class _ShopPolicy extends ShopPolicy {
   const factory _ShopPolicy(
       {required String body,
       required String handle,

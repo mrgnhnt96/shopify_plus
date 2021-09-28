@@ -19,8 +19,6 @@ class Shop with _$Shop {
   const Shop._();
 
   /// {@macro shop}
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
   const factory Shop({
     /// A description of the shop.
     String? description,

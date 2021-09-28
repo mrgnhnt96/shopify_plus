@@ -21,8 +21,6 @@ class Customer with _$Customer {
   const Customer._();
 
   /// {@macro customer}
-  @Implements(ParentResource)
-  @Implements(MetafieldConnection)
   const factory Customer({
     /// Indicates whether the customer has consented to be sent marketing material via email.
     @Default(false) bool acceptsMarketing,

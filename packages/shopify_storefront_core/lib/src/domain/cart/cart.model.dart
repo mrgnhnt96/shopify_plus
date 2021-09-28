@@ -16,7 +16,6 @@ class Cart with _$Cart {
   const Cart._();
 
   /// {@macro cart}
-  @Implements(Node)
   const factory Cart({
     /// The attributes associated with the cart. Attributes are represented as key-value pairs.
     @Default([]) List<Attribute> attributes,
