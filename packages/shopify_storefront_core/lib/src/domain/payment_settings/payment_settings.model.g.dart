@@ -23,7 +23,7 @@ _$_PaymentSettings _$$_PaymentSettingsFromJson(Map<String, dynamic> json) =>
       shopifyPaymentsAccountId: json['shopifyPaymentsAccountId'] as String?,
       supportedDigitalWallets:
           (json['supportedDigitalWallets'] as List<dynamic>)
-              .map((e) => _$enumDecode(_$DigitalWalletEnumMap, e))
+              .map((e) => const DigitalWalletJson().fromJson(e as String))
               .toList(),
     );
 
@@ -40,39 +40,6 @@ Map<String, dynamic> _$$_PaymentSettingsToJson(_$_PaymentSettings instance) =>
           .toList(),
       'shopifyPaymentsAccountId': instance.shopifyPaymentsAccountId,
       'supportedDigitalWallets': instance.supportedDigitalWallets
-          .map((e) => _$DigitalWalletEnumMap[e])
+          .map(const DigitalWalletJson().toJson)
           .toList(),
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-const _$DigitalWalletEnumMap = {
-  DigitalWallet.androidPay: 'androidPay',
-  DigitalWallet.applePay: 'applePay',
-  DigitalWallet.googlePay: 'googlePay',
-  DigitalWallet.shopifyPay: 'shopifyPay',
-};

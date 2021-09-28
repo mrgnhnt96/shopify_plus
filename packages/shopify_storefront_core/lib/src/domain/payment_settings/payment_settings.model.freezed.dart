@@ -32,7 +32,8 @@ class _$PaymentSettingsTearOff {
       @CurrencyCodeJson()
           required List<CurrencyCode> enabledPresentmentCurrencies,
       String? shopifyPaymentsAccountId,
-      required List<DigitalWallet> supportedDigitalWallets}) {
+      @DigitalWalletJson()
+          required List<DigitalWallet> supportedDigitalWallets}) {
     return _PaymentSettings(
       acceptedCardBrands: acceptedCardBrands,
       cardVaultUrl: cardVaultUrl,
@@ -78,6 +79,7 @@ mixin _$PaymentSettings {
   String? get shopifyPaymentsAccountId => throw _privateConstructorUsedError;
 
   /// List of the digital wallets which the shop supports.
+  @DigitalWalletJson()
   List<DigitalWallet> get supportedDigitalWallets =>
       throw _privateConstructorUsedError;
 
@@ -99,7 +101,7 @@ abstract class $PaymentSettingsCopyWith<$Res> {
       @CurrencyCodeJson() CurrencyCode currencyCode,
       @CurrencyCodeJson() List<CurrencyCode> enabledPresentmentCurrencies,
       String? shopifyPaymentsAccountId,
-      List<DigitalWallet> supportedDigitalWallets});
+      @DigitalWalletJson() List<DigitalWallet> supportedDigitalWallets});
 }
 
 /// @nodoc
@@ -168,7 +170,7 @@ abstract class _$PaymentSettingsCopyWith<$Res>
       @CurrencyCodeJson() CurrencyCode currencyCode,
       @CurrencyCodeJson() List<CurrencyCode> enabledPresentmentCurrencies,
       String? shopifyPaymentsAccountId,
-      List<DigitalWallet> supportedDigitalWallets});
+      @DigitalWalletJson() List<DigitalWallet> supportedDigitalWallets});
 }
 
 /// @nodoc
@@ -235,7 +237,7 @@ class _$_PaymentSettings extends _PaymentSettings {
       @CurrencyCodeJson() required this.currencyCode,
       @CurrencyCodeJson() required this.enabledPresentmentCurrencies,
       this.shopifyPaymentsAccountId,
-      required this.supportedDigitalWallets})
+      @DigitalWalletJson() required this.supportedDigitalWallets})
       : super._();
 
   factory _$_PaymentSettings.fromJson(Map<String, dynamic> json) =>
@@ -272,6 +274,7 @@ class _$_PaymentSettings extends _PaymentSettings {
   @override
 
   /// List of the digital wallets which the shop supports.
+  @DigitalWalletJson()
   final List<DigitalWallet> supportedDigitalWallets;
 
   @override
@@ -345,7 +348,8 @@ abstract class _PaymentSettings extends PaymentSettings {
           @CurrencyCodeJson()
               required List<CurrencyCode> enabledPresentmentCurrencies,
           String? shopifyPaymentsAccountId,
-          required List<DigitalWallet> supportedDigitalWallets}) =
+          @DigitalWalletJson()
+              required List<DigitalWallet> supportedDigitalWallets}) =
       _$_PaymentSettings;
   const _PaymentSettings._() : super._();
 
@@ -384,6 +388,7 @@ abstract class _PaymentSettings extends PaymentSettings {
   @override
 
   /// List of the digital wallets which the shop supports.
+  @DigitalWalletJson()
   List<DigitalWallet> get supportedDigitalWallets =>
       throw _privateConstructorUsedError;
   @override

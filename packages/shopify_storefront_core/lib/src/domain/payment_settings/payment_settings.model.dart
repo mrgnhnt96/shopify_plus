@@ -36,7 +36,7 @@ class PaymentSettings with _$PaymentSettings {
     String? shopifyPaymentsAccountId,
 
     /// List of the digital wallets which the shop supports.
-    required List<DigitalWallet> supportedDigitalWallets,
+    @DigitalWalletJson() required List<DigitalWallet> supportedDigitalWallets,
   }) = _PaymentSettings;
 
   /// {@macro from_json}
