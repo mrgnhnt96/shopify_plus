@@ -6,6 +6,7 @@ part '{{#snakeCase}}{{className}}{{/snakeCase}}_error.model.g.dart';
 // TODO: Add properties, constructors, and methods
 
 /// {@template {{#snakeCase}}{{className}}{{/snakeCase}}_error}
+/// Represents an error that happens during execution of a {{#snakeCase}}{{className}}{{/snakeCase}} mutation
 /// {@endtemplate}
 @freezed
 class {{#pascalCase}}{{className}}{{/pascalCase}}Error with _${{#pascalCase}}{{className}}{{/pascalCase}}Error  {
