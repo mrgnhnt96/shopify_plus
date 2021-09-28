@@ -1489,6 +1489,25 @@ class CountryCodeJson extends JsonConverter<CountryCode, String> {
 
   @override
   String toJson(CountryCode object) => object.code;
+
+  /// {@macro to_json}
+  static String? countryToJson(CountryCode? code) {
+    if (code == null) return null;
+    const jsonConverter = CountryCodeJson();
+    return jsonConverter.toJson(code);
+  }
+
+  /// {@macro from_json}
+  static CountryCode countryFromJson(String? code) {
+    return countryFromJsonNullable(code)!;
+  }
+
+  /// {@macro from_json}
+  static CountryCode? countryFromJsonNullable(String? code) {
+    if (code == null) return null;
+    const jsonConverter = CountryCodeJson();
+    return jsonConverter.fromJson(code);
+  }
 }
 
 /// {@macro enum_x}

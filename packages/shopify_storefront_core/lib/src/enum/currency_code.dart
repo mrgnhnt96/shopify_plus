@@ -962,6 +962,25 @@ class CurrencyCodeJson extends JsonConverter<CurrencyCode, String> {
 
   @override
   String toJson(CurrencyCode object) => object.name;
+
+  /// {@macro to_json}
+  static String? currencyToJson(CurrencyCode? code) {
+    if (code == null) return null;
+    const jsonConverter = CurrencyCodeJson();
+    return jsonConverter.toJson(code);
+  }
+
+  /// {@macro from_json}
+  static CurrencyCode currencyFromJson(String? code) {
+    return currencyFromJsonNullable(code)!;
+  }
+
+  /// {@macro from_json}
+  static CurrencyCode? currencyFromJsonNullable(String? code) {
+    if (code == null) return null;
+    const jsonConverter = CurrencyCodeJson();
+    return jsonConverter.fromJson(code);
+  }
 }
 
 /// {@macro enum_x}
