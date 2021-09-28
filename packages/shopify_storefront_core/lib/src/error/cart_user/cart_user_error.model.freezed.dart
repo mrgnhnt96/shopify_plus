@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user_error.model.dart';
+part of 'cart_user_error.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,35 +13,35 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UserError _$UserErrorFromJson(Map<String, dynamic> json) {
-  return _UserError.fromJson(json);
+CartUserError _$CartUserErrorFromJson(Map<String, dynamic> json) {
+  return _CartUserError.fromJson(json);
 }
 
 /// @nodoc
-class _$UserErrorTearOff {
-  const _$UserErrorTearOff();
+class _$CartUserErrorTearOff {
+  const _$CartUserErrorTearOff();
 
-  _UserError call(
+  _CartUserError call(
       {@CartErrorCodeJson() CartErrorCode? code,
       List<String>? field,
       required String message}) {
-    return _UserError(
+    return _CartUserError(
       code: code,
       field: field,
       message: message,
     );
   }
 
-  UserError fromJson(Map<String, Object> json) {
-    return UserError.fromJson(json);
+  CartUserError fromJson(Map<String, Object> json) {
+    return CartUserError.fromJson(json);
   }
 }
 
 /// @nodoc
-const $UserError = _$UserErrorTearOff();
+const $CartUserError = _$CartUserErrorTearOff();
 
 /// @nodoc
-mixin _$UserError {
+mixin _$CartUserError {
   /// The error code.
   @CartErrorCodeJson()
   CartErrorCode? get code => throw _privateConstructorUsedError;
@@ -54,14 +54,15 @@ mixin _$UserError {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserErrorCopyWith<UserError> get copyWith =>
+  $CartUserErrorCopyWith<CartUserError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserErrorCopyWith<$Res> {
-  factory $UserErrorCopyWith(UserError value, $Res Function(UserError) then) =
-      _$UserErrorCopyWithImpl<$Res>;
+abstract class $CartUserErrorCopyWith<$Res> {
+  factory $CartUserErrorCopyWith(
+          CartUserError value, $Res Function(CartUserError) then) =
+      _$CartUserErrorCopyWithImpl<$Res>;
   $Res call(
       {@CartErrorCodeJson() CartErrorCode? code,
       List<String>? field,
@@ -69,12 +70,13 @@ abstract class $UserErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserErrorCopyWithImpl<$Res> implements $UserErrorCopyWith<$Res> {
-  _$UserErrorCopyWithImpl(this._value, this._then);
+class _$CartUserErrorCopyWithImpl<$Res>
+    implements $CartUserErrorCopyWith<$Res> {
+  _$CartUserErrorCopyWithImpl(this._value, this._then);
 
-  final UserError _value;
+  final CartUserError _value;
   // ignore: unused_field
-  final $Res Function(UserError) _then;
+  final $Res Function(CartUserError) _then;
 
   @override
   $Res call({
@@ -100,10 +102,11 @@ class _$UserErrorCopyWithImpl<$Res> implements $UserErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UserErrorCopyWith<$Res> implements $UserErrorCopyWith<$Res> {
-  factory _$UserErrorCopyWith(
-          _UserError value, $Res Function(_UserError) then) =
-      __$UserErrorCopyWithImpl<$Res>;
+abstract class _$CartUserErrorCopyWith<$Res>
+    implements $CartUserErrorCopyWith<$Res> {
+  factory _$CartUserErrorCopyWith(
+          _CartUserError value, $Res Function(_CartUserError) then) =
+      __$CartUserErrorCopyWithImpl<$Res>;
   @override
   $Res call(
       {@CartErrorCodeJson() CartErrorCode? code,
@@ -112,13 +115,15 @@ abstract class _$UserErrorCopyWith<$Res> implements $UserErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserErrorCopyWithImpl<$Res> extends _$UserErrorCopyWithImpl<$Res>
-    implements _$UserErrorCopyWith<$Res> {
-  __$UserErrorCopyWithImpl(_UserError _value, $Res Function(_UserError) _then)
-      : super(_value, (v) => _then(v as _UserError));
+class __$CartUserErrorCopyWithImpl<$Res>
+    extends _$CartUserErrorCopyWithImpl<$Res>
+    implements _$CartUserErrorCopyWith<$Res> {
+  __$CartUserErrorCopyWithImpl(
+      _CartUserError _value, $Res Function(_CartUserError) _then)
+      : super(_value, (v) => _then(v as _CartUserError));
 
   @override
-  _UserError get _value => super._value as _UserError;
+  _CartUserError get _value => super._value as _CartUserError;
 
   @override
   $Res call({
@@ -126,7 +131,7 @@ class __$UserErrorCopyWithImpl<$Res> extends _$UserErrorCopyWithImpl<$Res>
     Object? field = freezed,
     Object? message = freezed,
   }) {
-    return _then(_UserError(
+    return _then(_CartUserError(
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -145,13 +150,13 @@ class __$UserErrorCopyWithImpl<$Res> extends _$UserErrorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserError extends _UserError {
-  const _$_UserError(
+class _$_CartUserError extends _CartUserError {
+  const _$_CartUserError(
       {@CartErrorCodeJson() this.code, this.field, required this.message})
       : super._();
 
-  factory _$_UserError.fromJson(Map<String, dynamic> json) =>
-      _$$_UserErrorFromJson(json);
+  factory _$_CartUserError.fromJson(Map<String, dynamic> json) =>
+      _$$_CartUserErrorFromJson(json);
 
   @override
 
@@ -169,13 +174,13 @@ class _$_UserError extends _UserError {
 
   @override
   String toString() {
-    return 'UserError(code: $code, field: $field, message: $message)';
+    return 'CartUserError(code: $code, field: $field, message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserError &&
+        (other is _CartUserError &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.field, field) ||
@@ -193,24 +198,24 @@ class _$_UserError extends _UserError {
 
   @JsonKey(ignore: true)
   @override
-  _$UserErrorCopyWith<_UserError> get copyWith =>
-      __$UserErrorCopyWithImpl<_UserError>(this, _$identity);
+  _$CartUserErrorCopyWith<_CartUserError> get copyWith =>
+      __$CartUserErrorCopyWithImpl<_CartUserError>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserErrorToJson(this);
+    return _$$_CartUserErrorToJson(this);
   }
 }
 
-abstract class _UserError extends UserError {
-  const factory _UserError(
+abstract class _CartUserError extends CartUserError {
+  const factory _CartUserError(
       {@CartErrorCodeJson() CartErrorCode? code,
       List<String>? field,
-      required String message}) = _$_UserError;
-  const _UserError._() : super._();
+      required String message}) = _$_CartUserError;
+  const _CartUserError._() : super._();
 
-  factory _UserError.fromJson(Map<String, dynamic> json) =
-      _$_UserError.fromJson;
+  factory _CartUserError.fromJson(Map<String, dynamic> json) =
+      _$_CartUserError.fromJson;
 
   @override
 
@@ -227,6 +232,6 @@ abstract class _UserError extends UserError {
   String get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserErrorCopyWith<_UserError> get copyWith =>
+  _$CartUserErrorCopyWith<_CartUserError> get copyWith =>
       throw _privateConstructorUsedError;
 }

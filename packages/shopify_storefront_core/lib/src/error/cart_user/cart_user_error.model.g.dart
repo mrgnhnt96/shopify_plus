@@ -1,19 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_error.model.dart';
+part of 'cart_user_error.model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserError _$$_UserErrorFromJson(Map<String, dynamic> json) => _$_UserError(
+_$_CartUserError _$$_CartUserErrorFromJson(Map<String, dynamic> json) =>
+    _$_CartUserError(
       code: _$enumDecodeNullable(_$CartErrorCodeEnumMap, json['code']),
       field:
           (json['field'] as List<dynamic>?)?.map((e) => e as String).toList(),
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$$_UserErrorToJson(_$_UserError instance) =>
+Map<String, dynamic> _$$_CartUserErrorToJson(_$_CartUserError instance) =>
     <String, dynamic>{
       'code': _$CartErrorCodeEnumMap[instance.code],
       'field': instance.field,

@@ -1,18 +1,18 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/src/enum/cart_error_code.dart';
 
-part 'user_error.model.freezed.dart';
-part 'user_error.model.g.dart';
+part 'cart_user_error.model.freezed.dart';
+part 'cart_user_error.model.g.dart';
 
-/// {@template user_error}
+/// {@template cart_user_error}
 /// Represents an error that happens during execution of a cart mutation
 /// {@endtemplate}
 @freezed
-class UserError with _$UserError {
-  const UserError._();
+class CartUserError with _$CartUserError {
+  const CartUserError._();
 
-  /// {@macro user_error}
-  const factory UserError({
+  /// {@macro cart_user_error}
+  const factory CartUserError({
     /// The error code.
     @CartErrorCodeJson() CartErrorCode? code,
 
@@ -21,9 +21,9 @@ class UserError with _$UserError {
 
     /// The error message.
     required String message,
-  }) = _UserError;
+  }) = _CartUserError;
 
   /// {@macro from_json}
-  factory UserError.fromJson(Map<String, dynamic> json) =>
-      _$UserErrorFromJson(json);
+  factory CartUserError.fromJson(Map<String, dynamic> json) =>
+      _$CartUserErrorFromJson(json);
 }
