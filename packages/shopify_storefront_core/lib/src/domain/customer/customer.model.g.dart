@@ -26,9 +26,7 @@ _$_Customer _$$_CustomerFromJson(Map<String, dynamic> json) => _$_Customer(
           ? null
           : Metafield.fromJson(json['metafield'] as Map<String, dynamic>),
       phone: json['phone'] as String?,
-      tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              [],
+      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
     );
 

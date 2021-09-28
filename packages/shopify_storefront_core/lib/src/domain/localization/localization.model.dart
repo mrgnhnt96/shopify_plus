@@ -14,7 +14,7 @@ class Localization with _$Localization {
   /// {@macro localization}
   const factory Localization({
     /// List of countries with enabled localized experiences.
-    @Default([]) List<Country> availableCountries,
+    required List<Country> availableCountries,
 
     /// The country of the active localized experience. Use the @inContext directive to change this value.
     required Country country,

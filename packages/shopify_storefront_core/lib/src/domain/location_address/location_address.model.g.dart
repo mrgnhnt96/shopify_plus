@@ -13,10 +13,8 @@ _$_LocationAddress _$$_LocationAddressFromJson(Map<String, dynamic> json) =>
       city: json['city'] as String?,
       country: json['country'] as String?,
       countryCode: json['countryCode'] as String?,
-      formatted: (json['formatted'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          [],
+      formatted:
+          (json['formatted'] as List<dynamic>).map((e) => e as String).toList(),
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       phone: json['phone'] as String?,

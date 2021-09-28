@@ -33,8 +33,8 @@ class _$CheckoutLineItemTearOff {
   const _$CheckoutLineItemTearOff();
 
   _CheckoutLineItem call(
-      {List<Attribute> customAttributes = const [],
-      List<DiscountAllocation> discountAllocations = const [],
+      {required List<Attribute> customAttributes,
+      required List<DiscountAllocation> discountAllocations,
       required String id,
       required int quantity,
       required String title,
@@ -283,8 +283,8 @@ class __$CheckoutLineItemCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CheckoutLineItem extends _CheckoutLineItem {
   const _$_CheckoutLineItem(
-      {this.customAttributes = const [],
-      this.discountAllocations = const [],
+      {required this.customAttributes,
+      required this.discountAllocations,
       required this.id,
       required this.quantity,
       required this.title,
@@ -295,12 +295,10 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
   factory _$_CheckoutLineItem.fromJson(Map<String, dynamic> json) =>
       _$$_CheckoutLineItemFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// Extra information in the form of an array of Key-Value pairs about the line item.
   final List<Attribute> customAttributes;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The discounts that have been allocated onto the checkout line item by discount applications.
@@ -486,8 +484,8 @@ class _$_CheckoutLineItem extends _CheckoutLineItem {
 
 abstract class _CheckoutLineItem extends CheckoutLineItem {
   const factory _CheckoutLineItem(
-      {List<Attribute> customAttributes,
-      List<DiscountAllocation> discountAllocations,
+      {required List<Attribute> customAttributes,
+      required List<DiscountAllocation> discountAllocations,
       required String id,
       required int quantity,
       required String title,

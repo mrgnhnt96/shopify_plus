@@ -19,18 +19,14 @@ _$_Product _$$_ProductFromJson(Map<String, dynamic> json) => _$_Product(
           ? null
           : Metafield.fromJson(json['metafield'] as Map<String, dynamic>),
       onlineStoreUrl: json['onlineStoreUrl'] as String?,
-      options: json['options'] == null
-          ? []
-          : ProductOption.fromJson(json['options'] as Map<String, dynamic>),
+      options: ProductOption.fromJson(json['options'] as Map<String, dynamic>),
       priceRange: ProductPriceRange.fromJson(
           json['priceRange'] as Map<String, dynamic>),
       productType: json['productType'] as String,
       publishedAt: DateTime.parse(json['publishedAt'] as String),
       requiresSellingPlan: json['requiresSellingPlan'] as bool? ?? false,
       seo: Seo.fromJson(json['seo'] as Map<String, dynamic>),
-      tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              [],
+      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       title: json['title'] as String,
       totalInventory: json['totalInventory'] as int,
       updatedAt: DateTime.parse(json['updatedAt'] as String),

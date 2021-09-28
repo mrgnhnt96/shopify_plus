@@ -93,7 +93,7 @@ class Order with _$Order {
     MailingAddress? shippingAddress,
 
     ///The discounts that have been allocated onto the shipping line by discount applications.
-    @Default([]) DiscountAllocation shippingDiscountAllocations,
+    required DiscountAllocation shippingDiscountAllocations,
 
     ///The unique URL for the order's status page.
     required String statusUrl,

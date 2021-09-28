@@ -18,7 +18,7 @@ class CartResponse with _$CartResponse {
     required Cart cart,
 
     /// The list of errors that occurred from executing the mutation
-    @Default([]) List<CartUserError> userErrors,
+    required List<CartUserError> userErrors,
   }) = _CartResponse;
 
   /// {@macro from_json}

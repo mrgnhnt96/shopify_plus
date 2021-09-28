@@ -25,7 +25,7 @@ class _$FilterGroupTearOff {
       {required String id,
       required String label,
       @FilterTypeJson() required FilterType type,
-      List<FilterValue> values = const []}) {
+      required List<FilterValue> values}) {
     return _FilterGroup(
       id: id,
       label: label,
@@ -170,7 +170,7 @@ class _$_FilterGroup extends _FilterGroup {
       {required this.id,
       required this.label,
       @FilterTypeJson() required this.type,
-      this.values = const []})
+      required this.values})
       : super._();
 
   factory _$_FilterGroup.fromJson(Map<String, dynamic> json) =>
@@ -189,7 +189,6 @@ class _$_FilterGroup extends _FilterGroup {
   /// An Enum that denotes the type of data this filter group represents.
   @FilterTypeJson()
   final FilterType type;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The list of options for this filter group.
@@ -238,7 +237,7 @@ abstract class _FilterGroup extends FilterGroup {
       {required String id,
       required String label,
       @FilterTypeJson() required FilterType type,
-      List<FilterValue> values}) = _$_FilterGroup;
+      required List<FilterValue> values}) = _$_FilterGroup;
   const _FilterGroup._() : super._();
 
   factory _FilterGroup.fromJson(Map<String, dynamic> json) =

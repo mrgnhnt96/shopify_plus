@@ -54,7 +54,7 @@ class ProductVariant with _$ProductVariant {
     @Default(true) bool requiresShipping,
 
     /// List of product options applied to the variant.
-    @Default([]) List<SelectedOption> selectedOptions,
+    required List<SelectedOption> selectedOptions,
 
     /// The SKU,
     String? sku,

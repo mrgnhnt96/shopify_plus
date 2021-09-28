@@ -27,7 +27,7 @@ class Checkout with _$Checkout {
   /// {@macro checkout}
   const factory Checkout({
     /// The gift cards used on the checkout.
-    @Default([]) List<AppliedGiftCard> appliedGiftCards,
+    required List<AppliedGiftCard> appliedGiftCards,
 
     /// The available shipping rates for this Checkout. Should only be used when checkout requiresShipping is true and the shipping address is valid.
     AvailableShippingRates? availableShippingRates,
@@ -45,7 +45,7 @@ class Checkout with _$Checkout {
     required String currencyCode,
 
     /// A list of extra information that is added to the checkout.
-    @Default([]) List<Attribute> customAttributes,
+    required List<Attribute> customAttributes,
 
     /// The email attached to this checkout.
     String? email,
@@ -78,7 +78,7 @@ class Checkout with _$Checkout {
     MailingAddress? shippingAddress,
 
     /// The discounts that have been allocated onto the shipping line by discount applications.
-    @Default([]) List<DiscountAllocation> shippingDiscountAllocations,
+    required List<DiscountAllocation> shippingDiscountAllocations,
 
     /// Once a shipping rate is selected by the customer it is transitioned to a ShippingLine object.
     ShippingRate? shippingLine,

@@ -32,7 +32,7 @@ class _$ProductVariantTearOff {
       required Product product,
       int? quantityAvailable,
       bool requiresShipping = true,
-      List<SelectedOption> selectedOptions = const [],
+      required List<SelectedOption> selectedOptions,
       String? sku,
       required String title,
       Money? unitPrice,
@@ -495,7 +495,7 @@ class _$_ProductVariant extends _ProductVariant {
       required this.product,
       this.quantityAvailable,
       this.requiresShipping = true,
-      this.selectedOptions = const [],
+      required this.selectedOptions,
       this.sku,
       required this.title,
       this.unitPrice,
@@ -554,7 +554,6 @@ class _$_ProductVariant extends _ProductVariant {
 
   /// Whether a customer needs to provide a shipping address when placing an order for the product variant.
   final bool requiresShipping;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// List of product options applied to the variant.
@@ -685,7 +684,7 @@ abstract class _ProductVariant extends ProductVariant {
       required Product product,
       int? quantityAvailable,
       bool requiresShipping,
-      List<SelectedOption> selectedOptions,
+      required List<SelectedOption> selectedOptions,
       String? sku,
       required String title,
       Money? unitPrice,

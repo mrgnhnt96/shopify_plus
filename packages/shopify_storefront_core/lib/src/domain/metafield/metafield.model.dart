@@ -45,33 +45,6 @@ class Metafield with _$Metafield {
     required String value,
   }) = _Metafield;
 
-  /// An auto-generated type for paginating through multiple Metafields
-  const factory Metafield.connection({
-    /// A list of edges.
-    @Default([]) List<MetafieldEdge> edges,
-
-    /// Information to aid in pagination.
-    required PageInfo pageInfo,
-  }) = MetafieldConnection;
-
-  /// An auto-generated type which holds one Metafield and a cursor during pagination
-  const factory Metafield.edge({
-    /// A cursor for use in pagination.
-    required String cursor,
-
-    /// The item at the end of MetafieldEdge.
-    required Metafield node,
-  }) = MetafieldEdge;
-
-  /// Represents information about the metafields associated to the specified resource
-  const factory Metafield.hasMetafields({
-    /// Returns a metafield found by namespace and key
-    Metafield? metafield,
-
-    /// A paginated list of metafields associated with the resource
-    required MetafieldConnection metafields,
-  }) = HasMetafields;
-
   /// {@macro from_json}
   factory Metafield.fromJson(Map<String, dynamic> json) =>
       _$MetafieldFromJson(json);

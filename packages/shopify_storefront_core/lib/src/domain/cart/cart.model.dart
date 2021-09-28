@@ -18,7 +18,7 @@ class Cart with _$Cart {
   /// {@macro cart}
   const factory Cart({
     /// The attributes associated with the cart. Attributes are represented as key-value pairs.
-    @Default([]) List<Attribute> attributes,
+    required List<Attribute> attributes,
 
     /// Information about the buyer that is interacting with the cart.
     required BuyerIdentity buyerIdentity,
@@ -30,7 +30,7 @@ class Cart with _$Cart {
     required DateTime createdAt,
 
     /// The discount codes that have been applied to the cart.
-    @Default([]) List<DiscountCode> discountCodes,
+    required List<DiscountCode> discountCodes,
 
     /// The estimated costs that the buyer will pay at checkout.
     required EstimatedCost estimatedCost,

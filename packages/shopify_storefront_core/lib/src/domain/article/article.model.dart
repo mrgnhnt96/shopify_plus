@@ -59,7 +59,7 @@ class Article with _$Article {
     Seo? seo,
 
     /// A categorization that a article can be tagged with.
-    @Default([]) List<String> tags,
+    required List<String> tags,
 
     /// The article’s name.
     required String title,

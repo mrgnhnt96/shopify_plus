@@ -22,8 +22,8 @@ class _$CartLineTearOff {
   const _$CartLineTearOff();
 
   _CartLine call(
-      {List<Attribute> attributes = const [],
-      List<DiscountAllocation> discountAllocations = const [],
+      {required List<Attribute> attributes,
+      required List<DiscountAllocation> discountAllocations,
       required EstimatedCost estimatedCost,
       required String id,
       required Merchandise merchandise,
@@ -248,8 +248,8 @@ class __$CartLineCopyWithImpl<$Res> extends _$CartLineCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CartLine extends _CartLine {
   const _$_CartLine(
-      {this.attributes = const [],
-      this.discountAllocations = const [],
+      {required this.attributes,
+      required this.discountAllocations,
       required this.estimatedCost,
       required this.id,
       required this.merchandise,
@@ -260,12 +260,10 @@ class _$_CartLine extends _CartLine {
   factory _$_CartLine.fromJson(Map<String, dynamic> json) =>
       _$$_CartLineFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The attributes associated with the cart line. Attributes are represented as key-value pairs.
   final List<Attribute> attributes;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The discounts that have been applied to the cart line.
@@ -346,8 +344,8 @@ class _$_CartLine extends _CartLine {
 
 abstract class _CartLine extends CartLine {
   const factory _CartLine(
-      {List<Attribute> attributes,
-      List<DiscountAllocation> discountAllocations,
+      {required List<Attribute> attributes,
+      required List<DiscountAllocation> discountAllocations,
       required EstimatedCost estimatedCost,
       required String id,
       required Merchandise merchandise,

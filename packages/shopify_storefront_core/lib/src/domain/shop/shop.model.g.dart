@@ -26,10 +26,9 @@ _$_Shop _$$_ShopFromJson(Map<String, dynamic> json) => _$_Shop(
       shippingPolicy: json['shippingPolicy'] == null
           ? null
           : ShopPolicy.fromJson(json['shippingPolicy'] as Map<String, dynamic>),
-      shipsToCountries: (json['shipsToCountries'] as List<dynamic>?)
-              ?.map((e) => _$enumDecode(_$CountryCodeEnumMap, e))
-              .toList() ??
-          [],
+      shipsToCountries: (json['shipsToCountries'] as List<dynamic>)
+          .map((e) => _$enumDecode(_$CountryCodeEnumMap, e))
+          .toList(),
       termsOfService: json['termsOfService'] == null
           ? null
           : ShopPolicy.fromJson(json['termsOfService'] as Map<String, dynamic>),

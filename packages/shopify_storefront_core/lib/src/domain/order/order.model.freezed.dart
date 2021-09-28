@@ -47,7 +47,7 @@ class _$OrderTearOff {
       String? phone,
       required DateTime processedAt,
       MailingAddress? shippingAddress,
-      DiscountAllocation shippingDiscountAllocations = const [],
+      required DiscountAllocation shippingDiscountAllocations,
       required String statusUrl,
       @JsonKey(name: 'subtotalPriceV2')
           Money? subtotalPrice,
@@ -812,7 +812,7 @@ class _$_Order extends _Order {
       this.phone,
       required this.processedAt,
       this.shippingAddress,
-      this.shippingDiscountAllocations = const [],
+      required this.shippingDiscountAllocations,
       required this.statusUrl,
       @JsonKey(name: 'subtotalPriceV2') this.subtotalPrice,
       this.successfulFulfillments,
@@ -917,7 +917,6 @@ class _$_Order extends _Order {
 
   ///The address to where the order will be shipped.
   final MailingAddress? shippingAddress;
-  @JsonKey(defaultValue: const [])
   @override
 
   ///The discounts that have been allocated onto the shipping line by discount applications.
@@ -1112,7 +1111,7 @@ abstract class _Order extends Order {
       String? phone,
       required DateTime processedAt,
       MailingAddress? shippingAddress,
-      DiscountAllocation shippingDiscountAllocations,
+      required DiscountAllocation shippingDiscountAllocations,
       required String statusUrl,
       @JsonKey(name: 'subtotalPriceV2')
           Money? subtotalPrice,

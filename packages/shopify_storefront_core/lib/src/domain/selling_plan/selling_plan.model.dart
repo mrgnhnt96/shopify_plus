@@ -26,10 +26,10 @@ class SellingPlan with _$SellingPlan {
     required String name,
 
     /// Represents the selling plan options available in the drop-down list in the storefront. For example, 'Delivery every week' or 'Delivery every 2 weeks' specifies the delivery frequency options for the product.
-    @Default([]) List<SellingPlanOption> options,
+    required List<SellingPlanOption> options,
 
     /// Represents how a selling plan affects pricing when a variant is purchased with a selling plan.
-    @Default([]) List<SellingPlanPriceAdjustment> priceAdjustments,
+    required List<SellingPlanPriceAdjustment> priceAdjustments,
 
     /// Whether purchasing the selling plan will result in multiple deliveries.
     @Default(false) bool recurringDeliveries,

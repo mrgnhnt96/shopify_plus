@@ -20,10 +20,10 @@ class CheckoutLineItem with _$CheckoutLineItem {
   /// {@macro checkout_line_item}
   const factory CheckoutLineItem({
     /// Extra information in the form of an array of Key-Value pairs about the line item.
-    @Default([]) List<Attribute> customAttributes,
+    required List<Attribute> customAttributes,
 
     /// The discounts that have been allocated onto the checkout line item by discount applications.
-    @Default([]) List<DiscountAllocation> discountAllocations,
+    required List<DiscountAllocation> discountAllocations,
 
     /// A globally-unique identifier.
     required String id,

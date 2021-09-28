@@ -7,15 +7,12 @@ part of 'cart_line.model.dart';
 // **************************************************************************
 
 _$_CartLine _$$_CartLineFromJson(Map<String, dynamic> json) => _$_CartLine(
-      attributes: (json['attributes'] as List<dynamic>?)
-              ?.map((e) => Attribute.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      discountAllocations: (json['discountAllocations'] as List<dynamic>?)
-              ?.map(
-                  (e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      attributes: (json['attributes'] as List<dynamic>)
+          .map((e) => Attribute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      discountAllocations: (json['discountAllocations'] as List<dynamic>)
+          .map((e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
+          .toList(),
       estimatedCost:
           EstimatedCost.fromJson(json['estimatedCost'] as Map<String, dynamic>),
       id: json['id'] as String,

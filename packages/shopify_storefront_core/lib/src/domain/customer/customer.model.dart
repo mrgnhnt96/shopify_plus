@@ -58,7 +58,7 @@ class Customer with _$Customer {
     /// A comma separated list of tags that have been added to the customer. Additional access scope required: unauthenticated_read_customer_tags.
     ///
     /// *required access: unauthenticated_read_customer_tags*
-    @Default([]) List<String> tags,
+    required List<String> tags,
 
     /// The date and time when the customer information was updated
     required DateTime updatedAt,

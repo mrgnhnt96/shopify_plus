@@ -23,7 +23,7 @@ class _$FulfillmentTearOff {
 
   _Fulfillment call(
       {String? trackingCompany,
-      List<FulfillmentTrackingInfo> tackingInfo = const []}) {
+      required List<FulfillmentTrackingInfo> tackingInfo}) {
     return _Fulfillment(
       trackingCompany: trackingCompany,
       tackingInfo: tackingInfo,
@@ -130,7 +130,7 @@ class __$FulfillmentCopyWithImpl<$Res> extends _$FulfillmentCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Fulfillment extends _Fulfillment {
-  const _$_Fulfillment({this.trackingCompany, this.tackingInfo = const []})
+  const _$_Fulfillment({this.trackingCompany, required this.tackingInfo})
       : super._();
 
   factory _$_Fulfillment.fromJson(Map<String, dynamic> json) =>
@@ -140,7 +140,6 @@ class _$_Fulfillment extends _Fulfillment {
 
   /// The name of the tracking company
   final String? trackingCompany;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// Tracking information associated with the fulfillment, such as the tracking number and tracking URL
@@ -183,7 +182,7 @@ class _$_Fulfillment extends _Fulfillment {
 abstract class _Fulfillment extends Fulfillment {
   const factory _Fulfillment(
       {String? trackingCompany,
-      List<FulfillmentTrackingInfo> tackingInfo}) = _$_Fulfillment;
+      required List<FulfillmentTrackingInfo> tackingInfo}) = _$_Fulfillment;
   const _Fulfillment._() : super._();
 
   factory _Fulfillment.fromJson(Map<String, dynamic> json) =

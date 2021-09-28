@@ -22,11 +22,11 @@ class _$CartTearOff {
   const _$CartTearOff();
 
   _Cart call(
-      {List<Attribute> attributes = const [],
+      {required List<Attribute> attributes,
       required BuyerIdentity buyerIdentity,
       required String checkoutUrl,
       required DateTime createdAt,
-      List<DiscountCode> discountCodes = const [],
+      required List<DiscountCode> discountCodes,
       required EstimatedCost estimatedCost,
       required String id,
       String? note,
@@ -268,11 +268,11 @@ class __$CartCopyWithImpl<$Res> extends _$CartCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Cart extends _Cart {
   const _$_Cart(
-      {this.attributes = const [],
+      {required this.attributes,
       required this.buyerIdentity,
       required this.checkoutUrl,
       required this.createdAt,
-      this.discountCodes = const [],
+      required this.discountCodes,
       required this.estimatedCost,
       required this.id,
       this.note,
@@ -281,7 +281,6 @@ class _$_Cart extends _Cart {
 
   factory _$_Cart.fromJson(Map<String, dynamic> json) => _$$_CartFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The attributes associated with the cart. Attributes are represented as key-value pairs.
@@ -298,7 +297,6 @@ class _$_Cart extends _Cart {
 
   /// The date and time when the cart was created.
   final DateTime createdAt;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The discount codes that have been applied to the cart.
@@ -382,11 +380,11 @@ class _$_Cart extends _Cart {
 
 abstract class _Cart extends Cart {
   const factory _Cart(
-      {List<Attribute> attributes,
+      {required List<Attribute> attributes,
       required BuyerIdentity buyerIdentity,
       required String checkoutUrl,
       required DateTime createdAt,
-      List<DiscountCode> discountCodes,
+      required List<DiscountCode> discountCodes,
       required EstimatedCost estimatedCost,
       required String id,
       String? note,

@@ -47,10 +47,8 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
           ? null
           : MailingAddress.fromJson(
               json['shippingAddress'] as Map<String, dynamic>),
-      shippingDiscountAllocations: json['shippingDiscountAllocations'] == null
-          ? []
-          : DiscountAllocation.fromJson(
-              json['shippingDiscountAllocations'] as Map<String, dynamic>),
+      shippingDiscountAllocations: DiscountAllocation.fromJson(
+          json['shippingDiscountAllocations'] as Map<String, dynamic>),
       statusUrl: json['statusUrl'] as String,
       subtotalPrice: json['subtotalPriceV2'] == null
           ? null

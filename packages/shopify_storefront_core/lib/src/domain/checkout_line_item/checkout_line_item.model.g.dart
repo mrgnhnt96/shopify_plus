@@ -8,15 +8,12 @@ part of 'checkout_line_item.model.dart';
 
 _$_CheckoutLineItem _$$_CheckoutLineItemFromJson(Map<String, dynamic> json) =>
     _$_CheckoutLineItem(
-      customAttributes: (json['customAttributes'] as List<dynamic>?)
-              ?.map((e) => Attribute.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      discountAllocations: (json['discountAllocations'] as List<dynamic>?)
-              ?.map(
-                  (e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      customAttributes: (json['customAttributes'] as List<dynamic>)
+          .map((e) => Attribute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      discountAllocations: (json['discountAllocations'] as List<dynamic>)
+          .map((e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
+          .toList(),
       id: json['id'] as String,
       quantity: json['quantity'] as int,
       title: json['title'] as String,

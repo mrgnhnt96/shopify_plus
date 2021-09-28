@@ -22,13 +22,17 @@ class _$PaymentSettingsTearOff {
   const _$PaymentSettingsTearOff();
 
   _PaymentSettings call(
-      {@CardBrandJson() List<CardBrand> acceptedCardBrands = const [],
+      {@CardBrandJson()
+          required List<CardBrand> acceptedCardBrands,
       required String cardVaultUrl,
-      @CountryCodeJson() required CountryCode countryCode,
-      @CurrencyCodeJson() required CurrencyCode currencyCode,
-      List<CurrencyCode> enabledPresentmentCurrencies = const [],
+      @CountryCodeJson()
+          required CountryCode countryCode,
+      @CurrencyCodeJson()
+          required CurrencyCode currencyCode,
+      @CurrencyCodeJson()
+          required List<CurrencyCode> enabledPresentmentCurrencies,
       String? shopifyPaymentsAccountId,
-      List<DigitalWallet> supportedDigitalWallets = const []}) {
+      required List<DigitalWallet> supportedDigitalWallets}) {
     return _PaymentSettings(
       acceptedCardBrands: acceptedCardBrands,
       cardVaultUrl: cardVaultUrl,
@@ -66,6 +70,7 @@ mixin _$PaymentSettings {
   CurrencyCode get currencyCode => throw _privateConstructorUsedError;
 
   /// A list of enabled currencies (ISO 4217 format) that the shop accepts. Merchants can enable currencies from their Shopify Payments settings in the Shopify admin.
+  @CurrencyCodeJson()
   List<CurrencyCode> get enabledPresentmentCurrencies =>
       throw _privateConstructorUsedError;
 
@@ -92,7 +97,7 @@ abstract class $PaymentSettingsCopyWith<$Res> {
       String cardVaultUrl,
       @CountryCodeJson() CountryCode countryCode,
       @CurrencyCodeJson() CurrencyCode currencyCode,
-      List<CurrencyCode> enabledPresentmentCurrencies,
+      @CurrencyCodeJson() List<CurrencyCode> enabledPresentmentCurrencies,
       String? shopifyPaymentsAccountId,
       List<DigitalWallet> supportedDigitalWallets});
 }
@@ -161,7 +166,7 @@ abstract class _$PaymentSettingsCopyWith<$Res>
       String cardVaultUrl,
       @CountryCodeJson() CountryCode countryCode,
       @CurrencyCodeJson() CurrencyCode currencyCode,
-      List<CurrencyCode> enabledPresentmentCurrencies,
+      @CurrencyCodeJson() List<CurrencyCode> enabledPresentmentCurrencies,
       String? shopifyPaymentsAccountId,
       List<DigitalWallet> supportedDigitalWallets});
 }
@@ -224,19 +229,18 @@ class __$PaymentSettingsCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_PaymentSettings extends _PaymentSettings {
   const _$_PaymentSettings(
-      {@CardBrandJson() this.acceptedCardBrands = const [],
+      {@CardBrandJson() required this.acceptedCardBrands,
       required this.cardVaultUrl,
       @CountryCodeJson() required this.countryCode,
       @CurrencyCodeJson() required this.currencyCode,
-      this.enabledPresentmentCurrencies = const [],
+      @CurrencyCodeJson() required this.enabledPresentmentCurrencies,
       this.shopifyPaymentsAccountId,
-      this.supportedDigitalWallets = const []})
+      required this.supportedDigitalWallets})
       : super._();
 
   factory _$_PaymentSettings.fromJson(Map<String, dynamic> json) =>
       _$$_PaymentSettingsFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// List of the card brands which the shop accepts.
@@ -256,16 +260,15 @@ class _$_PaymentSettings extends _PaymentSettings {
   /// The three-letter code for the shop's primary currency.
   @CurrencyCodeJson()
   final CurrencyCode currencyCode;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A list of enabled currencies (ISO 4217 format) that the shop accepts. Merchants can enable currencies from their Shopify Payments settings in the Shopify admin.
+  @CurrencyCodeJson()
   final List<CurrencyCode> enabledPresentmentCurrencies;
   @override
 
   /// The shop’s Shopify Payments account id.
   final String? shopifyPaymentsAccountId;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// List of the digital wallets which the shop supports.
@@ -332,13 +335,18 @@ class _$_PaymentSettings extends _PaymentSettings {
 
 abstract class _PaymentSettings extends PaymentSettings {
   const factory _PaymentSettings(
-      {@CardBrandJson() List<CardBrand> acceptedCardBrands,
-      required String cardVaultUrl,
-      @CountryCodeJson() required CountryCode countryCode,
-      @CurrencyCodeJson() required CurrencyCode currencyCode,
-      List<CurrencyCode> enabledPresentmentCurrencies,
-      String? shopifyPaymentsAccountId,
-      List<DigitalWallet> supportedDigitalWallets}) = _$_PaymentSettings;
+          {@CardBrandJson()
+              required List<CardBrand> acceptedCardBrands,
+          required String cardVaultUrl,
+          @CountryCodeJson()
+              required CountryCode countryCode,
+          @CurrencyCodeJson()
+              required CurrencyCode currencyCode,
+          @CurrencyCodeJson()
+              required List<CurrencyCode> enabledPresentmentCurrencies,
+          String? shopifyPaymentsAccountId,
+          required List<DigitalWallet> supportedDigitalWallets}) =
+      _$_PaymentSettings;
   const _PaymentSettings._() : super._();
 
   factory _PaymentSettings.fromJson(Map<String, dynamic> json) =
@@ -366,6 +374,7 @@ abstract class _PaymentSettings extends PaymentSettings {
   @override
 
   /// A list of enabled currencies (ISO 4217 format) that the shop accepts. Merchants can enable currencies from their Shopify Payments settings in the Shopify admin.
+  @CurrencyCodeJson()
   List<CurrencyCode> get enabledPresentmentCurrencies =>
       throw _privateConstructorUsedError;
   @override

@@ -54,7 +54,7 @@ class Product with _$Product {
     String? onlineStoreUrl,
 
     /// List of product options.
-    @Default([]) ProductOption options,
+    required ProductOption options,
 
     /// The price range.
     required ProductPriceRange priceRange,
@@ -74,7 +74,7 @@ class Product with _$Product {
     /// A comma separated list of tags that have been added to the product.
     ///
     /// *requires access: unauthenticated_read_product_tags*
-    @Default([]) List<String> tags,
+    required List<String> tags,
 
     /// The product’s title.
     required String title,

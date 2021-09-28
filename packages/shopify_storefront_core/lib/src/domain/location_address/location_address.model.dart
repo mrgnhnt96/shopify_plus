@@ -28,7 +28,7 @@ class LocationAddress with _$LocationAddress {
     String? countryCode,
 
     /// A formatted version of the location address.
-    @Default([]) List<String> formatted,
+    required List<String> formatted,
 
     /// The latitude coordinates of the location.
     double? latitude,

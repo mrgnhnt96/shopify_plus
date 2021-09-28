@@ -31,13 +31,13 @@ class _$ProductTearOff {
       required String id,
       Metafield? metafield,
       String? onlineStoreUrl,
-      ProductOption options = const [],
+      required ProductOption options,
       required ProductPriceRange priceRange,
       required String productType,
       required DateTime publishedAt,
       bool requiresSellingPlan = false,
       required Seo seo,
-      List<String> tags = const [],
+      required List<String> tags,
       required String title,
       required int totalInventory,
       required DateTime updatedAt,
@@ -550,13 +550,13 @@ class _$_Product extends _Product {
       required this.id,
       this.metafield,
       this.onlineStoreUrl,
-      this.options = const [],
+      required this.options,
       required this.priceRange,
       required this.productType,
       required this.publishedAt,
       this.requiresSellingPlan = false,
       required this.seo,
-      this.tags = const [],
+      required this.tags,
       required this.title,
       required this.totalInventory,
       required this.updatedAt,
@@ -607,7 +607,6 @@ class _$_Product extends _Product {
   /// The URL used for viewing the resource on the shop's Online Store.
   /// Returns null if the resource is currently not published to the Online Store sales channel.
   final String? onlineStoreUrl;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// List of product options.
@@ -633,7 +632,6 @@ class _$_Product extends _Product {
 
   /// The product's SEO information.
   final Seo seo;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A comma separated list of tags that have been added to the product.
@@ -790,13 +788,13 @@ abstract class _Product extends Product {
       required String id,
       Metafield? metafield,
       String? onlineStoreUrl,
-      ProductOption options,
+      required ProductOption options,
       required ProductPriceRange priceRange,
       required String productType,
       required DateTime publishedAt,
       bool requiresSellingPlan,
       required Seo seo,
-      List<String> tags,
+      required List<String> tags,
       required String title,
       required int totalInventory,
       required DateTime updatedAt,

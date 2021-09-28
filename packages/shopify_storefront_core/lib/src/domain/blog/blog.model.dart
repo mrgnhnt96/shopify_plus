@@ -20,7 +20,7 @@ class Blog with _$Blog {
     Article? articleByHandle,
 
     /// The authors who have contributed to the blog.
-    @Default([]) List<ArticleAuthor> authors,
+    required List<ArticleAuthor> authors,
 
     /// A human-friendly unique string for the Blog automatically generated from its title.
     required String handle,

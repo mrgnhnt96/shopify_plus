@@ -47,7 +47,7 @@ class Shop with _$Shop {
     ShopPolicy? shippingPolicy,
 
     /// Countries that the shop ships to.
-    @Default([]) List<CountryCode> shipsToCountries,
+    required List<CountryCode> shipsToCountries,
 
     /// The shop’s terms of service.
     ShopPolicy? termsOfService,

@@ -9,11 +9,10 @@ part of 'selling_plan_allocation.model.dart';
 _$_SellingPlanAllocation _$$_SellingPlanAllocationFromJson(
         Map<String, dynamic> json) =>
     _$_SellingPlanAllocation(
-      priceAdjustments: (json['priceAdjustments'] as List<dynamic>?)
-              ?.map((e) => SellingPlanAllocationPriceAdjustment.fromJson(
-                  e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      priceAdjustments: (json['priceAdjustments'] as List<dynamic>)
+          .map((e) => SellingPlanAllocationPriceAdjustment.fromJson(
+              e as Map<String, dynamic>))
+          .toList(),
       sellingPlan:
           SellingPlan.fromJson(json['sellingPlan'] as Map<String, dynamic>),
     );

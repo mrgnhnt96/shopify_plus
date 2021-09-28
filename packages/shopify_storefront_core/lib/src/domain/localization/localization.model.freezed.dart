@@ -22,7 +22,7 @@ class _$LocalizationTearOff {
   const _$LocalizationTearOff();
 
   _Localization call(
-      {List<Country> availableCountries = const [], required Country country}) {
+      {required List<Country> availableCountries, required Country country}) {
     return _Localization(
       availableCountries: availableCountries,
       country: country,
@@ -139,13 +139,12 @@ class __$LocalizationCopyWithImpl<$Res> extends _$LocalizationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Localization extends _Localization {
   const _$_Localization(
-      {this.availableCountries = const [], required this.country})
+      {required this.availableCountries, required this.country})
       : super._();
 
   factory _$_Localization.fromJson(Map<String, dynamic> json) =>
       _$$_LocalizationFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// List of countries with enabled localized experiences.
@@ -190,7 +189,7 @@ class _$_Localization extends _Localization {
 
 abstract class _Localization extends Localization {
   const factory _Localization(
-      {List<Country> availableCountries,
+      {required List<Country> availableCountries,
       required Country country}) = _$_Localization;
   const _Localization._() : super._();
 

@@ -21,7 +21,7 @@ class SellingPlanAllocation with _$SellingPlanAllocation {
     /// A list of price adjustments, with a maximum of two. When there are two,
     /// the first price adjustment goes into effect at the time of purchase,
     /// while the second one starts after a certain number of orders
-    @Default([]) List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
+    required List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
 
     /// A representation of how products and variants can be sold and purchased.
     ///

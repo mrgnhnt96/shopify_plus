@@ -31,7 +31,7 @@ class _$ShopTearOff {
       ShopPolicy? privacyPolicy,
       ShopPolicy? refundPolicy,
       ShopPolicy? shippingPolicy,
-      List<CountryCode> shipsToCountries = const [],
+      required List<CountryCode> shipsToCountries,
       ShopPolicy? termsOfService}) {
     return _Shop(
       description: description,
@@ -381,7 +381,7 @@ class _$_Shop extends _Shop {
       this.privacyPolicy,
       this.refundPolicy,
       this.shippingPolicy,
-      this.shipsToCountries = const [],
+      required this.shipsToCountries,
       this.termsOfService})
       : super._();
 
@@ -423,7 +423,6 @@ class _$_Shop extends _Shop {
 
   /// The shop’s shipping policy.
   final ShopPolicy? shippingPolicy;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// Countries that the shop ships to.
@@ -513,7 +512,7 @@ abstract class _Shop extends Shop {
       ShopPolicy? privacyPolicy,
       ShopPolicy? refundPolicy,
       ShopPolicy? shippingPolicy,
-      List<CountryCode> shipsToCountries,
+      required List<CountryCode> shipsToCountries,
       ShopPolicy? termsOfService}) = _$_Shop;
   const _Shop._() : super._();
 

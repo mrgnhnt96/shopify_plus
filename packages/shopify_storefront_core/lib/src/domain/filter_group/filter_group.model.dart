@@ -26,7 +26,7 @@ class FilterGroup with _$FilterGroup {
     @FilterTypeJson() required FilterType type,
 
     /// The list of options for this filter group.
-    @Default([]) List<FilterValue> values,
+    required List<FilterValue> values,
   }) = _FilterGroup;
 
   /// {@macro from_json}

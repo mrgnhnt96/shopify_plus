@@ -23,10 +23,9 @@ _$_ProductVariant _$$_ProductVariantFromJson(Map<String, dynamic> json) =>
       product: Product.fromJson(json['product'] as Map<String, dynamic>),
       quantityAvailable: json['quantityAvailable'] as int?,
       requiresShipping: json['requiresShipping'] as bool? ?? true,
-      selectedOptions: (json['selectedOptions'] as List<dynamic>?)
-              ?.map((e) => SelectedOption.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      selectedOptions: (json['selectedOptions'] as List<dynamic>)
+          .map((e) => SelectedOption.fromJson(e as Map<String, dynamic>))
+          .toList(),
       sku: json['sku'] as String?,
       title: json['title'] as String,
       unitPrice: json['unitPrice'] == null

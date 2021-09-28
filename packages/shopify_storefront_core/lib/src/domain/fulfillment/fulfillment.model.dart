@@ -19,7 +19,7 @@ class Fulfillment with _$Fulfillment {
     String? trackingCompany,
 
     /// Tracking information associated with the fulfillment, such as the tracking number and tracking URL
-    @Default([]) List<FulfillmentTrackingInfo> tackingInfo,
+    required List<FulfillmentTrackingInfo> tackingInfo,
   }) = _Fulfillment;
 
   /// {@macro from_json}

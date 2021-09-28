@@ -50,7 +50,7 @@ class _$CustomerTearOff {
       String? lastName,
       Metafield? metafield,
       String? phone,
-      List<String> tags = const [],
+      required List<String> tags,
       required DateTime updatedAt}) {
     return _Customer(
       acceptsMarketing: acceptsMarketing,
@@ -431,7 +431,7 @@ class _$_Customer extends _Customer {
       this.lastName,
       this.metafield,
       this.phone,
-      this.tags = const [],
+      required this.tags,
       required this.updatedAt})
       : super._();
 
@@ -483,7 +483,6 @@ class _$_Customer extends _Customer {
 
   /// The customer’s phone number.
   final String? phone;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A comma separated list of tags that have been added to the customer. Additional access scope required: unauthenticated_read_customer_tags.
@@ -767,7 +766,7 @@ abstract class _Customer extends Customer {
       String? lastName,
       Metafield? metafield,
       String? phone,
-      List<String> tags,
+      required List<String> tags,
       required DateTime updatedAt}) = _$_Customer;
   const _Customer._() : super._();
 

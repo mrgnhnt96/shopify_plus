@@ -7,10 +7,9 @@ part of 'checkout.model.dart';
 // **************************************************************************
 
 _$_Checkout _$$_CheckoutFromJson(Map<String, dynamic> json) => _$_Checkout(
-      appliedGiftCards: (json['appliedGiftCards'] as List<dynamic>?)
-              ?.map((e) => AppliedGiftCard.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      appliedGiftCards: (json['appliedGiftCards'] as List<dynamic>)
+          .map((e) => AppliedGiftCard.fromJson(e as Map<String, dynamic>))
+          .toList(),
       availableShippingRates: json['availableShippingRates'] == null
           ? null
           : AvailableShippingRates.fromJson(
@@ -22,10 +21,9 @@ _$_Checkout _$$_CheckoutFromJson(Map<String, dynamic> json) => _$_Checkout(
           : DateTime.parse(json['completedAt'] as String),
       createdAt: DateTime.parse(json['createdAt'] as String),
       currencyCode: json['currencyCode'] as String,
-      customAttributes: (json['customAttributes'] as List<dynamic>?)
-              ?.map((e) => Attribute.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      customAttributes: (json['customAttributes'] as List<dynamic>)
+          .map((e) => Attribute.fromJson(e as Map<String, dynamic>))
+          .toList(),
       email: json['email'] as String?,
       id: json['id'] as String,
       lineItemsSubtotalPrice: Money.fromJson(
@@ -43,11 +41,9 @@ _$_Checkout _$$_CheckoutFromJson(Map<String, dynamic> json) => _$_Checkout(
           : MailingAddress.fromJson(
               json['shippingAddress'] as Map<String, dynamic>),
       shippingDiscountAllocations: (json['shippingDiscountAllocations']
-                  as List<dynamic>?)
-              ?.map(
-                  (e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+              as List<dynamic>)
+          .map((e) => DiscountAllocation.fromJson(e as Map<String, dynamic>))
+          .toList(),
       shippingLine: json['shippingLine'] == null
           ? null
           : ShippingRate.fromJson(json['shippingLine'] as Map<String, dynamic>),

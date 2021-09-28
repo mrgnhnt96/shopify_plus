@@ -17,7 +17,7 @@ class PaymentSettings with _$PaymentSettings {
   /// {@macro payment_settings_model}
   const factory PaymentSettings({
     /// List of the card brands which the shop accepts.
-    @CardBrandJson() @Default([]) List<CardBrand> acceptedCardBrands,
+    @CardBrandJson() required List<CardBrand> acceptedCardBrands,
 
     /// The url pointing to the endpoint to vault credit cards.
     required String cardVaultUrl,
@@ -29,13 +29,14 @@ class PaymentSettings with _$PaymentSettings {
     @CurrencyCodeJson() required CurrencyCode currencyCode,
 
     /// A list of enabled currencies (ISO 4217 format) that the shop accepts. Merchants can enable currencies from their Shopify Payments settings in the Shopify admin.
-    @Default([]) List<CurrencyCode> enabledPresentmentCurrencies,
+    @CurrencyCodeJson()
+        required List<CurrencyCode> enabledPresentmentCurrencies,
 
     /// The shop’s Shopify Payments account id.
     String? shopifyPaymentsAccountId,
 
     /// List of the digital wallets which the shop supports.
-    @Default([]) List<DigitalWallet> supportedDigitalWallets,
+    required List<DigitalWallet> supportedDigitalWallets,
   }) = _PaymentSettings;
 
   /// {@macro from_json}

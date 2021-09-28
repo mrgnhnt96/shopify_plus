@@ -25,8 +25,8 @@ class _$SellingPlanTearOff {
       {String? description,
       required String id,
       required String name,
-      List<SellingPlanOption> options = const [],
-      List<SellingPlanPriceAdjustment> priceAdjustments = const [],
+      required List<SellingPlanOption> options,
+      required List<SellingPlanPriceAdjustment> priceAdjustments,
       bool recurringDeliveries = false}) {
     return _SellingPlan(
       description: description,
@@ -204,8 +204,8 @@ class _$_SellingPlan extends _SellingPlan {
       {this.description,
       required this.id,
       required this.name,
-      this.options = const [],
-      this.priceAdjustments = const [],
+      required this.options,
+      required this.priceAdjustments,
       this.recurringDeliveries = false})
       : super._();
 
@@ -224,12 +224,10 @@ class _$_SellingPlan extends _SellingPlan {
 
   /// The name of the selling plan. For example, '6 weeks of prepaid granola, delivered weekly'.
   final String name;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// Represents the selling plan options available in the drop-down list in the storefront. For example, 'Delivery every week' or 'Delivery every 2 weeks' specifies the delivery frequency options for the product.
   final List<SellingPlanOption> options;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// Represents how a selling plan affects pricing when a variant is purchased with a selling plan.
@@ -293,8 +291,8 @@ abstract class _SellingPlan extends SellingPlan {
       {String? description,
       required String id,
       required String name,
-      List<SellingPlanOption> options,
-      List<SellingPlanPriceAdjustment> priceAdjustments,
+      required List<SellingPlanOption> options,
+      required List<SellingPlanPriceAdjustment> priceAdjustments,
       bool recurringDeliveries}) = _$_SellingPlan;
   const _SellingPlan._() : super._();
 

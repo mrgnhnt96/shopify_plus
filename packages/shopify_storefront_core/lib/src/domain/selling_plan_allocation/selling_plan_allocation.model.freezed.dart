@@ -23,7 +23,7 @@ class _$SellingPlanAllocationTearOff {
   const _$SellingPlanAllocationTearOff();
 
   _SellingPlanAllocation call(
-      {List<SellingPlanAllocationPriceAdjustment> priceAdjustments = const [],
+      {required List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
       required SellingPlan sellingPlan}) {
     return _SellingPlanAllocation(
       priceAdjustments: priceAdjustments,
@@ -153,13 +153,12 @@ class __$SellingPlanAllocationCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_SellingPlanAllocation extends _SellingPlanAllocation {
   const _$_SellingPlanAllocation(
-      {this.priceAdjustments = const [], required this.sellingPlan})
+      {required this.priceAdjustments, required this.sellingPlan})
       : super._();
 
   factory _$_SellingPlanAllocation.fromJson(Map<String, dynamic> json) =>
       _$$_SellingPlanAllocationFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A list of price adjustments, with a maximum of two. When there are two,
@@ -211,7 +210,7 @@ class _$_SellingPlanAllocation extends _SellingPlanAllocation {
 
 abstract class _SellingPlanAllocation extends SellingPlanAllocation {
   const factory _SellingPlanAllocation(
-      {List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
+      {required List<SellingPlanAllocationPriceAdjustment> priceAdjustments,
       required SellingPlan sellingPlan}) = _$_SellingPlanAllocation;
   const _SellingPlanAllocation._() : super._();
 

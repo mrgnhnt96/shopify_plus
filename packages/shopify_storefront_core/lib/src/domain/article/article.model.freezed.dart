@@ -35,7 +35,7 @@ class _$ArticleTearOff {
       String? onlineStoreUrl,
       required DateTime publishedAt,
       Seo? seo,
-      List<String> tags = const [],
+      required List<String> tags,
       required String title}) {
     return _Article(
       author: author,
@@ -430,7 +430,7 @@ class _$_Article extends _Article {
       this.onlineStoreUrl,
       required this.publishedAt,
       this.seo,
-      this.tags = const [],
+      required this.tags,
       required this.title})
       : super._();
 
@@ -490,7 +490,6 @@ class _$_Article extends _Article {
 
   /// The article’s SEO information.
   final Seo? seo;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A categorization that a article can be tagged with.
@@ -593,7 +592,7 @@ abstract class _Article extends Article {
       String? onlineStoreUrl,
       required DateTime publishedAt,
       Seo? seo,
-      List<String> tags,
+      required List<String> tags,
       required String title}) = _$_Article;
   const _Article._() : super._();
 

@@ -10,10 +10,9 @@ _$_Blog _$$_BlogFromJson(Map<String, dynamic> json) => _$_Blog(
       articleByHandle: json['articleByHandle'] == null
           ? null
           : Article.fromJson(json['articleByHandle'] as Map<String, dynamic>),
-      authors: (json['authors'] as List<dynamic>?)
-              ?.map((e) => ArticleAuthor.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      authors: (json['authors'] as List<dynamic>)
+          .map((e) => ArticleAuthor.fromJson(e as Map<String, dynamic>))
+          .toList(),
       handle: json['handle'] as String,
       id: json['id'] as String,
       metafield: json['metafield'] == null

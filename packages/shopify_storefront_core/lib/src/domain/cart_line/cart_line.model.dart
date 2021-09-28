@@ -19,10 +19,10 @@ class CartLine with _$CartLine {
   /// {@macro cart_line}
   const factory CartLine({
     /// The attributes associated with the cart line. Attributes are represented as key-value pairs.
-    @Default([]) List<Attribute> attributes,
+    required List<Attribute> attributes,
 
     /// The discounts that have been applied to the cart line.
-    @Default([]) List<DiscountAllocation> discountAllocations,
+    required List<DiscountAllocation> discountAllocations,
 
     /// The estimated cost of the merchandise that the buyer will pay for at checkout.
     required EstimatedCost estimatedCost,

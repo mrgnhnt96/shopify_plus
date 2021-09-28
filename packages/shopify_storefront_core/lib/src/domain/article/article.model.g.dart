@@ -28,9 +28,7 @@ _$_Article _$$_ArticleFromJson(Map<String, dynamic> json) => _$_Article(
       seo: json['seo'] == null
           ? null
           : Seo.fromJson(json['seo'] as Map<String, dynamic>),
-      tags:
-          (json['tags'] as List<dynamic>?)?.map((e) => e as String).toList() ??
-              [],
+      tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
       title: json['title'] as String,
     );
 

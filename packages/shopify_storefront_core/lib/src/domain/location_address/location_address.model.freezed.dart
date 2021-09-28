@@ -27,7 +27,7 @@ class _$LocationAddressTearOff {
       String? city,
       String? country,
       String? countryCode,
-      List<String> formatted = const [],
+      required List<String> formatted,
       double? latitude,
       double? longitude,
       String? phone,
@@ -309,7 +309,7 @@ class _$_LocationAddress extends _LocationAddress {
       this.city,
       this.country,
       this.countryCode,
-      this.formatted = const [],
+      required this.formatted,
       this.latitude,
       this.longitude,
       this.phone,
@@ -341,7 +341,6 @@ class _$_LocationAddress extends _LocationAddress {
 
   /// The two-letter country code of the location.
   final String? countryCode;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A formatted version of the location address.
@@ -449,7 +448,7 @@ abstract class _LocationAddress extends LocationAddress {
       String? city,
       String? country,
       String? countryCode,
-      List<String> formatted,
+      required List<String> formatted,
       double? latitude,
       double? longitude,
       String? phone,

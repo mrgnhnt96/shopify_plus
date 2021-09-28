@@ -23,7 +23,7 @@ class _$BlogTearOff {
 
   _Blog call(
       {Article? articleByHandle,
-      List<ArticleAuthor> authors = const [],
+      required List<ArticleAuthor> authors,
       required String handle,
       required String id,
       Metafield? metafield,
@@ -274,7 +274,7 @@ class __$BlogCopyWithImpl<$Res> extends _$BlogCopyWithImpl<$Res>
 class _$_Blog extends _Blog {
   const _$_Blog(
       {this.articleByHandle,
-      this.authors = const [],
+      required this.authors,
       required this.handle,
       required this.id,
       this.metafield,
@@ -289,7 +289,6 @@ class _$_Blog extends _Blog {
 
   /// Find an article by its handle.
   final Article? articleByHandle;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The authors who have contributed to the blog.
@@ -376,7 +375,7 @@ class _$_Blog extends _Blog {
 abstract class _Blog extends Blog {
   const factory _Blog(
       {Article? articleByHandle,
-      List<ArticleAuthor> authors,
+      required List<ArticleAuthor> authors,
       required String handle,
       required String id,
       Metafield? metafield,

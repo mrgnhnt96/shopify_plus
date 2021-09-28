@@ -22,7 +22,7 @@ class _$CartResponseTearOff {
   const _$CartResponseTearOff();
 
   _CartResponse call(
-      {required Cart cart, List<CartUserError> userErrors = const []}) {
+      {required Cart cart, required List<CartUserError> userErrors}) {
     return _CartResponse(
       cart: cart,
       userErrors: userErrors,
@@ -138,7 +138,7 @@ class __$CartResponseCopyWithImpl<$Res> extends _$CartResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_CartResponse extends _CartResponse {
-  const _$_CartResponse({required this.cart, this.userErrors = const []})
+  const _$_CartResponse({required this.cart, required this.userErrors})
       : super._();
 
   factory _$_CartResponse.fromJson(Map<String, dynamic> json) =>
@@ -148,7 +148,6 @@ class _$_CartResponse extends _CartResponse {
 
   /// The updated cart
   final Cart cart;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The list of errors that occurred from executing the mutation
@@ -189,7 +188,8 @@ class _$_CartResponse extends _CartResponse {
 
 abstract class _CartResponse extends CartResponse {
   const factory _CartResponse(
-      {required Cart cart, List<CartUserError> userErrors}) = _$_CartResponse;
+      {required Cart cart,
+      required List<CartUserError> userErrors}) = _$_CartResponse;
   const _CartResponse._() : super._();
 
   factory _CartResponse.fromJson(Map<String, dynamic> json) =

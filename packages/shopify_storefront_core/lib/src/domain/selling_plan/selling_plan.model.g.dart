@@ -11,16 +11,13 @@ _$_SellingPlan _$$_SellingPlanFromJson(Map<String, dynamic> json) =>
       description: json['description'] as String?,
       id: json['id'] as String,
       name: json['name'] as String,
-      options: (json['options'] as List<dynamic>?)
-              ?.map(
-                  (e) => SellingPlanOption.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          [],
-      priceAdjustments: (json['priceAdjustments'] as List<dynamic>?)
-              ?.map((e) => SellingPlanPriceAdjustment.fromJson(
-                  e as Map<String, dynamic>))
-              .toList() ??
-          [],
+      options: (json['options'] as List<dynamic>)
+          .map((e) => SellingPlanOption.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      priceAdjustments: (json['priceAdjustments'] as List<dynamic>)
+          .map((e) =>
+              SellingPlanPriceAdjustment.fromJson(e as Map<String, dynamic>))
+          .toList(),
       recurringDeliveries: json['recurringDeliveries'] as bool? ?? false,
     );
 

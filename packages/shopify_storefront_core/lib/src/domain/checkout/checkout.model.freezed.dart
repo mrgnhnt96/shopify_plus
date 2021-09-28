@@ -35,13 +35,13 @@ class _$CheckoutTearOff {
   const _$CheckoutTearOff();
 
   _Checkout call(
-      {List<AppliedGiftCard> appliedGiftCards = const [],
+      {required List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
       required BuyerIdentity buyerIdentity,
       DateTime? completedAt,
       required DateTime createdAt,
       required String currencyCode,
-      List<Attribute> customAttributes = const [],
+      required List<Attribute> customAttributes,
       String? email,
       required String id,
       required Money lineItemsSubtotalPrice,
@@ -52,7 +52,7 @@ class _$CheckoutTearOff {
       bool ready = false,
       required bool requiresShipping,
       MailingAddress? shippingAddress,
-      List<DiscountAllocation> shippingDiscountAllocations = const [],
+      required List<DiscountAllocation> shippingDiscountAllocations,
       ShippingRate? shippingLine,
       @JsonKey(name: 'subtotalPriceV2') required Money subtotalPrice,
       bool taxExempt = false,
@@ -639,13 +639,13 @@ class __$CheckoutCopyWithImpl<$Res> extends _$CheckoutCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Checkout extends _Checkout {
   const _$_Checkout(
-      {this.appliedGiftCards = const [],
+      {required this.appliedGiftCards,
       this.availableShippingRates,
       required this.buyerIdentity,
       this.completedAt,
       required this.createdAt,
       required this.currencyCode,
-      this.customAttributes = const [],
+      required this.customAttributes,
       this.email,
       required this.id,
       required this.lineItemsSubtotalPrice,
@@ -656,7 +656,7 @@ class _$_Checkout extends _Checkout {
       this.ready = false,
       required this.requiresShipping,
       this.shippingAddress,
-      this.shippingDiscountAllocations = const [],
+      required this.shippingDiscountAllocations,
       this.shippingLine,
       @JsonKey(name: 'subtotalPriceV2') required this.subtotalPrice,
       this.taxExempt = false,
@@ -671,7 +671,6 @@ class _$_Checkout extends _Checkout {
   factory _$_Checkout.fromJson(Map<String, dynamic> json) =>
       _$$_CheckoutFromJson(json);
 
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The gift cards used on the checkout.
@@ -696,7 +695,6 @@ class _$_Checkout extends _Checkout {
 
   /// The currency code for the Checkout.
   final String currencyCode;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// A list of extra information that is added to the checkout.
@@ -743,7 +741,6 @@ class _$_Checkout extends _Checkout {
 
   /// The shipping address to where the line items will be shipped.
   final MailingAddress? shippingAddress;
-  @JsonKey(defaultValue: const [])
   @override
 
   /// The discounts that have been allocated onto the shipping line by discount applications.
@@ -1189,13 +1186,13 @@ class _$_Checkout extends _Checkout {
 
 abstract class _Checkout extends Checkout {
   const factory _Checkout(
-      {List<AppliedGiftCard> appliedGiftCards,
+      {required List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
       required BuyerIdentity buyerIdentity,
       DateTime? completedAt,
       required DateTime createdAt,
       required String currencyCode,
-      List<Attribute> customAttributes,
+      required List<Attribute> customAttributes,
       String? email,
       required String id,
       required Money lineItemsSubtotalPrice,
@@ -1206,7 +1203,7 @@ abstract class _Checkout extends Checkout {
       bool ready,
       required bool requiresShipping,
       MailingAddress? shippingAddress,
-      List<DiscountAllocation> shippingDiscountAllocations,
+      required List<DiscountAllocation> shippingDiscountAllocations,
       ShippingRate? shippingLine,
       @JsonKey(name: 'subtotalPriceV2') required Money subtotalPrice,
       bool taxExempt,
