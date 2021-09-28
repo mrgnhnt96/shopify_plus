@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/shopify_core.dart';
-import 'package:shopify_storefront_core/src/input/inputs.dart';
+import 'package:shopify_storefront_core/src/input/cart/cart_buyer_identity_input/cart_buyer_identity_input.model.dart';
+import 'package:shopify_storefront_core/src/input/cart/cart_line_input/cart_line_input.model.dart';
 
 part 'cart_input.model.g.dart';
 
