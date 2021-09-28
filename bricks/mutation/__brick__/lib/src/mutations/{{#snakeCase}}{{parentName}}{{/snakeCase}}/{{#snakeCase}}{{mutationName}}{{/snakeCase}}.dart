@@ -11,9 +11,9 @@ mutation {{#camelCase}}{{mutationName}}{{/camelCase}}() {
 /// {@template {{#snakeCase}}{{mutationName}}{{/snakeCase}}}
 /// Updates 
 /// {@endtemplate}
-class CartAttributesUpdate extends Mutation<T> {
+class {{#pascalCase}}{{mutationName}}{{/pascalCase}} extends Mutation<T> {
   /// {@macro {{#snakeCase}}{{mutationName}}{{/snakeCase}}}
-  CartAttributesUpdate() : super();
+  {{#pascalCase}}{{mutationName}}{{/pascalCase}}() : super();
 
   @override
   String get mutation => _{{#camelCase}}{{mutationName}}{{/camelCase}};
