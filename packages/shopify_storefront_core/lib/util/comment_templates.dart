@@ -24,6 +24,13 @@ abstract class _EnumX {
   /// {@endtemplate}
   T map<T>();
 
+  /// {@template enum_x.maybeMap}
+  /// Returns a map of enum values and their names
+  ///
+  /// provides a default ([orElse]) if the case is null
+  /// {@endtemplate}
+  T maybeMap<T>();
+
   /// {@template enum_x.name}
   /// Returns the name of the enum value.
   /// {@endtemplate}
