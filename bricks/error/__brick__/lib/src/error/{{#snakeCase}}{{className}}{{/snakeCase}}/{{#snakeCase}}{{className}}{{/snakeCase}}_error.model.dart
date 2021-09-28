@@ -13,7 +13,16 @@ class {{#pascalCase}}{{className}}{{/pascalCase}}Error with _${{#pascalCase}}{{c
   const {{#pascalCase}}{{className}}{{/pascalCase}}Error._();
 
   /// {@macro {{#snakeCase}}{{className}}{{/snakeCase}}_error}
-  const factory {{#pascalCase}}{{className}}{{/pascalCase}}Error() = _{{#pascalCase}}{{className}}{{/pascalCase}}Error;
+  const factory {{#pascalCase}}{{className}}{{/pascalCase}}Error({
+    /// The error code.
+    @<T>Json <T>? code,
+
+    /// The path to the input field that caused the error.
+    List<String>? field,
+
+    /// The error message.
+    required String message,
+  }) = _{{#pascalCase}}{{className}}{{/pascalCase}}Error;
 
   /// {@macro from_json}
   factory {{#pascalCase}}{{className}}{{/pascalCase}}Error.fromJson(Map<String, dynamic> json) =>
