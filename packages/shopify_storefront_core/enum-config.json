@@ -1,20 +1,24 @@
 {
-  "enumName": "UnitPriceMeasurementMeasuredType",
-  "enumDescription": "The set of valid sort keys for the ProductVariant query",
+  "enumName": "CartErrorCode",
+  "enumDescription": "Possible error codes that could be returned by CartUserError",
   "values": [
-    { "name": "ID", "description": "Sort by the id value." },
-
-    { "name": "POSITION", "description": "Sort by the position value." },
+    { "name": "INVALID", "description": "The input value is invalid." },
 
     {
-      "name": "RELEVANCE",
-      "description": "During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used."
-    },
-    {
-      "name": "SKU",
-      "description": "Sort by the sku value."
+      "name": "INVALID_MERCHANDISE_LINE",
+      "description": "Merchandise line was not found in cart."
     },
 
-    { "name": "TITLE", "description": "Sort by the title value." }
+    {
+      "name": "LESS_THAN",
+      "description": "The input value should be less than the maximum value allowed."
+    },
+
+    {
+      "name": "MISSING_DISCOUNT_CODE",
+      "description": "Missing discount code."
+    },
+
+    { "name": "MISSING_NOTE", "description": "Missing note." }
   ]
 }
