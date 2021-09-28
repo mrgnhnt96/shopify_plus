@@ -10,7 +10,7 @@ _$_CartResponse _$$_CartResponseFromJson(Map<String, dynamic> json) =>
     _$_CartResponse(
       cart: Cart.fromJson(json['cart'] as Map<String, dynamic>),
       userErrors: (json['userErrors'] as List<dynamic>?)
-              ?.map((e) => UserError.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => CartUserError.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],
     );

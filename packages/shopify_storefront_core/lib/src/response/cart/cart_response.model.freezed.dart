@@ -22,7 +22,7 @@ class _$CartResponseTearOff {
   const _$CartResponseTearOff();
 
   _CartResponse call(
-      {required Cart cart, List<UserError> userErrors = const []}) {
+      {required Cart cart, List<CartUserError> userErrors = const []}) {
     return _CartResponse(
       cart: cart,
       userErrors: userErrors,
@@ -41,7 +41,9 @@ const $CartResponse = _$CartResponseTearOff();
 mixin _$CartResponse {
   /// The updated cart
   Cart get cart => throw _privateConstructorUsedError;
-  List<UserError> get userErrors => throw _privateConstructorUsedError;
+
+  /// The list of errors that occurred from executing the mutation
+  List<CartUserError> get userErrors => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,7 +56,7 @@ abstract class $CartResponseCopyWith<$Res> {
   factory $CartResponseCopyWith(
           CartResponse value, $Res Function(CartResponse) then) =
       _$CartResponseCopyWithImpl<$Res>;
-  $Res call({Cart cart, List<UserError> userErrors});
+  $Res call({Cart cart, List<CartUserError> userErrors});
 
   $CartCopyWith<$Res> get cart;
 }
@@ -80,7 +82,7 @@ class _$CartResponseCopyWithImpl<$Res> implements $CartResponseCopyWith<$Res> {
       userErrors: userErrors == freezed
           ? _value.userErrors
           : userErrors // ignore: cast_nullable_to_non_nullable
-              as List<UserError>,
+              as List<CartUserError>,
     ));
   }
 
@@ -99,7 +101,7 @@ abstract class _$CartResponseCopyWith<$Res>
           _CartResponse value, $Res Function(_CartResponse) then) =
       __$CartResponseCopyWithImpl<$Res>;
   @override
-  $Res call({Cart cart, List<UserError> userErrors});
+  $Res call({Cart cart, List<CartUserError> userErrors});
 
   @override
   $CartCopyWith<$Res> get cart;
@@ -128,7 +130,7 @@ class __$CartResponseCopyWithImpl<$Res> extends _$CartResponseCopyWithImpl<$Res>
       userErrors: userErrors == freezed
           ? _value.userErrors
           : userErrors // ignore: cast_nullable_to_non_nullable
-              as List<UserError>,
+              as List<CartUserError>,
     ));
   }
 }
@@ -148,7 +150,9 @@ class _$_CartResponse extends _CartResponse {
   final Cart cart;
   @JsonKey(defaultValue: const [])
   @override
-  final List<UserError> userErrors;
+
+  /// The list of errors that occurred from executing the mutation
+  final List<CartUserError> userErrors;
 
   @override
   String toString() {
@@ -185,7 +189,7 @@ class _$_CartResponse extends _CartResponse {
 
 abstract class _CartResponse extends CartResponse {
   const factory _CartResponse(
-      {required Cart cart, List<UserError> userErrors}) = _$_CartResponse;
+      {required Cart cart, List<CartUserError> userErrors}) = _$_CartResponse;
   const _CartResponse._() : super._();
 
   factory _CartResponse.fromJson(Map<String, dynamic> json) =
@@ -196,7 +200,9 @@ abstract class _CartResponse extends CartResponse {
   /// The updated cart
   Cart get cart => throw _privateConstructorUsedError;
   @override
-  List<UserError> get userErrors => throw _privateConstructorUsedError;
+
+  /// The list of errors that occurred from executing the mutation
+  List<CartUserError> get userErrors => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CartResponseCopyWith<_CartResponse> get copyWith =>
