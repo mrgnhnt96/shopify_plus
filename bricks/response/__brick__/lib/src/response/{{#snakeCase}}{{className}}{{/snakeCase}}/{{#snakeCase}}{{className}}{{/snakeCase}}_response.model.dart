@@ -6,6 +6,7 @@ part '{{#snakeCase}}{{className}}{{/snakeCase}}_response.model.g.dart';
 // TODO: Add properties, constructors, and methods
 
 /// {@template {{#snakeCase}}{{className}}{{/snakeCase}}_response}
+/// The object that is returned when mutation for {{#snakeCase}}{{className}}{{/snakeCase}} is called.
 /// {@endtemplate}
 @freezed
 class {{#pascalCase}}{{className}}{{/pascalCase}}Response with _${{#pascalCase}}{{className}}{{/pascalCase}}Response  {
