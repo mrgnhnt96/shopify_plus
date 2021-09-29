@@ -1,0 +1,15 @@
+{
+  "enumName": "PaymentTokenType",
+  "enumDescription": "The valid values for the types of payment token.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "APPLE_PAY", "description": "Apple Pay token type." },
+
+    { "name": "GOOGLE_PAY", "description": "Google Pay token type." },
+
+    { "name": "SHOPIFY_PAY", "description": "Shopify Pay token type." },
+
+    { "name": "VAULT", "description": "Vault payment token type." }
+  ]
+}

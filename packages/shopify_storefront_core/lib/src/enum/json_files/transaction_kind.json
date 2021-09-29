@@ -1,0 +1,32 @@
+{
+  "enumName": "TransactionKind",
+  "enumDescription": "The different kinds of order transactions.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "AUTHORIZATION",
+      "description": "An amount reserved against the cardholder's funding source. Money does not change hands until the authorization is captured."
+    },
+
+    {
+      "name": "CAPTURE",
+      "description": "A transfer of the money that was reserved during the authorization stage."
+    },
+
+    {
+      "name": "CHANGE",
+      "description": "Money returned to the customer when they have paid too much."
+    },
+
+    {
+      "name": "EMV_AUTHORIZATION",
+      "description": "An authorization for a payment taken with an EMV credit card reader."
+    },
+
+    {
+      "name": "SALE",
+      "description": "An authorization and capture performed together in a single step."
+    }
+  ]
+}

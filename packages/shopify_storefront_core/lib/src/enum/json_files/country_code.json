@@ -1,0 +1,705 @@
+{
+  "enumName": "CountryCode",
+  "enumDescription": "ISO 3166-1 alpha-2 country codes with some differences",
+  "symbolBased": true,
+  "hasSymbols": true,
+  "values": [
+    {
+      "symbol": "AC",
+      "name": "Ascension Island",
+      "description": "Ascension Island"
+    },
+
+    { "symbol": "AD", "name": "Andorra", "description": "Andorra" },
+
+    {
+      "symbol": "AE",
+      "name": "United Arab Emirates",
+      "description": "United Arab Emirates"
+    },
+
+    { "symbol": "AF", "name": "Afghanistan", "description": "Afghanistan" },
+
+    {
+      "symbol": "AG",
+      "name": "Antigua & Barbuda",
+      "description": "Antigua & Barbuda"
+    },
+
+    { "symbol": "AI", "name": "Anguilla", "description": "Anguilla" },
+
+    { "symbol": "AL", "name": "Albania", "description": "Albania" },
+
+    { "symbol": "AM", "name": "Armenia", "description": "Armenia" },
+
+    {
+      "symbol": "AN",
+      "name": "Netherlands Antilles",
+      "description": "Netherlands Antilles"
+    },
+
+    { "symbol": "AO", "name": "Angola", "description": "Angola" },
+
+    { "symbol": "AR", "name": "Argentina", "description": "Argentina" },
+
+    { "symbol": "AT", "name": "Austria", "description": "Austria" },
+
+    { "symbol": "AU", "name": "Australia", "description": "Australia" },
+
+    { "symbol": "AW", "name": "Aruba", "description": "Aruba" },
+
+    {
+      "symbol": "AX",
+      "name": "Åland Islands",
+      "description": "Åland Islands"
+    },
+
+    { "symbol": "AZ", "name": "Azerbaijan", "description": "Azerbaijan" },
+
+    {
+      "symbol": "BA",
+      "name": "Bosnia & Herzegovina",
+      "description": "Bosnia & Herzegovina"
+    },
+
+    { "symbol": "BB", "name": "Barbados", "description": "Barbados" },
+
+    { "symbol": "BD", "name": "Bangladesh", "description": "Bangladesh" },
+
+    { "symbol": "BE", "name": "Belgium", "description": "Belgium" },
+
+    { "symbol": "BF", "name": "Burkina Faso", "description": "Burkina Faso" },
+
+    { "symbol": "BG", "name": "Bulgaria", "description": "Bulgaria" },
+
+    { "symbol": "BH", "name": "Bahrain", "description": "Bahrain" },
+
+    { "symbol": "BI", "name": "Burundi", "description": "Burundi" },
+
+    { "symbol": "BJ", "name": "Benin", "description": "Benin" },
+
+    {
+      "symbol": "BL",
+      "name": "St. Barthélemy",
+      "description": "St. Barthélemy"
+    },
+
+    { "symbol": "BM", "name": "Bermuda", "description": "Bermuda" },
+
+    { "symbol": "BN", "name": "Brunei", "description": "Brunei" },
+
+    { "symbol": "BO", "name": "Bolivia", "description": "Bolivia" },
+
+    {
+      "symbol": "BQ",
+      "name": "Caribbean Netherlands",
+      "description": "Caribbean Netherlands"
+    },
+
+    { "symbol": "BR", "name": "Brazil", "description": "Brazil" },
+
+    { "symbol": "BS", "name": "Bahamas", "description": "Bahamas" },
+
+    { "symbol": "BT", "name": "Bhutan", "description": "Bhutan" },
+
+    {
+      "symbol": "BV",
+      "name": "Bouvet Island",
+      "description": "Bouvet Island"
+    },
+
+    { "symbol": "BW", "name": "Botswana", "description": "Botswana" },
+
+    { "symbol": "BY", "name": "Belarus", "description": "Belarus" },
+
+    { "symbol": "BZ", "name": "Belize", "description": "Belize" },
+
+    { "symbol": "CA", "name": "Canada", "description": "Canada" },
+
+    {
+      "symbol": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "description": "Cocos (Keeling) Islands"
+    },
+
+    {
+      "symbol": "CD",
+      "name": "Congo - Kinshasa",
+      "description": "Congo - Kinshasa"
+    },
+
+    {
+      "symbol": "CF",
+      "name": "Central African Republic",
+      "description": "Central African Republic"
+    },
+
+    {
+      "symbol": "CG",
+      "name": "Congo - Brazzaville",
+      "description": "Congo - Brazzaville"
+    },
+
+    { "symbol": "CH", "name": "Switzerland", "description": "Switzerland" },
+
+    {
+      "symbol": "CI",
+      "name": "Côte d’Ivoire",
+      "description": "Côte d’Ivoire"
+    },
+
+    { "symbol": "CK", "name": "Cook Islands", "description": "Cook Islands" },
+
+    { "symbol": "CL", "name": "Chile", "description": "Chile" },
+
+    { "symbol": "CM", "name": "Cameroon", "description": "Cameroon" },
+
+    { "symbol": "CN", "name": "China", "description": "China" },
+
+    { "symbol": "CO", "name": "Colombia", "description": "Colombia" },
+
+    { "symbol": "CR", "name": "Costa Rica", "description": "Costa Rica" },
+
+    { "symbol": "CU", "name": "Cuba", "description": "Cuba" },
+
+    { "symbol": "CV", "name": "Cape Verde", "description": "Cape Verde" },
+
+    { "symbol": "CW", "name": "Curaçao", "description": "Curaçao" },
+
+    {
+      "symbol": "CX",
+      "name": "Christmas Island",
+      "description": "Christmas Island"
+    },
+
+    { "symbol": "CY", "name": "Cyprus", "description": "Cyprus" },
+
+    { "symbol": "CZ", "name": "Czechia", "description": "Czechia" },
+
+    { "symbol": "DE", "name": "Germany", "description": "Germany" },
+
+    { "symbol": "DJ", "name": "Djibouti", "description": "Djibouti" },
+
+    { "symbol": "DK", "name": "Denmark", "description": "Denmark" },
+
+    { "symbol": "DM", "name": "Dominica", "description": "Dominica" },
+
+    {
+      "symbol": "DO",
+      "name": "Dominican Republic",
+      "description": "Dominican Republic"
+    },
+
+    { "symbol": "DZ", "name": "Algeria", "description": "Algeria" },
+
+    { "symbol": "EC", "name": "Ecuador", "description": "Ecuador" },
+
+    { "symbol": "EE", "name": "Estonia", "description": "Estonia" },
+
+    { "symbol": "EG", "name": "Egypt", "description": "Egypt" },
+
+    {
+      "symbol": "EH",
+      "name": "Western Sahara",
+      "description": "Western Sahara"
+    },
+
+    { "symbol": "ER", "name": "Eritrea", "description": "Eritrea" },
+
+    { "symbol": "ES", "name": "Spain", "description": "Spain" },
+
+    { "symbol": "ET", "name": "Ethiopia", "description": "Ethiopia" },
+
+    { "symbol": "FI", "name": "Finland", "description": "Finland" },
+
+    { "symbol": "FJ", "name": "Fiji", "description": "Fiji" },
+
+    {
+      "symbol": "FK",
+      "name": "Falkland Islands",
+      "description": "Falkland Islands"
+    },
+
+    {
+      "symbol": "FO",
+      "name": "Faroe Islands",
+      "description": "Faroe Islands"
+    },
+
+    { "symbol": "FR", "name": "France", "description": "France" },
+
+    { "symbol": "GA", "name": "Gabon", "description": "Gabon" },
+
+    {
+      "symbol": "GB",
+      "name": "United Kingdom",
+      "description": "United Kingdom"
+    },
+
+    { "symbol": "GD", "name": "Grenada", "description": "Grenada" },
+
+    { "symbol": "GE", "name": "Georgia", "description": "Georgia" },
+
+    {
+      "symbol": "GF",
+      "name": "French Guiana",
+      "description": "French Guiana"
+    },
+
+    { "symbol": "GG", "name": "Guernsey", "description": "Guernsey" },
+
+    { "symbol": "GH", "name": "Ghana", "description": "Ghana" },
+
+    { "symbol": "GI", "name": "Gibraltar", "description": "Gibraltar" },
+
+    { "symbol": "GL", "name": "Greenland", "description": "Greenland" },
+
+    { "symbol": "GM", "name": "Gambia", "description": "Gambia" },
+
+    { "symbol": "GN", "name": "Guinea", "description": "Guinea" },
+
+    { "symbol": "GP", "name": "Guadeloupe", "description": "Guadeloupe" },
+
+    {
+      "symbol": "GQ",
+      "name": "Equatorial Guinea",
+      "description": "Equatorial Guinea"
+    },
+
+    { "symbol": "GR", "name": "Greece", "description": "Greece" },
+
+    {
+      "symbol": "GS",
+      "name": "South Georgia & South Sandwich Islands",
+      "description": "South Georgia & South Sandwich Islands"
+    },
+
+    { "symbol": "GT", "name": "Guatemala", "description": "Guatemala" },
+
+    {
+      "symbol": "GW",
+      "name": "Guinea-Bissau",
+      "description": "Guinea-Bissau"
+    },
+
+    { "symbol": "GY", "name": "Guyana", "description": "Guyana" },
+
+    {
+      "symbol": "HK",
+      "name": "Hong Kong SAR",
+      "description": "Hong Kong SAR"
+    },
+
+    {
+      "symbol": "HM",
+      "name": "Heard & McDonald Islands",
+      "description": "Heard & McDonald Islands"
+    },
+
+    { "symbol": "HN", "name": "Honduras", "description": "Honduras" },
+
+    { "symbol": "HR", "name": "Croatia", "description": "Croatia" },
+
+    { "symbol": "HT", "name": "Haiti", "description": "Haiti" },
+
+    { "symbol": "HU", "name": "Hungary", "description": "Hungary" },
+
+    { "symbol": "ID", "name": "Indonesia", "description": "Indonesia" },
+
+    { "symbol": "IE", "name": "Ireland", "description": "Ireland" },
+
+    { "symbol": "IL", "name": "Israel", "description": "Israel" },
+
+    { "symbol": "IM", "name": "Isle of Man", "description": "Isle of Man" },
+
+    { "symbol": "IN", "name": "India", "description": "India" },
+
+    {
+      "symbol": "IO",
+      "name": "British Indian Ocean Territory",
+      "description": "British Indian Ocean Territory"
+    },
+
+    { "symbol": "IQ", "name": "Iraq", "description": "Iraq" },
+
+    { "symbol": "IR", "name": "Iran", "description": "Iran" },
+
+    { "symbol": "IS", "name": "Iceland", "description": "Iceland" },
+
+    { "symbol": "IT", "name": "Italy", "description": "Italy" },
+
+    { "symbol": "JE", "name": "Jersey", "description": "Jersey" },
+
+    { "symbol": "JM", "name": "Jamaica", "description": "Jamaica" },
+
+    { "symbol": "JO", "name": "Jordan", "description": "Jordan" },
+
+    { "symbol": "JP", "name": "Japan", "description": "Japan" },
+
+    { "symbol": "KE", "name": "Kenya", "description": "Kenya" },
+
+    { "symbol": "KG", "name": "Kyrgyzstan", "description": "Kyrgyzstan" },
+
+    { "symbol": "KH", "name": "Cambodia", "description": "Cambodia" },
+
+    { "symbol": "KI", "name": "Kiribati", "description": "Kiribati" },
+
+    { "symbol": "KM", "name": "Comoros", "description": "Comoros" },
+
+    {
+      "symbol": "KN",
+      "name": "St. Kitts & Nevis",
+      "description": "St. Kitts & Nevis"
+    },
+
+    { "symbol": "KP", "name": "North Korea", "description": "North Korea" },
+
+    { "symbol": "KR", "name": "South Korea", "description": "South Korea" },
+
+    { "symbol": "KW", "name": "Kuwait", "description": "Kuwait" },
+
+    {
+      "symbol": "KY",
+      "name": "Cayman Islands",
+      "description": "Cayman Islands"
+    },
+
+    { "symbol": "KZ", "name": "Kazakhstan", "description": "Kazakhstan" },
+
+    { "symbol": "LA", "name": "Laos", "description": "Laos" },
+
+    { "symbol": "LB", "name": "Lebanon", "description": "Lebanon" },
+
+    { "symbol": "LC", "name": "St. Lucia", "description": "St. Lucia" },
+
+    {
+      "symbol": "LI",
+      "name": "Liechtenstein",
+      "description": "Liechtenstein"
+    },
+
+    { "symbol": "LK", "name": "Sri Lanka", "description": "Sri Lanka" },
+
+    { "symbol": "LR", "name": "Liberia", "description": "Liberia" },
+
+    { "symbol": "LS", "name": "Lesotho", "description": "Lesotho" },
+
+    { "symbol": "LT", "name": "Lithuania", "description": "Lithuania" },
+
+    { "symbol": "LU", "name": "Luxembourg", "description": "Luxembourg" },
+
+    { "symbol": "LV", "name": "Latvia", "description": "Latvia" },
+
+    { "symbol": "LY", "name": "Libya", "description": "Libya" },
+
+    { "symbol": "MA", "name": "Morocco", "description": "Morocco" },
+
+    { "symbol": "MC", "name": "Monaco", "description": "Monaco" },
+
+    { "symbol": "MD", "name": "Moldova", "description": "Moldova" },
+
+    { "symbol": "ME", "name": "Montenegro", "description": "Montenegro" },
+
+    { "symbol": "MF", "name": "St. Martin", "description": "St. Martin" },
+
+    { "symbol": "MG", "name": "Madagascar", "description": "Madagascar" },
+
+    {
+      "symbol": "MK",
+      "name": "North Macedonia",
+      "description": "North Macedonia"
+    },
+
+    { "symbol": "ML", "name": "Mali", "description": "Mali" },
+
+    {
+      "symbol": "MM",
+      "name": "Myanmar (Burma)",
+      "description": "Myanmar (Burma)"
+    },
+
+    { "symbol": "MN", "name": "Mongolia", "description": "Mongolia" },
+
+    { "symbol": "MO", "name": "Macao SAR", "description": "Macao SAR" },
+
+    { "symbol": "MQ", "name": "Martinique", "description": "Martinique" },
+
+    { "symbol": "MR", "name": "Mauritania", "description": "Mauritania" },
+
+    { "symbol": "MS", "name": "Montserrat", "description": "Montserrat" },
+
+    { "symbol": "MT", "name": "Malta", "description": "Malta" },
+
+    { "symbol": "MU", "name": "Mauritius", "description": "Mauritius" },
+
+    { "symbol": "MV", "name": "Maldives", "description": "Maldives" },
+
+    { "symbol": "MW", "name": "Malawi", "description": "Malawi" },
+
+    { "symbol": "MX", "name": "Mexico", "description": "Mexico" },
+
+    { "symbol": "MY", "name": "Malaysia", "description": "Malaysia" },
+
+    { "symbol": "MZ", "name": "Mozambique", "description": "Mozambique" },
+
+    { "symbol": "NA", "name": "Namibia", "description": "Namibia" },
+
+    {
+      "symbol": "NC",
+      "name": "New Caledonia",
+      "description": "New Caledonia"
+    },
+
+    { "symbol": "NE", "name": "Niger", "description": "Niger" },
+
+    {
+      "symbol": "NF",
+      "name": "Norfolk Island",
+      "description": "Norfolk Island"
+    },
+
+    { "symbol": "NG", "name": "Nigeria", "description": "Nigeria" },
+
+    { "symbol": "NI", "name": "Nicaragua", "description": "Nicaragua" },
+
+    { "symbol": "NL", "name": "Netherlands", "description": "Netherlands" },
+
+    { "symbol": "NO", "name": "Norway", "description": "Norway" },
+
+    { "symbol": "NP", "name": "Nepal", "description": "Nepal" },
+
+    { "symbol": "NR", "name": "Nauru", "description": "Nauru" },
+
+    { "symbol": "NU", "name": "Niue", "description": "Niue" },
+
+    { "symbol": "NZ", "name": "New Zealand", "description": "New Zealand" },
+
+    { "symbol": "OM", "name": "Oman", "description": "Oman" },
+
+    { "symbol": "PA", "name": "Panama", "description": "Panama" },
+
+    { "symbol": "PE", "name": "Peru", "description": "Peru" },
+
+    {
+      "symbol": "PF",
+      "name": "French Polynesia",
+      "description": "French Polynesia"
+    },
+
+    {
+      "symbol": "PG",
+      "name": "Papua New Guinea",
+      "description": "Papua New Guinea"
+    },
+
+    { "symbol": "PH", "name": "Philippines", "description": "Philippines" },
+
+    { "symbol": "PK", "name": "Pakistan", "description": "Pakistan" },
+
+    { "symbol": "PL", "name": "Poland", "description": "Poland" },
+
+    {
+      "symbol": "PM",
+      "name": "St. Pierre & Miquelon",
+      "description": "St. Pierre & Miquelon"
+    },
+
+    {
+      "symbol": "PN",
+      "name": "Pitcairn Islands",
+      "description": "Pitcairn Islands"
+    },
+
+    {
+      "symbol": "PS",
+      "name": "Palestinian Territories",
+      "description": "Palestinian Territories"
+    },
+
+    { "symbol": "PT", "name": "Portugal", "description": "Portugal" },
+
+    { "symbol": "PY", "name": "Paraguay", "description": "Paraguay" },
+
+    { "symbol": "QA", "name": "Qatar", "description": "Qatar" },
+
+    { "symbol": "RE", "name": "Réunion", "description": "Réunion" },
+
+    { "symbol": "RO", "name": "Romania", "description": "Romania" },
+
+    { "symbol": "RS", "name": "Serbia", "description": "Serbia" },
+
+    { "symbol": "RU", "name": "Russia", "description": "Russia" },
+
+    { "symbol": "RW", "name": "Rwanda", "description": "Rwanda" },
+
+    { "symbol": "SA", "name": "Saudi Arabia", "description": "Saudi Arabia" },
+
+    {
+      "symbol": "SB",
+      "name": "Solomon Islands",
+      "description": "Solomon Islands"
+    },
+
+    { "symbol": "SC", "name": "Seychelles", "description": "Seychelles" },
+
+    { "symbol": "SD", "name": "Sudan", "description": "Sudan" },
+
+    { "symbol": "SE", "name": "Sweden", "description": "Sweden" },
+
+    { "symbol": "SG", "name": "Singapore", "description": "Singapore" },
+
+    { "symbol": "SH", "name": "St. Helena", "description": "St. Helena" },
+
+    { "symbol": "SI", "name": "Slovenia", "description": "Slovenia" },
+
+    {
+      "symbol": "SJ",
+      "name": "Svalbard & Jan Mayen",
+      "description": "Svalbard & Jan Mayen"
+    },
+
+    { "symbol": "SK", "name": "Slovakia", "description": "Slovakia" },
+
+    { "symbol": "SL", "name": "Sierra Leone", "description": "Sierra Leone" },
+
+    { "symbol": "SM", "name": "San Marino", "description": "San Marino" },
+
+    { "symbol": "SN", "name": "Senegal", "description": "Senegal" },
+
+    { "symbol": "SO", "name": "Somalia", "description": "Somalia" },
+
+    { "symbol": "SR", "name": "Suriname", "description": "Suriname" },
+
+    { "symbol": "SS", "name": "South Sudan", "description": "South Sudan" },
+
+    {
+      "symbol": "ST",
+      "name": "São Tomé & Príncipe",
+      "description": "São Tomé & Príncipe"
+    },
+
+    { "symbol": "SV", "name": "El Salvador", "description": "El Salvador" },
+
+    { "symbol": "SX", "name": "Sint Maarten", "description": "Sint Maarten" },
+
+    { "symbol": "SY", "name": "Syria", "description": "Syria" },
+
+    { "symbol": "SZ", "name": "Eswatini", "description": "Eswatini" },
+
+    {
+      "symbol": "TA",
+      "name": "Tristan da Cunha",
+      "description": "Tristan da Cunha"
+    },
+
+    {
+      "symbol": "TC",
+      "name": "Turks & Caicos Islands",
+      "description": "Turks & Caicos Islands"
+    },
+
+    { "symbol": "TD", "name": "Chad", "description": "Chad" },
+
+    {
+      "symbol": "TF",
+      "name": "French Southern Territories",
+      "description": "French Southern Territories"
+    },
+
+    { "symbol": "TG", "name": "Togo", "description": "Togo" },
+
+    { "symbol": "TH", "name": "Thailand", "description": "Thailand" },
+
+    { "symbol": "TJ", "name": "Tajikistan", "description": "Tajikistan" },
+
+    { "symbol": "TK", "name": "Tokelau", "description": "Tokelau" },
+
+    { "symbol": "TL", "name": "Timor-Leste", "description": "Timor-Leste" },
+
+    { "symbol": "TM", "name": "Turkmenistan", "description": "Turkmenistan" },
+
+    { "symbol": "TN", "name": "Tunisia", "description": "Tunisia" },
+
+    { "symbol": "TO", "name": "Tonga", "description": "Tonga" },
+
+    { "symbol": "TR", "name": "Turkey", "description": "Turkey" },
+
+    {
+      "symbol": "TT",
+      "name": "Trinidad & Tobago",
+      "description": "Trinidad & Tobago"
+    },
+
+    { "symbol": "TV", "name": "Tuvalu", "description": "Tuvalu" },
+
+    { "symbol": "TW", "name": "Taiwan", "description": "Taiwan" },
+
+    { "symbol": "TZ", "name": "Tanzania", "description": "Tanzania" },
+
+    { "symbol": "UA", "name": "Ukraine", "description": "Ukraine" },
+
+    { "symbol": "UG", "name": "Uganda", "description": "Uganda" },
+
+    {
+      "symbol": "UM",
+      "name": "U.S. Outlying Islands",
+      "description": "U.S. Outlying Islands"
+    },
+
+    {
+      "symbol": "US",
+      "name": "United States",
+      "description": "United States"
+    },
+
+    { "symbol": "UY", "name": "Uruguay", "description": "Uruguay" },
+
+    { "symbol": "UZ", "name": "Uzbekistan", "description": "Uzbekistan" },
+
+    { "symbol": "VA", "name": "Vatican City", "description": "Vatican City" },
+
+    {
+      "symbol": "VC",
+      "name": "St. Vincent & Grenadines",
+      "description": "St. Vincent & Grenadines"
+    },
+
+    { "symbol": "VE", "name": "Venezuela", "description": "Venezuela" },
+
+    {
+      "symbol": "VG",
+      "name": "British Virgin Islands",
+      "description": "British Virgin Islands"
+    },
+
+    { "symbol": "VN", "name": "Vietnam", "description": "Vietnam" },
+
+    { "symbol": "VU", "name": "Vanuatu", "description": "Vanuatu" },
+
+    {
+      "symbol": "WF",
+      "name": "Wallis & Futuna",
+      "description": "Wallis & Futuna"
+    },
+
+    { "symbol": "WS", "name": "Samoa", "description": "Samoa" },
+
+    { "symbol": "XK", "name": "Kosovo", "description": "Kosovo" },
+
+    { "symbol": "YE", "name": "Yemen", "description": "Yemen" },
+
+    { "symbol": "YT", "name": "Mayotte", "description": "Mayotte" },
+
+    { "symbol": "ZA", "name": "South Africa", "description": "South Africa" },
+
+    { "symbol": "ZM", "name": "Zambia", "description": "Zambia" },
+
+    { "symbol": "ZW", "name": "Zimbabwe", "description": "Zimbabwe" },
+
+    {
+      "symbol": "ZZ",
+      "name": "Unknown Region",
+      "description": "Unknown Region"
+    }
+  ]
+}

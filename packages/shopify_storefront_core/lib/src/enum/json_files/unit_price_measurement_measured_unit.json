@@ -1,0 +1,73 @@
+{
+  "enumName": "UnitPriceMeasurementMeasuredUnit",
+  "enumDescription": "The valid units of measurement for a unit price measurement.",
+  "hasSymbols": true,
+  "symbolBased": true,
+  "values": [
+    {
+      "symbol": "CL",
+      "description": "100 centiliters equals 1 liter.",
+      "name": "CENTILITERS"
+    },
+
+    {
+      "symbol": "CM",
+      "description": "100 centimeters equals 1 meter.",
+      "name": "CENTIMETERS"
+    },
+
+    {
+      "symbol": "G",
+      "description": "Metric system unit of weight.",
+      "name": "WEIGHT"
+    },
+
+    {
+      "symbol": "KG",
+      "description": "1 kilogram equals 1000 grams.",
+      "name": "KILOGRAM"
+    },
+
+    {
+      "symbol": "L",
+      "description": "Metric system unit of volume.",
+      "name": "VOLUME"
+    },
+
+    {
+      "symbol": "M",
+      "description": "Metric system unit of length.",
+      "name": "LENGTH"
+    },
+
+    {
+      "symbol": "M2",
+      "description": "Metric system unit of area.",
+      "name": "AREA"
+    },
+
+    {
+      "symbol": "M3",
+      "description": "1 cubic meter equals 1000 liters.",
+      "name": "cubic METER"
+    },
+
+    {
+      "symbol": "MG",
+      "description": "1000 milligrams equals 1 gram.",
+      "name": "MILLIGRAMS"
+    },
+
+    {
+      "symbol": "ML",
+      "description": "1000 milliliters equals 1 liter.",
+      "name": "MILLILITERS"
+    },
+
+    {
+      "symbol": "MM",
+      "description": "1000 millimeters equals 1 meter.",
+      "name": "MILLIMETERS"
+    }
+  ]
+}

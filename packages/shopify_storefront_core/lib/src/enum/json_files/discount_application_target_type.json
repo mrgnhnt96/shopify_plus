@@ -1,0 +1,17 @@
+{
+  "enumName": "DiscountApplicationTargetType",
+  "enumDescription": "The type of line (i.e. line item or shipping line) on an order that the discount is applicable towards.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "LINE_ITEM",
+      "description": "The discount applies onto line items."
+    },
+
+    {
+      "name": "SHIPPING_LINE",
+      "description": "The discount applies onto shipping lines."
+    }
+  ]
+}

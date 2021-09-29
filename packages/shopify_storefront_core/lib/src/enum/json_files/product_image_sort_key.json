@@ -1,0 +1,18 @@
+{
+  "enumName": "ProductImageSortKey",
+  "enumDescription": "The set of valid sort keys for the ProductImage query.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "CREATED_AT", "description": "Sort by the created_at value." },
+
+    { "name": "ID", "description": "Sort by the id value." },
+
+    { "name": "POSITION", "description": "Sort by the position value." },
+
+    {
+      "name": "RELEVANCE",
+      "description": "During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used."
+    }
+  ]
+}

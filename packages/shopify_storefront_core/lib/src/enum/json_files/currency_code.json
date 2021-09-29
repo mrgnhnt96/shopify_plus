@@ -1,0 +1,777 @@
+{
+  "enumName": "CurrencyCode",
+  "enumDescription": "The part of the image that should remain after cropping.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "AED",
+      "description": "United Arab Emirates Dirham (AED)"
+    },
+
+    {
+      "name": "AFN",
+      "description": "Afghan Afghani (AFN)"
+    },
+
+    {
+      "name": "ALL",
+      "description": "Albanian Lek (ALL)"
+    },
+
+    {
+      "name": "AMD",
+      "description": "Armenian Dram (AMD)"
+    },
+
+    {
+      "name": "ANG",
+      "description": "Netherlands Antillean Guilder (ANG)"
+    },
+
+    {
+      "name": "AOA",
+      "description": "Angolan Kwanza (AOA)"
+    },
+
+    {
+      "name": "ARS",
+      "description": "Argentine Pesos (ARS)"
+    },
+
+    {
+      "name": "AUD",
+      "description": "Australian Dollars (AUD)"
+    },
+
+    {
+      "name": "AWG",
+      "description": "Aruban Florin (AWG)"
+    },
+
+    {
+      "name": "AZN",
+      "description": "Azerbaijani Manat (AZN)"
+    },
+
+    {
+      "name": "BAM",
+      "description": "Bosnia and Herzegovina Convertible Mark (BAM)"
+    },
+
+    {
+      "name": "BBD",
+      "description": "Barbadian Dollar (BBD)"
+    },
+
+    {
+      "name": "BDT",
+      "description": "Bangladesh Taka (BDT)"
+    },
+
+    {
+      "name": "BGN",
+      "description": "Bulgarian Lev (BGN)"
+    },
+
+    {
+      "name": "BHD",
+      "description": "Bahraini Dinar (BHD)"
+    },
+
+    {
+      "name": "BIF",
+      "description": "Burundian Franc (BIF)"
+    },
+
+    {
+      "name": "BMD",
+      "description": "Bermudian Dollar (BMD)"
+    },
+
+    {
+      "name": "BND",
+      "description": "Brunei Dollar (BND)"
+    },
+
+    {
+      "name": "BOB",
+      "description": "Bolivian Boliviano (BOB)"
+    },
+
+    {
+      "name": "BRL",
+      "description": "Brazilian Real (BRL)"
+    },
+
+    {
+      "name": "BSD",
+      "description": "Bahamian Dollar (BSD)"
+    },
+
+    {
+      "name": "BTN",
+      "description": "Bhutanese Ngultrum (BTN)"
+    },
+
+    {
+      "name": "BWP",
+      "description": "Botswana Pula (BWP)"
+    },
+
+    {
+      "name": "BYN",
+      "description": "Belarusian Ruble (BYN)"
+    },
+
+    {
+      "name": "BZD",
+      "description": "Belize Dollar (BZD)"
+    },
+
+    {
+      "name": "CAD",
+      "description": "Canadian Dollars (CAD)"
+    },
+
+    {
+      "name": "CDF",
+      "description": "Congolese franc (CDF)"
+    },
+
+    {
+      "name": "CHF",
+      "description": "Swiss Francs (CHF)"
+    },
+
+    {
+      "name": "CLP",
+      "description": "Chilean Peso (CLP)"
+    },
+
+    {
+      "name": "CNY",
+      "description": "Chinese Yuan Renminbi (CNY)"
+    },
+
+    {
+      "name": "COP",
+      "description": "Colombian Peso (COP)"
+    },
+
+    {
+      "name": "CRC",
+      "description": "Costa Rican Colones (CRC)"
+    },
+
+    {
+      "name": "CVE",
+      "description": "Cape Verdean escudo (CVE)"
+    },
+
+    {
+      "name": "CZK",
+      "description": "Czech Koruny (CZK)"
+    },
+
+    {
+      "name": "DJF",
+      "description": "Djiboutian Franc (DJF)"
+    },
+
+    {
+      "name": "DKK",
+      "description": "Danish Kroner (DKK)"
+    },
+
+    {
+      "name": "DOP",
+      "description": "Dominican Peso (DOP)"
+    },
+
+    {
+      "name": "DZD",
+      "description": "Algerian Dinar (DZD)"
+    },
+
+    {
+      "name": "EGP",
+      "description": "Egyptian Pound (EGP)"
+    },
+
+    {
+      "name": "ERN",
+      "description": "Eritrean Nakfa (ERN)"
+    },
+
+    {
+      "name": "ETB",
+      "description": "Ethiopian Birr nameETB)"
+    },
+
+    {
+      "name": "FJD",
+      "description": "Fijian Dollars (FJD)"
+    },
+
+    {
+      "name": "FKP",
+      "description": "Falkland Islands Pounds (FKP)"
+    },
+
+    {
+      "name": "GBP",
+      "description": "United Kingdom Pounds (GBP)"
+    },
+
+    {
+      "name": "GEL",
+      "description": "Georgian Lari (GEL)"
+    },
+
+    {
+      "name": "GHS",
+      "description": "Ghanaian Cedi (GHS)"
+    },
+
+    {
+      "name": "GIP",
+      "description": "Gibraltar Pounds (GIP)"
+    },
+
+    {
+      "name": "GMD",
+      "description": "Gambian Dalasi (GMD)"
+    },
+
+    {
+      "name": "GNF",
+      "description": "Guinean Franc (GNF)"
+    },
+
+    {
+      "name": "GTQ",
+      "description": "Guatemalan Quetzal (GTQ)"
+    },
+
+    {
+      "name": "GYD",
+      "description": "Guyanese Dollar (GYD)"
+    },
+
+    {
+      "name": "HKD",
+      "description": "Hong Kong Dollars (HKD)"
+    },
+
+    {
+      "name": "HNL",
+      "description": "Honduran Lempira (HNL)"
+    },
+
+    {
+      "name": "HRK",
+      "description": "Croatian Kuna (HRK)"
+    },
+
+    {
+      "name": "HTG",
+      "description": "Haitian Gourde (HTG)"
+    },
+
+    {
+      "name": "HUF",
+      "description": "Hungarian Forint (HUF)"
+    },
+
+    {
+      "name": "IDR",
+      "description": "Indonesian Rupiah (IDR)"
+    },
+
+    {
+      "name": "ILS",
+      "description": "Israeli New Shekel (ILS)"
+    },
+
+    {
+      "name": "INR",
+      "description": "Indian Rupees (INR)"
+    },
+
+    {
+      "name": "IQD",
+      "description": "Iraqi Dinar (IQD)"
+    },
+
+    {
+      "name": "IRR",
+      "description": "Iranian Rial (IRR)"
+    },
+
+    {
+      "name": "ISK",
+      "description": "Icelandic Kronur (ISK)"
+    },
+
+    {
+      "name": "JEP",
+      "description": "Jersey Pound (JEP)"
+    },
+
+    {
+      "name": "JMD",
+      "description": "Jamaican Dollars (JMD)"
+    },
+
+    {
+      "name": "JOD",
+      "description": "Jordanian Dinar (JOD)"
+    },
+
+    {
+      "name": "JPY",
+      "description": "Japanese Yen (JPY)"
+    },
+
+    {
+      "name": "KES",
+      "description": "Kenyan Shilling (KES)"
+    },
+
+    {
+      "name": "KGS",
+      "description": "Kyrgyzstani Som (KGS)"
+    },
+
+    {
+      "name": "KHR",
+      "description": "Cambodian Riel (KHR)"
+    },
+
+    {
+      "name": "KID",
+      "description": "Kiribati Dollar (KID)"
+    },
+
+    {
+      "name": "KMF",
+      "description": "Comorian Franc (KMF)"
+    },
+
+    {
+      "name": "KRW",
+      "description": "South Korean Won (KRW)"
+    },
+
+    {
+      "name": "KWD",
+      "description": "Kuwaiti Dinar (KWD)"
+    },
+
+    {
+      "name": "KYD",
+      "description": "Cayman Dollars (KYD)"
+    },
+
+    {
+      "name": "KZT",
+      "description": "Kazakhstani Tenge (KZT)"
+    },
+
+    {
+      "name": "LAK",
+      "description": "Laotian Kip (LAK)"
+    },
+
+    {
+      "name": "LBP",
+      "description": "Lebanese Pounds (LBP)"
+    },
+
+    {
+      "name": "LKR",
+      "description": "Sri Lankan Rupees (LKR)"
+    },
+
+    {
+      "name": "LRD",
+      "description": "Liberian Dollar (LRD)"
+    },
+
+    {
+      "name": "LSL",
+      "description": "Lesotho Loti (LSL)"
+    },
+
+    {
+      "name": "LTL",
+      "description": "Lithuanian Litai (LTL)"
+    },
+
+    {
+      "name": "LVL",
+      "description": "Latvian Lati (LVL)"
+    },
+
+    {
+      "name": "LYD",
+      "description": "Libyan Dinar (LYD)"
+    },
+
+    {
+      "name": "MAD",
+      "description": "Moroccan Dirham (MAD)"
+    },
+
+    {
+      "name": "MDL",
+      "description": "Moldovan Leu (MDL)"
+    },
+
+    {
+      "name": "MGA",
+      "description": "Malagasy Ariary (MGA)"
+    },
+
+    {
+      "name": "MKD",
+      "description": "Macedonia Denar (MKD)"
+    },
+
+    {
+      "name": "MMK",
+      "description": "Burmese Kyat (MMK)"
+    },
+
+    {
+      "name": "MNT",
+      "description": "Mongolian Tugrik (MNT)"
+    },
+
+    {
+      "name": "MOP",
+      "description": "Macanese Pataca (MOP)"
+    },
+
+    {
+      "name": "MRU",
+      "description": "Mauritanian Ouguiya (MRU)"
+    },
+
+    {
+      "name": "MUR",
+      "description": "Mauritian Rupee (MUR)"
+    },
+
+    {
+      "name": "MVR",
+      "description": "Maldivian Rufiyaa (MVR)"
+    },
+
+    {
+      "name": "MWK",
+      "description": "Malawian Kwacha (MWK)"
+    },
+
+    {
+      "name": "MXN",
+      "description": "Mexican Pesos (MXN)"
+    },
+
+    {
+      "name": "MYR",
+      "description": "Malaysian Ringgits (MYR)"
+    },
+
+    {
+      "name": "MZN",
+      "description": "Mozambican Metical (MZN)"
+    },
+
+    {
+      "name": "NAD",
+      "description": "Namibian Dollar (NAD)"
+    },
+
+    {
+      "name": "NGN",
+      "description": "Nigerian Naira (NGN)"
+    },
+
+    {
+      "name": "NIO",
+      "description": "Nicaraguan Córdoba (NIO)"
+    },
+
+    {
+      "name": "NOK",
+      "description": "Norwegian Kroner (NOK)"
+    },
+
+    {
+      "name": "NPR",
+      "description": "Nepalese Rupee (NPR)"
+    },
+
+    {
+      "name": "NZD",
+      "description": "New Zealand Dollars (NZD)"
+    },
+
+    {
+      "name": "OMR",
+      "description": "Omani Rial (OMR)"
+    },
+
+    {
+      "name": "PAB",
+      "description": "Panamian Balboa (PAB)"
+    },
+
+    {
+      "name": "PEN",
+      "description": "Peruvian Nuevo Sol (PEN)"
+    },
+
+    {
+      "name": "PGK",
+      "description": "Papua New Guinean Kina (PGK)"
+    },
+
+    {
+      "name": "PHP",
+      "description": "Philippine Peso (PHP)"
+    },
+
+    {
+      "name": "PKR",
+      "description": "Pakistani Rupee (PKR)"
+    },
+
+    {
+      "name": "PLN",
+      "description": "Polish Zlotych (PLN)"
+    },
+
+    {
+      "name": "PYG",
+      "description": "Paraguayan Guarani (PYG)"
+    },
+
+    {
+      "name": "QAR",
+      "description": "Qatari Rial (QAR)"
+    },
+
+    {
+      "name": "RON",
+      "description": "Romanian Lei (RON)"
+    },
+
+    {
+      "name": "RSD",
+      "description": "Serbian dinar (RSD)"
+    },
+
+    {
+      "name": "RUB",
+      "description": "Russian Rubles (RUB)"
+    },
+
+    {
+      "name": "RWF",
+      "description": "Rwandan Franc (RWF)"
+    },
+
+    {
+      "name": "SAR",
+      "description": "Saudi Riyal (SAR)"
+    },
+
+    {
+      "name": "SBD",
+      "description": "Solomon Islands Dollar (SBD)"
+    },
+
+    {
+      "name": "SCR",
+      "description": "Seychellois Rupee (SCR)"
+    },
+
+    {
+      "name": "SDG",
+      "description": "Sudanese Pound (SDG)"
+    },
+
+    {
+      "name": "SEK",
+      "description": "Swedish Kronor (SEK)"
+    },
+
+    {
+      "name": "SGD",
+      "description": "Singapore Dollars (SGD)"
+    },
+
+    {
+      "name": "SHP",
+      "description": "Saint Helena Pounds (SHP)"
+    },
+
+    {
+      "name": "SLL",
+      "description": "Sierra Leonean Leone (SLL)"
+    },
+
+    {
+      "name": "SOS",
+      "description": "Somali Shilling (SOS)"
+    },
+
+    {
+      "name": "SRD",
+      "description": "Surinamese Dollar (SRD)"
+    },
+
+    {
+      "name": "SSP",
+      "description": "South Sudanese Pound (SSP)"
+    },
+
+    {
+      "name": "STD",
+      "description": "Sao Tome And Principe Dobra (STD)"
+    },
+
+    {
+      "name": "SYP",
+      "description": "Syrian Pound (SYP)"
+    },
+
+    {
+      "name": "SZL",
+      "description": "Swazi Lilangeni nameSZL)"
+    },
+
+    {
+      "name": "TJS",
+      "description": "Tajikistani Somoni (TJS)"
+    },
+
+    {
+      "name": "TMT",
+      "description": "Turkmenistani Manat (TMT)"
+    },
+
+    {
+      "name": "TND",
+      "description": "Tunisian Dinar (TND)"
+    },
+
+    {
+      "name": "TOP",
+      "description": "Tongan Pa'anga (TOP)"
+    },
+
+    {
+      "name": "TRY",
+      "description": "Turkish Lira (TRY)"
+    },
+
+    {
+      "name": "TTD",
+      "description": "Trinidad and Tobago Dollars (TTD)"
+    },
+
+    {
+      "name": "TWD",
+      "description": "Taiwan Dollars (TWD)"
+    },
+
+    {
+      "name": "TZS",
+      "description": "Tanzanian Shilling (TZS)"
+    },
+
+    {
+      "name": "UAH",
+      "description": "Ukrainian Hryvnia (UAH)"
+    },
+
+    {
+      "name": "UGX",
+      "description": "Ugandan Shilling (UGX)"
+    },
+
+    {
+      "name": "USD",
+      "description": "United States Dollars (USD)"
+    },
+
+    {
+      "name": "UYU",
+      "description": "Uruguayan Pesos (UYU)"
+    },
+
+    {
+      "name": "UZS",
+      "description": "Uzbekistan som (UZS)"
+    },
+
+    {
+      "name": "VES",
+      "description": "Venezuelan Bolivares (VES)"
+    },
+
+    {
+      "name": "VND",
+      "description": "Vietnamese đồng (VND)"
+    },
+
+    {
+      "name": "VUV",
+      "description": "Vanuatu Vatu (VUV)"
+    },
+
+    {
+      "name": "WST",
+      "description": "Samoan Tala (WST)"
+    },
+
+    {
+      "name": "XAF",
+      "description": "Central African CFA Franc (XAF)"
+    },
+
+    {
+      "name": "XCD",
+      "description": "East Caribbean Dollar (XCD)"
+    },
+
+    {
+      "name": "XOF",
+      "description": "West African CFA franc nameXOF)"
+    },
+
+    {
+      "name": "XXX",
+      "description": "Unrecognized currency (XXX)"
+    },
+
+    {
+      "name": "YER",
+      "description": "Yemeni Rial (YER)"
+    },
+
+    {
+      "name": "ZAR",
+      "description": "South African Rand (ZAR)"
+    },
+
+    {
+      "name": "ZMW",
+      "description": "Zambian Kwacha (ZMW)"
+    }
+  ]
+}

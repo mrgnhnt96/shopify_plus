@@ -1,0 +1,15 @@
+{
+  "enumName": "MediaContentType",
+  "enumDescription": "The possible content types for a media object.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "EXTERNAL_VIDEO", "description": "An externally hosted video." },
+
+    { "name": "IMAGE", "description": "A Shopify hosted image." },
+
+    { "name": "MODEL_3D", "description": "A 3d model." },
+
+    { "name": "VIDEO", "description": "A Shopify hosted video." }
+  ]
+}

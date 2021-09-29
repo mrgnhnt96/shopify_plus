@@ -1,0 +1,18 @@
+{
+  "enumName": "TransactionStatus",
+  "enumDescription": "Transaction statuses describe the status of a transaction.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "ERROR",
+      "description": "There was an error while processing the transaction."
+    },
+
+    { "name": "FAILURE", "description": "The transaction failed." },
+
+    { "name": "PENDING", "description": "The transaction is pending." },
+
+    { "name": "SUCCESS", "description": "The transaction succeeded." }
+  ]
+}

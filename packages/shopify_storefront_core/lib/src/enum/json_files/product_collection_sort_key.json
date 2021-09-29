@@ -1,0 +1,32 @@
+{
+  "enumName": "ProductCollectionSortKey",
+  "enumDescription": "The set of valid sort keys for the ProductCollection query.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "BEST_SELLING",
+      "description": "Sort by the best-selling value."
+    },
+
+    {
+      "name": "COLLECTION_DEFAULT",
+      "description": "Sort by the collection-default value."
+    },
+
+    { "name": "CREATED", "description": "Sort by the created value." },
+
+    { "name": "ID", "description": "Sort by the id value." },
+
+    { "name": "MANUAL", "description": "Sort by the manual value." },
+
+    { "name": "PRICE", "description": "Sort by the price value." },
+
+    {
+      "name": "RELEVANCE",
+      "description": "During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used."
+    },
+
+    { "name": "TITLE", "description": "Sort by the title value." }
+  ]
+}

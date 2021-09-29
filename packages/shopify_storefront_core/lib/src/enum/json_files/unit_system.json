@@ -1,0 +1,17 @@
+{
+  "enumName": "UnitSystem",
+  "enumDescription": "Systems of weights and measures.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "IMPERIAL_SYSTEM",
+      "description": "Imperial system of weights and measures."
+    },
+
+    {
+      "name": "METRIC_SYSTEM",
+      "description": "Metric system of weights and measures."
+    }
+  ]
+}

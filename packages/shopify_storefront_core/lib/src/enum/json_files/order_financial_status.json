@@ -1,0 +1,24 @@
+{
+  "enumName": "OrderFinancialStatus",
+  "enumDescription": "Represents the order's current financial status.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "AUTHORIZED", "description": "Displayed as Authorized." },
+
+    { "name": "PAID", "description": "Displayed as Paid." },
+
+    { "name": "PARTIALLY_PAID", "description": "Displayed as Partially paid." },
+
+    {
+      "name": "PARTIALLY_REFUNDED",
+      "description": "Displayed as Partially refunded."
+    },
+
+    { "name": "PENDING", "description": "Displayed as Pending." },
+
+    { "name": "REFUNDED", "description": "Displayed as Refunded." },
+
+    { "name": "VOIDED", "description": "Displayed as Voided." }
+  ]
+}

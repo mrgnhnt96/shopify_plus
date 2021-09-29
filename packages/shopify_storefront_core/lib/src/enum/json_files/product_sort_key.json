@@ -1,0 +1,34 @@
+{
+  "enumName": "ProductSortKey",
+  "enumDescription": "The set of valid sort keys for the Product query.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    {
+      "name": "BEST_SELLING",
+      "description": "Sort by the best_selling value."
+    },
+
+    { "name": "CREATED_AT", "description": "Sort by the created_at value." },
+
+    { "name": "ID", "description": "Sort by the id value." },
+
+    { "name": "PRICE", "description": "Sort by the price value." },
+
+    {
+      "name": "PRODUCT_TYPE",
+      "description": "Sort by the product_type value."
+    },
+
+    {
+      "name": "RELEVANCE",
+      "description": "During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used."
+    },
+
+    { "name": "TITLE", "description": "Sort by the title value." },
+
+    { "name": "UPDATED_AT", "description": "Sort by the updated_at value." },
+
+    { "name": "VENDOR", "description": "Sort by the vendor value." }
+  ]
+}

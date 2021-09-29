@@ -1,0 +1,31 @@
+{
+  "enumName": "OrderFulfillmentStatus",
+  "enumDescription": "Represents the order's current fulfillment status.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "FULFILLED", "description": "Displayed as Fulfilled." },
+
+    { "name": "IN_PROGRESS", "description": "Displayed as In progress." },
+
+    { "name": "ON_HOLD", "description": "Displayed as On hold." },
+
+    { "name": "OPEN", "description": "Displayed as Open." },
+
+    {
+      "name": "PARTIALLY_FULFILLED",
+      "description": "Displayed as Partially fulfilled."
+    },
+
+    {
+      "name": "PENDING_FULFILLMENT",
+      "description": "Displayed as Pending fulfillment."
+    },
+
+    { "name": "RESTOCKED", "description": "Displayed as Restocked." },
+
+    { "name": "SCHEDULED", "description": "Displayed as Scheduled." },
+
+    { "name": "UNFULFILLED", "description": "Displayed as Unfulfilled." }
+  ]
+}

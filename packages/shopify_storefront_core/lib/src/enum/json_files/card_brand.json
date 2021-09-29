@@ -1,0 +1,19 @@
+{
+  "enumName": "CardBrand",
+  "enumDescription": "Card brand, such as Visa or Mastercard, which can be used for payments.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "AMERICAN_EXPRESS", "description": "American Express." },
+
+    { "name": "DINERS_CLUB", "description": "Diners Club." },
+
+    { "name": "DISCOVER", "description": "Discover." },
+
+    { "name": "JCB", "description": "JCB." },
+
+    { "name": "MASTERCARD", "description": "Mastercard." },
+
+    { "name": "VISA", "description": "Visa." }
+  ]
+}

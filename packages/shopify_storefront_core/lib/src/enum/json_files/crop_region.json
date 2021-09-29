@@ -1,0 +1,17 @@
+{
+  "enumName": "CropRegion",
+  "enumDescription": "The part of the image that should remain after cropping.",
+  "symbolBased": false,
+  "hasSymbols": false,
+  "values": [
+    { "name": "BOTTOM", "description": "Keep the bottom of the image." },
+
+    { "name": "CENTER", "description": "Keep the center of the image." },
+
+    { "name": "LEFT", "description": "Keep the left of the image." },
+
+    { "name": "RIGHT", "description": "Keep the right of the image." },
+
+    { "name": "TOP", "description": "Keep the top of the image." }
+  ]
+}
