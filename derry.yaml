@@ -14,6 +14,10 @@ cgit:
 
 sort: dart pub global run import_sorter:main
 
+prep:
+  - flutter format lib test
+  - $sort
+
 # requires `dart pub global activate pub_version_plus`
 vmajor: pubversion major
 vminor: pubversion minor
