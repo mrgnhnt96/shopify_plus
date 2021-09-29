@@ -14,8 +14,8 @@ _$_Checkout _$$_CheckoutFromJson(Map<String, dynamic> json) => _$_Checkout(
           ? null
           : AvailableShippingRates.fromJson(
               json['availableShippingRates'] as Map<String, dynamic>),
-      buyerIdentity:
-          BuyerIdentity.fromJson(json['buyerIdentity'] as Map<String, dynamic>),
+      buyerIdentity: CartBuyerIdentity.fromJson(
+          json['buyerIdentity'] as Map<String, dynamic>),
       completedAt: json['completedAt'] == null
           ? null
           : DateTime.parse(json['completedAt'] as String),

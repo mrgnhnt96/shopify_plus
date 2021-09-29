@@ -23,7 +23,7 @@ class Checkout with _$Checkout {
     AvailableShippingRates? availableShippingRates,
 
     /// The identity of the customer associated with the checkout.
-    required BuyerIdentity buyerIdentity,
+    required CartBuyerIdentity buyerIdentity,
 
     /// The date and time when the checkout was completed.
     DateTime? completedAt,

@@ -1,19 +1,18 @@
-import 'package:freezed_annotation/freezed_annotation\.dart';
-
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/shopify_core.dart';
 
-part 'buyer_identity.model.freezed.dart';
-part 'buyer_identity.model.g.dart';
+part 'cart_buyer_identity.model.freezed.dart';
+part 'cart_buyer_identity.model.g.dart';
 
-/// {@template buyer_identity}
+/// {@template cart_buyer_identity}
 /// Represents information about the buyer that is interacting with the cart
 /// {@endtemplate}
 @freezed
-class BuyerIdentity with _$BuyerIdentity {
-  const BuyerIdentity._();
+class CartBuyerIdentity with _$CartBuyerIdentity {
+  const CartBuyerIdentity._();
 
-  /// {@macro buyer_identity}
-  const factory BuyerIdentity({
+  /// {@macro cart_buyer_identity}
+  const factory CartBuyerIdentity({
     /// The country where the buyer is located
     String? countryCode,
 
@@ -25,9 +24,9 @@ class BuyerIdentity with _$BuyerIdentity {
 
     /// The phone number of the buyer that is interacting with the cart
     String? phone,
-  }) = _BuyerIdentity;
+  }) = _CartBuyerIdentity;
 
   /// {@macro from_json}
-  factory BuyerIdentity.fromJson(Map<String, dynamic> json) =>
-      _$BuyerIdentityFromJson(json);
+  factory CartBuyerIdentity.fromJson(Map<String, dynamic> json) =>
+      _$CartBuyerIdentityFromJson(json);
 }

@@ -10,8 +10,8 @@ _$_Cart _$$_CartFromJson(Map<String, dynamic> json) => _$_Cart(
       attributes: (json['attributes'] as List<dynamic>)
           .map((e) => Attribute.fromJson(e as Map<String, dynamic>))
           .toList(),
-      buyerIdentity:
-          BuyerIdentity.fromJson(json['buyerIdentity'] as Map<String, dynamic>),
+      buyerIdentity: CartBuyerIdentity.fromJson(
+          json['buyerIdentity'] as Map<String, dynamic>),
       checkoutUrl: json['checkoutUrl'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
       discountCodes: (json['discountCodes'] as List<dynamic>)

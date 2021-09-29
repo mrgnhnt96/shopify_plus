@@ -18,7 +18,7 @@ class Cart with _$Cart {
     required List<Attribute> attributes,
 
     /// Information about the buyer that is interacting with the cart.
-    required BuyerIdentity buyerIdentity,
+    required CartBuyerIdentity buyerIdentity,
 
     /// The URL of the checkout for the cart.
     required String checkoutUrl,

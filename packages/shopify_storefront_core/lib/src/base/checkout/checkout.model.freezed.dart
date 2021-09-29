@@ -24,7 +24,7 @@ class _$CheckoutTearOff {
   _Checkout call(
       {required List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
-      required BuyerIdentity buyerIdentity,
+      required CartBuyerIdentity buyerIdentity,
       DateTime? completedAt,
       required DateTime createdAt,
       required String currencyCode,
@@ -99,7 +99,7 @@ mixin _$Checkout {
       throw _privateConstructorUsedError;
 
   /// The identity of the customer associated with the checkout.
-  BuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
+  CartBuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
 
   /// The date and time when the checkout was completed.
   DateTime? get completedAt => throw _privateConstructorUsedError;
@@ -191,7 +191,7 @@ abstract class $CheckoutCopyWith<$Res> {
   $Res call(
       {List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
-      BuyerIdentity buyerIdentity,
+      CartBuyerIdentity buyerIdentity,
       DateTime? completedAt,
       DateTime createdAt,
       String currencyCode,
@@ -218,7 +218,7 @@ abstract class $CheckoutCopyWith<$Res> {
       String webUrl});
 
   $AvailableShippingRatesCopyWith<$Res>? get availableShippingRates;
-  $BuyerIdentityCopyWith<$Res> get buyerIdentity;
+  $CartBuyerIdentityCopyWith<$Res> get buyerIdentity;
   $OrderCopyWith<$Res>? get order;
   $MailingAddressCopyWith<$Res>? get shippingAddress;
   $ShippingRateCopyWith<$Res>? get shippingLine;
@@ -274,7 +274,7 @@ class _$CheckoutCopyWithImpl<$Res> implements $CheckoutCopyWith<$Res> {
       buyerIdentity: buyerIdentity == freezed
           ? _value.buyerIdentity
           : buyerIdentity // ignore: cast_nullable_to_non_nullable
-              as BuyerIdentity,
+              as CartBuyerIdentity,
       completedAt: completedAt == freezed
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
@@ -387,8 +387,8 @@ class _$CheckoutCopyWithImpl<$Res> implements $CheckoutCopyWith<$Res> {
   }
 
   @override
-  $BuyerIdentityCopyWith<$Res> get buyerIdentity {
-    return $BuyerIdentityCopyWith<$Res>(_value.buyerIdentity, (value) {
+  $CartBuyerIdentityCopyWith<$Res> get buyerIdentity {
+    return $CartBuyerIdentityCopyWith<$Res>(_value.buyerIdentity, (value) {
       return _then(_value.copyWith(buyerIdentity: value));
     });
   }
@@ -435,7 +435,7 @@ abstract class _$CheckoutCopyWith<$Res> implements $CheckoutCopyWith<$Res> {
   $Res call(
       {List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
-      BuyerIdentity buyerIdentity,
+      CartBuyerIdentity buyerIdentity,
       DateTime? completedAt,
       DateTime createdAt,
       String currencyCode,
@@ -464,7 +464,7 @@ abstract class _$CheckoutCopyWith<$Res> implements $CheckoutCopyWith<$Res> {
   @override
   $AvailableShippingRatesCopyWith<$Res>? get availableShippingRates;
   @override
-  $BuyerIdentityCopyWith<$Res> get buyerIdentity;
+  $CartBuyerIdentityCopyWith<$Res> get buyerIdentity;
   @override
   $OrderCopyWith<$Res>? get order;
   @override
@@ -524,7 +524,7 @@ class __$CheckoutCopyWithImpl<$Res> extends _$CheckoutCopyWithImpl<$Res>
       buyerIdentity: buyerIdentity == freezed
           ? _value.buyerIdentity
           : buyerIdentity // ignore: cast_nullable_to_non_nullable
-              as BuyerIdentity,
+              as CartBuyerIdentity,
       completedAt: completedAt == freezed
           ? _value.completedAt
           : completedAt // ignore: cast_nullable_to_non_nullable
@@ -672,7 +672,7 @@ class _$_Checkout extends _Checkout {
   @override
 
   /// The identity of the customer associated with the checkout.
-  final BuyerIdentity buyerIdentity;
+  final CartBuyerIdentity buyerIdentity;
   @override
 
   /// The date and time when the checkout was completed.
@@ -902,7 +902,7 @@ abstract class _Checkout extends Checkout {
   const factory _Checkout(
       {required List<AppliedGiftCard> appliedGiftCards,
       AvailableShippingRates? availableShippingRates,
-      required BuyerIdentity buyerIdentity,
+      required CartBuyerIdentity buyerIdentity,
       DateTime? completedAt,
       required DateTime createdAt,
       required String currencyCode,
@@ -944,7 +944,7 @@ abstract class _Checkout extends Checkout {
   @override
 
   /// The identity of the customer associated with the checkout.
-  BuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
+  CartBuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
   @override
 
   /// The date and time when the checkout was completed.

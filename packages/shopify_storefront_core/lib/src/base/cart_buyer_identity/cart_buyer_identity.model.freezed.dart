@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'buyer_identity.model.dart';
+part of 'cart_buyer_identity.model.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,17 +13,17 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-BuyerIdentity _$BuyerIdentityFromJson(Map<String, dynamic> json) {
-  return _BuyerIdentity.fromJson(json);
+CartBuyerIdentity _$CartBuyerIdentityFromJson(Map<String, dynamic> json) {
+  return _CartBuyerIdentity.fromJson(json);
 }
 
 /// @nodoc
-class _$BuyerIdentityTearOff {
-  const _$BuyerIdentityTearOff();
+class _$CartBuyerIdentityTearOff {
+  const _$CartBuyerIdentityTearOff();
 
-  _BuyerIdentity call(
+  _CartBuyerIdentity call(
       {String? countryCode, Customer? customer, String? email, String? phone}) {
-    return _BuyerIdentity(
+    return _CartBuyerIdentity(
       countryCode: countryCode,
       customer: customer,
       email: email,
@@ -31,16 +31,16 @@ class _$BuyerIdentityTearOff {
     );
   }
 
-  BuyerIdentity fromJson(Map<String, Object> json) {
-    return BuyerIdentity.fromJson(json);
+  CartBuyerIdentity fromJson(Map<String, Object> json) {
+    return CartBuyerIdentity.fromJson(json);
   }
 }
 
 /// @nodoc
-const $BuyerIdentity = _$BuyerIdentityTearOff();
+const $CartBuyerIdentity = _$CartBuyerIdentityTearOff();
 
 /// @nodoc
-mixin _$BuyerIdentity {
+mixin _$CartBuyerIdentity {
   /// The country where the buyer is located
   String? get countryCode => throw _privateConstructorUsedError;
 
@@ -55,15 +55,15 @@ mixin _$BuyerIdentity {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BuyerIdentityCopyWith<BuyerIdentity> get copyWith =>
+  $CartBuyerIdentityCopyWith<CartBuyerIdentity> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BuyerIdentityCopyWith<$Res> {
-  factory $BuyerIdentityCopyWith(
-          BuyerIdentity value, $Res Function(BuyerIdentity) then) =
-      _$BuyerIdentityCopyWithImpl<$Res>;
+abstract class $CartBuyerIdentityCopyWith<$Res> {
+  factory $CartBuyerIdentityCopyWith(
+          CartBuyerIdentity value, $Res Function(CartBuyerIdentity) then) =
+      _$CartBuyerIdentityCopyWithImpl<$Res>;
   $Res call(
       {String? countryCode, Customer? customer, String? email, String? phone});
 
@@ -71,13 +71,13 @@ abstract class $BuyerIdentityCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BuyerIdentityCopyWithImpl<$Res>
-    implements $BuyerIdentityCopyWith<$Res> {
-  _$BuyerIdentityCopyWithImpl(this._value, this._then);
+class _$CartBuyerIdentityCopyWithImpl<$Res>
+    implements $CartBuyerIdentityCopyWith<$Res> {
+  _$CartBuyerIdentityCopyWithImpl(this._value, this._then);
 
-  final BuyerIdentity _value;
+  final CartBuyerIdentity _value;
   // ignore: unused_field
-  final $Res Function(BuyerIdentity) _then;
+  final $Res Function(CartBuyerIdentity) _then;
 
   @override
   $Res call({
@@ -119,11 +119,11 @@ class _$BuyerIdentityCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$BuyerIdentityCopyWith<$Res>
-    implements $BuyerIdentityCopyWith<$Res> {
-  factory _$BuyerIdentityCopyWith(
-          _BuyerIdentity value, $Res Function(_BuyerIdentity) then) =
-      __$BuyerIdentityCopyWithImpl<$Res>;
+abstract class _$CartBuyerIdentityCopyWith<$Res>
+    implements $CartBuyerIdentityCopyWith<$Res> {
+  factory _$CartBuyerIdentityCopyWith(
+          _CartBuyerIdentity value, $Res Function(_CartBuyerIdentity) then) =
+      __$CartBuyerIdentityCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? countryCode, Customer? customer, String? email, String? phone});
@@ -133,15 +133,15 @@ abstract class _$BuyerIdentityCopyWith<$Res>
 }
 
 /// @nodoc
-class __$BuyerIdentityCopyWithImpl<$Res>
-    extends _$BuyerIdentityCopyWithImpl<$Res>
-    implements _$BuyerIdentityCopyWith<$Res> {
-  __$BuyerIdentityCopyWithImpl(
-      _BuyerIdentity _value, $Res Function(_BuyerIdentity) _then)
-      : super(_value, (v) => _then(v as _BuyerIdentity));
+class __$CartBuyerIdentityCopyWithImpl<$Res>
+    extends _$CartBuyerIdentityCopyWithImpl<$Res>
+    implements _$CartBuyerIdentityCopyWith<$Res> {
+  __$CartBuyerIdentityCopyWithImpl(
+      _CartBuyerIdentity _value, $Res Function(_CartBuyerIdentity) _then)
+      : super(_value, (v) => _then(v as _CartBuyerIdentity));
 
   @override
-  _BuyerIdentity get _value => super._value as _BuyerIdentity;
+  _CartBuyerIdentity get _value => super._value as _CartBuyerIdentity;
 
   @override
   $Res call({
@@ -150,7 +150,7 @@ class __$BuyerIdentityCopyWithImpl<$Res>
     Object? email = freezed,
     Object? phone = freezed,
   }) {
-    return _then(_BuyerIdentity(
+    return _then(_CartBuyerIdentity(
       countryCode: countryCode == freezed
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -173,13 +173,13 @@ class __$BuyerIdentityCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_BuyerIdentity extends _BuyerIdentity {
-  const _$_BuyerIdentity(
+class _$_CartBuyerIdentity extends _CartBuyerIdentity {
+  const _$_CartBuyerIdentity(
       {this.countryCode, this.customer, this.email, this.phone})
       : super._();
 
-  factory _$_BuyerIdentity.fromJson(Map<String, dynamic> json) =>
-      _$$_BuyerIdentityFromJson(json);
+  factory _$_CartBuyerIdentity.fromJson(Map<String, dynamic> json) =>
+      _$$_CartBuyerIdentityFromJson(json);
 
   @override
 
@@ -200,13 +200,13 @@ class _$_BuyerIdentity extends _BuyerIdentity {
 
   @override
   String toString() {
-    return 'BuyerIdentity(countryCode: $countryCode, customer: $customer, email: $email, phone: $phone)';
+    return 'CartBuyerIdentity(countryCode: $countryCode, customer: $customer, email: $email, phone: $phone)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BuyerIdentity &&
+        (other is _CartBuyerIdentity &&
             (identical(other.countryCode, countryCode) ||
                 const DeepCollectionEquality()
                     .equals(other.countryCode, countryCode)) &&
@@ -229,25 +229,25 @@ class _$_BuyerIdentity extends _BuyerIdentity {
 
   @JsonKey(ignore: true)
   @override
-  _$BuyerIdentityCopyWith<_BuyerIdentity> get copyWith =>
-      __$BuyerIdentityCopyWithImpl<_BuyerIdentity>(this, _$identity);
+  _$CartBuyerIdentityCopyWith<_CartBuyerIdentity> get copyWith =>
+      __$CartBuyerIdentityCopyWithImpl<_CartBuyerIdentity>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BuyerIdentityToJson(this);
+    return _$$_CartBuyerIdentityToJson(this);
   }
 }
 
-abstract class _BuyerIdentity extends BuyerIdentity {
-  const factory _BuyerIdentity(
+abstract class _CartBuyerIdentity extends CartBuyerIdentity {
+  const factory _CartBuyerIdentity(
       {String? countryCode,
       Customer? customer,
       String? email,
-      String? phone}) = _$_BuyerIdentity;
-  const _BuyerIdentity._() : super._();
+      String? phone}) = _$_CartBuyerIdentity;
+  const _CartBuyerIdentity._() : super._();
 
-  factory _BuyerIdentity.fromJson(Map<String, dynamic> json) =
-      _$_BuyerIdentity.fromJson;
+  factory _CartBuyerIdentity.fromJson(Map<String, dynamic> json) =
+      _$_CartBuyerIdentity.fromJson;
 
   @override
 
@@ -267,6 +267,6 @@ abstract class _BuyerIdentity extends BuyerIdentity {
   String? get phone => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$BuyerIdentityCopyWith<_BuyerIdentity> get copyWith =>
+  _$CartBuyerIdentityCopyWith<_CartBuyerIdentity> get copyWith =>
       throw _privateConstructorUsedError;
 }

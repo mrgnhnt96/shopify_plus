@@ -23,7 +23,7 @@ class _$CartTearOff {
 
   _Cart call(
       {required List<Attribute> attributes,
-      required BuyerIdentity buyerIdentity,
+      required CartBuyerIdentity buyerIdentity,
       required String checkoutUrl,
       required DateTime createdAt,
       required List<DiscountCode> discountCodes,
@@ -58,7 +58,7 @@ mixin _$Cart {
   List<Attribute> get attributes => throw _privateConstructorUsedError;
 
   /// Information about the buyer that is interacting with the cart.
-  BuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
+  CartBuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
 
   /// The URL of the checkout for the cart.
   String get checkoutUrl => throw _privateConstructorUsedError;
@@ -92,7 +92,7 @@ abstract class $CartCopyWith<$Res> {
       _$CartCopyWithImpl<$Res>;
   $Res call(
       {List<Attribute> attributes,
-      BuyerIdentity buyerIdentity,
+      CartBuyerIdentity buyerIdentity,
       String checkoutUrl,
       DateTime createdAt,
       List<DiscountCode> discountCodes,
@@ -101,7 +101,7 @@ abstract class $CartCopyWith<$Res> {
       String? note,
       DateTime updatedAt});
 
-  $BuyerIdentityCopyWith<$Res> get buyerIdentity;
+  $CartBuyerIdentityCopyWith<$Res> get buyerIdentity;
   $EstimatedCostCopyWith<$Res> get estimatedCost;
 }
 
@@ -133,7 +133,7 @@ class _$CartCopyWithImpl<$Res> implements $CartCopyWith<$Res> {
       buyerIdentity: buyerIdentity == freezed
           ? _value.buyerIdentity
           : buyerIdentity // ignore: cast_nullable_to_non_nullable
-              as BuyerIdentity,
+              as CartBuyerIdentity,
       checkoutUrl: checkoutUrl == freezed
           ? _value.checkoutUrl
           : checkoutUrl // ignore: cast_nullable_to_non_nullable
@@ -166,8 +166,8 @@ class _$CartCopyWithImpl<$Res> implements $CartCopyWith<$Res> {
   }
 
   @override
-  $BuyerIdentityCopyWith<$Res> get buyerIdentity {
-    return $BuyerIdentityCopyWith<$Res>(_value.buyerIdentity, (value) {
+  $CartBuyerIdentityCopyWith<$Res> get buyerIdentity {
+    return $CartBuyerIdentityCopyWith<$Res>(_value.buyerIdentity, (value) {
       return _then(_value.copyWith(buyerIdentity: value));
     });
   }
@@ -187,7 +187,7 @@ abstract class _$CartCopyWith<$Res> implements $CartCopyWith<$Res> {
   @override
   $Res call(
       {List<Attribute> attributes,
-      BuyerIdentity buyerIdentity,
+      CartBuyerIdentity buyerIdentity,
       String checkoutUrl,
       DateTime createdAt,
       List<DiscountCode> discountCodes,
@@ -197,7 +197,7 @@ abstract class _$CartCopyWith<$Res> implements $CartCopyWith<$Res> {
       DateTime updatedAt});
 
   @override
-  $BuyerIdentityCopyWith<$Res> get buyerIdentity;
+  $CartBuyerIdentityCopyWith<$Res> get buyerIdentity;
   @override
   $EstimatedCostCopyWith<$Res> get estimatedCost;
 }
@@ -231,7 +231,7 @@ class __$CartCopyWithImpl<$Res> extends _$CartCopyWithImpl<$Res>
       buyerIdentity: buyerIdentity == freezed
           ? _value.buyerIdentity
           : buyerIdentity // ignore: cast_nullable_to_non_nullable
-              as BuyerIdentity,
+              as CartBuyerIdentity,
       checkoutUrl: checkoutUrl == freezed
           ? _value.checkoutUrl
           : checkoutUrl // ignore: cast_nullable_to_non_nullable
@@ -288,7 +288,7 @@ class _$_Cart extends _Cart {
   @override
 
   /// Information about the buyer that is interacting with the cart.
-  final BuyerIdentity buyerIdentity;
+  final CartBuyerIdentity buyerIdentity;
   @override
 
   /// The URL of the checkout for the cart.
@@ -381,7 +381,7 @@ class _$_Cart extends _Cart {
 abstract class _Cart extends Cart {
   const factory _Cart(
       {required List<Attribute> attributes,
-      required BuyerIdentity buyerIdentity,
+      required CartBuyerIdentity buyerIdentity,
       required String checkoutUrl,
       required DateTime createdAt,
       required List<DiscountCode> discountCodes,
@@ -400,7 +400,7 @@ abstract class _Cart extends Cart {
   @override
 
   /// Information about the buyer that is interacting with the cart.
-  BuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
+  CartBuyerIdentity get buyerIdentity => throw _privateConstructorUsedError;
   @override
 
   /// The URL of the checkout for the cart.
