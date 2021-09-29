@@ -6,32 +6,40 @@ part of 'selling_plan_price_adjustment_value.model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_FixedAmount _$$_FixedAmountFromJson(Map<String, dynamic> json) =>
-    _$_FixedAmount(
-      Money.fromJson(json['adjustmentAmount'] as Map<String, dynamic>),
-    );
+_$SellingPlanFixedAmountPriceAdjustment
+    _$$SellingPlanFixedAmountPriceAdjustmentFromJson(
+            Map<String, dynamic> json) =>
+        _$SellingPlanFixedAmountPriceAdjustment(
+          Money.fromJson(json['adjustmentAmount'] as Map<String, dynamic>),
+        );
 
-Map<String, dynamic> _$$_FixedAmountToJson(_$_FixedAmount instance) =>
+Map<String, dynamic> _$$SellingPlanFixedAmountPriceAdjustmentToJson(
+        _$SellingPlanFixedAmountPriceAdjustment instance) =>
     <String, dynamic>{
       'adjustmentAmount': instance.adjustmentAmount,
     };
 
-_$_FixedPrice _$$_FixedPriceFromJson(Map<String, dynamic> json) =>
-    _$_FixedPrice(
+_$SellingPlanFixedPriceAdjustment _$$SellingPlanFixedPriceAdjustmentFromJson(
+        Map<String, dynamic> json) =>
+    _$SellingPlanFixedPriceAdjustment(
       Money.fromJson(json['price'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_FixedPriceToJson(_$_FixedPrice instance) =>
+Map<String, dynamic> _$$SellingPlanFixedPriceAdjustmentToJson(
+        _$SellingPlanFixedPriceAdjustment instance) =>
     <String, dynamic>{
       'price': instance.price,
     };
 
-_$_PercentagePrice _$$_PercentagePriceFromJson(Map<String, dynamic> json) =>
-    _$_PercentagePrice(
-      json['adjustmentPercentage'] as int,
-    );
+_$SellingPlanPercentagePriceAdjustment
+    _$$SellingPlanPercentagePriceAdjustmentFromJson(
+            Map<String, dynamic> json) =>
+        _$SellingPlanPercentagePriceAdjustment(
+          json['adjustmentPercentage'] as int,
+        );
 
-Map<String, dynamic> _$$_PercentagePriceToJson(_$_PercentagePrice instance) =>
+Map<String, dynamic> _$$SellingPlanPercentagePriceAdjustmentToJson(
+        _$SellingPlanPercentagePriceAdjustment instance) =>
     <String, dynamic>{
       'adjustmentPercentage': instance.adjustmentPercentage,
     };

@@ -17,11 +17,11 @@ SellingPlanPriceAdjustmentValue _$SellingPlanPriceAdjustmentValueFromJson(
     Map<String, dynamic> json) {
   switch (json['runtimeType'] as String?) {
     case 'fixedAmount':
-      return _FixedAmount.fromJson(json);
+      return SellingPlanFixedAmountPriceAdjustment.fromJson(json);
     case 'fixedPrice':
-      return _FixedPrice.fromJson(json);
+      return SellingPlanFixedPriceAdjustment.fromJson(json);
     case 'percentagePrice':
-      return _PercentagePrice.fromJson(json);
+      return SellingPlanPercentagePriceAdjustment.fromJson(json);
 
     default:
       throw CheckedFromJsonException(
@@ -36,20 +36,21 @@ SellingPlanPriceAdjustmentValue _$SellingPlanPriceAdjustmentValueFromJson(
 class _$SellingPlanPriceAdjustmentValueTearOff {
   const _$SellingPlanPriceAdjustmentValueTearOff();
 
-  _FixedAmount fixedAmount(Money adjustmentAmount) {
-    return _FixedAmount(
+  SellingPlanFixedAmountPriceAdjustment fixedAmount(Money adjustmentAmount) {
+    return SellingPlanFixedAmountPriceAdjustment(
       adjustmentAmount,
     );
   }
 
-  _FixedPrice fixedPrice(Money price) {
-    return _FixedPrice(
+  SellingPlanFixedPriceAdjustment fixedPrice(Money price) {
+    return SellingPlanFixedPriceAdjustment(
       price,
     );
   }
 
-  _PercentagePrice percentagePrice(int adjustmentPercentage) {
-    return _PercentagePrice(
+  SellingPlanPercentagePriceAdjustment percentagePrice(
+      int adjustmentPercentage) {
+    return SellingPlanPercentagePriceAdjustment(
       adjustmentPercentage,
     );
   }
@@ -89,23 +90,27 @@ mixin _$SellingPlanPriceAdjustmentValue {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FixedAmount value) fixedAmount,
-    required TResult Function(_FixedPrice value) fixedPrice,
-    required TResult Function(_PercentagePrice value) percentagePrice,
+    required TResult Function(SellingPlanFixedAmountPriceAdjustment value)
+        fixedAmount,
+    required TResult Function(SellingPlanFixedPriceAdjustment value) fixedPrice,
+    required TResult Function(SellingPlanPercentagePriceAdjustment value)
+        percentagePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,29 +136,32 @@ class _$SellingPlanPriceAdjustmentValueCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FixedAmountCopyWith<$Res> {
-  factory _$FixedAmountCopyWith(
-          _FixedAmount value, $Res Function(_FixedAmount) then) =
-      __$FixedAmountCopyWithImpl<$Res>;
+abstract class $SellingPlanFixedAmountPriceAdjustmentCopyWith<$Res> {
+  factory $SellingPlanFixedAmountPriceAdjustmentCopyWith(
+          SellingPlanFixedAmountPriceAdjustment value,
+          $Res Function(SellingPlanFixedAmountPriceAdjustment) then) =
+      _$SellingPlanFixedAmountPriceAdjustmentCopyWithImpl<$Res>;
   $Res call({Money adjustmentAmount});
 }
 
 /// @nodoc
-class __$FixedAmountCopyWithImpl<$Res>
+class _$SellingPlanFixedAmountPriceAdjustmentCopyWithImpl<$Res>
     extends _$SellingPlanPriceAdjustmentValueCopyWithImpl<$Res>
-    implements _$FixedAmountCopyWith<$Res> {
-  __$FixedAmountCopyWithImpl(
-      _FixedAmount _value, $Res Function(_FixedAmount) _then)
-      : super(_value, (v) => _then(v as _FixedAmount));
+    implements $SellingPlanFixedAmountPriceAdjustmentCopyWith<$Res> {
+  _$SellingPlanFixedAmountPriceAdjustmentCopyWithImpl(
+      SellingPlanFixedAmountPriceAdjustment _value,
+      $Res Function(SellingPlanFixedAmountPriceAdjustment) _then)
+      : super(_value, (v) => _then(v as SellingPlanFixedAmountPriceAdjustment));
 
   @override
-  _FixedAmount get _value => super._value as _FixedAmount;
+  SellingPlanFixedAmountPriceAdjustment get _value =>
+      super._value as SellingPlanFixedAmountPriceAdjustment;
 
   @override
   $Res call({
     Object? adjustmentAmount = freezed,
   }) {
-    return _then(_FixedAmount(
+    return _then(SellingPlanFixedAmountPriceAdjustment(
       adjustmentAmount == freezed
           ? _value.adjustmentAmount
           : adjustmentAmount // ignore: cast_nullable_to_non_nullable
@@ -164,11 +172,14 @@ class __$FixedAmountCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FixedAmount extends _FixedAmount {
-  const _$_FixedAmount(this.adjustmentAmount) : super._();
+class _$SellingPlanFixedAmountPriceAdjustment
+    extends SellingPlanFixedAmountPriceAdjustment {
+  const _$SellingPlanFixedAmountPriceAdjustment(this.adjustmentAmount)
+      : super._();
 
-  factory _$_FixedAmount.fromJson(Map<String, dynamic> json) =>
-      _$$_FixedAmountFromJson(json);
+  factory _$SellingPlanFixedAmountPriceAdjustment.fromJson(
+          Map<String, dynamic> json) =>
+      _$$SellingPlanFixedAmountPriceAdjustmentFromJson(json);
 
   @override
 
@@ -183,7 +194,7 @@ class _$_FixedAmount extends _FixedAmount {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FixedAmount &&
+        (other is SellingPlanFixedAmountPriceAdjustment &&
             (identical(other.adjustmentAmount, adjustmentAmount) ||
                 const DeepCollectionEquality()
                     .equals(other.adjustmentAmount, adjustmentAmount)));
@@ -196,8 +207,10 @@ class _$_FixedAmount extends _FixedAmount {
 
   @JsonKey(ignore: true)
   @override
-  _$FixedAmountCopyWith<_FixedAmount> get copyWith =>
-      __$FixedAmountCopyWithImpl<_FixedAmount>(this, _$identity);
+  $SellingPlanFixedAmountPriceAdjustmentCopyWith<
+          SellingPlanFixedAmountPriceAdjustment>
+      get copyWith => _$SellingPlanFixedAmountPriceAdjustmentCopyWithImpl<
+          SellingPlanFixedAmountPriceAdjustment>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -236,9 +249,11 @@ class _$_FixedAmount extends _FixedAmount {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FixedAmount value) fixedAmount,
-    required TResult Function(_FixedPrice value) fixedPrice,
-    required TResult Function(_PercentagePrice value) percentagePrice,
+    required TResult Function(SellingPlanFixedAmountPriceAdjustment value)
+        fixedAmount,
+    required TResult Function(SellingPlanFixedPriceAdjustment value) fixedPrice,
+    required TResult Function(SellingPlanPercentagePriceAdjustment value)
+        percentagePrice,
   }) {
     return fixedAmount(this);
   }
@@ -246,9 +261,10 @@ class _$_FixedAmount extends _FixedAmount {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
   }) {
     return fixedAmount?.call(this);
   }
@@ -256,9 +272,10 @@ class _$_FixedAmount extends _FixedAmount {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
     required TResult orElse(),
   }) {
     if (fixedAmount != null) {
@@ -269,48 +286,56 @@ class _$_FixedAmount extends _FixedAmount {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FixedAmountToJson(this)..['runtimeType'] = 'fixedAmount';
+    return _$$SellingPlanFixedAmountPriceAdjustmentToJson(this)
+      ..['runtimeType'] = 'fixedAmount';
   }
 }
 
-abstract class _FixedAmount extends SellingPlanPriceAdjustmentValue {
-  const factory _FixedAmount(Money adjustmentAmount) = _$_FixedAmount;
-  const _FixedAmount._() : super._();
+abstract class SellingPlanFixedAmountPriceAdjustment
+    extends SellingPlanPriceAdjustmentValue {
+  const factory SellingPlanFixedAmountPriceAdjustment(Money adjustmentAmount) =
+      _$SellingPlanFixedAmountPriceAdjustment;
+  const SellingPlanFixedAmountPriceAdjustment._() : super._();
 
-  factory _FixedAmount.fromJson(Map<String, dynamic> json) =
-      _$_FixedAmount.fromJson;
+  factory SellingPlanFixedAmountPriceAdjustment.fromJson(
+          Map<String, dynamic> json) =
+      _$SellingPlanFixedAmountPriceAdjustment.fromJson;
 
   /// The money value of the price adjustment
   Money get adjustmentAmount => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FixedAmountCopyWith<_FixedAmount> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SellingPlanFixedAmountPriceAdjustmentCopyWith<
+          SellingPlanFixedAmountPriceAdjustment>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$FixedPriceCopyWith<$Res> {
-  factory _$FixedPriceCopyWith(
-          _FixedPrice value, $Res Function(_FixedPrice) then) =
-      __$FixedPriceCopyWithImpl<$Res>;
+abstract class $SellingPlanFixedPriceAdjustmentCopyWith<$Res> {
+  factory $SellingPlanFixedPriceAdjustmentCopyWith(
+          SellingPlanFixedPriceAdjustment value,
+          $Res Function(SellingPlanFixedPriceAdjustment) then) =
+      _$SellingPlanFixedPriceAdjustmentCopyWithImpl<$Res>;
   $Res call({Money price});
 }
 
 /// @nodoc
-class __$FixedPriceCopyWithImpl<$Res>
+class _$SellingPlanFixedPriceAdjustmentCopyWithImpl<$Res>
     extends _$SellingPlanPriceAdjustmentValueCopyWithImpl<$Res>
-    implements _$FixedPriceCopyWith<$Res> {
-  __$FixedPriceCopyWithImpl(
-      _FixedPrice _value, $Res Function(_FixedPrice) _then)
-      : super(_value, (v) => _then(v as _FixedPrice));
+    implements $SellingPlanFixedPriceAdjustmentCopyWith<$Res> {
+  _$SellingPlanFixedPriceAdjustmentCopyWithImpl(
+      SellingPlanFixedPriceAdjustment _value,
+      $Res Function(SellingPlanFixedPriceAdjustment) _then)
+      : super(_value, (v) => _then(v as SellingPlanFixedPriceAdjustment));
 
   @override
-  _FixedPrice get _value => super._value as _FixedPrice;
+  SellingPlanFixedPriceAdjustment get _value =>
+      super._value as SellingPlanFixedPriceAdjustment;
 
   @override
   $Res call({
     Object? price = freezed,
   }) {
-    return _then(_FixedPrice(
+    return _then(SellingPlanFixedPriceAdjustment(
       price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -321,11 +346,13 @@ class __$FixedPriceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FixedPrice extends _FixedPrice {
-  const _$_FixedPrice(this.price) : super._();
+class _$SellingPlanFixedPriceAdjustment
+    extends SellingPlanFixedPriceAdjustment {
+  const _$SellingPlanFixedPriceAdjustment(this.price) : super._();
 
-  factory _$_FixedPrice.fromJson(Map<String, dynamic> json) =>
-      _$$_FixedPriceFromJson(json);
+  factory _$SellingPlanFixedPriceAdjustment.fromJson(
+          Map<String, dynamic> json) =>
+      _$$SellingPlanFixedPriceAdjustmentFromJson(json);
 
   @override
 
@@ -340,7 +367,7 @@ class _$_FixedPrice extends _FixedPrice {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FixedPrice &&
+        (other is SellingPlanFixedPriceAdjustment &&
             (identical(other.price, price) ||
                 const DeepCollectionEquality().equals(other.price, price)));
   }
@@ -351,8 +378,9 @@ class _$_FixedPrice extends _FixedPrice {
 
   @JsonKey(ignore: true)
   @override
-  _$FixedPriceCopyWith<_FixedPrice> get copyWith =>
-      __$FixedPriceCopyWithImpl<_FixedPrice>(this, _$identity);
+  $SellingPlanFixedPriceAdjustmentCopyWith<SellingPlanFixedPriceAdjustment>
+      get copyWith => _$SellingPlanFixedPriceAdjustmentCopyWithImpl<
+          SellingPlanFixedPriceAdjustment>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -391,9 +419,11 @@ class _$_FixedPrice extends _FixedPrice {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FixedAmount value) fixedAmount,
-    required TResult Function(_FixedPrice value) fixedPrice,
-    required TResult Function(_PercentagePrice value) percentagePrice,
+    required TResult Function(SellingPlanFixedAmountPriceAdjustment value)
+        fixedAmount,
+    required TResult Function(SellingPlanFixedPriceAdjustment value) fixedPrice,
+    required TResult Function(SellingPlanPercentagePriceAdjustment value)
+        percentagePrice,
   }) {
     return fixedPrice(this);
   }
@@ -401,9 +431,10 @@ class _$_FixedPrice extends _FixedPrice {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
   }) {
     return fixedPrice?.call(this);
   }
@@ -411,9 +442,10 @@ class _$_FixedPrice extends _FixedPrice {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
     required TResult orElse(),
   }) {
     if (fixedPrice != null) {
@@ -424,48 +456,54 @@ class _$_FixedPrice extends _FixedPrice {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FixedPriceToJson(this)..['runtimeType'] = 'fixedPrice';
+    return _$$SellingPlanFixedPriceAdjustmentToJson(this)
+      ..['runtimeType'] = 'fixedPrice';
   }
 }
 
-abstract class _FixedPrice extends SellingPlanPriceAdjustmentValue {
-  const factory _FixedPrice(Money price) = _$_FixedPrice;
-  const _FixedPrice._() : super._();
+abstract class SellingPlanFixedPriceAdjustment
+    extends SellingPlanPriceAdjustmentValue {
+  const factory SellingPlanFixedPriceAdjustment(Money price) =
+      _$SellingPlanFixedPriceAdjustment;
+  const SellingPlanFixedPriceAdjustment._() : super._();
 
-  factory _FixedPrice.fromJson(Map<String, dynamic> json) =
-      _$_FixedPrice.fromJson;
+  factory SellingPlanFixedPriceAdjustment.fromJson(Map<String, dynamic> json) =
+      _$SellingPlanFixedPriceAdjustment.fromJson;
 
   /// A new price of the variant when it's purchased with the selling plan
   Money get price => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FixedPriceCopyWith<_FixedPrice> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SellingPlanFixedPriceAdjustmentCopyWith<SellingPlanFixedPriceAdjustment>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PercentagePriceCopyWith<$Res> {
-  factory _$PercentagePriceCopyWith(
-          _PercentagePrice value, $Res Function(_PercentagePrice) then) =
-      __$PercentagePriceCopyWithImpl<$Res>;
+abstract class $SellingPlanPercentagePriceAdjustmentCopyWith<$Res> {
+  factory $SellingPlanPercentagePriceAdjustmentCopyWith(
+          SellingPlanPercentagePriceAdjustment value,
+          $Res Function(SellingPlanPercentagePriceAdjustment) then) =
+      _$SellingPlanPercentagePriceAdjustmentCopyWithImpl<$Res>;
   $Res call({int adjustmentPercentage});
 }
 
 /// @nodoc
-class __$PercentagePriceCopyWithImpl<$Res>
+class _$SellingPlanPercentagePriceAdjustmentCopyWithImpl<$Res>
     extends _$SellingPlanPriceAdjustmentValueCopyWithImpl<$Res>
-    implements _$PercentagePriceCopyWith<$Res> {
-  __$PercentagePriceCopyWithImpl(
-      _PercentagePrice _value, $Res Function(_PercentagePrice) _then)
-      : super(_value, (v) => _then(v as _PercentagePrice));
+    implements $SellingPlanPercentagePriceAdjustmentCopyWith<$Res> {
+  _$SellingPlanPercentagePriceAdjustmentCopyWithImpl(
+      SellingPlanPercentagePriceAdjustment _value,
+      $Res Function(SellingPlanPercentagePriceAdjustment) _then)
+      : super(_value, (v) => _then(v as SellingPlanPercentagePriceAdjustment));
 
   @override
-  _PercentagePrice get _value => super._value as _PercentagePrice;
+  SellingPlanPercentagePriceAdjustment get _value =>
+      super._value as SellingPlanPercentagePriceAdjustment;
 
   @override
   $Res call({
     Object? adjustmentPercentage = freezed,
   }) {
-    return _then(_PercentagePrice(
+    return _then(SellingPlanPercentagePriceAdjustment(
       adjustmentPercentage == freezed
           ? _value.adjustmentPercentage
           : adjustmentPercentage // ignore: cast_nullable_to_non_nullable
@@ -476,11 +514,14 @@ class __$PercentagePriceCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PercentagePrice extends _PercentagePrice {
-  const _$_PercentagePrice(this.adjustmentPercentage) : super._();
+class _$SellingPlanPercentagePriceAdjustment
+    extends SellingPlanPercentagePriceAdjustment {
+  const _$SellingPlanPercentagePriceAdjustment(this.adjustmentPercentage)
+      : super._();
 
-  factory _$_PercentagePrice.fromJson(Map<String, dynamic> json) =>
-      _$$_PercentagePriceFromJson(json);
+  factory _$SellingPlanPercentagePriceAdjustment.fromJson(
+          Map<String, dynamic> json) =>
+      _$$SellingPlanPercentagePriceAdjustmentFromJson(json);
 
   @override
 
@@ -495,7 +536,7 @@ class _$_PercentagePrice extends _PercentagePrice {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PercentagePrice &&
+        (other is SellingPlanPercentagePriceAdjustment &&
             (identical(other.adjustmentPercentage, adjustmentPercentage) ||
                 const DeepCollectionEquality()
                     .equals(other.adjustmentPercentage, adjustmentPercentage)));
@@ -508,8 +549,10 @@ class _$_PercentagePrice extends _PercentagePrice {
 
   @JsonKey(ignore: true)
   @override
-  _$PercentagePriceCopyWith<_PercentagePrice> get copyWith =>
-      __$PercentagePriceCopyWithImpl<_PercentagePrice>(this, _$identity);
+  $SellingPlanPercentagePriceAdjustmentCopyWith<
+          SellingPlanPercentagePriceAdjustment>
+      get copyWith => _$SellingPlanPercentagePriceAdjustmentCopyWithImpl<
+          SellingPlanPercentagePriceAdjustment>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -548,9 +591,11 @@ class _$_PercentagePrice extends _PercentagePrice {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_FixedAmount value) fixedAmount,
-    required TResult Function(_FixedPrice value) fixedPrice,
-    required TResult Function(_PercentagePrice value) percentagePrice,
+    required TResult Function(SellingPlanFixedAmountPriceAdjustment value)
+        fixedAmount,
+    required TResult Function(SellingPlanFixedPriceAdjustment value) fixedPrice,
+    required TResult Function(SellingPlanPercentagePriceAdjustment value)
+        percentagePrice,
   }) {
     return percentagePrice(this);
   }
@@ -558,9 +603,10 @@ class _$_PercentagePrice extends _PercentagePrice {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
   }) {
     return percentagePrice?.call(this);
   }
@@ -568,9 +614,10 @@ class _$_PercentagePrice extends _PercentagePrice {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_FixedAmount value)? fixedAmount,
-    TResult Function(_FixedPrice value)? fixedPrice,
-    TResult Function(_PercentagePrice value)? percentagePrice,
+    TResult Function(SellingPlanFixedAmountPriceAdjustment value)? fixedAmount,
+    TResult Function(SellingPlanFixedPriceAdjustment value)? fixedPrice,
+    TResult Function(SellingPlanPercentagePriceAdjustment value)?
+        percentagePrice,
     required TResult orElse(),
   }) {
     if (percentagePrice != null) {
@@ -581,20 +628,25 @@ class _$_PercentagePrice extends _PercentagePrice {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PercentagePriceToJson(this)..['runtimeType'] = 'percentagePrice';
+    return _$$SellingPlanPercentagePriceAdjustmentToJson(this)
+      ..['runtimeType'] = 'percentagePrice';
   }
 }
 
-abstract class _PercentagePrice extends SellingPlanPriceAdjustmentValue {
-  const factory _PercentagePrice(int adjustmentPercentage) = _$_PercentagePrice;
-  const _PercentagePrice._() : super._();
+abstract class SellingPlanPercentagePriceAdjustment
+    extends SellingPlanPriceAdjustmentValue {
+  const factory SellingPlanPercentagePriceAdjustment(int adjustmentPercentage) =
+      _$SellingPlanPercentagePriceAdjustment;
+  const SellingPlanPercentagePriceAdjustment._() : super._();
 
-  factory _PercentagePrice.fromJson(Map<String, dynamic> json) =
-      _$_PercentagePrice.fromJson;
+  factory SellingPlanPercentagePriceAdjustment.fromJson(
+          Map<String, dynamic> json) =
+      _$SellingPlanPercentagePriceAdjustment.fromJson;
 
   /// The percentage value of the price adjustment
   int get adjustmentPercentage => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$PercentagePriceCopyWith<_PercentagePrice> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SellingPlanPercentagePriceAdjustmentCopyWith<
+          SellingPlanPercentagePriceAdjustment>
+      get copyWith => throw _privateConstructorUsedError;
 }
