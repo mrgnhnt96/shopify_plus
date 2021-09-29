@@ -1,4 +1,4 @@
-export 'domain/domain.dart';
+export 'base/base.dart';
 export 'enum/enum.dart';
 export 'error/error.dart';
 export 'input/input.dart';

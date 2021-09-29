@@ -1,6 +1,5 @@
-// Package imports:
-import 'package:freezed_annotation/freezed_annotation.dart';
-// Project imports:
+import 'package:freezed_annotation/freezed_annotation\.dart';
+
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// Digital wallet, such as Apple Pay, which can be used for accelerated checkouts.

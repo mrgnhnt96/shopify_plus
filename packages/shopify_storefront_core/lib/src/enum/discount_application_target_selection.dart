@@ -1,7 +1,5 @@
-// Package imports:
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation\.dart';
 
-// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// Which lines on the order that the discount is allocated over, of the type defined by the Discount Application&#x27;s target type.
