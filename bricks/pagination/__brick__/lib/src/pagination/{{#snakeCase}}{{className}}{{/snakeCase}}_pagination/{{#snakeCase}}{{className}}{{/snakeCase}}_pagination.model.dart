@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
+import 'package:shopify_storefront_core/shopify_core.dart';
 
 part '{{#snakeCase}}{{className}}{{/snakeCase}}_pagination.model.freezed.dart';
 part '{{#snakeCase}}{{className}}{{/snakeCase}}_pagination.model.g.dart';
