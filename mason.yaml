@@ -11,3 +11,5 @@ bricks:
     path: ./bricks/error
   mutation:
     path: ./bricks/mutation
+  input:
+    path: ./bricks/input
