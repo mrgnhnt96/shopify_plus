@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The set of valid sort keys for the ProductMedia query
+/// The set of valid sort keys for the ProductMedia query.
 enum ProductMediaSortKey {
   /// Sort by the id value.
   id,
@@ -9,8 +12,7 @@ enum ProductMediaSortKey {
   /// Sort by the position value.
   position,
 
-  /// During a search (i.e. when the query parameter has been specified on the connection)
-  /// this sorts the results by relevance to the search term(s).
+  /// During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.
   relevance,
 }
 
@@ -43,6 +45,23 @@ class ProductMediaSortKeyJson
   String toJson(ProductMediaSortKey object) => object.name;
 }
 
+/// {@macro json_converter}
+class ProductMediaSortKeyJsonNullable
+    extends JsonConverter<ProductMediaSortKey?, String?> {
+  /// {@macro json_converter}
+  const ProductMediaSortKeyJsonNullable();
+
+  @override
+  ProductMediaSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = ProductMediaSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(ProductMediaSortKey? object) => object?.name;
+}
+
 /// {@macro enum_x}
 extension ProductMediaSortKeyX on ProductMediaSortKey {
   /// {@macro enum_x.map}
@@ -57,6 +76,26 @@ extension ProductMediaSortKeyX on ProductMediaSortKey {
       case ProductMediaSortKey.position:
         return position;
       case ProductMediaSortKey.relevance:
+        return relevance;
+    }
+  }
+
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? id,
+    T? position,
+    T? relevance,
+  }) {
+    switch (this) {
+      case ProductMediaSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case ProductMediaSortKey.position:
+        if (position == null) return orElse;
+        return position;
+      case ProductMediaSortKey.relevance:
+        if (relevance == null) return orElse;
         return relevance;
     }
   }
@@ -76,10 +115,10 @@ extension ProductMediaSortKeyX on ProductMediaSortKey {
   /// {@macro enum_x.description}
   String get description {
     return map(
-      id: 'Sort by the id value.',
-      position: 'Sort by the position value.',
+      id: 'Sort by the id.',
+      position: 'Sort by the position.',
       relevance:
-          'During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.',
+          'During a search this sorts the results by relevance to the search term(s).',
     );
   }
 }

@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// The part of the image that should remain after cropping.
@@ -406,7 +409,7 @@ enum CurrencyCode {
   top,
 
   /// Turkish Lira (TRY)
-  TRY,
+  Try,
 
   /// Trinidad and Tobago Dollars (TTD)
   ttd,
@@ -605,7 +608,7 @@ class CurrencyCodeJson extends JsonConverter<CurrencyCode, String> {
   static const _tmtName = 'TMT';
   static const _tndName = 'TND';
   static const _topName = 'TOP';
-  static const _tryName = 'TRY';
+  static const _tryName = 'Try';
   static const _ttdName = 'TTD';
   static const _twdName = 'TWD';
   static const _tzsName = 'TZS';
@@ -625,161 +628,6 @@ class CurrencyCodeJson extends JsonConverter<CurrencyCode, String> {
   static const _yerName = 'YER';
   static const _zarName = 'ZAR';
   static const _zmwName = 'ZMW';
-
-  static const _aedSymbol = '';
-  static const _afnSymbol = '';
-  static const _allSymbol = '';
-  static const _amdSymbol = '';
-  static const _angSymbol = '';
-  static const _aoaSymbol = '';
-  static const _arsSymbol = '';
-  static const _audSymbol = '';
-  static const _awgSymbol = '';
-  static const _aznSymbol = '';
-  static const _bamSymbol = '';
-  static const _bbdSymbol = '';
-  static const _bdtSymbol = '';
-  static const _bgnSymbol = '';
-  static const _bhdSymbol = '';
-  static const _bifSymbol = '';
-  static const _bmdSymbol = '';
-  static const _bndSymbol = '';
-  static const _bobSymbol = '';
-  static const _brlSymbol = '';
-  static const _bsdSymbol = '';
-  static const _btnSymbol = '';
-  static const _bwpSymbol = '';
-  static const _bynSymbol = '';
-  static const _bzdSymbol = '';
-  static const _cadSymbol = '';
-  static const _cdfSymbol = '';
-  static const _chfSymbol = '';
-  static const _clpSymbol = '';
-  static const _cnySymbol = '';
-  static const _copSymbol = '';
-  static const _crcSymbol = '';
-  static const _cveSymbol = '';
-  static const _czkSymbol = '';
-  static const _djfSymbol = '';
-  static const _dkkSymbol = '';
-  static const _dopSymbol = '';
-  static const _dzdSymbol = '';
-  static const _egpSymbol = '';
-  static const _ernSymbol = '';
-  static const _etbSymbol = '';
-  static const _fjdSymbol = '';
-  static const _fkpSymbol = '';
-  static const _gbpSymbol = '';
-  static const _gelSymbol = '';
-  static const _ghsSymbol = '';
-  static const _gipSymbol = '';
-  static const _gmdSymbol = '';
-  static const _gnfSymbol = '';
-  static const _gtqSymbol = '';
-  static const _gydSymbol = '';
-  static const _hkdSymbol = '';
-  static const _hnlSymbol = '';
-  static const _hrkSymbol = '';
-  static const _htgSymbol = '';
-  static const _hufSymbol = '';
-  static const _idrSymbol = '';
-  static const _ilsSymbol = '';
-  static const _inrSymbol = '';
-  static const _iqdSymbol = '';
-  static const _irrSymbol = '';
-  static const _iskSymbol = '';
-  static const _jepSymbol = '';
-  static const _jmdSymbol = '';
-  static const _jodSymbol = '';
-  static const _jpySymbol = '';
-  static const _kesSymbol = '';
-  static const _kgsSymbol = '';
-  static const _khrSymbol = '';
-  static const _kidSymbol = '';
-  static const _kmfSymbol = '';
-  static const _krwSymbol = '';
-  static const _kwdSymbol = '';
-  static const _kydSymbol = '';
-  static const _kztSymbol = '';
-  static const _lakSymbol = '';
-  static const _lbpSymbol = '';
-  static const _lkrSymbol = '';
-  static const _lrdSymbol = '';
-  static const _lslSymbol = '';
-  static const _ltlSymbol = '';
-  static const _lvlSymbol = '';
-  static const _lydSymbol = '';
-  static const _madSymbol = '';
-  static const _mdlSymbol = '';
-  static const _mgaSymbol = '';
-  static const _mkdSymbol = '';
-  static const _mmkSymbol = '';
-  static const _mntSymbol = '';
-  static const _mopSymbol = '';
-  static const _mruSymbol = '';
-  static const _murSymbol = '';
-  static const _mvrSymbol = '';
-  static const _mwkSymbol = '';
-  static const _mxnSymbol = '';
-  static const _myrSymbol = '';
-  static const _mznSymbol = '';
-  static const _nadSymbol = '';
-  static const _ngnSymbol = '';
-  static const _nioSymbol = '';
-  static const _nokSymbol = '';
-  static const _nprSymbol = '';
-  static const _nzdSymbol = '';
-  static const _omrSymbol = '';
-  static const _pabSymbol = '';
-  static const _penSymbol = '';
-  static const _pgkSymbol = '';
-  static const _phpSymbol = '';
-  static const _pkrSymbol = '';
-  static const _plnSymbol = '';
-  static const _pygSymbol = '';
-  static const _qarSymbol = '';
-  static const _ronSymbol = '';
-  static const _rsdSymbol = '';
-  static const _rubSymbol = '';
-  static const _rwfSymbol = '';
-  static const _sarSymbol = '';
-  static const _sbdSymbol = '';
-  static const _scrSymbol = '';
-  static const _sdgSymbol = '';
-  static const _sekSymbol = '';
-  static const _sgdSymbol = '';
-  static const _shpSymbol = '';
-  static const _sllSymbol = '';
-  static const _sosSymbol = '';
-  static const _srdSymbol = '';
-  static const _sspSymbol = '';
-  static const _stdSymbol = '';
-  static const _sypSymbol = '';
-  static const _szlSymbol = '';
-  static const _tjsSymbol = '';
-  static const _tmtSymbol = '';
-  static const _tndSymbol = '';
-  static const _topSymbol = '';
-  static const _trySymbol = '';
-  static const _ttdSymbol = '';
-  static const _twdSymbol = '';
-  static const _tzsSymbol = '';
-  static const _uahSymbol = '';
-  static const _ugxSymbol = '';
-  static const _usdSymbol = '';
-  static const _uyuSymbol = '';
-  static const _uzsSymbol = '';
-  static const _vesSymbol = '';
-  static const _vndSymbol = '';
-  static const _vuvSymbol = '';
-  static const _wstSymbol = '';
-  static const _xafSymbol = '';
-  static const _xcdSymbol = '';
-  static const _xofSymbol = '';
-  static const _xxxSymbol = '';
-  static const _yerSymbol = '';
-  static const _zarSymbol = '';
-  static const _zmwSymbol = '';
 
   @override
   CurrencyCode fromJson(String json) {
@@ -1053,7 +901,7 @@ class CurrencyCodeJson extends JsonConverter<CurrencyCode, String> {
       case _topName:
         return CurrencyCode.top;
       case _tryName:
-        return CurrencyCode.TRY;
+        return CurrencyCode.Try;
       case _ttdName:
         return CurrencyCode.ttd;
       case _twdName:
@@ -1256,7 +1104,7 @@ extension CurrencyCodeX on CurrencyCode {
     required T tmt,
     required T tnd,
     required T top,
-    required T TRY,
+    required T Try,
     required T ttd,
     required T twd,
     required T tzs,
@@ -1546,8 +1394,8 @@ extension CurrencyCodeX on CurrencyCode {
         return tnd;
       case CurrencyCode.top:
         return top;
-      case CurrencyCode.TRY:
-        return TRY;
+      case CurrencyCode.Try:
+        return Try;
       case CurrencyCode.ttd:
         return ttd;
       case CurrencyCode.twd:
@@ -1726,7 +1574,7 @@ extension CurrencyCodeX on CurrencyCode {
     T? tmt,
     T? tnd,
     T? top,
-    T? TRY,
+    T? Try,
     T? ttd,
     T? twd,
     T? tzs,
@@ -2150,9 +1998,9 @@ extension CurrencyCodeX on CurrencyCode {
       case CurrencyCode.top:
         if (top == null) return orElse;
         return top;
-      case CurrencyCode.TRY:
-        if (TRY == null) return orElse;
-        return TRY;
+      case CurrencyCode.Try:
+        if (Try == null) return orElse;
+        return Try;
       case CurrencyCode.ttd:
         if (ttd == null) return orElse;
         return ttd;
@@ -2350,7 +2198,7 @@ extension CurrencyCodeX on CurrencyCode {
       tmt: CurrencyCodeJson._tmtName,
       tnd: CurrencyCodeJson._tndName,
       top: CurrencyCodeJson._topName,
-      TRY: CurrencyCodeJson._tryName,
+      Try: CurrencyCodeJson._tryName,
       ttd: CurrencyCodeJson._ttdName,
       twd: CurrencyCodeJson._twdName,
       tzs: CurrencyCodeJson._tzsName,
@@ -2513,7 +2361,7 @@ extension CurrencyCodeX on CurrencyCode {
       tmt: 'Turkmenistani Manat (TMT)',
       tnd: 'Tunisian Dinar (TND)',
       top: 'Tongan Pa\'anga (TOP)',
-      TRY: 'Turkish Lira (TRY)',
+      Try: 'Turkish Lira (Try)',
       ttd: 'Trinidad and Tobago Dollars (TTD)',
       twd: 'Taiwan Dollars (TWD)',
       tzs: 'Tanzanian Shilling (TZS)',

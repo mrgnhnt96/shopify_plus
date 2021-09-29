@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The set of valid sort keys for the ProductVariant query
+/// The set of valid sort keys for the ProductVariant query.
 enum ProductVariantSortKey {
   /// Sort by the id value.
   id,
@@ -9,8 +12,7 @@ enum ProductVariantSortKey {
   /// Sort by the position value.
   position,
 
-  /// During a search (i.e. when the query parameter has been specified on the connection)
-  /// this sorts the results by relevance to the search term(s).
+  /// During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.
   relevance,
 
   /// Sort by the sku value.
@@ -55,6 +57,23 @@ class ProductVariantSortKeyJson
   String toJson(ProductVariantSortKey object) => object.name;
 }
 
+/// {@macro json_converter}
+class ProductVariantSortKeyJsonNullable
+    extends JsonConverter<ProductVariantSortKey?, String?> {
+  /// {@macro json_converter}
+  const ProductVariantSortKeyJsonNullable();
+
+  @override
+  ProductVariantSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = ProductVariantSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(ProductVariantSortKey? object) => object?.name;
+}
+
 /// {@macro enum_x}
 extension ProductVariantSortKeyX on ProductVariantSortKey {
   /// {@macro enum_x.map}
@@ -79,6 +98,34 @@ extension ProductVariantSortKeyX on ProductVariantSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? id,
+    T? position,
+    T? relevance,
+    T? sku,
+    T? title,
+  }) {
+    switch (this) {
+      case ProductVariantSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case ProductVariantSortKey.position:
+        if (position == null) return orElse;
+        return position;
+      case ProductVariantSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+      case ProductVariantSortKey.sku:
+        if (sku == null) return orElse;
+        return sku;
+      case ProductVariantSortKey.title:
+        if (title == null) return orElse;
+        return title;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -96,12 +143,12 @@ extension ProductVariantSortKeyX on ProductVariantSortKey {
   /// {@macro enum_x.description}
   String get description {
     return map(
-      id: 'Sort by the id value.',
-      position: 'Sort by the position value.',
+      id: 'Sort by the id.',
+      position: 'Sort by the position.',
       relevance:
-          'During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.',
-      sku: 'Sort by the sku value.',
-      title: 'Sort by the title value.',
+          'During a search this sorts the results by relevance to the search term(s).',
+      sku: 'Sort by the sku.',
+      title: 'Sort by the title.',
     );
   }
 }

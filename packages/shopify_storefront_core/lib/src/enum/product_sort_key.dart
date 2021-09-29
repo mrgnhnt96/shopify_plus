@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The set of valid sort keys for the Product query
+/// The set of valid sort keys for the Product query.
 enum ProductSortKey {
   /// Sort by the best_selling value.
   bestSelling,
@@ -18,8 +21,7 @@ enum ProductSortKey {
   /// Sort by the product_type value.
   productType,
 
-  /// During a search (i.e. when the query parameter has been specified on the connection)
-  /// this sorts the results by relevance to the search term(s).
+  /// During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.
   relevance,
 
   /// Sort by the title value.
@@ -78,6 +80,23 @@ class ProductSortKeyJson extends JsonConverter<ProductSortKey, String> {
   String toJson(ProductSortKey object) => object.name;
 }
 
+/// {@macro json_converter}
+class ProductSortKeyJsonNullable
+    extends JsonConverter<ProductSortKey?, String?> {
+  /// {@macro json_converter}
+  const ProductSortKeyJsonNullable();
+
+  @override
+  ProductSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = ProductSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(ProductSortKey? object) => object?.name;
+}
+
 /// {@macro enum_x}
 extension ProductSortKeyX on ProductSortKey {
   /// {@macro enum_x.map}
@@ -114,6 +133,50 @@ extension ProductSortKeyX on ProductSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? bestSelling,
+    T? createdAt,
+    T? id,
+    T? price,
+    T? productType,
+    T? relevance,
+    T? title,
+    T? updatedAt,
+    T? vendor,
+  }) {
+    switch (this) {
+      case ProductSortKey.bestSelling:
+        if (bestSelling == null) return orElse;
+        return bestSelling;
+      case ProductSortKey.createdAt:
+        if (createdAt == null) return orElse;
+        return createdAt;
+      case ProductSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case ProductSortKey.price:
+        if (price == null) return orElse;
+        return price;
+      case ProductSortKey.productType:
+        if (productType == null) return orElse;
+        return productType;
+      case ProductSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+      case ProductSortKey.title:
+        if (title == null) return orElse;
+        return title;
+      case ProductSortKey.updatedAt:
+        if (updatedAt == null) return orElse;
+        return updatedAt;
+      case ProductSortKey.vendor:
+        if (vendor == null) return orElse;
+        return vendor;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -135,16 +198,16 @@ extension ProductSortKeyX on ProductSortKey {
   /// {@macro enum_x.description}
   String get description {
     return map(
-      bestSelling: 'Sort by the best_selling value.',
-      createdAt: 'Sort by the created_at value.',
-      id: 'Sort by the id value.',
-      price: 'Sort by the price value.',
-      productType: 'Sort by the product_type value.',
+      bestSelling: 'Sort by the best_selling.',
+      createdAt: 'Sort by the date created.',
+      id: 'Sort by the id.',
+      price: 'Sort by the price.',
+      productType: 'Sort by the product type.',
       relevance:
-          'During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.',
-      title: 'Sort by the title value.',
-      updatedAt: 'Sort by the updated_at value.',
-      vendor: 'Sort by the vendor value.',
+          'During a search this sorts the results by relevance to the search term(s).',
+      title: 'Sort by the title.',
+      updatedAt: 'Sort by the date updated.',
+      vendor: 'Sort by the vendor.',
     );
   }
 }

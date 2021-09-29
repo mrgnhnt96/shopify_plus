@@ -1,18 +1,20 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// Digital wallet, such as Apple Pay, which can be used for accelerated checkouts.
 enum DigitalWallet {
-  /// Android pay
+  /// Android Pay
   androidPay,
 
-  /// Apple pay
+  /// Apple Pay
   applePay,
 
-  /// Google pay
+  /// Google Pay
   googlePay,
 
-  /// Shopify pay
+  /// Shopify Pay
   shopifyPay,
 }
 
@@ -37,6 +39,7 @@ class DigitalWalletJson extends JsonConverter<DigitalWallet, String> {
         return DigitalWallet.googlePay;
       case _shopifyPayName:
         return DigitalWallet.shopifyPay;
+
       default:
         throw Exception('Unknown DigitalWallet: $json');
     }
@@ -44,6 +47,22 @@ class DigitalWalletJson extends JsonConverter<DigitalWallet, String> {
 
   @override
   String toJson(DigitalWallet object) => object.name;
+}
+
+/// {@macro json_converter}
+class DigitalWalletJsonNullable extends JsonConverter<DigitalWallet?, String?> {
+  /// {@macro json_converter}
+  const DigitalWalletJsonNullable();
+
+  @override
+  DigitalWallet? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = DigitalWalletJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(DigitalWallet? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -67,6 +86,30 @@ extension DigitalWalletX on DigitalWallet {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? androidPay,
+    T? applePay,
+    T? googlePay,
+    T? shopifyPay,
+  }) {
+    switch (this) {
+      case DigitalWallet.androidPay:
+        if (androidPay == null) return orElse;
+        return androidPay;
+      case DigitalWallet.applePay:
+        if (applePay == null) return orElse;
+        return applePay;
+      case DigitalWallet.googlePay:
+        if (googlePay == null) return orElse;
+        return googlePay;
+      case DigitalWallet.shopifyPay:
+        if (shopifyPay == null) return orElse;
+        return shopifyPay;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -79,4 +122,14 @@ extension DigitalWalletX on DigitalWallet {
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      androidPay: 'Android Pay',
+      applePay: 'Apple Pay',
+      googlePay: 'Google Pay',
+      shopifyPay: 'Shopify Pay',
+    );
+  }
 }

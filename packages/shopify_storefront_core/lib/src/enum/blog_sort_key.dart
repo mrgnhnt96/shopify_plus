@@ -37,6 +37,7 @@ class BlogSortKeyJson extends JsonConverter<BlogSortKey, String> {
         return BlogSortKey.relevance;
       case _titleName:
         return BlogSortKey.title;
+
       default:
         throw Exception('Unknown BlogSortKey: $json');
     }
@@ -44,6 +45,22 @@ class BlogSortKeyJson extends JsonConverter<BlogSortKey, String> {
 
   @override
   String toJson(BlogSortKey object) => object.name;
+}
+
+/// {@macro json_converter}
+class BlogSortKeyJsonNullable extends JsonConverter<BlogSortKey?, String?> {
+  /// {@macro json_converter}
+  const BlogSortKeyJsonNullable();
+
+  @override
+  BlogSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = BlogSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(BlogSortKey? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -67,6 +84,30 @@ extension BlogSortKeyX on BlogSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? handle,
+    T? id,
+    T? relevance,
+    T? title,
+  }) {
+    switch (this) {
+      case BlogSortKey.handle:
+        if (handle == null) return orElse;
+        return handle;
+      case BlogSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case BlogSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+      case BlogSortKey.title:
+        if (title == null) return orElse;
+        return title;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -79,4 +120,15 @@ extension BlogSortKeyX on BlogSortKey {
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      handle: 'Sort by the handle.',
+      id: 'Sort by the id.',
+      relevance:
+          'During a search this sorts the results by relevance to the search term(s).',
+      title: 'Sort by the title.',
+    );
+  }
 }

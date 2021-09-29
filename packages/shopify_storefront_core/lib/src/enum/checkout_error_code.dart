@@ -1,4 +1,6 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// Possible error codes that could be returned by CheckoutUserError
@@ -277,6 +279,23 @@ class CheckoutErrorCodeJson extends JsonConverter<CheckoutErrorCode, String> {
 
   @override
   String toJson(CheckoutErrorCode object) => object.name;
+}
+
+/// {@macro json_converter}
+class CheckoutErrorCodeJsonNullable
+    extends JsonConverter<CheckoutErrorCode?, String?> {
+  /// {@macro json_converter}
+  const CheckoutErrorCodeJsonNullable();
+
+  @override
+  CheckoutErrorCode? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = CheckoutErrorCodeJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(CheckoutErrorCode? object) => object?.name;
 }
 
 /// {@macro enum_x}

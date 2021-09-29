@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// The set of valid sort keys for the Page query.
@@ -37,6 +40,7 @@ class PageSortKeyJson extends JsonConverter<PageSortKey, String> {
         return PageSortKey.title;
       case _updatedAtName:
         return PageSortKey.updatedAt;
+
       default:
         throw Exception('Unknown PageSortKey: $json');
     }
@@ -44,6 +48,22 @@ class PageSortKeyJson extends JsonConverter<PageSortKey, String> {
 
   @override
   String toJson(PageSortKey object) => object.name;
+}
+
+/// {@macro json_converter}
+class PageSortKeyJsonNullable extends JsonConverter<PageSortKey?, String?> {
+  /// {@macro json_converter}
+  const PageSortKeyJsonNullable();
+
+  @override
+  PageSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = PageSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(PageSortKey? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -67,6 +87,30 @@ extension PageSortKeyX on PageSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? id,
+    T? relevance,
+    T? title,
+    T? updatedAt,
+  }) {
+    switch (this) {
+      case PageSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case PageSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+      case PageSortKey.title:
+        if (title == null) return orElse;
+        return title;
+      case PageSortKey.updatedAt:
+        if (updatedAt == null) return orElse;
+        return updatedAt;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -79,4 +123,15 @@ extension PageSortKeyX on PageSortKey {
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      id: 'Sort by the id.',
+      relevance:
+          'During a search this sorts the results by relevance to the search term(s).',
+      title: 'Sort by the title.',
+      updatedAt: 'Sort by date updated.',
+    );
+  }
 }

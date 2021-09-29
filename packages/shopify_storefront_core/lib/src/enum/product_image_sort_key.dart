@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// The set of valid sort keys for the ProductImage query.
@@ -12,8 +15,7 @@ enum ProductImageSortKey {
   /// Sort by the position value.
   position,
 
-  /// During a search (i.e. when the query parameter has been specified on the connection)
-  /// this sorts the results by relevance to the search term(s).
+  /// During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.
   relevance,
 }
 
@@ -49,6 +51,23 @@ class ProductImageSortKeyJson
   String toJson(ProductImageSortKey object) => object.name;
 }
 
+/// {@macro json_converter}
+class ProductImageSortKeyJsonNullable
+    extends JsonConverter<ProductImageSortKey?, String?> {
+  /// {@macro json_converter}
+  const ProductImageSortKeyJsonNullable();
+
+  @override
+  ProductImageSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = ProductImageSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(ProductImageSortKey? object) => object?.name;
+}
+
 /// {@macro enum_x}
 extension ProductImageSortKeyX on ProductImageSortKey {
   /// {@macro enum_x.map}
@@ -70,6 +89,30 @@ extension ProductImageSortKeyX on ProductImageSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? createdAt,
+    T? id,
+    T? position,
+    T? relevance,
+  }) {
+    switch (this) {
+      case ProductImageSortKey.createdAt:
+        if (createdAt == null) return orElse;
+        return createdAt;
+      case ProductImageSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case ProductImageSortKey.position:
+        if (position == null) return orElse;
+        return position;
+      case ProductImageSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -86,11 +129,11 @@ extension ProductImageSortKeyX on ProductImageSortKey {
   /// {@macro enum_x.description}
   String get description {
     return map(
-      createdAt: 'Sort by the created_at value.',
-      id: 'Sort by the id value.',
-      position: 'Sort by the position value.',
+      createdAt: 'Sort by the date created.',
+      id: 'Sort by the id.',
+      position: 'Sort by the position.',
       relevance:
-          'During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.',
+          'During a search this sorts the results by relevance to the search term(s).',
     );
   }
 }

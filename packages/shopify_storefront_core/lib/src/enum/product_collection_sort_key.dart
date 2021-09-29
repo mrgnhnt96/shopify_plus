@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The set of valid sort keys for the ProductCollection query
+/// The set of valid sort keys for the ProductCollection query.
 enum ProductCollectionSortKey {
   /// Sort by the best-selling value.
   bestSelling,
@@ -21,8 +24,7 @@ enum ProductCollectionSortKey {
   /// Sort by the price value.
   price,
 
-  /// During a search (i.e. when the query parameter has been specified on the connection)
-  /// this sorts the results by relevance to the search term(s).
+  /// During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.
   relevance,
 
   /// Sort by the title value.
@@ -73,6 +75,23 @@ class ProductCollectionSortKeyJson
   String toJson(ProductCollectionSortKey object) => object.name;
 }
 
+/// {@macro json_converter}
+class ProductCollectionSortKeyJsonNullable
+    extends JsonConverter<ProductCollectionSortKey?, String?> {
+  /// {@macro json_converter}
+  const ProductCollectionSortKeyJsonNullable();
+
+  @override
+  ProductCollectionSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = ProductCollectionSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(ProductCollectionSortKey? object) => object?.name;
+}
+
 /// {@macro enum_x}
 extension ProductCollectionSortKeyX on ProductCollectionSortKey {
   /// {@macro enum_x.map}
@@ -106,6 +125,46 @@ extension ProductCollectionSortKeyX on ProductCollectionSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? bestSelling,
+    T? collectionDefault,
+    T? created,
+    T? id,
+    T? manual,
+    T? price,
+    T? relevance,
+    T? title,
+  }) {
+    switch (this) {
+      case ProductCollectionSortKey.bestSelling:
+        if (bestSelling == null) return orElse;
+        return bestSelling;
+      case ProductCollectionSortKey.collectionDefault:
+        if (collectionDefault == null) return orElse;
+        return collectionDefault;
+      case ProductCollectionSortKey.created:
+        if (created == null) return orElse;
+        return created;
+      case ProductCollectionSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case ProductCollectionSortKey.manual:
+        if (manual == null) return orElse;
+        return manual;
+      case ProductCollectionSortKey.price:
+        if (price == null) return orElse;
+        return price;
+      case ProductCollectionSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+      case ProductCollectionSortKey.title:
+        if (title == null) return orElse;
+        return title;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -126,15 +185,15 @@ extension ProductCollectionSortKeyX on ProductCollectionSortKey {
   /// {@macro enum_x.description}
   String get description {
     return map(
-      bestSelling: 'Sort by the best-selling value.',
-      collectionDefault: 'Sort by the collection-default value.',
-      created: 'Sort by the created value.',
-      id: 'Sort by the id value.',
-      manual: 'Sort by the manual value.',
-      price: 'Sort by the price value.',
+      bestSelling: 'Sort by best-selling.',
+      collectionDefault: 'Sort by the default.',
+      created: 'Sort by the date created.',
+      id: 'Sort by the id.',
+      manual: 'Sorts manually.',
+      price: 'Sort by the price.',
       relevance:
-          'During a search (i.e. when the query parameter has been specified on the connection) this sorts the results by relevance to the search term(s). When no search query is specified, this sort key is not deterministic and should not be used.',
-      title: 'Sort by the title value.',
+          'During a search this sorts the results by relevance to the search term(s).',
+      title: 'Sort by the title.',
     );
   }
 }

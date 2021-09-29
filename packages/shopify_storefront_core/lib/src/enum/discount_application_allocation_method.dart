@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The method by which the discount's value is allocated onto its entitled lines.
+/// The method by which the discount&#x27;s value is allocated onto its entitled lines.
 enum DiscountApplicationAllocationMethod {
   /// The value is spread across all entitled lines.
   across,
@@ -26,6 +29,7 @@ class DiscountApplicationAllocationMethodJson
         return DiscountApplicationAllocationMethod.across;
       case _eachName:
         return DiscountApplicationAllocationMethod.each;
+
       default:
         throw Exception('Unknown DiscountApplicationAllocationMethod: $json');
     }
@@ -33,6 +37,23 @@ class DiscountApplicationAllocationMethodJson
 
   @override
   String toJson(DiscountApplicationAllocationMethod object) => object.name;
+}
+
+/// {@macro json_converter}
+class DiscountApplicationAllocationMethodJsonNullable
+    extends JsonConverter<DiscountApplicationAllocationMethod?, String?> {
+  /// {@macro json_converter}
+  const DiscountApplicationAllocationMethodJsonNullable();
+
+  @override
+  DiscountApplicationAllocationMethod? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = DiscountApplicationAllocationMethodJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(DiscountApplicationAllocationMethod? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -51,6 +72,22 @@ extension DiscountApplicationAllocationMethodX
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? across,
+    T? each,
+  }) {
+    switch (this) {
+      case DiscountApplicationAllocationMethod.across:
+        if (across == null) return orElse;
+        return across;
+      case DiscountApplicationAllocationMethod.each:
+        if (each == null) return orElse;
+        return each;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -61,4 +98,12 @@ extension DiscountApplicationAllocationMethodX
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      across: 'The value is spread across all entitled lines.',
+      each: 'The value is applied onto every entitled line.',
+    );
+  }
 }

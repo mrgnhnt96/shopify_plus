@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// Units of measurement for weight.
@@ -47,8 +50,24 @@ class WeightUnitJson extends JsonConverter<WeightUnit, String> {
   String toJson(WeightUnit object) => object.name;
 }
 
+/// {@macro json_converter}
+class WeightUnitJsonNullable extends JsonConverter<WeightUnit?, String?> {
+  /// {@macro json_converter}
+  const WeightUnitJsonNullable();
+
+  @override
+  WeightUnit? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = WeightUnitJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(WeightUnit? object) => object?.name;
+}
+
 /// {@macro enum_x}
-extension UnitWeightUnitX on WeightUnit {
+extension WeightUnitX on WeightUnit {
   /// {@macro enum_x.map}
   T map<T>({
     required T grams,
@@ -68,6 +87,30 @@ extension UnitWeightUnitX on WeightUnit {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? grams,
+    T? kilograms,
+    T? ounces,
+    T? pounds,
+  }) {
+    switch (this) {
+      case WeightUnit.grams:
+        if (grams == null) return orElse;
+        return grams;
+      case WeightUnit.kilograms:
+        if (kilograms == null) return orElse;
+        return kilograms;
+      case WeightUnit.ounces:
+        if (ounces == null) return orElse;
+        return ounces;
+      case WeightUnit.pounds:
+        if (pounds == null) return orElse;
+        return pounds;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -78,6 +121,9 @@ extension UnitWeightUnitX on WeightUnit {
     );
   }
 
+  /// {@macro enum_x.displayName}
+  String get displayName => name.capitalize();
+
   /// {@macro enum_x.description}
   String get description {
     return map(
@@ -87,7 +133,4 @@ extension UnitWeightUnitX on WeightUnit {
       pounds: '1 pound equals 16 ounces.',
     );
   }
-
-  /// {@macro enum_x.displayName}
-  String get displayName => name.capitalize();
 }

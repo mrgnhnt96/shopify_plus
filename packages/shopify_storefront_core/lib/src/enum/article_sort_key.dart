@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The set of valid sort keys for the Article query
+/// The set of valid sort keys for the Article query.
 enum ArticleSortKey {
   /// Sort by the author value.
   author,
@@ -21,7 +21,7 @@ enum ArticleSortKey {
   /// Sort by the title value.
   title,
 
-  /// Sort by the updated_at value.
+  /// Sort by updated at.
   updatedAt,
 }
 
@@ -55,6 +55,7 @@ class ArticleSortKeyJson extends JsonConverter<ArticleSortKey, String> {
         return ArticleSortKey.title;
       case _updatedAtName:
         return ArticleSortKey.updatedAt;
+
       default:
         throw Exception('Unknown ArticleSortKey: $json');
     }
@@ -62,6 +63,23 @@ class ArticleSortKeyJson extends JsonConverter<ArticleSortKey, String> {
 
   @override
   String toJson(ArticleSortKey object) => object.name;
+}
+
+/// {@macro json_converter}
+class ArticleSortKeyJsonNullable
+    extends JsonConverter<ArticleSortKey?, String?> {
+  /// {@macro json_converter}
+  const ArticleSortKeyJsonNullable();
+
+  @override
+  ArticleSortKey? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = ArticleSortKeyJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(ArticleSortKey? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -94,6 +112,42 @@ extension ArticleSortKeyX on ArticleSortKey {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? author,
+    T? blogTitle,
+    T? id,
+    T? publishedAt,
+    T? relevance,
+    T? title,
+    T? updatedAt,
+  }) {
+    switch (this) {
+      case ArticleSortKey.author:
+        if (author == null) return orElse;
+        return author;
+      case ArticleSortKey.blogTitle:
+        if (blogTitle == null) return orElse;
+        return blogTitle;
+      case ArticleSortKey.id:
+        if (id == null) return orElse;
+        return id;
+      case ArticleSortKey.publishedAt:
+        if (publishedAt == null) return orElse;
+        return publishedAt;
+      case ArticleSortKey.relevance:
+        if (relevance == null) return orElse;
+        return relevance;
+      case ArticleSortKey.title:
+        if (title == null) return orElse;
+        return title;
+      case ArticleSortKey.updatedAt:
+        if (updatedAt == null) return orElse;
+        return updatedAt;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -109,4 +163,18 @@ extension ArticleSortKeyX on ArticleSortKey {
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      author: 'Sort by the author.',
+      blogTitle: 'Sort by the blog title.',
+      id: 'Sort by id.',
+      publishedAt: 'Sort by the date published.',
+      relevance:
+          'During a search this sorts the results by relevance to the search term(s).',
+      title: 'Sort by title.',
+      updatedAt: 'Sort by date updated.',
+    );
+  }
 }

@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// Metafield value types.
@@ -31,6 +34,7 @@ class MetafieldValueTypeJson extends JsonConverter<MetafieldValueType, String> {
         return MetafieldValueType.jsonString;
       case _stringName:
         return MetafieldValueType.string;
+
       default:
         throw Exception('Unknown MetafieldValueType: $json');
     }
@@ -38,6 +42,23 @@ class MetafieldValueTypeJson extends JsonConverter<MetafieldValueType, String> {
 
   @override
   String toJson(MetafieldValueType object) => object.name;
+}
+
+/// {@macro json_converter}
+class MetafieldValueTypeJsonNullable
+    extends JsonConverter<MetafieldValueType?, String?> {
+  /// {@macro json_converter}
+  const MetafieldValueTypeJsonNullable();
+
+  @override
+  MetafieldValueType? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = MetafieldValueTypeJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(MetafieldValueType? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -58,12 +79,44 @@ extension MetafieldValueTypeX on MetafieldValueType {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? integer,
+    T? jsonString,
+    T? string,
+  }) {
+    switch (this) {
+      case MetafieldValueType.integer:
+        if (integer == null) return orElse;
+        return integer;
+      case MetafieldValueType.jsonString:
+        if (jsonString == null) return orElse;
+        return jsonString;
+      case MetafieldValueType.string:
+        if (string == null) return orElse;
+        return string;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
       integer: MetafieldValueTypeJson._integerName,
       jsonString: MetafieldValueTypeJson._jsonStringName,
       string: MetafieldValueTypeJson._stringName,
+    );
+  }
+
+  /// {@macro enum_x.displayName}
+  String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      integer: 'An integer metafield.',
+      jsonString: 'A json string metafield.',
+      string: 'A string metafield.',
     );
   }
 
@@ -75,7 +128,4 @@ extension MetafieldValueTypeX on MetafieldValueType {
       string: String,
     );
   }
-
-  /// {@macro enum_x.displayName}
-  String get displayName => name.capitalize();
 }

@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
 /// The different kinds of order transactions.
@@ -43,6 +46,7 @@ class TransactionKindJson extends JsonConverter<TransactionKind, String> {
         return TransactionKind.emvAuthorization;
       case _saleName:
         return TransactionKind.sale;
+
       default:
         throw Exception('Unknown TransactionKind: $json');
     }
@@ -50,6 +54,23 @@ class TransactionKindJson extends JsonConverter<TransactionKind, String> {
 
   @override
   String toJson(TransactionKind object) => object.name;
+}
+
+/// {@macro json_converter}
+class TransactionKindJsonNullable
+    extends JsonConverter<TransactionKind?, String?> {
+  /// {@macro json_converter}
+  const TransactionKindJsonNullable();
+
+  @override
+  TransactionKind? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = TransactionKindJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(TransactionKind? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -76,6 +97,34 @@ extension TransactionKindX on TransactionKind {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? authorization,
+    T? capture,
+    T? change,
+    T? emvAuthorization,
+    T? sale,
+  }) {
+    switch (this) {
+      case TransactionKind.authorization:
+        if (authorization == null) return orElse;
+        return authorization;
+      case TransactionKind.capture:
+        if (capture == null) return orElse;
+        return capture;
+      case TransactionKind.change:
+        if (change == null) return orElse;
+        return change;
+      case TransactionKind.emvAuthorization:
+        if (emvAuthorization == null) return orElse;
+        return emvAuthorization;
+      case TransactionKind.sale:
+        if (sale == null) return orElse;
+        return sale;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -89,4 +138,18 @@ extension TransactionKindX on TransactionKind {
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      authorization:
+          'An amount reserved against the cardholder\'s funding source. Money does not change hands until the authorization is captured.',
+      capture:
+          'A transfer of the money that was reserved during the authorization stage.',
+      change: 'Money returned to the customer when they have paid too much.',
+      emvAuthorization:
+          'An authorization for a payment taken with an EMV credit card reader.',
+      sale: 'An authorization and capture performed together in a single step.',
+    );
+  }
 }

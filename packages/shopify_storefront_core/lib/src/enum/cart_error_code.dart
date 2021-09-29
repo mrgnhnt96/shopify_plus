@@ -53,6 +53,22 @@ class CartErrorCodeJson extends JsonConverter<CartErrorCode, String> {
   String toJson(CartErrorCode object) => object.name;
 }
 
+/// {@macro json_converter}
+class CartErrorCodeJsonNullable extends JsonConverter<CartErrorCode?, String?> {
+  /// {@macro json_converter}
+  const CartErrorCodeJsonNullable();
+
+  @override
+  CartErrorCode? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = CartErrorCodeJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(CartErrorCode? object) => object?.name;
+}
+
 /// {@macro enum_x}
 extension CartErrorCodeX on CartErrorCode {
   /// {@macro enum_x.map}

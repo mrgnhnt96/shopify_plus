@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// The valid values for the types of payment token
+/// The valid values for the types of payment token.
 enum PaymentTokenType {
   /// Apple Pay token type.
   applePay,
@@ -45,25 +48,23 @@ class PaymentTokenTypeJson extends JsonConverter<PaymentTokenType, String> {
 
   @override
   String toJson(PaymentTokenType object) => object.name;
+}
 
-  /// {@macro to_json}
-  static String? tokenToJson(PaymentTokenType? code) {
-    if (code == null) return null;
+/// {@macro json_converter}
+class PaymentTokenTypeJsonNullable
+    extends JsonConverter<PaymentTokenType?, String?> {
+  /// {@macro json_converter}
+  const PaymentTokenTypeJsonNullable();
+
+  @override
+  PaymentTokenType? fromJson(String? json) {
+    if (json == null) return null;
     const jsonConverter = PaymentTokenTypeJson();
-    return jsonConverter.toJson(code);
+    return jsonConverter.fromJson(json);
   }
 
-  /// {@macro from_json}
-  static PaymentTokenType tokenFromJson(String? code) {
-    return tokenFromJsonNullable(code)!;
-  }
-
-  /// {@macro from_json}
-  static PaymentTokenType? tokenFromJsonNullable(String? code) {
-    if (code == null) return null;
-    const jsonConverter = PaymentTokenTypeJson();
-    return jsonConverter.fromJson(code);
-  }
+  @override
+  String? toJson(PaymentTokenType? object) => object?.name;
 }
 
 /// {@macro enum_x}

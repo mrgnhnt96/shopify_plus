@@ -1,36 +1,30 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// {@template order_financial_status}
-/// The financial status of the order
-/// {@endtemplate}
+/// Represents the order&#x27;s current financial status.
 enum OrderFinancialStatus {
-  /// {@macro order_financial_status}
-  /// is `AUTHORIZED`
+  /// Displayed as Authorized.
   authorized,
 
-  /// {@macro order_financial_status}
-  /// is `PAID`
+  /// Displayed as Paid.
   paid,
 
-  /// {@macro order_financial_status}
-  /// is `PARTIALLY_PAID`
+  /// Displayed as Partially paid.
   partiallyPaid,
 
-  /// {@macro order_financial_status}
-  /// is `PARTIALLY_REFUNDED`
+  /// Displayed as Partially refunded.
   partiallyRefunded,
 
-  /// {@macro order_financial_status}
-  /// is `PENDING`
+  /// Displayed as Pending.
   pending,
 
-  /// {@macro order_financial_status}
-  /// is `REFUNDED`
+  /// Displayed as Refunded.
   refunded,
 
-  /// {@macro order_financial_status}
-  /// is `VOIDED`
+  /// Displayed as Voided.
   voided,
 }
 
@@ -51,20 +45,21 @@ class OrderFinancialStatusJson
   @override
   OrderFinancialStatus fromJson(String json) {
     switch (json.toLowerCase()) {
-      case OrderFinancialStatusJson._authorizedName:
+      case _authorizedName:
         return OrderFinancialStatus.authorized;
-      case OrderFinancialStatusJson._paidName:
+      case _paidName:
         return OrderFinancialStatus.paid;
-      case OrderFinancialStatusJson._partiallyPaidName:
+      case _partiallyPaidName:
         return OrderFinancialStatus.partiallyPaid;
-      case OrderFinancialStatusJson._partiallyRefundedName:
+      case _partiallyRefundedName:
         return OrderFinancialStatus.partiallyRefunded;
-      case OrderFinancialStatusJson._pendingName:
+      case _pendingName:
         return OrderFinancialStatus.pending;
-      case OrderFinancialStatusJson._refundedName:
+      case _refundedName:
         return OrderFinancialStatus.refunded;
-      case OrderFinancialStatusJson._voidedName:
+      case _voidedName:
         return OrderFinancialStatus.voided;
+
       default:
         throw Exception('Unknown OrderFinancialStatus: $json');
     }
@@ -72,6 +67,23 @@ class OrderFinancialStatusJson
 
   @override
   String toJson(OrderFinancialStatus object) => object.name;
+}
+
+/// {@macro json_converter}
+class OrderFinancialStatusJsonNullable
+    extends JsonConverter<OrderFinancialStatus?, String?> {
+  /// {@macro json_converter}
+  const OrderFinancialStatusJsonNullable();
+
+  @override
+  OrderFinancialStatus? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = OrderFinancialStatusJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(OrderFinancialStatus? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -104,6 +116,42 @@ extension OrderFinancialStatusX on OrderFinancialStatus {
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? authorized,
+    T? paid,
+    T? partiallyPaid,
+    T? partiallyRefunded,
+    T? pending,
+    T? refunded,
+    T? voided,
+  }) {
+    switch (this) {
+      case OrderFinancialStatus.authorized:
+        if (authorized == null) return orElse;
+        return authorized;
+      case OrderFinancialStatus.paid:
+        if (paid == null) return orElse;
+        return paid;
+      case OrderFinancialStatus.partiallyPaid:
+        if (partiallyPaid == null) return orElse;
+        return partiallyPaid;
+      case OrderFinancialStatus.partiallyRefunded:
+        if (partiallyRefunded == null) return orElse;
+        return partiallyRefunded;
+      case OrderFinancialStatus.pending:
+        if (pending == null) return orElse;
+        return pending;
+      case OrderFinancialStatus.refunded:
+        if (refunded == null) return orElse;
+        return refunded;
+      case OrderFinancialStatus.voided:
+        if (voided == null) return orElse;
+        return voided;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -119,4 +167,17 @@ extension OrderFinancialStatusX on OrderFinancialStatus {
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      authorized: 'Displayed as Authorized.',
+      paid: 'Displayed as Paid.',
+      partiallyPaid: 'Displayed as Partially paid.',
+      partiallyRefunded: 'Displayed as Partially refunded.',
+      pending: 'Displayed as Pending.',
+      refunded: 'Displayed as Refunded.',
+      voided: 'Displayed as Voided.',
+    );
+  }
 }

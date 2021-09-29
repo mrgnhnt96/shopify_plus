@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/util/string_extension.dart';
 
-/// Which lines on the order that the discount is allocated over, of the type defined by the Discount Application's target_type.
+/// Which lines on the order that the discount is allocated over, of the type defined by the Discount Application&#x27;s target type.
 enum DiscountApplicationTargetSelection {
   /// The discount is allocated onto all the lines.
   all,
@@ -32,6 +35,7 @@ class DiscountApplicationTargetSelectionJson
         return DiscountApplicationTargetSelection.entitled;
       case _explicitName:
         return DiscountApplicationTargetSelection.explicit;
+
       default:
         throw Exception('Unknown DiscountApplicationTargetSelection: $json');
     }
@@ -39,6 +43,23 @@ class DiscountApplicationTargetSelectionJson
 
   @override
   String toJson(DiscountApplicationTargetSelection object) => object.name;
+}
+
+/// {@macro json_converter}
+class DiscountApplicationTargetSelectionJsonNullable
+    extends JsonConverter<DiscountApplicationTargetSelection?, String?> {
+  /// {@macro json_converter}
+  const DiscountApplicationTargetSelectionJsonNullable();
+
+  @override
+  DiscountApplicationTargetSelection? fromJson(String? json) {
+    if (json == null) return null;
+    const jsonConverter = DiscountApplicationTargetSelectionJson();
+    return jsonConverter.fromJson(json);
+  }
+
+  @override
+  String? toJson(DiscountApplicationTargetSelection? object) => object?.name;
 }
 
 /// {@macro enum_x}
@@ -60,6 +81,26 @@ extension DiscountApplicationTargetSelectionX
     }
   }
 
+  /// {@macro enum_x.maybeMap}
+  T maybeMap<T>({
+    required T orElse,
+    T? all,
+    T? entitled,
+    T? explicit,
+  }) {
+    switch (this) {
+      case DiscountApplicationTargetSelection.all:
+        if (all == null) return orElse;
+        return all;
+      case DiscountApplicationTargetSelection.entitled:
+        if (entitled == null) return orElse;
+        return entitled;
+      case DiscountApplicationTargetSelection.explicit:
+        if (explicit == null) return orElse;
+        return explicit;
+    }
+  }
+
   /// {@macro enum_x.name}
   String get name {
     return map(
@@ -71,4 +112,14 @@ extension DiscountApplicationTargetSelectionX
 
   /// {@macro enum_x.displayName}
   String get displayName => name.capitalize();
+
+  /// {@macro enum_x.description}
+  String get description {
+    return map(
+      all: 'The discount is allocated onto all the lines.',
+      entitled:
+          'The discount is allocated onto only the lines it is entitled for.',
+      explicit: 'The discount is allocated onto explicitly chosen lines.',
+    );
+  }
 }
