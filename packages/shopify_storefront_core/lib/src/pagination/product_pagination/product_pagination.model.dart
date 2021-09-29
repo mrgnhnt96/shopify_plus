@@ -1,5 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation\.dart';
-
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:shopify_storefront_core/shopify_core.dart';
 
 part 'product_pagination.model.freezed.dart';
@@ -7,7 +6,7 @@ part 'product_pagination.model.g.dart';
 
 /// {@macro pagination}
 @freezed
-class ProductPagination with _$ProductPagination {
+class ProductPagination with _$ProductPagination  {
   const ProductPagination._();
 
   /// {@macro pagination}
@@ -31,4 +30,5 @@ class ProductPagination with _$ProductPagination {
   /// {@macro from_json}
   factory ProductPagination.fromJson(Map<String, dynamic> json) =>
       _$ProductPaginationFromJson(json);
+
 }
