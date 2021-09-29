@@ -1,1 +1,2 @@
-export 'product/product_pagination.model.dart';
+export 'metafield/metafield.dart';
+export 'product/product.dart';

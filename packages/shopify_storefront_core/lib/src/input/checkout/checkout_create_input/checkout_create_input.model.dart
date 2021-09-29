@@ -4,6 +4,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 // Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
 import 'package:shopify_storefront_core/src/input/checkout/checkout_buyer_identity_input/checkout_buyer_identity_input.model.dart';
+import 'package:shopify_storefront_core/src/input/checkout/checkout_line_item_input/checkout_line_item_input.model.dart';
 import 'package:shopify_storefront_core/src/input/common/mailing_address_input/mailing_address_input.model.dart';
 
 part 'checkout_create_input.model.g.dart';

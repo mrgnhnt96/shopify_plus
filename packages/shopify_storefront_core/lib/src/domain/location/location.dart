@@ -1,0 +1,1 @@
+export 'location.model.dart';

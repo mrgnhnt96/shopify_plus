@@ -6,11 +6,9 @@ import 'package:shopify_storefront/shopify_storefront.dart';
 /// {@template mutation}
 /// A mutation is an operation that changes the state of a database.
 /// {@endtemplate}
-abstract class Mutation<R> {
+mixin Mutation<R> {
   /// {@template mutation}
-  Mutation() : _client = ShopifyStorefrontApi.graphQLClient;
-
-  final GraphQLClient _client;
+  final _client = ShopifyStorefrontApi.graphQLClient;
 
   /// executes the mutation using the provided args
   ///
@@ -23,11 +21,11 @@ abstract class Mutation<R> {
     final data = result.data;
     if (data == null) return null;
 
-    return fromJson(data);
+    return fromResponse(data);
   }
 
   /// {@macro from_json}
-  R fromJson(Map<String, dynamic> json);
+  R fromResponse(Map<String, dynamic> json);
 
   /// retrieves the mutation
   String get mutation;
@@ -35,9 +33,9 @@ abstract class Mutation<R> {
   /// The query options to use when executing the mutation.
   QueryOptions get options => QueryOptions(
         document: gql(mutation),
-        variables: toJson(),
+        variables: setVariables(),
       );
 
   /// set the mutation args
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> setVariables();
 }

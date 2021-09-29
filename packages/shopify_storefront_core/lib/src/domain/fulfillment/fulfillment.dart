@@ -1,0 +1,1 @@
+export 'fulfillment.model.dart';

@@ -1,0 +1,1 @@
+export 'collection.model.dart';

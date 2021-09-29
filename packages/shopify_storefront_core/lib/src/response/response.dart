@@ -1,2 +1,3 @@
-export 'cart/cart_response.model.dart';
-export 'checkout/checkout_response.model.dart';
+export 'cart/cart.dart';
+export 'checkout/checkout.dart';
+export 'customer/customer.dart';

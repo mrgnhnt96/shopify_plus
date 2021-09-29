@@ -1,0 +1,1 @@
+export 'localization.model.dart';

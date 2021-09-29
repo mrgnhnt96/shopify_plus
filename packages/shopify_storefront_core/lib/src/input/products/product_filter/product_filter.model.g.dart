@@ -9,7 +9,9 @@ part of 'product_filter.model.dart';
 ProductFilter _$ProductFilterFromJson(Map<String, dynamic> json) =>
     ProductFilter(
       inStock: json['inStock'] as bool?,
-      price: json['price'],
+      price: json['price'] == null
+          ? null
+          : PriceRangeFilter.fromJson(json['price'] as Map<String, dynamic>),
       productType: json['productType'] as String?,
       productVendor: json['productVendor'] as String?,
       variantOption: json['variantOption'] == null

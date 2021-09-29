@@ -17,7 +17,8 @@ class CheckoutLineItemUpdateInput {
     required this.id,
     required this.quantity,
     required this.variantId,
-  });
+  }) : assert(!((id == null) && (variantId == null)),
+            'An id or variantId must be provided');
 
   /// {@macro from_json}
   factory CheckoutLineItemUpdateInput.fromJson(Map<String, dynamic> json) =>
