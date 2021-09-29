@@ -29,17 +29,3 @@ Map<String, dynamic> _$$_DiscountApplicationToJson(
           const DiscountApplicationTargetTypeJson().toJson(instance.targetType),
       'value': instance.value,
     };
-
-_$DiscountApplicationEdge _$$DiscountApplicationEdgeFromJson(
-        Map<String, dynamic> json) =>
-    _$DiscountApplicationEdge(
-      cursor: json['cursor'] as String,
-      node: DiscountApplication.fromJson(json['node'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$DiscountApplicationEdgeToJson(
-        _$DiscountApplicationEdge instance) =>
-    <String, dynamic>{
-      'cursor': instance.cursor,
-      'node': instance.node,
-    };

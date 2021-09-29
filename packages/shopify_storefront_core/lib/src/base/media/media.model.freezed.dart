@@ -25,10 +25,6 @@ Media _$MediaFromJson(Map<String, dynamic> json) {
       return Video.fromJson(json);
     case 'externalVideo':
       return ExternalVideo.fromJson(json);
-    case 'edge':
-      return MediaEdge.fromJson(json);
-    case 'paginated':
-      return MediaPagination.fromJson(json);
 
     default:
       throw CheckedFromJsonException(json, 'runtimeType', 'Media',
@@ -115,21 +111,6 @@ class _$MediaTearOff {
     );
   }
 
-  MediaEdge edge({required String cursor, required Media node}) {
-    return MediaEdge(
-      cursor: cursor,
-      node: node,
-    );
-  }
-
-  MediaPagination paginated(
-      {required List<MediaEdge> edges, required PageInfo pageInfo}) {
-    return MediaPagination(
-      edges: edges,
-      pageInfo: pageInfo,
-    );
-  }
-
   Media fromJson(Map<String, Object> json) {
     return Media.fromJson(json);
   }
@@ -140,6 +121,16 @@ const $Media = _$MediaTearOff();
 
 /// @nodoc
 mixin _$Media {
+  /// A word or phrase to share the nature or contents of a media.
+  String? get alt => throw _privateConstructorUsedError;
+
+  /// The media content type.
+  @MediaContentTypeJson()
+  MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+
+  /// The preview image for the media.
+  ShopifyImage? get previewImage => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
@@ -177,9 +168,6 @@ mixin _$Media {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)
         externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -219,8 +207,6 @@ mixin _$Media {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -260,8 +246,6 @@ mixin _$Media {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -272,8 +256,6 @@ mixin _$Media {
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
     required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -283,8 +265,6 @@ mixin _$Media {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -294,18 +274,24 @@ mixin _$Media {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MediaCopyWith<Media> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MediaCopyWith<$Res> {
   factory $MediaCopyWith(Media value, $Res Function(Media) then) =
       _$MediaCopyWithImpl<$Res>;
+  $Res call(
+      {String? alt,
+      @MediaContentTypeJson() MediaContentType mediaContentType,
+      ShopifyImage? previewImage});
+
+  $ShopifyImageCopyWith<$Res>? get previewImage;
 }
 
 /// @nodoc
@@ -315,17 +301,52 @@ class _$MediaCopyWithImpl<$Res> implements $MediaCopyWith<$Res> {
   final Media _value;
   // ignore: unused_field
   final $Res Function(Media) _then;
+
+  @override
+  $Res call({
+    Object? alt = freezed,
+    Object? mediaContentType = freezed,
+    Object? previewImage = freezed,
+  }) {
+    return _then(_value.copyWith(
+      alt: alt == freezed
+          ? _value.alt
+          : alt // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mediaContentType: mediaContentType == freezed
+          ? _value.mediaContentType
+          : mediaContentType // ignore: cast_nullable_to_non_nullable
+              as MediaContentType,
+      previewImage: previewImage == freezed
+          ? _value.previewImage
+          : previewImage // ignore: cast_nullable_to_non_nullable
+              as ShopifyImage?,
+    ));
+  }
+
+  @override
+  $ShopifyImageCopyWith<$Res>? get previewImage {
+    if (_value.previewImage == null) {
+      return null;
+    }
+
+    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
+      return _then(_value.copyWith(previewImage: value));
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$MediaCopyWith<$Res> {
+abstract class _$MediaCopyWith<$Res> implements $MediaCopyWith<$Res> {
   factory _$MediaCopyWith(_Media value, $Res Function(_Media) then) =
       __$MediaCopyWithImpl<$Res>;
+  @override
   $Res call(
       {String? alt,
       @MediaContentTypeJson() MediaContentType mediaContentType,
       ShopifyImage? previewImage});
 
+  @override
   $ShopifyImageCopyWith<$Res>? get previewImage;
 }
 
@@ -358,17 +379,6 @@ class __$MediaCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
           : previewImage // ignore: cast_nullable_to_non_nullable
               as ShopifyImage?,
     ));
-  }
-
-  @override
-  $ShopifyImageCopyWith<$Res>? get previewImage {
-    if (_value.previewImage == null) {
-      return null;
-    }
-
-    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
-      return _then(_value.copyWith(previewImage: value));
-    });
   }
 }
 
@@ -467,9 +477,6 @@ class _$_Media extends _Media {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)
         externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
   }) {
     return $default(alt, mediaContentType, previewImage);
   }
@@ -512,8 +519,6 @@ class _$_Media extends _Media {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
   }) {
     return $default?.call(alt, mediaContentType, previewImage);
   }
@@ -556,8 +561,6 @@ class _$_Media extends _Media {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -574,8 +577,6 @@ class _$_Media extends _Media {
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
     required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
   }) {
     return $default(this);
   }
@@ -588,8 +589,6 @@ class _$_Media extends _Media {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
   }) {
     return $default?.call(this);
   }
@@ -602,8 +601,6 @@ class _$_Media extends _Media {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -627,24 +624,30 @@ abstract class _Media extends Media {
 
   factory _Media.fromJson(Map<String, dynamic> json) = _$_Media.fromJson;
 
+  @override
+
   /// A word or phrase to share the nature or contents of a media.
   String? get alt => throw _privateConstructorUsedError;
+  @override
 
   /// The media content type.
   @MediaContentTypeJson()
   MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+  @override
 
   /// The preview image for the media.
   ShopifyImage? get previewImage => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$MediaCopyWith<_Media> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MediaImageCopyWith<$Res> {
+abstract class $MediaImageCopyWith<$Res> implements $MediaCopyWith<$Res> {
   factory $MediaImageCopyWith(
           MediaImage value, $Res Function(MediaImage) then) =
       _$MediaImageCopyWithImpl<$Res>;
+  @override
   $Res call(
       {String? alt,
       String id,
@@ -653,6 +656,7 @@ abstract class $MediaImageCopyWith<$Res> {
       ShopifyImage? previewImage});
 
   $ShopifyImageCopyWith<$Res>? get image;
+  @override
   $ShopifyImageCopyWith<$Res>? get previewImage;
 }
 
@@ -705,17 +709,6 @@ class _$MediaImageCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
 
     return $ShopifyImageCopyWith<$Res>(_value.image!, (value) {
       return _then(_value.copyWith(image: value));
-    });
-  }
-
-  @override
-  $ShopifyImageCopyWith<$Res>? get previewImage {
-    if (_value.previewImage == null) {
-      return null;
-    }
-
-    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
-      return _then(_value.copyWith(previewImage: value));
     });
   }
 }
@@ -831,9 +824,6 @@ class _$MediaImage extends MediaImage {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)
         externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
   }) {
     return image(alt, id, this.image, mediaContentType, previewImage);
   }
@@ -876,8 +866,6 @@ class _$MediaImage extends MediaImage {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
   }) {
     return image?.call(alt, id, this.image, mediaContentType, previewImage);
   }
@@ -920,8 +908,6 @@ class _$MediaImage extends MediaImage {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
     required TResult orElse(),
   }) {
     if (image != null) {
@@ -938,8 +924,6 @@ class _$MediaImage extends MediaImage {
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
     required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
   }) {
     return image(this);
   }
@@ -952,8 +936,6 @@ class _$MediaImage extends MediaImage {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
   }) {
     return image?.call(this);
   }
@@ -966,8 +948,6 @@ class _$MediaImage extends MediaImage {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
     required TResult orElse(),
   }) {
     if (image != null) {
@@ -994,6 +974,8 @@ abstract class MediaImage extends Media {
   factory MediaImage.fromJson(Map<String, dynamic> json) =
       _$MediaImage.fromJson;
 
+  @override
+
   /// A word or phrase to share the nature or contents of a media.
   String? get alt => throw _privateConstructorUsedError;
 
@@ -1002,22 +984,26 @@ abstract class MediaImage extends Media {
 
   /// The image for the media.
   ShopifyImage? get image => throw _privateConstructorUsedError;
+  @override
 
   /// The media content type.
   @MediaContentTypeJson()
   MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+  @override
 
   /// The preview image for the media.
   ShopifyImage? get previewImage => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   $MediaImageCopyWith<MediaImage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $Model3dCopyWith<$Res> {
+abstract class $Model3dCopyWith<$Res> implements $MediaCopyWith<$Res> {
   factory $Model3dCopyWith(Model3d value, $Res Function(Model3d) then) =
       _$Model3dCopyWithImpl<$Res>;
+  @override
   $Res call(
       {String? alt,
       String id,
@@ -1025,6 +1011,7 @@ abstract class $Model3dCopyWith<$Res> {
       @MediaContentTypeJson() MediaContentType mediaContentType,
       ShopifyImage? previewImage});
 
+  @override
   $ShopifyImageCopyWith<$Res>? get previewImage;
 }
 
@@ -1067,17 +1054,6 @@ class _$Model3dCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
           : previewImage // ignore: cast_nullable_to_non_nullable
               as ShopifyImage?,
     ));
-  }
-
-  @override
-  $ShopifyImageCopyWith<$Res>? get previewImage {
-    if (_value.previewImage == null) {
-      return null;
-    }
-
-    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
-      return _then(_value.copyWith(previewImage: value));
-    });
   }
 }
 
@@ -1193,9 +1169,6 @@ class _$Model3d extends Model3d {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)
         externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
   }) {
     return model3d(alt, id, sources, mediaContentType, previewImage);
   }
@@ -1238,8 +1211,6 @@ class _$Model3d extends Model3d {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
   }) {
     return model3d?.call(alt, id, sources, mediaContentType, previewImage);
   }
@@ -1282,8 +1253,6 @@ class _$Model3d extends Model3d {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
     required TResult orElse(),
   }) {
     if (model3d != null) {
@@ -1300,8 +1269,6 @@ class _$Model3d extends Model3d {
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
     required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
   }) {
     return model3d(this);
   }
@@ -1314,8 +1281,6 @@ class _$Model3d extends Model3d {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
   }) {
     return model3d?.call(this);
   }
@@ -1328,8 +1293,6 @@ class _$Model3d extends Model3d {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
     required TResult orElse(),
   }) {
     if (model3d != null) {
@@ -1355,6 +1318,8 @@ abstract class Model3d extends Media {
 
   factory Model3d.fromJson(Map<String, dynamic> json) = _$Model3d.fromJson;
 
+  @override
+
   /// A word or phrase to share the nature or contents of a media.
   String? get alt => throw _privateConstructorUsedError;
 
@@ -1363,21 +1328,25 @@ abstract class Model3d extends Media {
 
   /// The image for the media.
   List<Model3dSource> get sources => throw _privateConstructorUsedError;
+  @override
 
   /// The media content type.
   @MediaContentTypeJson()
   MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+  @override
 
   /// The preview image for the media.
   ShopifyImage? get previewImage => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   $Model3dCopyWith<Model3d> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VideoCopyWith<$Res> {
+abstract class $VideoCopyWith<$Res> implements $MediaCopyWith<$Res> {
   factory $VideoCopyWith(Video value, $Res Function(Video) then) =
       _$VideoCopyWithImpl<$Res>;
+  @override
   $Res call(
       {String? alt,
       @MediaHostJson() MediaHost host,
@@ -1386,6 +1355,7 @@ abstract class $VideoCopyWith<$Res> {
       ShopifyImage? previewImage,
       List<VideoSource> sources});
 
+  @override
   $ShopifyImageCopyWith<$Res>? get previewImage;
 }
 
@@ -1433,17 +1403,6 @@ class _$VideoCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
           : sources // ignore: cast_nullable_to_non_nullable
               as List<VideoSource>,
     ));
-  }
-
-  @override
-  $ShopifyImageCopyWith<$Res>? get previewImage {
-    if (_value.previewImage == null) {
-      return null;
-    }
-
-    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
-      return _then(_value.copyWith(previewImage: value));
-    });
   }
 }
 
@@ -1566,9 +1525,6 @@ class _$Video extends Video {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)
         externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
   }) {
     return video(alt, host, id, mediaContentType, previewImage, sources);
   }
@@ -1611,8 +1567,6 @@ class _$Video extends Video {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
   }) {
     return video?.call(alt, host, id, mediaContentType, previewImage, sources);
   }
@@ -1655,8 +1609,6 @@ class _$Video extends Video {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
     required TResult orElse(),
   }) {
     if (video != null) {
@@ -1673,8 +1625,6 @@ class _$Video extends Video {
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
     required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
   }) {
     return video(this);
   }
@@ -1687,8 +1637,6 @@ class _$Video extends Video {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
   }) {
     return video?.call(this);
   }
@@ -1701,8 +1649,6 @@ class _$Video extends Video {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
     required TResult orElse(),
   }) {
     if (video != null) {
@@ -1729,6 +1675,8 @@ abstract class Video extends Media {
 
   factory Video.fromJson(Map<String, dynamic> json) = _$Video.fromJson;
 
+  @override
+
   /// A word or phrase to share the nature or contents of a media.
   String? get alt => throw _privateConstructorUsedError;
 
@@ -1738,25 +1686,29 @@ abstract class Video extends Media {
 
   /// A globally-unique identifier.
   String get id => throw _privateConstructorUsedError;
+  @override
 
   /// The media content type.
   @MediaContentTypeJson()
   MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+  @override
 
   /// The preview image for the media.
   ShopifyImage? get previewImage => throw _privateConstructorUsedError;
 
   /// The sources for a video.
   List<VideoSource> get sources => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   $VideoCopyWith<Video> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExternalVideoCopyWith<$Res> {
+abstract class $ExternalVideoCopyWith<$Res> implements $MediaCopyWith<$Res> {
   factory $ExternalVideoCopyWith(
           ExternalVideo value, $Res Function(ExternalVideo) then) =
       _$ExternalVideoCopyWithImpl<$Res>;
+  @override
   $Res call(
       {String? alt,
       String embeddedUrl,
@@ -1765,6 +1717,7 @@ abstract class $ExternalVideoCopyWith<$Res> {
       @MediaContentTypeJson() MediaContentType mediaContentType,
       ShopifyImage? previewImage});
 
+  @override
   $ShopifyImageCopyWith<$Res>? get previewImage;
 }
 
@@ -1813,17 +1766,6 @@ class _$ExternalVideoCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
           : previewImage // ignore: cast_nullable_to_non_nullable
               as ShopifyImage?,
     ));
-  }
-
-  @override
-  $ShopifyImageCopyWith<$Res>? get previewImage {
-    if (_value.previewImage == null) {
-      return null;
-    }
-
-    return $ShopifyImageCopyWith<$Res>(_value.previewImage!, (value) {
-      return _then(_value.copyWith(previewImage: value));
-    });
   }
 }
 
@@ -1948,9 +1890,6 @@ class _$ExternalVideo extends ExternalVideo {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)
         externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
   }) {
     return externalVideo(
         alt, embeddedUrl, host, id, mediaContentType, previewImage);
@@ -1994,8 +1933,6 @@ class _$ExternalVideo extends ExternalVideo {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
   }) {
     return externalVideo?.call(
         alt, embeddedUrl, host, id, mediaContentType, previewImage);
@@ -2039,8 +1976,6 @@ class _$ExternalVideo extends ExternalVideo {
             @MediaContentTypeJson() MediaContentType mediaContentType,
             ShopifyImage? previewImage)?
         externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
     required TResult orElse(),
   }) {
     if (externalVideo != null) {
@@ -2058,8 +1993,6 @@ class _$ExternalVideo extends ExternalVideo {
     required TResult Function(Model3d value) model3d,
     required TResult Function(Video value) video,
     required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
   }) {
     return externalVideo(this);
   }
@@ -2072,8 +2005,6 @@ class _$ExternalVideo extends ExternalVideo {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
   }) {
     return externalVideo?.call(this);
   }
@@ -2086,8 +2017,6 @@ class _$ExternalVideo extends ExternalVideo {
     TResult Function(Model3d value)? model3d,
     TResult Function(Video value)? video,
     TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
     required TResult orElse(),
   }) {
     if (externalVideo != null) {
@@ -2115,6 +2044,8 @@ abstract class ExternalVideo extends Media {
   factory ExternalVideo.fromJson(Map<String, dynamic> json) =
       _$ExternalVideo.fromJson;
 
+  @override
+
   /// A word or phrase to share the nature or contents of a media.
   String? get alt => throw _privateConstructorUsedError;
 
@@ -2127,604 +2058,17 @@ abstract class ExternalVideo extends Media {
 
   /// A globally-unique identifier.
   String get id => throw _privateConstructorUsedError;
+  @override
 
   /// The media content type.
   @MediaContentTypeJson()
   MediaContentType get mediaContentType => throw _privateConstructorUsedError;
+  @override
 
   /// The preview image for the media.
   ShopifyImage? get previewImage => throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   $ExternalVideoCopyWith<ExternalVideo> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MediaEdgeCopyWith<$Res> {
-  factory $MediaEdgeCopyWith(MediaEdge value, $Res Function(MediaEdge) then) =
-      _$MediaEdgeCopyWithImpl<$Res>;
-  $Res call({String cursor, Media node});
-
-  $MediaCopyWith<$Res> get node;
-}
-
-/// @nodoc
-class _$MediaEdgeCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
-    implements $MediaEdgeCopyWith<$Res> {
-  _$MediaEdgeCopyWithImpl(MediaEdge _value, $Res Function(MediaEdge) _then)
-      : super(_value, (v) => _then(v as MediaEdge));
-
-  @override
-  MediaEdge get _value => super._value as MediaEdge;
-
-  @override
-  $Res call({
-    Object? cursor = freezed,
-    Object? node = freezed,
-  }) {
-    return _then(MediaEdge(
-      cursor: cursor == freezed
-          ? _value.cursor
-          : cursor // ignore: cast_nullable_to_non_nullable
-              as String,
-      node: node == freezed
-          ? _value.node
-          : node // ignore: cast_nullable_to_non_nullable
-              as Media,
-    ));
-  }
-
-  @override
-  $MediaCopyWith<$Res> get node {
-    return $MediaCopyWith<$Res>(_value.node, (value) {
-      return _then(_value.copyWith(node: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MediaEdge extends MediaEdge {
-  const _$MediaEdge({required this.cursor, required this.node}) : super._();
-
-  factory _$MediaEdge.fromJson(Map<String, dynamic> json) =>
-      _$$MediaEdgeFromJson(json);
-
-  @override
-
-  /// A cursor for use in pagination.
-  final String cursor;
-  @override
-
-  /// The item at the end of MediaEdge.
-  final Media node;
-
-  @override
-  String toString() {
-    return 'Media.edge(cursor: $cursor, node: $node)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is MediaEdge &&
-            (identical(other.cursor, cursor) ||
-                const DeepCollectionEquality().equals(other.cursor, cursor)) &&
-            (identical(other.node, node) ||
-                const DeepCollectionEquality().equals(other.node, node)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cursor) ^
-      const DeepCollectionEquality().hash(node);
-
-  @JsonKey(ignore: true)
-  @override
-  $MediaEdgeCopyWith<MediaEdge> get copyWith =>
-      _$MediaEdgeCopyWithImpl<MediaEdge>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String? alt,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        $default, {
-    required TResult Function(
-            String? alt,
-            String id,
-            ShopifyImage? image,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        image,
-    required TResult Function(
-            String? alt,
-            String id,
-            List<Model3dSource> sources,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        model3d,
-    required TResult Function(
-            String? alt,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage,
-            List<VideoSource> sources)
-        video,
-    required TResult Function(
-            String? alt,
-            String embeddedUrl,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
-  }) {
-    return edge(cursor, node);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(
-            String? alt,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        $default, {
-    TResult Function(
-            String? alt,
-            String id,
-            ShopifyImage? image,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        image,
-    TResult Function(
-            String? alt,
-            String id,
-            List<Model3dSource> sources,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        model3d,
-    TResult Function(
-            String? alt,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage,
-            List<VideoSource> sources)?
-        video,
-    TResult Function(
-            String? alt,
-            String embeddedUrl,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
-  }) {
-    return edge?.call(cursor, node);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String? alt,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        $default, {
-    TResult Function(
-            String? alt,
-            String id,
-            ShopifyImage? image,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        image,
-    TResult Function(
-            String? alt,
-            String id,
-            List<Model3dSource> sources,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        model3d,
-    TResult Function(
-            String? alt,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage,
-            List<VideoSource> sources)?
-        video,
-    TResult Function(
-            String? alt,
-            String embeddedUrl,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
-    required TResult orElse(),
-  }) {
-    if (edge != null) {
-      return edge(cursor, node);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Media value) $default, {
-    required TResult Function(MediaImage value) image,
-    required TResult Function(Model3d value) model3d,
-    required TResult Function(Video value) video,
-    required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
-  }) {
-    return edge(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Media value)? $default, {
-    TResult Function(MediaImage value)? image,
-    TResult Function(Model3d value)? model3d,
-    TResult Function(Video value)? video,
-    TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
-  }) {
-    return edge?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Media value)? $default, {
-    TResult Function(MediaImage value)? image,
-    TResult Function(Model3d value)? model3d,
-    TResult Function(Video value)? video,
-    TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
-    required TResult orElse(),
-  }) {
-    if (edge != null) {
-      return edge(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MediaEdgeToJson(this)..['runtimeType'] = 'edge';
-  }
-}
-
-abstract class MediaEdge extends Media {
-  const factory MediaEdge({required String cursor, required Media node}) =
-      _$MediaEdge;
-  const MediaEdge._() : super._();
-
-  factory MediaEdge.fromJson(Map<String, dynamic> json) = _$MediaEdge.fromJson;
-
-  /// A cursor for use in pagination.
-  String get cursor => throw _privateConstructorUsedError;
-
-  /// The item at the end of MediaEdge.
-  Media get node => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MediaEdgeCopyWith<MediaEdge> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MediaPaginationCopyWith<$Res> {
-  factory $MediaPaginationCopyWith(
-          MediaPagination value, $Res Function(MediaPagination) then) =
-      _$MediaPaginationCopyWithImpl<$Res>;
-  $Res call({List<MediaEdge> edges, PageInfo pageInfo});
-
-  $PageInfoCopyWith<$Res> get pageInfo;
-}
-
-/// @nodoc
-class _$MediaPaginationCopyWithImpl<$Res> extends _$MediaCopyWithImpl<$Res>
-    implements $MediaPaginationCopyWith<$Res> {
-  _$MediaPaginationCopyWithImpl(
-      MediaPagination _value, $Res Function(MediaPagination) _then)
-      : super(_value, (v) => _then(v as MediaPagination));
-
-  @override
-  MediaPagination get _value => super._value as MediaPagination;
-
-  @override
-  $Res call({
-    Object? edges = freezed,
-    Object? pageInfo = freezed,
-  }) {
-    return _then(MediaPagination(
-      edges: edges == freezed
-          ? _value.edges
-          : edges // ignore: cast_nullable_to_non_nullable
-              as List<MediaEdge>,
-      pageInfo: pageInfo == freezed
-          ? _value.pageInfo
-          : pageInfo // ignore: cast_nullable_to_non_nullable
-              as PageInfo,
-    ));
-  }
-
-  @override
-  $PageInfoCopyWith<$Res> get pageInfo {
-    return $PageInfoCopyWith<$Res>(_value.pageInfo, (value) {
-      return _then(_value.copyWith(pageInfo: value));
-    });
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MediaPagination extends MediaPagination {
-  const _$MediaPagination({required this.edges, required this.pageInfo})
-      : super._();
-
-  factory _$MediaPagination.fromJson(Map<String, dynamic> json) =>
-      _$$MediaPaginationFromJson(json);
-
-  @override
-
-  /// A list of edges
-  final List<MediaEdge> edges;
-  @override
-
-  /// Information to aid in pagination
-  final PageInfo pageInfo;
-
-  @override
-  String toString() {
-    return 'Media.paginated(edges: $edges, pageInfo: $pageInfo)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is MediaPagination &&
-            (identical(other.edges, edges) ||
-                const DeepCollectionEquality().equals(other.edges, edges)) &&
-            (identical(other.pageInfo, pageInfo) ||
-                const DeepCollectionEquality()
-                    .equals(other.pageInfo, pageInfo)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(edges) ^
-      const DeepCollectionEquality().hash(pageInfo);
-
-  @JsonKey(ignore: true)
-  @override
-  $MediaPaginationCopyWith<MediaPagination> get copyWith =>
-      _$MediaPaginationCopyWithImpl<MediaPagination>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String? alt,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        $default, {
-    required TResult Function(
-            String? alt,
-            String id,
-            ShopifyImage? image,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        image,
-    required TResult Function(
-            String? alt,
-            String id,
-            List<Model3dSource> sources,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        model3d,
-    required TResult Function(
-            String? alt,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage,
-            List<VideoSource> sources)
-        video,
-    required TResult Function(
-            String? alt,
-            String embeddedUrl,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)
-        externalVideo,
-    required TResult Function(String cursor, Media node) edge,
-    required TResult Function(List<MediaEdge> edges, PageInfo pageInfo)
-        paginated,
-  }) {
-    return paginated(edges, pageInfo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(
-            String? alt,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        $default, {
-    TResult Function(
-            String? alt,
-            String id,
-            ShopifyImage? image,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        image,
-    TResult Function(
-            String? alt,
-            String id,
-            List<Model3dSource> sources,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        model3d,
-    TResult Function(
-            String? alt,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage,
-            List<VideoSource> sources)?
-        video,
-    TResult Function(
-            String? alt,
-            String embeddedUrl,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
-  }) {
-    return paginated?.call(edges, pageInfo);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String? alt,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        $default, {
-    TResult Function(
-            String? alt,
-            String id,
-            ShopifyImage? image,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        image,
-    TResult Function(
-            String? alt,
-            String id,
-            List<Model3dSource> sources,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        model3d,
-    TResult Function(
-            String? alt,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage,
-            List<VideoSource> sources)?
-        video,
-    TResult Function(
-            String? alt,
-            String embeddedUrl,
-            @MediaHostJson() MediaHost host,
-            String id,
-            @MediaContentTypeJson() MediaContentType mediaContentType,
-            ShopifyImage? previewImage)?
-        externalVideo,
-    TResult Function(String cursor, Media node)? edge,
-    TResult Function(List<MediaEdge> edges, PageInfo pageInfo)? paginated,
-    required TResult orElse(),
-  }) {
-    if (paginated != null) {
-      return paginated(edges, pageInfo);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_Media value) $default, {
-    required TResult Function(MediaImage value) image,
-    required TResult Function(Model3d value) model3d,
-    required TResult Function(Video value) video,
-    required TResult Function(ExternalVideo value) externalVideo,
-    required TResult Function(MediaEdge value) edge,
-    required TResult Function(MediaPagination value) paginated,
-  }) {
-    return paginated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_Media value)? $default, {
-    TResult Function(MediaImage value)? image,
-    TResult Function(Model3d value)? model3d,
-    TResult Function(Video value)? video,
-    TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
-  }) {
-    return paginated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_Media value)? $default, {
-    TResult Function(MediaImage value)? image,
-    TResult Function(Model3d value)? model3d,
-    TResult Function(Video value)? video,
-    TResult Function(ExternalVideo value)? externalVideo,
-    TResult Function(MediaEdge value)? edge,
-    TResult Function(MediaPagination value)? paginated,
-    required TResult orElse(),
-  }) {
-    if (paginated != null) {
-      return paginated(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MediaPaginationToJson(this)..['runtimeType'] = 'paginated';
-  }
-}
-
-abstract class MediaPagination extends Media {
-  const factory MediaPagination(
-      {required List<MediaEdge> edges,
-      required PageInfo pageInfo}) = _$MediaPagination;
-  const MediaPagination._() : super._();
-
-  factory MediaPagination.fromJson(Map<String, dynamic> json) =
-      _$MediaPagination.fromJson;
-
-  /// A list of edges
-  List<MediaEdge> get edges => throw _privateConstructorUsedError;
-
-  /// Information to aid in pagination
-  PageInfo get pageInfo => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MediaPaginationCopyWith<MediaPagination> get copyWith =>
       throw _privateConstructorUsedError;
 }

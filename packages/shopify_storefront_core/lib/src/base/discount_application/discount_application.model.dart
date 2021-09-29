@@ -29,15 +29,6 @@ class DiscountApplication with _$DiscountApplication {
     required PricingValue value,
   }) = _DiscountApplication;
 
-  /// An auto-generated type which holds one DiscountApplication and a cursor during pagination
-  const factory DiscountApplication.edge({
-    /// A cursor for use in pagination.
-    required String cursor,
-
-    /// The item at the end of DiscountApplicationEdge
-    required DiscountApplication node,
-  }) = DiscountApplicationEdge;
-
   /// {@macro from_json}
   factory DiscountApplication.fromJson(Map<String, dynamic> json) =>
       _$DiscountApplicationFromJson(json);

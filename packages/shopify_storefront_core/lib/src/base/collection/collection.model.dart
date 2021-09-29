@@ -44,24 +44,6 @@ class Collection with _$Collection {
     required DateTime updatedAt,
   }) = _Collection;
 
-  /// {@macro edge}
-  const factory Collection.edge({
-    /// A cursor for use in pagination.
-    required String cursor,
-
-    /// The item at the end of CollectionEdge.
-    required Collection node,
-  }) = CollectionEdge;
-
-  /// {@macro pagination}
-  const factory Collection.paginated({
-    /// A list of edges
-    required List<CollectionEdge> edges,
-
-    /// Information to aid in pagination
-    required PageInfo pageInfo,
-  }) = CollectionPagination;
-
   /// {@macro from_json}
   factory Collection.fromJson(Map<String, dynamic> json) =>
       _$CollectionFromJson(json);

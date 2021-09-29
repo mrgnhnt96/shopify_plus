@@ -106,24 +106,6 @@ class Media with _$Media {
     ShopifyImage? previewImage,
   }) = ExternalVideo;
 
-  /// {@macro edge}
-  const factory Media.edge({
-    /// A cursor for use in pagination.
-    required String cursor,
-
-    /// The item at the end of MediaEdge.
-    required Media node,
-  }) = MediaEdge;
-
-  /// {@macro pagination}
-  const factory Media.paginated({
-    /// A list of edges
-    required List<MediaEdge> edges,
-
-    /// Information to aid in pagination
-    required PageInfo pageInfo,
-  }) = MediaPagination;
-
   /// {@macro from_json}
   factory Media.fromJson(Map<String, dynamic> json) => _$MediaFromJson(json);
 }
