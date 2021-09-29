@@ -23,7 +23,7 @@ CheckoutCreateInput _$CheckoutCreateInputFromJson(Map<String, dynamic> json) =>
           .toList(),
       note: json['note'] as String?,
       country:
-          CurrencyCodeJson.currencyFromJsonNullable(json['country'] as String?),
+          const CurrencyCodeJsonNullable().fromJson(json['country'] as String?),
       shippingAddress: json['shippingAddress'] == null
           ? null
           : MailingAddressInput.fromJson(
@@ -39,6 +39,6 @@ Map<String, dynamic> _$CheckoutCreateInputToJson(
       'email': instance.email,
       'lineItems': instance.lineItems,
       'note': instance.note,
-      'country': CurrencyCodeJson.currencyToJson(instance.country),
+      'country': const CurrencyCodeJsonNullable().toJson(instance.country),
       'shippingAddress': instance.shippingAddress,
     };

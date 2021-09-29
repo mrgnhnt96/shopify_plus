@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/model_3d_source/model_3d_source.model.dart';
 import 'package:shopify_storefront_core/src/domain/page_info/page_info.model.dart';
 import 'package:shopify_storefront_core/src/domain/shopify_image/shopify_image.model.dart';

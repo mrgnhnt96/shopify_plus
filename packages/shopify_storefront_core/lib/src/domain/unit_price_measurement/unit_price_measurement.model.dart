@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shopify_storefront_core/src/enum/measurement_type.dart';
-import 'package:shopify_storefront_core/src/enum/measurement_unit.dart';
+
+// Project imports:
+import 'package:shopify_storefront_core/src/enum/unit_price_measurement_measured_type.dart';
+import 'package:shopify_storefront_core/src/enum/unit_price_measurement_measured_unit.dart';
 
 part 'unit_price_measurement.model.freezed.dart';
 part 'unit_price_measurement.model.g.dart';
@@ -18,16 +21,19 @@ class UnitPriceMeasurement with _$UnitPriceMeasurement {
   /// {@macro unit_price_measurement}
   const factory UnitPriceMeasurement({
     /// The type of unit of measurement for the unit price measurement.
-    @MeasurementTypeJson() MeasurementType? measuredType,
+    @UnitPriceMeasurementMeasuredTypeJsonNullable()
+        UnitPriceMeasurementMeasuredType? measuredType,
 
     /// The quantity unit for the unit price measurement.
-    @MeasurementUnitJson() MeasurementUnit? quantityUnit,
+    @UnitPriceMeasurementMeasuredUnitJsonNullable()
+        UnitPriceMeasurementMeasuredUnit? quantityUnit,
 
     /// The quantity value for the unit price measurement.
     required double quantityValue,
 
     /// The reference unit for the unit price measurement.
-    @MeasurementUnitJson() MeasurementUnit? referenceUnit,
+    @UnitPriceMeasurementMeasuredUnitJsonNullable()
+        UnitPriceMeasurementMeasuredUnit? referenceUnit,
 
     /// The reference value for the unit price measurement.
     required int referenceValue,

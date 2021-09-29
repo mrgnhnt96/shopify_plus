@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/enum/card_brand.dart';
 import 'package:shopify_storefront_core/src/enum/country_code.dart';
 import 'package:shopify_storefront_core/src/enum/currency_code.dart';

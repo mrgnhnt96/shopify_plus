@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/enum/checkout_error_code.dart';
 
 part 'checkout_user_error.model.freezed.dart';
@@ -14,7 +17,7 @@ class CheckoutUserError with _$CheckoutUserError {
   /// {@macro checkout_user_error}
   const factory CheckoutUserError({
     /// The error code.
-    @CheckoutErrorCodeJson() CheckoutErrorCode? code,
+    @CheckoutErrorCodeJsonNullable() CheckoutErrorCode? code,
 
     /// The path to the input field that caused the error.
     List<String>? field,

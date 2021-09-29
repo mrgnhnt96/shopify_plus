@@ -1,6 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
 import 'package:shopify_storefront_core/src/enum/payment_token_type.dart';
+import 'package:shopify_storefront_core/src/input/common/mailing_address_input/mailing_address_input.model.dart';
 
 part 'tokenized_payment_input.model.g.dart';
 
@@ -42,12 +46,8 @@ class TokenizedPaymentInput {
   /// Whether to execute the payment in test mode, if possible. Test mode is not supported in production stores. Defaults to false.
   final bool test;
 
-  @JsonKey(
-    fromJson: PaymentTokenTypeJson.tokenFromJson,
-    toJson: PaymentTokenTypeJson.tokenToJson,
-  )
-
   /// The type of payment token.
+  @PaymentTokenTypeJson()
   final PaymentTokenType type;
 
   /// {@macro to_json}

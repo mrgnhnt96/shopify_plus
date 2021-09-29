@@ -120,6 +120,8 @@ abstract class $MetafieldPageCopyWith<$Res> {
           MetafieldPage value, $Res Function(MetafieldPage) then) =
       _$MetafieldPageCopyWithImpl<$Res>;
   $Res call({List<MetafieldEdge> edges, PageInfo pageInfo});
+
+  $PageInfoCopyWith<$Res> get pageInfo;
 }
 
 /// @nodoc
@@ -148,6 +150,13 @@ class _$MetafieldPageCopyWithImpl<$Res>
           : pageInfo // ignore: cast_nullable_to_non_nullable
               as PageInfo,
     ));
+  }
+
+  @override
+  $PageInfoCopyWith<$Res> get pageInfo {
+    return $PageInfoCopyWith<$Res>(_value.pageInfo, (value) {
+      return _then(_value.copyWith(pageInfo: value));
+    });
   }
 }
 
@@ -290,6 +299,8 @@ abstract class $MetafieldEdgeCopyWith<$Res> {
           MetafieldEdge value, $Res Function(MetafieldEdge) then) =
       _$MetafieldEdgeCopyWithImpl<$Res>;
   $Res call({String cursor, Metafield node});
+
+  $MetafieldCopyWith<$Res> get node;
 }
 
 /// @nodoc
@@ -318,6 +329,13 @@ class _$MetafieldEdgeCopyWithImpl<$Res>
           : node // ignore: cast_nullable_to_non_nullable
               as Metafield,
     ));
+  }
+
+  @override
+  $MetafieldCopyWith<$Res> get node {
+    return $MetafieldCopyWith<$Res>(_value.node, (value) {
+      return _then(_value.copyWith(node: value));
+    });
   }
 }
 

@@ -9,80 +9,25 @@ part of 'unit_price_measurement.model.dart';
 _$_UnitPriceMeasurement _$$_UnitPriceMeasurementFromJson(
         Map<String, dynamic> json) =>
     _$_UnitPriceMeasurement(
-      measuredType:
-          _$enumDecodeNullable(_$MeasurementTypeEnumMap, json['measuredType']),
-      quantityUnit:
-          _$enumDecodeNullable(_$MeasurementUnitEnumMap, json['quantityUnit']),
+      measuredType: const UnitPriceMeasurementMeasuredTypeJsonNullable()
+          .fromJson(json['measuredType'] as String?),
+      quantityUnit: const UnitPriceMeasurementMeasuredUnitJsonNullable()
+          .fromJson(json['quantityUnit'] as String?),
       quantityValue: (json['quantityValue'] as num).toDouble(),
-      referenceUnit:
-          _$enumDecodeNullable(_$MeasurementUnitEnumMap, json['referenceUnit']),
+      referenceUnit: const UnitPriceMeasurementMeasuredUnitJsonNullable()
+          .fromJson(json['referenceUnit'] as String?),
       referenceValue: json['referenceValue'] as int,
     );
 
 Map<String, dynamic> _$$_UnitPriceMeasurementToJson(
         _$_UnitPriceMeasurement instance) =>
     <String, dynamic>{
-      'measuredType': _$MeasurementTypeEnumMap[instance.measuredType],
-      'quantityUnit': _$MeasurementUnitEnumMap[instance.quantityUnit],
+      'measuredType': const UnitPriceMeasurementMeasuredTypeJsonNullable()
+          .toJson(instance.measuredType),
+      'quantityUnit': const UnitPriceMeasurementMeasuredUnitJsonNullable()
+          .toJson(instance.quantityUnit),
       'quantityValue': instance.quantityValue,
-      'referenceUnit': _$MeasurementUnitEnumMap[instance.referenceUnit],
+      'referenceUnit': const UnitPriceMeasurementMeasuredUnitJsonNullable()
+          .toJson(instance.referenceUnit),
       'referenceValue': instance.referenceValue,
     };
-
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
-K? _$enumDecodeNullable<K, V>(
-  Map<K, V> enumValues,
-  dynamic source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    return null;
-  }
-  return _$enumDecode<K, V>(enumValues, source, unknownValue: unknownValue);
-}
-
-const _$MeasurementTypeEnumMap = {
-  MeasurementType.area: 'area',
-  MeasurementType.length: 'length',
-  MeasurementType.volume: 'volume',
-  MeasurementType.weight: 'weight',
-};
-
-const _$MeasurementUnitEnumMap = {
-  MeasurementUnit.centiliters: 'centiliters',
-  MeasurementUnit.centimeters: 'centimeters',
-  MeasurementUnit.weight: 'weight',
-  MeasurementUnit.kilogram: 'kilogram',
-  MeasurementUnit.volume: 'volume',
-  MeasurementUnit.length: 'length',
-  MeasurementUnit.area: 'area',
-  MeasurementUnit.cubicMeter: 'cubicMeter',
-  MeasurementUnit.milligrams: 'milligrams',
-  MeasurementUnit.milliliters: 'milliliters',
-  MeasurementUnit.millimeters: 'millimeters',
-};

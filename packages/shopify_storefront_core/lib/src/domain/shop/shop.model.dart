@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/domain/domain.model.dart';
 import 'package:shopify_storefront_core/src/domain/metafield/metafield.model.dart';
 import 'package:shopify_storefront_core/src/domain/payment_settings/payment_settings.model.dart';
@@ -47,7 +50,7 @@ class Shop with _$Shop {
     ShopPolicy? shippingPolicy,
 
     /// Countries that the shop ships to.
-    required List<CountryCode> shipsToCountries,
+    @CountryCodeJson() required List<CountryCode> shipsToCountries,
 
     /// The shop’s terms of service.
     ShopPolicy? termsOfService,

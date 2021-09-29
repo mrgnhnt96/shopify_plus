@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/fulfillment_tracking_info/fulfillment_tracking_info.model.dart';
 
 part 'fulfillment.model.freezed.dart';

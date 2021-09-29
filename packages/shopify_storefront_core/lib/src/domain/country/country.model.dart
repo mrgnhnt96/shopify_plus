@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/currency/currency.model.dart';
 import 'package:shopify_storefront_core/src/enum/country_code.dart';
 import 'package:shopify_storefront_core/src/enum/unit_system.dart';
@@ -19,7 +22,7 @@ class Country with _$Country {
     required Currency currency,
 
     /// The ISO code of the country.
-    required CountryCode isoCode,
+    @CountryCodeJson() required CountryCode isoCode,
 
     /// The name of the country.
     required String name,

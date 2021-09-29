@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/pricing_value/pricing_value.model.dart';
 
 part 'pricing_percentage_value.model.freezed.dart';

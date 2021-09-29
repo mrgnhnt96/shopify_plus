@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/applied_gift_card/applied_gift_card.model.dart';
 import 'package:shopify_storefront_core/src/domain/attribute/attribute.model.dart';
 import 'package:shopify_storefront_core/src/domain/available_shipping_rates/available_shipping_rates.model.dart';
@@ -107,63 +110,6 @@ class Checkout with _$Checkout {
     /// The url pointing to the checkout accessible from the web.
     required String webUrl,
   }) = _Checkout;
-
-  /// Specifies the fields required to update a checkout's attributes
-  const factory Checkout.updateAttributes({
-    /// Allows setting partial addresses on a Checkout, skipping the full validation of attributes.
-    ///
-    /// The required attributes are city, province, and country.
-    ///
-    /// Full validation of the addresses is still done at completion time.
-    ///
-    /// Defaults to `false` with each operation.
-    @Default(false) bool allowPartialAddresses,
-
-    /// A list of extra information that is added to the checkout.
-    required List<Attribute> customAttributes,
-
-    /// The text of an optional note that a shop owner can attach to the checkout.
-    String? note,
-  }) = CheckoutAttributesInput;
-
-  /// Specifies the identity of the customer associated with the checkout
-  const factory Checkout.updateBuyerIdentity(
-    /// Creates a checkout in the specified country's currency.
-    @CountryCodeJson() CountryCode countryCode,
-  ) = CheckoutBuyerIdentityInput;
-
-  /// Specifies the fields required to create a checkout
-  const factory Checkout.create({
-    /// Allows setting partial addresses on a Checkout, skipping the full validation of attributes.
-    ///
-    /// The required attributes are city, province, and country.
-    ///
-    /// Full validation of addresses is still done at completion time. Defaults to null.
-    bool? allowPartialAddresses,
-
-    /// The identity of the customer associated with the checkout.
-    CheckoutBuyerIdentityInput? buyerIdentity,
-
-    /// A list of extra information that is added to the checkout.
-    List<Attribute>? customAttributes,
-
-    /// The email with which the customer wants to checkout.
-    String? email,
-
-    /// A list of line item objects, each one containing information about an item in the checkout.
-    List<CheckoutLineItemInput>? lineItems,
-
-    /// The text of an optional note that a shop owner can attach to the checkout.
-    String? note,
-
-    /// Including this field creates a checkout in the specified currency.
-    ///
-    /// By default, new checkouts are created in the shop's primary currency. This argument is deprecated: Use country field instead.
-    @CountryCodeJson() CountryCode? country,
-
-    /// The shipping address to where the line items will be shipped.
-    MailingAddressInput? shippingAddress,
-  }) = CheckoutCreate;
 
   /// {@macro from_json}
   factory Checkout.fromJson(Map<String, dynamic> json) =>

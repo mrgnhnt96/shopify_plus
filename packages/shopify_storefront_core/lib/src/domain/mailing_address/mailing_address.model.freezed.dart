@@ -14,16 +14,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 MailingAddress _$MailingAddressFromJson(Map<String, dynamic> json) {
-  switch (json['runtimeType'] as String?) {
-    case 'default':
-      return _MailingAddress.fromJson(json);
-    case 'create':
-      return MailingAddressInput.fromJson(json);
-
-    default:
-      throw CheckedFromJsonException(json, 'runtimeType', 'MailingAddress',
-          'Invalid union type "${json['runtimeType']}"!');
-  }
+  return _MailingAddress.fromJson(json);
 }
 
 /// @nodoc
@@ -71,31 +62,6 @@ class _$MailingAddressTearOff {
     );
   }
 
-  MailingAddressInput create(
-      {String? address1,
-      String? address2,
-      String? city,
-      String? company,
-      @CountryCodeJson() CountryCode? country,
-      String? firstName,
-      String? lastName,
-      String? phone,
-      String? province,
-      String? zip}) {
-    return MailingAddressInput(
-      address1: address1,
-      address2: address2,
-      city: city,
-      company: company,
-      country: country,
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone,
-      province: province,
-      zip: zip,
-    );
-  }
-
   MailingAddress fromJson(Map<String, Object> json) {
     return MailingAddress.fromJson(json);
   }
@@ -118,11 +84,38 @@ mixin _$MailingAddress {
   /// The name of the customer's company or organization.
   String? get company => throw _privateConstructorUsedError;
 
+  /// The name of the country.
+  String? get country => throw _privateConstructorUsedError;
+
+  /// The two-letter code for the country of the address.
+  ///
+  /// For example, US.
+  @JsonKey(name: 'countryCodeV2')
+  String? get countryCode => throw _privateConstructorUsedError;
+
   /// The first name of the customer.
   String? get firstName => throw _privateConstructorUsedError;
 
+  /// A formatted version of the address, customized by the provided arguments.
+  String get formatted => throw _privateConstructorUsedError;
+
+  /// A comma-separated list of the values for city, province, and country.
+  String? get formattedArea => throw _privateConstructorUsedError;
+
+  /// {@macro id}
+  String get id => throw _privateConstructorUsedError;
+
   /// The last name of the customer.
   String? get lastName => throw _privateConstructorUsedError;
+
+  /// The latitude coordinate of the customer address.
+  double? get latitude => throw _privateConstructorUsedError;
+
+  /// The longitude coordinate of the customer address.
+  double? get longitude => throw _privateConstructorUsedError;
+
+  /// The full name of the customer, based on firstName and lastName.
+  String? get name => throw _privateConstructorUsedError;
 
   /// A unique phone number for the customer.
   /// Formatted using E.164 standard.
@@ -133,137 +126,14 @@ mixin _$MailingAddress {
   /// The region of the address, such as the province, state, or district.
   String? get province => throw _privateConstructorUsedError;
 
+  /// The two-letter code for the region.
+  ///
+  /// For example, ON.
+  String? get provinceCode => throw _privateConstructorUsedError;
+
   /// The zip or postal code of the address.
   String? get zip => throw _privateConstructorUsedError;
 
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)
-        $default, {
-    required TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)
-        create,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)?
-        $default, {
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)?
-        create,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)?
-        $default, {
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)?
-        create,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MailingAddress value) $default, {
-    required TResult Function(MailingAddressInput value) create,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_MailingAddress value)? $default, {
-    TResult Function(MailingAddressInput value)? create,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MailingAddress value)? $default, {
-    TResult Function(MailingAddressInput value)? create,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MailingAddressCopyWith<MailingAddress> get copyWith =>
@@ -280,10 +150,19 @@ abstract class $MailingAddressCopyWith<$Res> {
       String? address2,
       String? city,
       String? company,
+      String? country,
+      @JsonKey(name: 'countryCodeV2') String? countryCode,
       String? firstName,
+      String formatted,
+      String? formattedArea,
+      String id,
       String? lastName,
+      double? latitude,
+      double? longitude,
+      String? name,
       String? phone,
       String? province,
+      String? provinceCode,
       String? zip});
 }
 
@@ -302,10 +181,19 @@ class _$MailingAddressCopyWithImpl<$Res>
     Object? address2 = freezed,
     Object? city = freezed,
     Object? company = freezed,
+    Object? country = freezed,
+    Object? countryCode = freezed,
     Object? firstName = freezed,
+    Object? formatted = freezed,
+    Object? formattedArea = freezed,
+    Object? id = freezed,
     Object? lastName = freezed,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? name = freezed,
     Object? phone = freezed,
     Object? province = freezed,
+    Object? provinceCode = freezed,
     Object? zip = freezed,
   }) {
     return _then(_value.copyWith(
@@ -325,13 +213,45 @@ class _$MailingAddressCopyWithImpl<$Res>
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
               as String?,
+      country: country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String?,
+      countryCode: countryCode == freezed
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String?,
+      formatted: formatted == freezed
+          ? _value.formatted
+          : formatted // ignore: cast_nullable_to_non_nullable
+              as String,
+      formattedArea: formattedArea == freezed
+          ? _value.formattedArea
+          : formattedArea // ignore: cast_nullable_to_non_nullable
+              as String?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       lastName: lastName == freezed
           ? _value.lastName
           : lastName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      latitude: latitude == freezed
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: longitude == freezed
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
       phone: phone == freezed
           ? _value.phone
@@ -340,6 +260,10 @@ class _$MailingAddressCopyWithImpl<$Res>
       province: province == freezed
           ? _value.province
           : province // ignore: cast_nullable_to_non_nullable
+              as String?,
+      provinceCode: provinceCode == freezed
+          ? _value.provinceCode
+          : provinceCode // ignore: cast_nullable_to_non_nullable
               as String?,
       zip: zip == freezed
           ? _value.zip
@@ -682,214 +606,8 @@ class _$_MailingAddress extends _MailingAddress {
       __$MailingAddressCopyWithImpl<_MailingAddress>(this, _$identity);
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)
-        $default, {
-    required TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)
-        create,
-  }) {
-    return $default(
-        address1,
-        address2,
-        city,
-        company,
-        country,
-        countryCode,
-        firstName,
-        formatted,
-        formattedArea,
-        id,
-        lastName,
-        latitude,
-        longitude,
-        name,
-        phone,
-        province,
-        provinceCode,
-        zip);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)?
-        $default, {
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)?
-        create,
-  }) {
-    return $default?.call(
-        address1,
-        address2,
-        city,
-        company,
-        country,
-        countryCode,
-        firstName,
-        formatted,
-        formattedArea,
-        id,
-        lastName,
-        latitude,
-        longitude,
-        name,
-        phone,
-        province,
-        provinceCode,
-        zip);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)?
-        $default, {
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)?
-        create,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(
-          address1,
-          address2,
-          city,
-          company,
-          country,
-          countryCode,
-          firstName,
-          formatted,
-          formattedArea,
-          id,
-          lastName,
-          latitude,
-          longitude,
-          name,
-          phone,
-          province,
-          provinceCode,
-          zip);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MailingAddress value) $default, {
-    required TResult Function(MailingAddressInput value) create,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_MailingAddress value)? $default, {
-    TResult Function(MailingAddressInput value)? create,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MailingAddress value)? $default, {
-    TResult Function(MailingAddressInput value)? create,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
-
-  @override
   Map<String, dynamic> toJson() {
-    return _$$_MailingAddressToJson(this)..['runtimeType'] = 'default';
+    return _$$_MailingAddressToJson(this);
   }
 }
 
@@ -934,9 +652,11 @@ abstract class _MailingAddress extends MailingAddress {
 
   /// The name of the customer's company or organization.
   String? get company => throw _privateConstructorUsedError;
+  @override
 
   /// The name of the country.
   String? get country => throw _privateConstructorUsedError;
+  @override
 
   /// The two-letter code for the country of the address.
   ///
@@ -947,12 +667,15 @@ abstract class _MailingAddress extends MailingAddress {
 
   /// The first name of the customer.
   String? get firstName => throw _privateConstructorUsedError;
+  @override
 
   /// A formatted version of the address, customized by the provided arguments.
   String get formatted => throw _privateConstructorUsedError;
+  @override
 
   /// A comma-separated list of the values for city, province, and country.
   String? get formattedArea => throw _privateConstructorUsedError;
+  @override
 
   /// {@macro id}
   String get id => throw _privateConstructorUsedError;
@@ -960,12 +683,15 @@ abstract class _MailingAddress extends MailingAddress {
 
   /// The last name of the customer.
   String? get lastName => throw _privateConstructorUsedError;
+  @override
 
   /// The latitude coordinate of the customer address.
   double? get latitude => throw _privateConstructorUsedError;
+  @override
 
   /// The longitude coordinate of the customer address.
   double? get longitude => throw _privateConstructorUsedError;
+  @override
 
   /// The full name of the customer, based on firstName and lastName.
   String? get name => throw _privateConstructorUsedError;
@@ -980,6 +706,7 @@ abstract class _MailingAddress extends MailingAddress {
 
   /// The region of the address, such as the province, state, or district.
   String? get province => throw _privateConstructorUsedError;
+  @override
 
   /// The two-letter code for the region.
   ///
@@ -992,440 +719,5 @@ abstract class _MailingAddress extends MailingAddress {
   @override
   @JsonKey(ignore: true)
   _$MailingAddressCopyWith<_MailingAddress> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MailingAddressInputCopyWith<$Res>
-    implements $MailingAddressCopyWith<$Res> {
-  factory $MailingAddressInputCopyWith(
-          MailingAddressInput value, $Res Function(MailingAddressInput) then) =
-      _$MailingAddressInputCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {String? address1,
-      String? address2,
-      String? city,
-      String? company,
-      @CountryCodeJson() CountryCode? country,
-      String? firstName,
-      String? lastName,
-      String? phone,
-      String? province,
-      String? zip});
-}
-
-/// @nodoc
-class _$MailingAddressInputCopyWithImpl<$Res>
-    extends _$MailingAddressCopyWithImpl<$Res>
-    implements $MailingAddressInputCopyWith<$Res> {
-  _$MailingAddressInputCopyWithImpl(
-      MailingAddressInput _value, $Res Function(MailingAddressInput) _then)
-      : super(_value, (v) => _then(v as MailingAddressInput));
-
-  @override
-  MailingAddressInput get _value => super._value as MailingAddressInput;
-
-  @override
-  $Res call({
-    Object? address1 = freezed,
-    Object? address2 = freezed,
-    Object? city = freezed,
-    Object? company = freezed,
-    Object? country = freezed,
-    Object? firstName = freezed,
-    Object? lastName = freezed,
-    Object? phone = freezed,
-    Object? province = freezed,
-    Object? zip = freezed,
-  }) {
-    return _then(MailingAddressInput(
-      address1: address1 == freezed
-          ? _value.address1
-          : address1 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address2: address2 == freezed
-          ? _value.address2
-          : address2 // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: city == freezed
-          ? _value.city
-          : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      company: company == freezed
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String?,
-      country: country == freezed
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as CountryCode?,
-      firstName: firstName == freezed
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastName: lastName == freezed
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      phone: phone == freezed
-          ? _value.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      province: province == freezed
-          ? _value.province
-          : province // ignore: cast_nullable_to_non_nullable
-              as String?,
-      zip: zip == freezed
-          ? _value.zip
-          : zip // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MailingAddressInput extends MailingAddressInput {
-  const _$MailingAddressInput(
-      {this.address1,
-      this.address2,
-      this.city,
-      this.company,
-      @CountryCodeJson() this.country,
-      this.firstName,
-      this.lastName,
-      this.phone,
-      this.province,
-      this.zip})
-      : super._();
-
-  factory _$MailingAddressInput.fromJson(Map<String, dynamic> json) =>
-      _$$MailingAddressInputFromJson(json);
-
-  @override
-
-  /// The first line of the address. Typically the street address or PO Box number.
-  final String? address1;
-  @override
-
-  /// The second line of the address. Typically the number of the apartment, suite, or unit.
-  final String? address2;
-  @override
-
-  /// The name of the city, district, village, or town.
-  final String? city;
-  @override
-
-  /// The name of the customer's company or organization.
-  final String? company;
-  @override
-
-  /// The name of the country.
-  @CountryCodeJson()
-  final CountryCode? country;
-  @override
-
-  /// The first name of the customer.
-  final String? firstName;
-  @override
-
-  /// The last name of the customer.
-  final String? lastName;
-  @override
-
-  /// A unique phone number for the customer.
-  ///
-  /// Formatted using E.164 standard. For example, +16135551111.
-  final String? phone;
-  @override
-
-  /// The region of the address, such as the province, state, or district.
-  final String? province;
-  @override
-
-  /// The zip or postal code of the address.
-  final String? zip;
-
-  @override
-  String toString() {
-    return 'MailingAddress.create(address1: $address1, address2: $address2, city: $city, company: $company, country: $country, firstName: $firstName, lastName: $lastName, phone: $phone, province: $province, zip: $zip)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is MailingAddressInput &&
-            (identical(other.address1, address1) ||
-                const DeepCollectionEquality()
-                    .equals(other.address1, address1)) &&
-            (identical(other.address2, address2) ||
-                const DeepCollectionEquality()
-                    .equals(other.address2, address2)) &&
-            (identical(other.city, city) ||
-                const DeepCollectionEquality().equals(other.city, city)) &&
-            (identical(other.company, company) ||
-                const DeepCollectionEquality()
-                    .equals(other.company, company)) &&
-            (identical(other.country, country) ||
-                const DeepCollectionEquality()
-                    .equals(other.country, country)) &&
-            (identical(other.firstName, firstName) ||
-                const DeepCollectionEquality()
-                    .equals(other.firstName, firstName)) &&
-            (identical(other.lastName, lastName) ||
-                const DeepCollectionEquality()
-                    .equals(other.lastName, lastName)) &&
-            (identical(other.phone, phone) ||
-                const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.province, province) ||
-                const DeepCollectionEquality()
-                    .equals(other.province, province)) &&
-            (identical(other.zip, zip) ||
-                const DeepCollectionEquality().equals(other.zip, zip)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(address1) ^
-      const DeepCollectionEquality().hash(address2) ^
-      const DeepCollectionEquality().hash(city) ^
-      const DeepCollectionEquality().hash(company) ^
-      const DeepCollectionEquality().hash(country) ^
-      const DeepCollectionEquality().hash(firstName) ^
-      const DeepCollectionEquality().hash(lastName) ^
-      const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(province) ^
-      const DeepCollectionEquality().hash(zip);
-
-  @JsonKey(ignore: true)
-  @override
-  $MailingAddressInputCopyWith<MailingAddressInput> get copyWith =>
-      _$MailingAddressInputCopyWithImpl<MailingAddressInput>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)
-        $default, {
-    required TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)
-        create,
-  }) {
-    return create(address1, address2, city, company, country, firstName,
-        lastName, phone, province, zip);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)?
-        $default, {
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)?
-        create,
-  }) {
-    return create?.call(address1, address2, city, company, country, firstName,
-        lastName, phone, province, zip);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            String? country,
-            @JsonKey(name: 'countryCodeV2') String? countryCode,
-            String? firstName,
-            String formatted,
-            String? formattedArea,
-            String id,
-            String? lastName,
-            double? latitude,
-            double? longitude,
-            String? name,
-            String? phone,
-            String? province,
-            String? provinceCode,
-            String? zip)?
-        $default, {
-    TResult Function(
-            String? address1,
-            String? address2,
-            String? city,
-            String? company,
-            @CountryCodeJson() CountryCode? country,
-            String? firstName,
-            String? lastName,
-            String? phone,
-            String? province,
-            String? zip)?
-        create,
-    required TResult orElse(),
-  }) {
-    if (create != null) {
-      return create(address1, address2, city, company, country, firstName,
-          lastName, phone, province, zip);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_MailingAddress value) $default, {
-    required TResult Function(MailingAddressInput value) create,
-  }) {
-    return create(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult Function(_MailingAddress value)? $default, {
-    TResult Function(MailingAddressInput value)? create,
-  }) {
-    return create?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_MailingAddress value)? $default, {
-    TResult Function(MailingAddressInput value)? create,
-    required TResult orElse(),
-  }) {
-    if (create != null) {
-      return create(this);
-    }
-    return orElse();
-  }
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MailingAddressInputToJson(this)..['runtimeType'] = 'create';
-  }
-}
-
-abstract class MailingAddressInput extends MailingAddress {
-  const factory MailingAddressInput(
-      {String? address1,
-      String? address2,
-      String? city,
-      String? company,
-      @CountryCodeJson() CountryCode? country,
-      String? firstName,
-      String? lastName,
-      String? phone,
-      String? province,
-      String? zip}) = _$MailingAddressInput;
-  const MailingAddressInput._() : super._();
-
-  factory MailingAddressInput.fromJson(Map<String, dynamic> json) =
-      _$MailingAddressInput.fromJson;
-
-  @override
-
-  /// The first line of the address. Typically the street address or PO Box number.
-  String? get address1 => throw _privateConstructorUsedError;
-  @override
-
-  /// The second line of the address. Typically the number of the apartment, suite, or unit.
-  String? get address2 => throw _privateConstructorUsedError;
-  @override
-
-  /// The name of the city, district, village, or town.
-  String? get city => throw _privateConstructorUsedError;
-  @override
-
-  /// The name of the customer's company or organization.
-  String? get company => throw _privateConstructorUsedError;
-
-  /// The name of the country.
-  @CountryCodeJson()
-  CountryCode? get country => throw _privateConstructorUsedError;
-  @override
-
-  /// The first name of the customer.
-  String? get firstName => throw _privateConstructorUsedError;
-  @override
-
-  /// The last name of the customer.
-  String? get lastName => throw _privateConstructorUsedError;
-  @override
-
-  /// A unique phone number for the customer.
-  ///
-  /// Formatted using E.164 standard. For example, +16135551111.
-  String? get phone => throw _privateConstructorUsedError;
-  @override
-
-  /// The region of the address, such as the province, state, or district.
-  String? get province => throw _privateConstructorUsedError;
-  @override
-
-  /// The zip or postal code of the address.
-  String? get zip => throw _privateConstructorUsedError;
-  @override
-  @JsonKey(ignore: true)
-  $MailingAddressInputCopyWith<MailingAddressInput> get copyWith =>
       throw _privateConstructorUsedError;
 }

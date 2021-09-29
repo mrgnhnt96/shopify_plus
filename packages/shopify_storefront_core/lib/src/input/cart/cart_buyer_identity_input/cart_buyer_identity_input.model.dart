@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:json_annotation/json_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
 
 part 'cart_buyer_identity_input.model.g.dart';
@@ -21,10 +24,7 @@ class CartBuyerIdentityInput {
       _$CartBuyerIdentityInputFromJson(json);
 
   /// The country where the buyer is located.
-  @JsonKey(
-    fromJson: CountryCodeJson.countryFromJsonNullable,
-    toJson: CountryCodeJson.countryToJson,
-  )
+  @CountryCodeJsonNullable()
   final CountryCode? countryCode;
 
   /// The access token used to identify the customer associated with the cart.

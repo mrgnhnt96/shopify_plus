@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/selling_plan_price_adjustment_value/selling_plan_price_adjustment_value.model.dart';
 
 part 'selling_plan_price_adjustment.model.freezed.dart';

@@ -1,12 +1,15 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:shopify_core/src/domain/page_info/page_info.model.dart';
+
+// Project imports:
+import 'package:shopify_storefront_core/shopify_core.dart';
 
 part 'metafield_pagination.model.freezed.dart';
 part 'metafield_pagination.model.g.dart';
 
 /// {@macro pagination}
 @freezed
-class MetafieldPagination with _$MetafieldPagination  {
+class MetafieldPagination with _$MetafieldPagination {
   const MetafieldPagination._();
 
   /// {@macro pagination}
@@ -30,5 +33,4 @@ class MetafieldPagination with _$MetafieldPagination  {
   /// {@macro from_json}
   factory MetafieldPagination.fromJson(Map<String, dynamic> json) =>
       _$MetafieldPaginationFromJson(json);
-
 }

@@ -17,7 +17,7 @@ TokenizedPaymentInput _$TokenizedPaymentInputFromJson(
           MoneyInput.fromJson(json['paymentAmount'] as Map<String, dynamic>),
       paymentData: json['paymentData'] as String,
       test: json['test'] as bool,
-      type: PaymentTokenTypeJson.tokenFromJson(json['type'] as String?),
+      type: const PaymentTokenTypeJson().fromJson(json['type'] as String),
     );
 
 Map<String, dynamic> _$TokenizedPaymentInputToJson(
@@ -29,5 +29,5 @@ Map<String, dynamic> _$TokenizedPaymentInputToJson(
       'paymentAmount': instance.paymentAmount,
       'paymentData': instance.paymentData,
       'test': instance.test,
-      'type': PaymentTokenTypeJson.tokenToJson(instance.type),
+      'type': const PaymentTokenTypeJson().toJson(instance.type),
     };

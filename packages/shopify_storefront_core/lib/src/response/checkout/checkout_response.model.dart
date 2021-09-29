@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
 import 'package:shopify_storefront_core/src/error/checkout_user/checkout_user_error.model.dart';
 

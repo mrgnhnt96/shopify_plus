@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/enum/country_code.dart';
 
 part 'currency.model.freezed.dart';
@@ -14,7 +17,7 @@ class Currency with _$Currency {
   /// {@macro currency}
   const factory Currency({
     /// The ISO code of the currency.
-    required CountryCode isoCode,
+    @CountryCodeJson() required CountryCode isoCode,
 
     /// The name of the currency.
     required String name,

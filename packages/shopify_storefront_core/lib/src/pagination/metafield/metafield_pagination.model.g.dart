@@ -11,7 +11,7 @@ _$MetafieldPage _$$MetafieldPageFromJson(Map<String, dynamic> json) =>
       edges: (json['edges'] as List<dynamic>)
           .map((e) => MetafieldEdge.fromJson(e as Map<String, dynamic>))
           .toList(),
-      pageInfo: json['pageInfo'],
+      pageInfo: PageInfo.fromJson(json['pageInfo'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$MetafieldPageToJson(_$MetafieldPage instance) =>
@@ -23,7 +23,7 @@ Map<String, dynamic> _$$MetafieldPageToJson(_$MetafieldPage instance) =>
 _$MetafieldEdge _$$MetafieldEdgeFromJson(Map<String, dynamic> json) =>
     _$MetafieldEdge(
       cursor: json['cursor'] as String,
-      node: json['node'],
+      node: Metafield.fromJson(json['node'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$MetafieldEdgeToJson(_$MetafieldEdge instance) =>

@@ -26,7 +26,7 @@ class _$TransactionTearOff {
           required Money amount,
       @TransactionKindJson()
           required TransactionKind kind,
-      @TransactionStatusJson()
+      @TransactionStatusJsonNullable()
       @JsonKey(name: 'statusV2')
           TransactionStatus? status,
       bool test = false}) {
@@ -57,7 +57,7 @@ mixin _$Transaction {
   TransactionKind get kind => throw _privateConstructorUsedError;
 
   /// The status of the transaction.
-  @TransactionStatusJson()
+  @TransactionStatusJsonNullable()
   @JsonKey(name: 'statusV2')
   TransactionStatus? get status => throw _privateConstructorUsedError;
 
@@ -80,7 +80,7 @@ abstract class $TransactionCopyWith<$Res> {
           Money amount,
       @TransactionKindJson()
           TransactionKind kind,
-      @TransactionStatusJson()
+      @TransactionStatusJsonNullable()
       @JsonKey(name: 'statusV2')
           TransactionStatus? status,
       bool test});
@@ -143,7 +143,7 @@ abstract class _$TransactionCopyWith<$Res>
           Money amount,
       @TransactionKindJson()
           TransactionKind kind,
-      @TransactionStatusJson()
+      @TransactionStatusJsonNullable()
       @JsonKey(name: 'statusV2')
           TransactionStatus? status,
       bool test});
@@ -196,7 +196,7 @@ class _$_Transaction extends _Transaction {
   const _$_Transaction(
       {@JsonKey(name: 'amountV2') required this.amount,
       @TransactionKindJson() required this.kind,
-      @TransactionStatusJson() @JsonKey(name: 'statusV2') this.status,
+      @TransactionStatusJsonNullable() @JsonKey(name: 'statusV2') this.status,
       this.test = false})
       : super._();
 
@@ -216,7 +216,7 @@ class _$_Transaction extends _Transaction {
   @override
 
   /// The status of the transaction.
-  @TransactionStatusJson()
+  @TransactionStatusJsonNullable()
   @JsonKey(name: 'statusV2')
   final TransactionStatus? status;
   @JsonKey(defaultValue: false)
@@ -269,7 +269,7 @@ abstract class _Transaction extends Transaction {
           required Money amount,
       @TransactionKindJson()
           required TransactionKind kind,
-      @TransactionStatusJson()
+      @TransactionStatusJsonNullable()
       @JsonKey(name: 'statusV2')
           TransactionStatus? status,
       bool test}) = _$_Transaction;
@@ -291,7 +291,7 @@ abstract class _Transaction extends Transaction {
   @override
 
   /// The status of the transaction.
-  @TransactionStatusJson()
+  @TransactionStatusJsonNullable()
   @JsonKey(name: 'statusV2')
   TransactionStatus? get status => throw _privateConstructorUsedError;
   @override

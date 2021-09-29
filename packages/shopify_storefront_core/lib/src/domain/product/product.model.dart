@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/metafield/metafield.model.dart';
 import 'package:shopify_storefront_core/src/domain/product_option/product_option.model.dart';
 import 'package:shopify_storefront_core/src/domain/product_price_range/product_price_range.model.dart';

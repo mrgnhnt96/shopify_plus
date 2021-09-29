@@ -31,7 +31,7 @@ class _$ShopTearOff {
       ShopPolicy? privacyPolicy,
       ShopPolicy? refundPolicy,
       ShopPolicy? shippingPolicy,
-      required List<CountryCode> shipsToCountries,
+      @CountryCodeJson() required List<CountryCode> shipsToCountries,
       ShopPolicy? termsOfService}) {
     return _Shop(
       description: description,
@@ -86,6 +86,7 @@ mixin _$Shop {
   ShopPolicy? get shippingPolicy => throw _privateConstructorUsedError;
 
   /// Countries that the shop ships to.
+  @CountryCodeJson()
   List<CountryCode> get shipsToCountries => throw _privateConstructorUsedError;
 
   /// The shop’s terms of service.
@@ -110,7 +111,7 @@ abstract class $ShopCopyWith<$Res> {
       ShopPolicy? privacyPolicy,
       ShopPolicy? refundPolicy,
       ShopPolicy? shippingPolicy,
-      List<CountryCode> shipsToCountries,
+      @CountryCodeJson() List<CountryCode> shipsToCountries,
       ShopPolicy? termsOfService});
 
   $MetafieldCopyWith<$Res>? get metafield;
@@ -277,7 +278,7 @@ abstract class _$ShopCopyWith<$Res> implements $ShopCopyWith<$Res> {
       ShopPolicy? privacyPolicy,
       ShopPolicy? refundPolicy,
       ShopPolicy? shippingPolicy,
-      List<CountryCode> shipsToCountries,
+      @CountryCodeJson() List<CountryCode> shipsToCountries,
       ShopPolicy? termsOfService});
 
   @override
@@ -381,7 +382,7 @@ class _$_Shop extends _Shop {
       this.privacyPolicy,
       this.refundPolicy,
       this.shippingPolicy,
-      required this.shipsToCountries,
+      @CountryCodeJson() required this.shipsToCountries,
       this.termsOfService})
       : super._();
 
@@ -426,6 +427,7 @@ class _$_Shop extends _Shop {
   @override
 
   /// Countries that the shop ships to.
+  @CountryCodeJson()
   final List<CountryCode> shipsToCountries;
   @override
 
@@ -512,7 +514,7 @@ abstract class _Shop extends Shop {
       ShopPolicy? privacyPolicy,
       ShopPolicy? refundPolicy,
       ShopPolicy? shippingPolicy,
-      required List<CountryCode> shipsToCountries,
+      @CountryCodeJson() required List<CountryCode> shipsToCountries,
       ShopPolicy? termsOfService}) = _$_Shop;
   const _Shop._() : super._();
 
@@ -557,6 +559,7 @@ abstract class _Shop extends Shop {
   @override
 
   /// Countries that the shop ships to.
+  @CountryCodeJson()
   List<CountryCode> get shipsToCountries => throw _privateConstructorUsedError;
   @override
 

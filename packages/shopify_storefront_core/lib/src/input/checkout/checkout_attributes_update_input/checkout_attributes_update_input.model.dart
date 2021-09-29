@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
 
 part 'checkout_attributes_update_input.model.g.dart';

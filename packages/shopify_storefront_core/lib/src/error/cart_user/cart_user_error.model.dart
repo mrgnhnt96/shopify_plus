@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/enum/cart_error_code.dart';
 
 part 'cart_user_error.model.freezed.dart';

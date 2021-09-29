@@ -23,7 +23,7 @@ class _$CountryTearOff {
 
   _Country call(
       {required Currency currency,
-      required CountryCode isoCode,
+      @CountryCodeJson() required CountryCode isoCode,
       required String name,
       @UnitSystemJson() required UnitSystem unitSystem}) {
     return _Country(
@@ -48,6 +48,7 @@ mixin _$Country {
   Currency get currency => throw _privateConstructorUsedError;
 
   /// The ISO code of the country.
+  @CountryCodeJson()
   CountryCode get isoCode => throw _privateConstructorUsedError;
 
   /// The name of the country.
@@ -68,7 +69,7 @@ abstract class $CountryCopyWith<$Res> {
       _$CountryCopyWithImpl<$Res>;
   $Res call(
       {Currency currency,
-      CountryCode isoCode,
+      @CountryCodeJson() CountryCode isoCode,
       String name,
       @UnitSystemJson() UnitSystem unitSystem});
 
@@ -125,7 +126,7 @@ abstract class _$CountryCopyWith<$Res> implements $CountryCopyWith<$Res> {
   @override
   $Res call(
       {Currency currency,
-      CountryCode isoCode,
+      @CountryCodeJson() CountryCode isoCode,
       String name,
       @UnitSystemJson() UnitSystem unitSystem});
 
@@ -175,7 +176,7 @@ class __$CountryCopyWithImpl<$Res> extends _$CountryCopyWithImpl<$Res>
 class _$_Country extends _Country {
   const _$_Country(
       {required this.currency,
-      required this.isoCode,
+      @CountryCodeJson() required this.isoCode,
       required this.name,
       @UnitSystemJson() required this.unitSystem})
       : super._();
@@ -190,6 +191,7 @@ class _$_Country extends _Country {
   @override
 
   /// The ISO code of the country.
+  @CountryCodeJson()
   final CountryCode isoCode;
   @override
 
@@ -245,7 +247,7 @@ class _$_Country extends _Country {
 abstract class _Country extends Country {
   const factory _Country(
       {required Currency currency,
-      required CountryCode isoCode,
+      @CountryCodeJson() required CountryCode isoCode,
       required String name,
       @UnitSystemJson() required UnitSystem unitSystem}) = _$_Country;
   const _Country._() : super._();
@@ -259,6 +261,7 @@ abstract class _Country extends Country {
   @override
 
   /// The ISO code of the country.
+  @CountryCodeJson()
   CountryCode get isoCode => throw _privateConstructorUsedError;
   @override
 

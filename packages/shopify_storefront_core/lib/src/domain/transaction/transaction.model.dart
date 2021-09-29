@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/money/money.model.dart';
 import 'package:shopify_storefront_core/src/enum/transaction_kind.dart';
 import 'package:shopify_storefront_core/src/enum/transaction_status.dart';
@@ -24,7 +27,7 @@ class Transaction with _$Transaction {
     @TransactionKindJson() required TransactionKind kind,
 
     /// The status of the transaction.
-    @TransactionStatusJson()
+    @TransactionStatusJsonNullable()
     @JsonKey(name: 'statusV2')
         TransactionStatus? status,
 

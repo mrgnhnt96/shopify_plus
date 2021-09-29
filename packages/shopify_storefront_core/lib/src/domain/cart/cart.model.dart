@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/attribute/attribute.model.dart';
 import 'package:shopify_storefront_core/src/domain/buyer_identity/buyer_identity.model.dart';
 import 'package:shopify_storefront_core/src/domain/discount_code/discount_code.model.dart';

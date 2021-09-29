@@ -22,10 +22,13 @@ class _$UnitPriceMeasurementTearOff {
   const _$UnitPriceMeasurementTearOff();
 
   _UnitPriceMeasurement call(
-      {@MeasurementTypeJson() MeasurementType? measuredType,
-      @MeasurementUnitJson() MeasurementUnit? quantityUnit,
+      {@UnitPriceMeasurementMeasuredTypeJsonNullable()
+          UnitPriceMeasurementMeasuredType? measuredType,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? quantityUnit,
       required double quantityValue,
-      @MeasurementUnitJson() MeasurementUnit? referenceUnit,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? referenceUnit,
       required int referenceValue}) {
     return _UnitPriceMeasurement(
       measuredType: measuredType,
@@ -47,19 +50,22 @@ const $UnitPriceMeasurement = _$UnitPriceMeasurementTearOff();
 /// @nodoc
 mixin _$UnitPriceMeasurement {
   /// The type of unit of measurement for the unit price measurement.
-  @MeasurementTypeJson()
-  MeasurementType? get measuredType => throw _privateConstructorUsedError;
+  @UnitPriceMeasurementMeasuredTypeJsonNullable()
+  UnitPriceMeasurementMeasuredType? get measuredType =>
+      throw _privateConstructorUsedError;
 
   /// The quantity unit for the unit price measurement.
-  @MeasurementUnitJson()
-  MeasurementUnit? get quantityUnit => throw _privateConstructorUsedError;
+  @UnitPriceMeasurementMeasuredUnitJsonNullable()
+  UnitPriceMeasurementMeasuredUnit? get quantityUnit =>
+      throw _privateConstructorUsedError;
 
   /// The quantity value for the unit price measurement.
   double get quantityValue => throw _privateConstructorUsedError;
 
   /// The reference unit for the unit price measurement.
-  @MeasurementUnitJson()
-  MeasurementUnit? get referenceUnit => throw _privateConstructorUsedError;
+  @UnitPriceMeasurementMeasuredUnitJsonNullable()
+  UnitPriceMeasurementMeasuredUnit? get referenceUnit =>
+      throw _privateConstructorUsedError;
 
   /// The reference value for the unit price measurement.
   int get referenceValue => throw _privateConstructorUsedError;
@@ -76,10 +82,13 @@ abstract class $UnitPriceMeasurementCopyWith<$Res> {
           $Res Function(UnitPriceMeasurement) then) =
       _$UnitPriceMeasurementCopyWithImpl<$Res>;
   $Res call(
-      {@MeasurementTypeJson() MeasurementType? measuredType,
-      @MeasurementUnitJson() MeasurementUnit? quantityUnit,
+      {@UnitPriceMeasurementMeasuredTypeJsonNullable()
+          UnitPriceMeasurementMeasuredType? measuredType,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? quantityUnit,
       double quantityValue,
-      @MeasurementUnitJson() MeasurementUnit? referenceUnit,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? referenceUnit,
       int referenceValue});
 }
 
@@ -104,11 +113,11 @@ class _$UnitPriceMeasurementCopyWithImpl<$Res>
       measuredType: measuredType == freezed
           ? _value.measuredType
           : measuredType // ignore: cast_nullable_to_non_nullable
-              as MeasurementType?,
+              as UnitPriceMeasurementMeasuredType?,
       quantityUnit: quantityUnit == freezed
           ? _value.quantityUnit
           : quantityUnit // ignore: cast_nullable_to_non_nullable
-              as MeasurementUnit?,
+              as UnitPriceMeasurementMeasuredUnit?,
       quantityValue: quantityValue == freezed
           ? _value.quantityValue
           : quantityValue // ignore: cast_nullable_to_non_nullable
@@ -116,7 +125,7 @@ class _$UnitPriceMeasurementCopyWithImpl<$Res>
       referenceUnit: referenceUnit == freezed
           ? _value.referenceUnit
           : referenceUnit // ignore: cast_nullable_to_non_nullable
-              as MeasurementUnit?,
+              as UnitPriceMeasurementMeasuredUnit?,
       referenceValue: referenceValue == freezed
           ? _value.referenceValue
           : referenceValue // ignore: cast_nullable_to_non_nullable
@@ -133,10 +142,13 @@ abstract class _$UnitPriceMeasurementCopyWith<$Res>
       __$UnitPriceMeasurementCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@MeasurementTypeJson() MeasurementType? measuredType,
-      @MeasurementUnitJson() MeasurementUnit? quantityUnit,
+      {@UnitPriceMeasurementMeasuredTypeJsonNullable()
+          UnitPriceMeasurementMeasuredType? measuredType,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? quantityUnit,
       double quantityValue,
-      @MeasurementUnitJson() MeasurementUnit? referenceUnit,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? referenceUnit,
       int referenceValue});
 }
 
@@ -163,11 +175,11 @@ class __$UnitPriceMeasurementCopyWithImpl<$Res>
       measuredType: measuredType == freezed
           ? _value.measuredType
           : measuredType // ignore: cast_nullable_to_non_nullable
-              as MeasurementType?,
+              as UnitPriceMeasurementMeasuredType?,
       quantityUnit: quantityUnit == freezed
           ? _value.quantityUnit
           : quantityUnit // ignore: cast_nullable_to_non_nullable
-              as MeasurementUnit?,
+              as UnitPriceMeasurementMeasuredUnit?,
       quantityValue: quantityValue == freezed
           ? _value.quantityValue
           : quantityValue // ignore: cast_nullable_to_non_nullable
@@ -175,7 +187,7 @@ class __$UnitPriceMeasurementCopyWithImpl<$Res>
       referenceUnit: referenceUnit == freezed
           ? _value.referenceUnit
           : referenceUnit // ignore: cast_nullable_to_non_nullable
-              as MeasurementUnit?,
+              as UnitPriceMeasurementMeasuredUnit?,
       referenceValue: referenceValue == freezed
           ? _value.referenceValue
           : referenceValue // ignore: cast_nullable_to_non_nullable
@@ -188,10 +200,10 @@ class __$UnitPriceMeasurementCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_UnitPriceMeasurement extends _UnitPriceMeasurement {
   const _$_UnitPriceMeasurement(
-      {@MeasurementTypeJson() this.measuredType,
-      @MeasurementUnitJson() this.quantityUnit,
+      {@UnitPriceMeasurementMeasuredTypeJsonNullable() this.measuredType,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable() this.quantityUnit,
       required this.quantityValue,
-      @MeasurementUnitJson() this.referenceUnit,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable() this.referenceUnit,
       required this.referenceValue})
       : super._();
 
@@ -201,13 +213,13 @@ class _$_UnitPriceMeasurement extends _UnitPriceMeasurement {
   @override
 
   /// The type of unit of measurement for the unit price measurement.
-  @MeasurementTypeJson()
-  final MeasurementType? measuredType;
+  @UnitPriceMeasurementMeasuredTypeJsonNullable()
+  final UnitPriceMeasurementMeasuredType? measuredType;
   @override
 
   /// The quantity unit for the unit price measurement.
-  @MeasurementUnitJson()
-  final MeasurementUnit? quantityUnit;
+  @UnitPriceMeasurementMeasuredUnitJsonNullable()
+  final UnitPriceMeasurementMeasuredUnit? quantityUnit;
   @override
 
   /// The quantity value for the unit price measurement.
@@ -215,8 +227,8 @@ class _$_UnitPriceMeasurement extends _UnitPriceMeasurement {
   @override
 
   /// The reference unit for the unit price measurement.
-  @MeasurementUnitJson()
-  final MeasurementUnit? referenceUnit;
+  @UnitPriceMeasurementMeasuredUnitJsonNullable()
+  final UnitPriceMeasurementMeasuredUnit? referenceUnit;
   @override
 
   /// The reference value for the unit price measurement.
@@ -271,10 +283,13 @@ class _$_UnitPriceMeasurement extends _UnitPriceMeasurement {
 
 abstract class _UnitPriceMeasurement extends UnitPriceMeasurement {
   const factory _UnitPriceMeasurement(
-      {@MeasurementTypeJson() MeasurementType? measuredType,
-      @MeasurementUnitJson() MeasurementUnit? quantityUnit,
+      {@UnitPriceMeasurementMeasuredTypeJsonNullable()
+          UnitPriceMeasurementMeasuredType? measuredType,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? quantityUnit,
       required double quantityValue,
-      @MeasurementUnitJson() MeasurementUnit? referenceUnit,
+      @UnitPriceMeasurementMeasuredUnitJsonNullable()
+          UnitPriceMeasurementMeasuredUnit? referenceUnit,
       required int referenceValue}) = _$_UnitPriceMeasurement;
   const _UnitPriceMeasurement._() : super._();
 
@@ -284,13 +299,15 @@ abstract class _UnitPriceMeasurement extends UnitPriceMeasurement {
   @override
 
   /// The type of unit of measurement for the unit price measurement.
-  @MeasurementTypeJson()
-  MeasurementType? get measuredType => throw _privateConstructorUsedError;
+  @UnitPriceMeasurementMeasuredTypeJsonNullable()
+  UnitPriceMeasurementMeasuredType? get measuredType =>
+      throw _privateConstructorUsedError;
   @override
 
   /// The quantity unit for the unit price measurement.
-  @MeasurementUnitJson()
-  MeasurementUnit? get quantityUnit => throw _privateConstructorUsedError;
+  @UnitPriceMeasurementMeasuredUnitJsonNullable()
+  UnitPriceMeasurementMeasuredUnit? get quantityUnit =>
+      throw _privateConstructorUsedError;
   @override
 
   /// The quantity value for the unit price measurement.
@@ -298,8 +315,9 @@ abstract class _UnitPriceMeasurement extends UnitPriceMeasurement {
   @override
 
   /// The reference unit for the unit price measurement.
-  @MeasurementUnitJson()
-  MeasurementUnit? get referenceUnit => throw _privateConstructorUsedError;
+  @UnitPriceMeasurementMeasuredUnitJsonNullable()
+  UnitPriceMeasurementMeasuredUnit? get referenceUnit =>
+      throw _privateConstructorUsedError;
   @override
 
   /// The reference value for the unit price measurement.

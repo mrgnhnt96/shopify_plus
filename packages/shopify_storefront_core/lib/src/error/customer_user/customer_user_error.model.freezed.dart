@@ -22,7 +22,7 @@ class _$CustomerUserErrorTearOff {
   const _$CustomerUserErrorTearOff();
 
   _CustomerUserError call(
-      {@CustomerErrorCodeJson() CustomerErrorCode? code,
+      {@CustomerErrorCodeJsonNullable() CustomerErrorCode? code,
       List<String>? field,
       required String message}) {
     return _CustomerUserError(
@@ -43,7 +43,7 @@ const $CustomerUserError = _$CustomerUserErrorTearOff();
 /// @nodoc
 mixin _$CustomerUserError {
   /// The error code.
-  @CustomerErrorCodeJson()
+  @CustomerErrorCodeJsonNullable()
   CustomerErrorCode? get code => throw _privateConstructorUsedError;
 
   /// The path to the input field that caused the error.
@@ -64,7 +64,7 @@ abstract class $CustomerUserErrorCopyWith<$Res> {
           CustomerUserError value, $Res Function(CustomerUserError) then) =
       _$CustomerUserErrorCopyWithImpl<$Res>;
   $Res call(
-      {@CustomerErrorCodeJson() CustomerErrorCode? code,
+      {@CustomerErrorCodeJsonNullable() CustomerErrorCode? code,
       List<String>? field,
       String message});
 }
@@ -109,7 +109,7 @@ abstract class _$CustomerUserErrorCopyWith<$Res>
       __$CustomerUserErrorCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@CustomerErrorCodeJson() CustomerErrorCode? code,
+      {@CustomerErrorCodeJsonNullable() CustomerErrorCode? code,
       List<String>? field,
       String message});
 }
@@ -152,7 +152,9 @@ class __$CustomerUserErrorCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CustomerUserError extends _CustomerUserError {
   const _$_CustomerUserError(
-      {@CustomerErrorCodeJson() this.code, this.field, required this.message})
+      {@CustomerErrorCodeJsonNullable() this.code,
+      this.field,
+      required this.message})
       : super._();
 
   factory _$_CustomerUserError.fromJson(Map<String, dynamic> json) =>
@@ -161,7 +163,7 @@ class _$_CustomerUserError extends _CustomerUserError {
   @override
 
   /// The error code.
-  @CustomerErrorCodeJson()
+  @CustomerErrorCodeJsonNullable()
   final CustomerErrorCode? code;
   @override
 
@@ -209,7 +211,7 @@ class _$_CustomerUserError extends _CustomerUserError {
 
 abstract class _CustomerUserError extends CustomerUserError {
   const factory _CustomerUserError(
-      {@CustomerErrorCodeJson() CustomerErrorCode? code,
+      {@CustomerErrorCodeJsonNullable() CustomerErrorCode? code,
       List<String>? field,
       required String message}) = _$_CustomerUserError;
   const _CustomerUserError._() : super._();
@@ -220,7 +222,7 @@ abstract class _CustomerUserError extends CustomerUserError {
   @override
 
   /// The error code.
-  @CustomerErrorCodeJson()
+  @CustomerErrorCodeJsonNullable()
   CustomerErrorCode? get code => throw _privateConstructorUsedError;
   @override
 

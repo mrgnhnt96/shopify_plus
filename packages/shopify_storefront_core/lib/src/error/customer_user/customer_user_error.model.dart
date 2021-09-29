@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/enum/customer_error_code.dart';
 
 part 'customer_user_error.model.freezed.dart';
@@ -14,7 +17,7 @@ class CustomerUserError with _$CustomerUserError {
   /// {@macro customer_user_error}
   const factory CustomerUserError({
     /// The error code.
-    @CustomerErrorCodeJson() CustomerErrorCode? code,
+    @CustomerErrorCodeJsonNullable() CustomerErrorCode? code,
 
     /// The path to the input field that caused the error.
     List<String>? field,

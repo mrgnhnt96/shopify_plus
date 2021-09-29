@@ -788,7 +788,7 @@ class __$OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Order extends _Order {
+class _$_Order implements _Order {
   const _$_Order(
       {@OrderCancelReasonJson() this.cancelReason,
       this.canceledAt,
@@ -819,8 +819,7 @@ class _$_Order extends _Order {
       @JsonKey(name: 'totalPriceV2') required this.totalPrice,
       @JsonKey(name: 'totalRefundedV2') required this.totalRefunded,
       @JsonKey(name: 'totalShippingPriceV2') required this.totalShippingPrice,
-      @JsonKey(name: 'totalTaxV2') this.totalTax})
-      : super._();
+      @JsonKey(name: 'totalTaxV2') this.totalTax});
 
   factory _$_Order.fromJson(Map<String, dynamic> json) =>
       _$$_OrderFromJson(json);
@@ -1084,7 +1083,7 @@ class _$_Order extends _Order {
   }
 }
 
-abstract class _Order extends Order {
+abstract class _Order implements Order {
   const factory _Order(
       {@OrderCancelReasonJson()
           OrderCancelReason? cancelReason,
@@ -1124,7 +1123,6 @@ abstract class _Order extends Order {
           required Money totalShippingPrice,
       @JsonKey(name: 'totalTaxV2')
           Money? totalTax}) = _$_Order;
-  const _Order._() : super._();
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
 

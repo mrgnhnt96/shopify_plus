@@ -1,5 +1,10 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
+import 'package:shopify_storefront_core/src/input/checkout/checkout_buyer_identity_input/checkout_buyer_identity_input.model.dart';
+import 'package:shopify_storefront_core/src/input/common/mailing_address_input/mailing_address_input.model.dart';
 
 part 'checkout_create_input.model.g.dart';
 
@@ -43,10 +48,7 @@ class CheckoutCreateInput {
   final String? note;
 
   /// The three-letter currency code of one of the shop's enabled presentment currencies. Including this field creates a checkout in the specified currency. By default, new checkouts are created in the shop's primary currency. This argument is deprecated: Use country field instead.
-  @JsonKey(
-    fromJson: CurrencyCodeJson.currencyFromJsonNullable,
-    toJson: CurrencyCodeJson.currencyToJson,
-  )
+  @CurrencyCodeJsonNullable()
   final CurrencyCode? country;
 
   /// The shipping address to where the line items will be shipped.

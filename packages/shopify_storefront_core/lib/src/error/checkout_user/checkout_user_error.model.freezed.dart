@@ -22,7 +22,7 @@ class _$CheckoutUserErrorTearOff {
   const _$CheckoutUserErrorTearOff();
 
   _CheckoutUserError call(
-      {@CheckoutErrorCodeJson() CheckoutErrorCode? code,
+      {@CheckoutErrorCodeJsonNullable() CheckoutErrorCode? code,
       List<String>? field,
       required String message}) {
     return _CheckoutUserError(
@@ -43,7 +43,7 @@ const $CheckoutUserError = _$CheckoutUserErrorTearOff();
 /// @nodoc
 mixin _$CheckoutUserError {
   /// The error code.
-  @CheckoutErrorCodeJson()
+  @CheckoutErrorCodeJsonNullable()
   CheckoutErrorCode? get code => throw _privateConstructorUsedError;
 
   /// The path to the input field that caused the error.
@@ -64,7 +64,7 @@ abstract class $CheckoutUserErrorCopyWith<$Res> {
           CheckoutUserError value, $Res Function(CheckoutUserError) then) =
       _$CheckoutUserErrorCopyWithImpl<$Res>;
   $Res call(
-      {@CheckoutErrorCodeJson() CheckoutErrorCode? code,
+      {@CheckoutErrorCodeJsonNullable() CheckoutErrorCode? code,
       List<String>? field,
       String message});
 }
@@ -109,7 +109,7 @@ abstract class _$CheckoutUserErrorCopyWith<$Res>
       __$CheckoutUserErrorCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@CheckoutErrorCodeJson() CheckoutErrorCode? code,
+      {@CheckoutErrorCodeJsonNullable() CheckoutErrorCode? code,
       List<String>? field,
       String message});
 }
@@ -152,7 +152,9 @@ class __$CheckoutUserErrorCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CheckoutUserError extends _CheckoutUserError {
   const _$_CheckoutUserError(
-      {@CheckoutErrorCodeJson() this.code, this.field, required this.message})
+      {@CheckoutErrorCodeJsonNullable() this.code,
+      this.field,
+      required this.message})
       : super._();
 
   factory _$_CheckoutUserError.fromJson(Map<String, dynamic> json) =>
@@ -161,7 +163,7 @@ class _$_CheckoutUserError extends _CheckoutUserError {
   @override
 
   /// The error code.
-  @CheckoutErrorCodeJson()
+  @CheckoutErrorCodeJsonNullable()
   final CheckoutErrorCode? code;
   @override
 
@@ -209,7 +211,7 @@ class _$_CheckoutUserError extends _CheckoutUserError {
 
 abstract class _CheckoutUserError extends CheckoutUserError {
   const factory _CheckoutUserError(
-      {@CheckoutErrorCodeJson() CheckoutErrorCode? code,
+      {@CheckoutErrorCodeJsonNullable() CheckoutErrorCode? code,
       List<String>? field,
       required String message}) = _$_CheckoutUserError;
   const _CheckoutUserError._() : super._();
@@ -220,7 +222,7 @@ abstract class _CheckoutUserError extends CheckoutUserError {
   @override
 
   /// The error code.
-  @CheckoutErrorCodeJson()
+  @CheckoutErrorCodeJsonNullable()
   CheckoutErrorCode? get code => throw _privateConstructorUsedError;
   @override
 

@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
 
 part 'checkout_buyer_identity_input.model.g.dart';
@@ -16,10 +19,7 @@ class CheckoutBuyerIdentityInput {
       _$CheckoutBuyerIdentityInputFromJson(json);
 
   /// The country code of one of the shop's enabled countries. For example, CA. Including this field creates a checkout in the specified country's currency.
-  @JsonKey(
-    fromJson: CountryCodeJson.countryFromJson,
-    toJson: CountryCodeJson.countryToJson,
-  )
+  @CountryCodeJsonNullable()
   final CountryCode countryCode;
 
   /// {@macro to_json}

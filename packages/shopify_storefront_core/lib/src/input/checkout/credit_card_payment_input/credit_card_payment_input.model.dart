@@ -1,5 +1,9 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/shopify_core.dart';
+import 'package:shopify_storefront_core/src/input/common/mailing_address_input/mailing_address_input.model.dart';
 
 part 'credit_card_payment_input.model.g.dart';
 

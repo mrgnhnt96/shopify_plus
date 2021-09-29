@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/filter_value/filter_value.model.dart';
 import 'package:shopify_storefront_core/src/enum/filter_type.dart';
 

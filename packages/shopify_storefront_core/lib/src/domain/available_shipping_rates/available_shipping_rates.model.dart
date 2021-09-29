@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/shipping_rate/shipping_rate.model.dart';
 
 part 'available_shipping_rates.model.freezed.dart';

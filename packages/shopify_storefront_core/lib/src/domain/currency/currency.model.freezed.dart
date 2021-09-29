@@ -22,7 +22,7 @@ class _$CurrencyTearOff {
   const _$CurrencyTearOff();
 
   _Currency call(
-      {required CountryCode isoCode,
+      {@CountryCodeJson() required CountryCode isoCode,
       required String name,
       required String symbol}) {
     return _Currency(
@@ -43,6 +43,7 @@ const $Currency = _$CurrencyTearOff();
 /// @nodoc
 mixin _$Currency {
   /// The ISO code of the currency.
+  @CountryCodeJson()
   CountryCode get isoCode => throw _privateConstructorUsedError;
 
   /// The name of the currency.
@@ -61,7 +62,8 @@ mixin _$Currency {
 abstract class $CurrencyCopyWith<$Res> {
   factory $CurrencyCopyWith(Currency value, $Res Function(Currency) then) =
       _$CurrencyCopyWithImpl<$Res>;
-  $Res call({CountryCode isoCode, String name, String symbol});
+  $Res call(
+      {@CountryCodeJson() CountryCode isoCode, String name, String symbol});
 }
 
 /// @nodoc
@@ -100,7 +102,8 @@ abstract class _$CurrencyCopyWith<$Res> implements $CurrencyCopyWith<$Res> {
   factory _$CurrencyCopyWith(_Currency value, $Res Function(_Currency) then) =
       __$CurrencyCopyWithImpl<$Res>;
   @override
-  $Res call({CountryCode isoCode, String name, String symbol});
+  $Res call(
+      {@CountryCodeJson() CountryCode isoCode, String name, String symbol});
 }
 
 /// @nodoc
@@ -139,7 +142,9 @@ class __$CurrencyCopyWithImpl<$Res> extends _$CurrencyCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Currency extends _Currency {
   const _$_Currency(
-      {required this.isoCode, required this.name, required this.symbol})
+      {@CountryCodeJson() required this.isoCode,
+      required this.name,
+      required this.symbol})
       : super._();
 
   factory _$_Currency.fromJson(Map<String, dynamic> json) =>
@@ -148,6 +153,7 @@ class _$_Currency extends _Currency {
   @override
 
   /// The ISO code of the currency.
+  @CountryCodeJson()
   final CountryCode isoCode;
   @override
 
@@ -196,7 +202,7 @@ class _$_Currency extends _Currency {
 
 abstract class _Currency extends Currency {
   const factory _Currency(
-      {required CountryCode isoCode,
+      {@CountryCodeJson() required CountryCode isoCode,
       required String name,
       required String symbol}) = _$_Currency;
   const _Currency._() : super._();
@@ -206,6 +212,7 @@ abstract class _Currency extends Currency {
   @override
 
   /// The ISO code of the currency.
+  @CountryCodeJson()
   CountryCode get isoCode => throw _privateConstructorUsedError;
   @override
 

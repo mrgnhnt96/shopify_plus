@@ -1,4 +1,7 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+// Project imports:
 import 'package:shopify_storefront_core/src/domain/discount_allocation/discount_allocation.model.dart';
 import 'package:shopify_storefront_core/src/domain/fulfillment/fulfillment.model.dart';
 import 'package:shopify_storefront_core/src/domain/mailing_address/mailing_address.model.dart';
@@ -11,6 +14,9 @@ import 'package:shopify_storefront_core/src/enum/order_fulfillment_status.dart';
 part 'order.model.freezed.dart';
 part 'order.model.g.dart';
 
+// TODO: sort all files into folders (similar to inputs)
+// Fix all enum problems (annotate with @Json())
+
 /// {@template order}
 /// An order is a customer’s completed request to purchase one or
 /// more products from a shop. An order is created when a
@@ -21,8 +27,6 @@ part 'order.model.g.dart';
 /// {@endtemplate}
 @freezed
 class Order with _$Order {
-  const Order._();
-
   /// {@macro order}
   const factory Order({
     ///The reason for the order's cancellation. Returns null if the order wasn't canceled.
